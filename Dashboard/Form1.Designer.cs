@@ -1,4 +1,6 @@
-﻿namespace Dashboard
+﻿using MyResources = Dashboard.Properties.Resources;
+
+namespace Dashboard
 {
     partial class dashboardPanel
     {
@@ -30,99 +32,26 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(dashboardPanel));
-            materialTabControl = new MaterialSkin.Controls.MaterialTabControl();
-            Dashboard = new TabPage();
-            Dashboard_Panel = new Panel();
-            Order = new TabPage();
-            bodyMeasurement = new TabPage();
-            costConsumption = new TabPage();
-            Revenue = new TabPage();
             imageList = new ImageList(components);
-            materialTabControl.SuspendLayout();
-            Dashboard.SuspendLayout();
+            materialTabControl1 = new ReaLTaiizor.Controls.MaterialTabControl();
+            MainDashboard = new TabPage();
+            materialCard1 = new ReaLTaiizor.Controls.MaterialCard();
+            materialLabel1 = new ReaLTaiizor.Controls.MaterialLabel();
+            btnNotification = new ReaLTaiizor.Controls.MaterialButton();
+            Order = new TabPage();
+            BodyMeasurement = new TabPage();
+            CostConsumption = new TabPage();
+            Revenue = new TabPage();
+            pnlNotification = new ReaLTaiizor.Controls.MaterialCard();
+            materialCard3 = new ReaLTaiizor.Controls.MaterialCard();
+            materialLabel2 = new ReaLTaiizor.Controls.MaterialLabel();
+            btnCloseNotification = new ReaLTaiizor.Controls.MaterialButton();
+            materialTabControl1.SuspendLayout();
+            MainDashboard.SuspendLayout();
+            materialCard1.SuspendLayout();
+            pnlNotification.SuspendLayout();
+            materialCard3.SuspendLayout();
             SuspendLayout();
-            // 
-            // materialTabControl
-            // 
-            materialTabControl.Controls.Add(Dashboard);
-            materialTabControl.Controls.Add(Order);
-            materialTabControl.Controls.Add(bodyMeasurement);
-            materialTabControl.Controls.Add(costConsumption);
-            materialTabControl.Controls.Add(Revenue);
-            materialTabControl.Depth = 0;
-            materialTabControl.Dock = DockStyle.Fill;
-            materialTabControl.ImageList = imageList;
-            materialTabControl.Location = new Point(3, 64);
-            materialTabControl.MouseState = MaterialSkin.MouseState.HOVER;
-            materialTabControl.Multiline = true;
-            materialTabControl.Name = "materialTabControl";
-            materialTabControl.SelectedIndex = 0;
-            materialTabControl.Size = new Size(878, 394);
-            materialTabControl.TabIndex = 0;
-            // 
-            // Dashboard
-            // 
-            Dashboard.BackColor = Color.Transparent;
-            Dashboard.Controls.Add(Dashboard_Panel);
-            Dashboard.ImageKey = "dashboard.png";
-            Dashboard.Location = new Point(4, 29);
-            Dashboard.Name = "Dashboard";
-            Dashboard.Padding = new Padding(3);
-            Dashboard.Size = new Size(870, 361);
-            Dashboard.TabIndex = 0;
-            Dashboard.Text = "Dashboard";
-            // 
-            // Dashboard_Panel
-            // 
-            Dashboard_Panel.BackColor = Color.Silver;
-            Dashboard_Panel.BorderStyle = BorderStyle.FixedSingle;
-            Dashboard_Panel.Dock = DockStyle.Top;
-            Dashboard_Panel.Location = new Point(3, 3);
-            Dashboard_Panel.Name = "Dashboard_Panel";
-            Dashboard_Panel.Size = new Size(864, 100);
-            Dashboard_Panel.TabIndex = 0;
-            Dashboard_Panel.Paint += panel1_Paint;
-            // 
-            // Order
-            // 
-            Order.ImageKey = "order.png";
-            Order.Location = new Point(4, 29);
-            Order.Name = "Order";
-            Order.Padding = new Padding(3);
-            Order.Size = new Size(870, 361);
-            Order.TabIndex = 1;
-            Order.Text = "Order";
-            Order.UseVisualStyleBackColor = true;
-            // 
-            // bodyMeasurement
-            // 
-            bodyMeasurement.ImageKey = "bodyMeasurement.png";
-            bodyMeasurement.Location = new Point(4, 29);
-            bodyMeasurement.Name = "bodyMeasurement";
-            bodyMeasurement.Size = new Size(870, 361);
-            bodyMeasurement.TabIndex = 2;
-            bodyMeasurement.Text = "Body Measurement";
-            bodyMeasurement.UseVisualStyleBackColor = true;
-            // 
-            // costConsumption
-            // 
-            costConsumption.ImageKey = "cost.png";
-            costConsumption.Location = new Point(4, 29);
-            costConsumption.Name = "costConsumption";
-            costConsumption.Size = new Size(870, 361);
-            costConsumption.TabIndex = 3;
-            costConsumption.Text = "Cost Consumption";
-            costConsumption.UseVisualStyleBackColor = true;
-            // 
-            // Revenue
-            // 
-            Revenue.ImageKey = "revenue.png";
-            Revenue.Location = new Point(4, 29);
-            Revenue.Name = "Revenue";
-            Revenue.Size = new Size(870, 361);
-            Revenue.TabIndex = 4;
-            Revenue.Text = "Revenue";
-            Revenue.UseVisualStyleBackColor = true;
             // 
             // imageList
             // 
@@ -134,36 +63,247 @@
             imageList.Images.SetKeyName(2, "bodyMeasurement.png");
             imageList.Images.SetKeyName(3, "cost.png");
             imageList.Images.SetKeyName(4, "revenue.png");
+            imageList.Images.SetKeyName(5, "bell.png");
+            // 
+            // materialTabControl1
+            // 
+            materialTabControl1.Controls.Add(MainDashboard);
+            materialTabControl1.Controls.Add(Order);
+            materialTabControl1.Controls.Add(BodyMeasurement);
+            materialTabControl1.Controls.Add(CostConsumption);
+            materialTabControl1.Controls.Add(Revenue);
+            materialTabControl1.Depth = 0;
+            materialTabControl1.Dock = DockStyle.Fill;
+            materialTabControl1.ImageList = imageList;
+            materialTabControl1.Location = new Point(3, 64);
+            materialTabControl1.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            materialTabControl1.Multiline = true;
+            materialTabControl1.Name = "materialTabControl1";
+            materialTabControl1.SelectedIndex = 0;
+            materialTabControl1.Size = new Size(878, 394);
+            materialTabControl1.TabIndex = 0;
+            // 
+            // MainDashboard
+            // 
+            MainDashboard.Controls.Add(materialCard1);
+            MainDashboard.ImageKey = "dashboard.png";
+            MainDashboard.Location = new Point(4, 24);
+            MainDashboard.Name = "MainDashboard";
+            MainDashboard.Padding = new Padding(3);
+            MainDashboard.Size = new Size(870, 366);
+            MainDashboard.TabIndex = 0;
+            MainDashboard.Text = "Dashboard";
+            MainDashboard.UseVisualStyleBackColor = true;
+            // 
+            // materialCard1
+            // 
+            materialCard1.BackColor = Color.FromArgb(255, 255, 255);
+            materialCard1.Controls.Add(materialLabel1);
+            materialCard1.Controls.Add(btnNotification);
+            materialCard1.Depth = 0;
+            materialCard1.Dock = DockStyle.Top;
+            materialCard1.ForeColor = Color.FromArgb(222, 0, 0, 0);
+            materialCard1.Location = new Point(3, 3);
+            materialCard1.Margin = new Padding(14);
+            materialCard1.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            materialCard1.Name = "materialCard1";
+            materialCard1.Padding = new Padding(14);
+            materialCard1.Size = new Size(864, 50);
+            materialCard1.TabIndex = 1;
+            // 
+            // materialLabel1
+            // 
+            materialLabel1.AutoSize = true;
+            materialLabel1.Depth = 0;
+            materialLabel1.Dock = DockStyle.Left;
+            materialLabel1.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
+            materialLabel1.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.H6;
+            materialLabel1.Location = new Point(14, 14);
+            materialLabel1.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            materialLabel1.Name = "materialLabel1";
+            materialLabel1.Size = new Size(97, 24);
+            materialLabel1.TabIndex = 2;
+            materialLabel1.Text = "Dashboard";
+            // 
+            // btnNotification
+            // 
+            btnNotification.AutoSize = false;
+            btnNotification.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btnNotification.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
+            btnNotification.Depth = 0;
+            btnNotification.Dock = DockStyle.Right;
+            btnNotification.HighEmphasis = true;
+            btnNotification.Icon = MyResources.bell;
+            btnNotification.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Default;
+            btnNotification.ImageKey = "(none)";
+            btnNotification.Location = new Point(810, 14);
+            btnNotification.Margin = new Padding(4, 6, 4, 6);
+            btnNotification.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            btnNotification.Name = "btnNotification";
+            btnNotification.NoAccentTextColor = Color.Empty;
+            btnNotification.Size = new Size(40, 22);
+            btnNotification.TabIndex = 2;
+            btnNotification.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Text;
+            btnNotification.UseAccentColor = false;
+            btnNotification.UseVisualStyleBackColor = true;
+            btnNotification.Click += btnNotification_Click;
+            // 
+            // Order
+            // 
+            Order.ImageKey = "order.png";
+            Order.Location = new Point(4, 24);
+            Order.Name = "Order";
+            Order.Padding = new Padding(3);
+            Order.Size = new Size(870, 366);
+            Order.TabIndex = 1;
+            Order.Text = "Order";
+            Order.UseVisualStyleBackColor = true;
+            // 
+            // BodyMeasurement
+            // 
+            BodyMeasurement.ImageKey = "bodyMeasurement.png";
+            BodyMeasurement.Location = new Point(4, 24);
+            BodyMeasurement.Name = "BodyMeasurement";
+            BodyMeasurement.Size = new Size(870, 366);
+            BodyMeasurement.TabIndex = 2;
+            BodyMeasurement.Text = "Body Measurement";
+            BodyMeasurement.UseVisualStyleBackColor = true;
+            // 
+            // CostConsumption
+            // 
+            CostConsumption.ImageKey = "cost.png";
+            CostConsumption.Location = new Point(4, 24);
+            CostConsumption.Name = "CostConsumption";
+            CostConsumption.Size = new Size(870, 366);
+            CostConsumption.TabIndex = 3;
+            CostConsumption.Text = "Cost Consumption";
+            CostConsumption.UseVisualStyleBackColor = true;
+            // 
+            // Revenue
+            // 
+            Revenue.ImageKey = "revenue.png";
+            Revenue.Location = new Point(4, 24);
+            Revenue.Name = "Revenue";
+            Revenue.Size = new Size(870, 366);
+            Revenue.TabIndex = 4;
+            Revenue.Text = "Revenue";
+            Revenue.UseVisualStyleBackColor = true;
+            // 
+            // pnlNotification
+            // 
+            pnlNotification.BackColor = Color.FromArgb(255, 255, 255);
+            pnlNotification.Controls.Add(materialCard3);
+            pnlNotification.Depth = 0;
+            pnlNotification.ForeColor = Color.FromArgb(222, 0, 0, 0);
+            pnlNotification.Location = new Point(627, 45);
+            pnlNotification.Margin = new Padding(14);
+            pnlNotification.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            pnlNotification.Name = "pnlNotification";
+            pnlNotification.Padding = new Padding(14);
+            pnlNotification.Size = new Size(300, 400);
+            pnlNotification.TabIndex = 2;
+            pnlNotification.Visible = false;
+            // 
+            // materialCard3
+            // 
+            materialCard3.Anchor = AnchorStyles.Top;
+            materialCard3.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            materialCard3.BackColor = Color.FromArgb(255, 255, 255);
+            materialCard3.BorderStyle = BorderStyle.FixedSingle;
+            materialCard3.Controls.Add(materialLabel2);
+            materialCard3.Controls.Add(btnCloseNotification);
+            materialCard3.Depth = 0;
+            materialCard3.ForeColor = Color.FromArgb(222, 0, 0, 0);
+            materialCard3.Location = new Point(0, 0);
+            materialCard3.Margin = new Padding(14);
+            materialCard3.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            materialCard3.Name = "materialCard3";
+            materialCard3.Padding = new Padding(14);
+            materialCard3.Size = new Size(300, 50);
+            materialCard3.TabIndex = 1;
+            materialCard3.Paint += materialCard3_Paint;
+            // 
+            // materialLabel2
+            // 
+            materialLabel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            materialLabel2.AutoSize = true;
+            materialLabel2.Depth = 0;
+            materialLabel2.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialLabel2.Location = new Point(113, 17);
+            materialLabel2.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            materialLabel2.Name = "materialLabel2";
+            materialLabel2.Size = new Size(84, 19);
+            materialLabel2.TabIndex = 1;
+            materialLabel2.Text = "Notification";
+            // 
+            // btnCloseNotification
+            // 
+            btnCloseNotification.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnCloseNotification.AutoSize = false;
+            btnCloseNotification.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btnCloseNotification.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
+            btnCloseNotification.Depth = 0;
+            btnCloseNotification.ForeColor = Color.Black;
+            btnCloseNotification.HighEmphasis = true;
+            btnCloseNotification.Icon = null;
+            btnCloseNotification.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
+            btnCloseNotification.Location = new Point(280, 6);
+            btnCloseNotification.Margin = new Padding(4, 6, 4, 6);
+            btnCloseNotification.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            btnCloseNotification.Name = "btnCloseNotification";
+            btnCloseNotification.NoAccentTextColor = Color.Empty;
+            btnCloseNotification.Size = new Size(14, 20);
+            btnCloseNotification.TabIndex = 0;
+            btnCloseNotification.Text = "X";
+            btnCloseNotification.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Text;
+            btnCloseNotification.UseAccentColor = true;
+            btnCloseNotification.UseVisualStyleBackColor = true;
+            btnCloseNotification.Click += btnCloseNotification_Click;
             // 
             // dashboardPanel
             // 
             AutoScaleMode = AutoScaleMode.Inherit;
+            AutoValidate = AutoValidate.EnablePreventFocusChange;
             BackColor = SystemColors.Control;
             ClientSize = new Size(884, 461);
-            Controls.Add(materialTabControl);
+            Controls.Add(pnlNotification);
+            Controls.Add(materialTabControl1);
             DrawerAutoHide = false;
             DrawerAutoShow = true;
+            DrawerBackgroundWithAccent = true;
             DrawerShowIconsWhenHidden = true;
+            DrawerTabControl = materialTabControl1;
             DrawerUseColors = true;
             Name = "dashboardPanel";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "RE Sewing Creations";
             WindowState = FormWindowState.Maximized;
             Load += Form1_Load;
-            materialTabControl.ResumeLayout(false);
-            Dashboard.ResumeLayout(false);
+            materialTabControl1.ResumeLayout(false);
+            MainDashboard.ResumeLayout(false);
+            materialCard1.ResumeLayout(false);
+            materialCard1.PerformLayout();
+            pnlNotification.ResumeLayout(false);
+            materialCard3.ResumeLayout(false);
+            materialCard3.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private MaterialSkin.Controls.MaterialTabControl materialTabControl;
-        private TabPage Dashboard;
-        private TabPage Order;
         private ImageList imageList;
-        private TabPage bodyMeasurement;
-        private TabPage costConsumption;
+        private ReaLTaiizor.Controls.MaterialTabControl materialTabControl1;
+        private TabPage MainDashboard;
+        private TabPage Order;
+        private TabPage BodyMeasurement;
+        private TabPage CostConsumption;
         private TabPage Revenue;
-        private Panel Dashboard_Panel;
+        private ReaLTaiizor.Controls.MaterialCard materialCard2;
+        private ReaLTaiizor.Controls.MaterialCard materialCard1;
+        private ReaLTaiizor.Controls.MaterialButton btnNotification;
+        private ReaLTaiizor.Controls.MaterialCard pnlNotification;
+        private ReaLTaiizor.Controls.MaterialLabel materialLabel1;
+        private ReaLTaiizor.Controls.MaterialButton btnCloseNotification;
+        private ReaLTaiizor.Controls.MaterialCard materialCard3;
+        private ReaLTaiizor.Controls.MaterialLabel materialLabel2;
     }
 }
