@@ -65,10 +65,10 @@
             Dashboard.BackColor = Color.Transparent;
             Dashboard.Controls.Add(Dashboard_Panel);
             Dashboard.ImageKey = "dashboard.png";
-            Dashboard.Location = new Point(4, 24);
+            Dashboard.Location = new Point(4, 29);
             Dashboard.Name = "Dashboard";
             Dashboard.Padding = new Padding(3);
-            Dashboard.Size = new Size(870, 366);
+            Dashboard.Size = new Size(870, 361);
             Dashboard.TabIndex = 0;
             Dashboard.Text = "Dashboard";
             // 
@@ -86,10 +86,10 @@
             // Order
             // 
             Order.ImageKey = "order.png";
-            Order.Location = new Point(4, 24);
+            Order.Location = new Point(4, 29);
             Order.Name = "Order";
             Order.Padding = new Padding(3);
-            Order.Size = new Size(870, 366);
+            Order.Size = new Size(870, 361);
             Order.TabIndex = 1;
             Order.Text = "Order";
             Order.UseVisualStyleBackColor = true;
@@ -97,9 +97,9 @@
             // bodyMeasurement
             // 
             bodyMeasurement.ImageKey = "bodyMeasurement.png";
-            bodyMeasurement.Location = new Point(4, 24);
+            bodyMeasurement.Location = new Point(4, 29);
             bodyMeasurement.Name = "bodyMeasurement";
-            bodyMeasurement.Size = new Size(870, 366);
+            bodyMeasurement.Size = new Size(870, 361);
             bodyMeasurement.TabIndex = 2;
             bodyMeasurement.Text = "Body Measurement";
             bodyMeasurement.UseVisualStyleBackColor = true;
@@ -107,9 +107,9 @@
             // costConsumption
             // 
             costConsumption.ImageKey = "cost.png";
-            costConsumption.Location = new Point(4, 24);
+            costConsumption.Location = new Point(4, 29);
             costConsumption.Name = "costConsumption";
-            costConsumption.Size = new Size(870, 366);
+            costConsumption.Size = new Size(870, 361);
             costConsumption.TabIndex = 3;
             costConsumption.Text = "Cost Consumption";
             costConsumption.UseVisualStyleBackColor = true;
@@ -117,9 +117,9 @@
             // Revenue
             // 
             Revenue.ImageKey = "revenue.png";
-            Revenue.Location = new Point(4, 24);
+            Revenue.Location = new Point(4, 29);
             Revenue.Name = "Revenue";
-            Revenue.Size = new Size(870, 366);
+            Revenue.Size = new Size(870, 361);
             Revenue.TabIndex = 4;
             Revenue.Text = "Revenue";
             Revenue.UseVisualStyleBackColor = true;
@@ -144,10 +144,11 @@
             DrawerAutoHide = false;
             DrawerAutoShow = true;
             DrawerShowIconsWhenHidden = true;
-            DrawerTabControl = materialTabControl;
             DrawerUseColors = true;
             Name = "dashboardPanel";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "RE Sewing Creations";
+            WindowState = FormWindowState.Maximized;
             Load += Form1_Load;
             materialTabControl.ResumeLayout(false);
             Dashboard.ResumeLayout(false);
