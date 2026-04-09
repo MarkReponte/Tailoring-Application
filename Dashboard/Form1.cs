@@ -3,6 +3,7 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 using MyResources = Dashboard.Properties.Resources;
+using ReaLTaiizor.Controls;
 
 namespace Dashboard
 {
@@ -17,32 +18,8 @@ namespace Dashboard
 
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        public void NotificationPanel()
         {
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-        }
-
-        private void materialButton1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void materialCard1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void materialTabSelector1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnNotification_Click(object sender, EventArgs e)
-        {
-            
             pnlNotification.Visible = !pnlNotification.Visible;
 
             if (pnlNotification.Visible)
@@ -58,16 +35,66 @@ namespace Dashboard
             }
         }
 
+        private void dashboardPanel_Load(object sender, EventArgs e)
+        {
+            cboSearch.Text = "Search...";
+            cboSearch.ForeColor = Color.FromArgb(150, 150, 150);
+            this.ActiveControl = null;
+        }
+
         private void btnCloseNotification_Click(object sender, EventArgs e)
         {
             pnlNotification.Visible = false;
         }
 
-        private void materialCard3_Paint(object sender, PaintEventArgs e)
+        private void cboSearch_Enter(Object sender, EventArgs e)
         {
+            cboSearch.Select(0, 0);
+
+            if (cboSearch.Text == "Search...")
+            {
+                cboSearch.Text = "";
+                cboSearch.ForeColor = Color.FromArgb(0, 0, 0);
+            }
+        }
+
+        private void cboSearch_TextChanged(object sender, EventArgs e)
+        {
+            if (cboSearch.Text != "Search..." && cboSearch.Text != "")
+            {
+                cboSearch.ForeColor = Color.FromArgb(0, 0, 0);
+            }
+        }
+
+        private void cboSearch_Leave(Object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(cboSearch.Text))
+            {
+                cboSearch.Text = "Search...";
+                cboSearch.ForeColor = Color.FromArgb(150, 150, 150);
+            }
+        }
+
+        private void btnNotification_Click(object sender, EventArgs e)
+        {
+
+            NotificationPanel();
 
         }
 
-       
+        private void btnNotificationOrder_Click(object sender, EventArgs e)
+        {
+            NotificationPanel();
+        }
+        private void btnNotificationCostConsumption_Click(object sender, EventArgs e)
+        {
+            NotificationPanel();
+        }
+
+        private void btnNotificationRevenue_Click(object sender, EventArgs e)
+        {
+            NotificationPanel();
+        }
+
     }
 }
