@@ -35,15 +35,106 @@ namespace Dashboard
             imageList = new ImageList(components);
             btn = new ReaLTaiizor.Controls.MaterialTabControl();
             MainDashboard = new TabPage();
+            materialCard7 = new ReaLTaiizor.Controls.MaterialCard();
+            materialLabel9 = new ReaLTaiizor.Controls.MaterialLabel();
+            panel1 = new Panel();
+            tableLayoutPanel1 = new TableLayoutPanel();
+            pgpNewCustomer = new ReaLTaiizor.Controls.ParrotGradientPanel();
+            tlpNewCustomer = new TableLayoutPanel();
+            pgpProfit = new ReaLTaiizor.Controls.ParrotGradientPanel();
+            tlpProfit = new TableLayoutPanel();
+            pgpTurnover = new ReaLTaiizor.Controls.ParrotGradientPanel();
+            tlpTurnover = new TableLayoutPanel();
+            pictureBox2 = new PictureBox();
+            materialLabel7 = new ReaLTaiizor.Controls.MaterialLabel();
+            pictureBox1 = new PictureBox();
             materialCard1 = new ReaLTaiizor.Controls.MaterialCard();
             materialLabel1 = new ReaLTaiizor.Controls.MaterialLabel();
             btnNotification = new ReaLTaiizor.Controls.MaterialButton();
             Order = new TabPage();
+            materialCard8 = new ReaLTaiizor.Controls.MaterialCard();
+            flwpnlOrderList = new FlowLayoutPanel();
+            materialLabel8 = new ReaLTaiizor.Controls.MaterialLabel();
+            pictureBox3 = new PictureBox();
             materialCard2 = new ReaLTaiizor.Controls.MaterialCard();
-            cboSearch = new ReaLTaiizor.Controls.HopeComboBox();
+            hcbSearch = new ReaLTaiizor.Controls.HopeComboBox();
             materialLabel3 = new ReaLTaiizor.Controls.MaterialLabel();
             btnNotificationOrder = new ReaLTaiizor.Controls.MaterialButton();
             BodyMeasurement = new TabPage();
+            panel2 = new Panel();
+            materialCard9 = new ReaLTaiizor.Controls.MaterialCard();
+            btnClear = new ReaLTaiizor.Controls.HopeButton();
+            btnSubmit = new ReaLTaiizor.Controls.HopeButton();
+            materialLabel42 = new ReaLTaiizor.Controls.MaterialLabel();
+            materialLabel43 = new ReaLTaiizor.Controls.MaterialLabel();
+            poisonTextBox21 = new ReaLTaiizor.Controls.PoisonTextBox();
+            poisonTextBox22 = new ReaLTaiizor.Controls.PoisonTextBox();
+            materialLabel57 = new ReaLTaiizor.Controls.MaterialLabel();
+            materialLabel58 = new ReaLTaiizor.Controls.MaterialLabel();
+            materialLabel32 = new ReaLTaiizor.Controls.MaterialLabel();
+            materialLabel33 = new ReaLTaiizor.Controls.MaterialLabel();
+            materialLabel34 = new ReaLTaiizor.Controls.MaterialLabel();
+            materialLabel35 = new ReaLTaiizor.Controls.MaterialLabel();
+            poisonTextBox9 = new ReaLTaiizor.Controls.PoisonTextBox();
+            materialLabel36 = new ReaLTaiizor.Controls.MaterialLabel();
+            poisonTextBox10 = new ReaLTaiizor.Controls.PoisonTextBox();
+            materialLabel37 = new ReaLTaiizor.Controls.MaterialLabel();
+            poisonTextBox11 = new ReaLTaiizor.Controls.PoisonTextBox();
+            poisonTextBox12 = new ReaLTaiizor.Controls.PoisonTextBox();
+            materialLabel38 = new ReaLTaiizor.Controls.MaterialLabel();
+            materialLabel39 = new ReaLTaiizor.Controls.MaterialLabel();
+            materialLabel24 = new ReaLTaiizor.Controls.MaterialLabel();
+            materialLabel25 = new ReaLTaiizor.Controls.MaterialLabel();
+            materialLabel26 = new ReaLTaiizor.Controls.MaterialLabel();
+            materialLabel27 = new ReaLTaiizor.Controls.MaterialLabel();
+            poisonTextBox5 = new ReaLTaiizor.Controls.PoisonTextBox();
+            materialLabel28 = new ReaLTaiizor.Controls.MaterialLabel();
+            poisonTextBox6 = new ReaLTaiizor.Controls.PoisonTextBox();
+            materialLabel29 = new ReaLTaiizor.Controls.MaterialLabel();
+            poisonTextBox7 = new ReaLTaiizor.Controls.PoisonTextBox();
+            poisonTextBox8 = new ReaLTaiizor.Controls.PoisonTextBox();
+            materialLabel30 = new ReaLTaiizor.Controls.MaterialLabel();
+            materialLabel31 = new ReaLTaiizor.Controls.MaterialLabel();
+            materialLabel16 = new ReaLTaiizor.Controls.MaterialLabel();
+            materialLabel17 = new ReaLTaiizor.Controls.MaterialLabel();
+            materialLabel18 = new ReaLTaiizor.Controls.MaterialLabel();
+            materialLabel19 = new ReaLTaiizor.Controls.MaterialLabel();
+            poisonTextBox1 = new ReaLTaiizor.Controls.PoisonTextBox();
+            materialLabel20 = new ReaLTaiizor.Controls.MaterialLabel();
+            poisonTextBox2 = new ReaLTaiizor.Controls.PoisonTextBox();
+            materialLabel21 = new ReaLTaiizor.Controls.MaterialLabel();
+            poisonTextBox3 = new ReaLTaiizor.Controls.PoisonTextBox();
+            poisonTextBox4 = new ReaLTaiizor.Controls.PoisonTextBox();
+            materialLabel22 = new ReaLTaiizor.Controls.MaterialLabel();
+            materialLabel23 = new ReaLTaiizor.Controls.MaterialLabel();
+            materialLabel53 = new ReaLTaiizor.Controls.MaterialLabel();
+            poisonTextBox20 = new ReaLTaiizor.Controls.PoisonTextBox();
+            materialLabel54 = new ReaLTaiizor.Controls.MaterialLabel();
+            materialLabel45 = new ReaLTaiizor.Controls.MaterialLabel();
+            materialLabel46 = new ReaLTaiizor.Controls.MaterialLabel();
+            materialLabel47 = new ReaLTaiizor.Controls.MaterialLabel();
+            materialLabel48 = new ReaLTaiizor.Controls.MaterialLabel();
+            poisonTextBox13 = new ReaLTaiizor.Controls.PoisonTextBox();
+            materialLabel49 = new ReaLTaiizor.Controls.MaterialLabel();
+            poisonTextBox14 = new ReaLTaiizor.Controls.PoisonTextBox();
+            materialLabel50 = new ReaLTaiizor.Controls.MaterialLabel();
+            poisonTextBox18 = new ReaLTaiizor.Controls.PoisonTextBox();
+            poisonTextBox19 = new ReaLTaiizor.Controls.PoisonTextBox();
+            materialLabel51 = new ReaLTaiizor.Controls.MaterialLabel();
+            materialLabel52 = new ReaLTaiizor.Controls.MaterialLabel();
+            materialLabel44 = new ReaLTaiizor.Controls.MaterialLabel();
+            pictureBox6 = new PictureBox();
+            materialLabel15 = new ReaLTaiizor.Controls.MaterialLabel();
+            pictureBox5 = new PictureBox();
+            poisonTextBox15 = new ReaLTaiizor.Controls.PoisonTextBox();
+            pictureBox4 = new PictureBox();
+            materialLabel14 = new ReaLTaiizor.Controls.MaterialLabel();
+            pdtOrderDeadline = new ReaLTaiizor.Controls.PoisonDateTime();
+            materialLabel13 = new ReaLTaiizor.Controls.MaterialLabel();
+            hcbGender = new ReaLTaiizor.Controls.HopeComboBox();
+            materialLabel12 = new ReaLTaiizor.Controls.MaterialLabel();
+            materialLabel11 = new ReaLTaiizor.Controls.MaterialLabel();
+            materialLabel10 = new ReaLTaiizor.Controls.MaterialLabel();
             materialCard4 = new ReaLTaiizor.Controls.MaterialCard();
             materialLabel4 = new ReaLTaiizor.Controls.MaterialLabel();
             btnNotificationBodyMeasurement = new ReaLTaiizor.Controls.MaterialButton();
@@ -59,12 +150,28 @@ namespace Dashboard
             materialCard3 = new ReaLTaiizor.Controls.MaterialCard();
             materialLabel2 = new ReaLTaiizor.Controls.MaterialLabel();
             btnCloseNotification = new ReaLTaiizor.Controls.MaterialButton();
+            animationTimer = new System.Windows.Forms.Timer(components);
             btn.SuspendLayout();
             MainDashboard.SuspendLayout();
+            materialCard7.SuspendLayout();
+            panel1.SuspendLayout();
+            tableLayoutPanel1.SuspendLayout();
+            pgpNewCustomer.SuspendLayout();
+            pgpProfit.SuspendLayout();
+            pgpTurnover.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             materialCard1.SuspendLayout();
             Order.SuspendLayout();
+            materialCard8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             materialCard2.SuspendLayout();
             BodyMeasurement.SuspendLayout();
+            panel2.SuspendLayout();
+            materialCard9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             materialCard4.SuspendLayout();
             CostConsumption.SuspendLayout();
             materialCard5.SuspendLayout();
@@ -96,29 +203,239 @@ namespace Dashboard
             btn.Depth = 0;
             btn.Dock = DockStyle.Fill;
             btn.ImageList = imageList;
-            btn.Location = new Point(3, 64);
+            btn.Location = new Point(0, 64);
             btn.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             btn.Multiline = true;
             btn.Name = "btn";
+            btn.Padding = new Point(0, 0);
             btn.SelectedIndex = 0;
-            btn.Size = new Size(878, 394);
+            btn.Size = new Size(881, 533);
             btn.TabIndex = 0;
             // 
             // MainDashboard
             // 
+            MainDashboard.Controls.Add(materialCard7);
             MainDashboard.Controls.Add(materialCard1);
             MainDashboard.ImageKey = "dashboard.png";
             MainDashboard.Location = new Point(4, 24);
             MainDashboard.Name = "MainDashboard";
             MainDashboard.Padding = new Padding(3);
-            MainDashboard.Size = new Size(870, 366);
+            MainDashboard.Size = new Size(873, 505);
             MainDashboard.TabIndex = 0;
             MainDashboard.Text = "Dashboard";
             MainDashboard.UseVisualStyleBackColor = true;
             // 
+            // materialCard7
+            // 
+            materialCard7.BackColor = Color.FromArgb(255, 255, 255);
+            materialCard7.BorderStyle = BorderStyle.FixedSingle;
+            materialCard7.Controls.Add(materialLabel9);
+            materialCard7.Controls.Add(panel1);
+            materialCard7.Controls.Add(pictureBox2);
+            materialCard7.Controls.Add(materialLabel7);
+            materialCard7.Controls.Add(pictureBox1);
+            materialCard7.Depth = 0;
+            materialCard7.Dock = DockStyle.Fill;
+            materialCard7.ForeColor = Color.FromArgb(222, 0, 0, 0);
+            materialCard7.Location = new Point(3, 53);
+            materialCard7.Margin = new Padding(14);
+            materialCard7.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            materialCard7.Name = "materialCard7";
+            materialCard7.Padding = new Padding(14);
+            materialCard7.Size = new Size(867, 449);
+            materialCard7.TabIndex = 3;
+            // 
+            // materialLabel9
+            // 
+            materialLabel9.AutoSize = true;
+            materialLabel9.Depth = 0;
+            materialLabel9.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialLabel9.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle1;
+            materialLabel9.Location = new Point(57, 202);
+            materialLabel9.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            materialLabel9.Name = "materialLabel9";
+            materialLabel9.Padding = new Padding(10, 0, 10, 0);
+            materialLabel9.Size = new Size(109, 19);
+            materialLabel9.TabIndex = 6;
+            materialLabel9.Text = "Detailed Report";
+            // 
+            // panel1
+            // 
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            panel1.Controls.Add(tableLayoutPanel1);
+            panel1.Location = new Point(3, 53);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(862, 134);
+            panel1.TabIndex = 5;
+            // 
+            // tableLayoutPanel1
+            // 
+            tableLayoutPanel1.ColumnCount = 3;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.33333F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
+            tableLayoutPanel1.Controls.Add(pgpNewCustomer, 2, 0);
+            tableLayoutPanel1.Controls.Add(pgpProfit, 1, 0);
+            tableLayoutPanel1.Controls.Add(pgpTurnover, 0, 0);
+            tableLayoutPanel1.Dock = DockStyle.Fill;
+            tableLayoutPanel1.Location = new Point(0, 0);
+            tableLayoutPanel1.Margin = new Padding(5);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.Padding = new Padding(5);
+            tableLayoutPanel1.RowCount = 1;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 105F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel1.Size = new Size(862, 134);
+            tableLayoutPanel1.TabIndex = 0;
+            tableLayoutPanel1.Paint += tableLayoutPanel1_Paint;
+            // 
+            // pgpNewCustomer
+            // 
+            pgpNewCustomer.BottomLeft = Color.LimeGreen;
+            pgpNewCustomer.BottomRight = Color.LimeGreen;
+            pgpNewCustomer.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+            pgpNewCustomer.Controls.Add(tlpNewCustomer);
+            pgpNewCustomer.Dock = DockStyle.Fill;
+            pgpNewCustomer.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
+            pgpNewCustomer.Location = new Point(577, 10);
+            pgpNewCustomer.Margin = new Padding(5);
+            pgpNewCustomer.Name = "pgpNewCustomer";
+            pgpNewCustomer.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
+            pgpNewCustomer.PrimerColor = Color.YellowGreen;
+            pgpNewCustomer.Size = new Size(275, 114);
+            pgpNewCustomer.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            pgpNewCustomer.Style = ReaLTaiizor.Controls.ParrotGradientPanel.GradientStyle.Corners;
+            pgpNewCustomer.TabIndex = 8;
+            pgpNewCustomer.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            pgpNewCustomer.TopLeft = Color.LightGreen;
+            pgpNewCustomer.TopRight = Color.LightGreen;
+            // 
+            // tlpNewCustomer
+            // 
+            tlpNewCustomer.BackColor = Color.Transparent;
+            tlpNewCustomer.ColumnCount = 2;
+            tlpNewCustomer.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 70F));
+            tlpNewCustomer.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 30F));
+            tlpNewCustomer.Dock = DockStyle.Fill;
+            tlpNewCustomer.Location = new Point(0, 0);
+            tlpNewCustomer.Name = "tlpNewCustomer";
+            tlpNewCustomer.RowCount = 2;
+            tlpNewCustomer.RowStyles.Add(new RowStyle(SizeType.Percent, 40F));
+            tlpNewCustomer.RowStyles.Add(new RowStyle(SizeType.Percent, 60F));
+            tlpNewCustomer.Size = new Size(275, 114);
+            tlpNewCustomer.TabIndex = 1;
+            tlpNewCustomer.Visible = false;
+            // 
+            // pgpProfit
+            // 
+            pgpProfit.BottomLeft = Color.LimeGreen;
+            pgpProfit.BottomRight = Color.LimeGreen;
+            pgpProfit.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+            pgpProfit.Controls.Add(tlpProfit);
+            pgpProfit.Dock = DockStyle.Fill;
+            pgpProfit.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
+            pgpProfit.Location = new Point(293, 10);
+            pgpProfit.Margin = new Padding(5);
+            pgpProfit.Name = "pgpProfit";
+            pgpProfit.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
+            pgpProfit.PrimerColor = Color.YellowGreen;
+            pgpProfit.Size = new Size(274, 114);
+            pgpProfit.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            pgpProfit.Style = ReaLTaiizor.Controls.ParrotGradientPanel.GradientStyle.Corners;
+            pgpProfit.TabIndex = 7;
+            pgpProfit.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            pgpProfit.TopLeft = Color.LightGreen;
+            pgpProfit.TopRight = Color.LightGreen;
+            // 
+            // tlpProfit
+            // 
+            tlpProfit.BackColor = Color.Transparent;
+            tlpProfit.ColumnCount = 2;
+            tlpProfit.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 70F));
+            tlpProfit.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 30F));
+            tlpProfit.Dock = DockStyle.Fill;
+            tlpProfit.Location = new Point(0, 0);
+            tlpProfit.Name = "tlpProfit";
+            tlpProfit.RowCount = 2;
+            tlpProfit.RowStyles.Add(new RowStyle(SizeType.Percent, 40F));
+            tlpProfit.RowStyles.Add(new RowStyle(SizeType.Percent, 60F));
+            tlpProfit.Size = new Size(274, 114);
+            tlpProfit.TabIndex = 1;
+            tlpProfit.Visible = false;
+            // 
+            // pgpTurnover
+            // 
+            pgpTurnover.BottomLeft = Color.LimeGreen;
+            pgpTurnover.BottomRight = Color.LimeGreen;
+            pgpTurnover.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+            pgpTurnover.Controls.Add(tlpTurnover);
+            pgpTurnover.Dock = DockStyle.Fill;
+            pgpTurnover.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
+            pgpTurnover.Location = new Point(10, 10);
+            pgpTurnover.Margin = new Padding(5);
+            pgpTurnover.Name = "pgpTurnover";
+            pgpTurnover.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.None;
+            pgpTurnover.PrimerColor = Color.YellowGreen;
+            pgpTurnover.Size = new Size(273, 114);
+            pgpTurnover.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            pgpTurnover.Style = ReaLTaiizor.Controls.ParrotGradientPanel.GradientStyle.Corners;
+            pgpTurnover.TabIndex = 6;
+            pgpTurnover.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            pgpTurnover.TopLeft = Color.LightGreen;
+            pgpTurnover.TopRight = Color.LightGreen;
+            // 
+            // tlpTurnover
+            // 
+            tlpTurnover.BackColor = Color.Transparent;
+            tlpTurnover.ColumnCount = 2;
+            tlpTurnover.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 70F));
+            tlpTurnover.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 30F));
+            tlpTurnover.Dock = DockStyle.Fill;
+            tlpTurnover.Location = new Point(0, 0);
+            tlpTurnover.Name = "tlpTurnover";
+            tlpTurnover.RowCount = 2;
+            tlpTurnover.RowStyles.Add(new RowStyle(SizeType.Percent, 40F));
+            tlpTurnover.RowStyles.Add(new RowStyle(SizeType.Percent, 60F));
+            tlpTurnover.Size = new Size(273, 114);
+            tlpTurnover.TabIndex = 2;
+            tlpTurnover.Visible = false;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(17, 193);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(34, 35);
+            pictureBox2.TabIndex = 4;
+            pictureBox2.TabStop = false;
+            // 
+            // materialLabel7
+            // 
+            materialLabel7.AutoSize = true;
+            materialLabel7.Depth = 0;
+            materialLabel7.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialLabel7.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle1;
+            materialLabel7.Location = new Point(54, 21);
+            materialLabel7.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            materialLabel7.Name = "materialLabel7";
+            materialLabel7.Padding = new Padding(10, 0, 10, 0);
+            materialLabel7.Size = new Size(65, 19);
+            materialLabel7.TabIndex = 3;
+            materialLabel7.Text = "Overview";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = MyResources.dashboard;
+            pictureBox1.Location = new Point(14, 12);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(34, 35);
+            pictureBox1.TabIndex = 3;
+            pictureBox1.TabStop = false;
+            // 
             // materialCard1
             // 
             materialCard1.BackColor = Color.FromArgb(255, 255, 255);
+            materialCard1.BorderStyle = BorderStyle.FixedSingle;
             materialCard1.Controls.Add(materialLabel1);
             materialCard1.Controls.Add(btnNotification);
             materialCard1.Depth = 0;
@@ -129,7 +446,7 @@ namespace Dashboard
             materialCard1.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialCard1.Name = "materialCard1";
             materialCard1.Padding = new Padding(14);
-            materialCard1.Size = new Size(864, 50);
+            materialCard1.Size = new Size(867, 50);
             materialCard1.TabIndex = 1;
             // 
             // materialLabel1
@@ -157,12 +474,12 @@ namespace Dashboard
             btnNotification.Icon = MyResources.bell;
             btnNotification.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Default;
             btnNotification.ImageKey = "(none)";
-            btnNotification.Location = new Point(810, 14);
+            btnNotification.Location = new Point(811, 14);
             btnNotification.Margin = new Padding(4, 6, 4, 6);
             btnNotification.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             btnNotification.Name = "btnNotification";
             btnNotification.NoAccentTextColor = Color.Empty;
-            btnNotification.Size = new Size(40, 22);
+            btnNotification.Size = new Size(40, 20);
             btnNotification.TabIndex = 2;
             btnNotification.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Text;
             btnNotification.UseAccentColor = false;
@@ -171,20 +488,71 @@ namespace Dashboard
             // 
             // Order
             // 
+            Order.Controls.Add(materialCard8);
             Order.Controls.Add(materialCard2);
             Order.ImageKey = "order.png";
             Order.Location = new Point(4, 24);
             Order.Name = "Order";
             Order.Padding = new Padding(3);
-            Order.Size = new Size(870, 366);
+            Order.Size = new Size(873, 505);
             Order.TabIndex = 1;
             Order.Text = "Order";
             Order.UseVisualStyleBackColor = true;
             // 
+            // materialCard8
+            // 
+            materialCard8.BackColor = Color.FromArgb(255, 255, 255);
+            materialCard8.Controls.Add(flwpnlOrderList);
+            materialCard8.Controls.Add(materialLabel8);
+            materialCard8.Controls.Add(pictureBox3);
+            materialCard8.Depth = 0;
+            materialCard8.Dock = DockStyle.Fill;
+            materialCard8.ForeColor = Color.FromArgb(222, 0, 0, 0);
+            materialCard8.Location = new Point(3, 53);
+            materialCard8.Margin = new Padding(14);
+            materialCard8.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            materialCard8.Name = "materialCard8";
+            materialCard8.Padding = new Padding(14);
+            materialCard8.Size = new Size(867, 449);
+            materialCard8.TabIndex = 3;
+            // 
+            // flwpnlOrderList
+            // 
+            flwpnlOrderList.AutoScroll = true;
+            flwpnlOrderList.FlowDirection = FlowDirection.TopDown;
+            flwpnlOrderList.Location = new Point(0, 53);
+            flwpnlOrderList.Name = "flwpnlOrderList";
+            flwpnlOrderList.Size = new Size(867, 778);
+            flwpnlOrderList.TabIndex = 6;
+            flwpnlOrderList.WrapContents = false;
+            flwpnlOrderList.MouseEnter += flwpnlOrderList_MouseEnter;
+            // 
+            // materialLabel8
+            // 
+            materialLabel8.AutoSize = true;
+            materialLabel8.Depth = 0;
+            materialLabel8.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialLabel8.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle1;
+            materialLabel8.Location = new Point(54, 21);
+            materialLabel8.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            materialLabel8.Name = "materialLabel8";
+            materialLabel8.Size = new Size(69, 19);
+            materialLabel8.TabIndex = 4;
+            materialLabel8.Text = "Order List";
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.Image = MyResources.dashboard;
+            pictureBox3.Location = new Point(14, 12);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(34, 35);
+            pictureBox3.TabIndex = 5;
+            pictureBox3.TabStop = false;
+            // 
             // materialCard2
             // 
             materialCard2.BackColor = Color.FromArgb(255, 255, 255);
-            materialCard2.Controls.Add(cboSearch);
+            materialCard2.Controls.Add(hcbSearch);
             materialCard2.Controls.Add(materialLabel3);
             materialCard2.Controls.Add(btnNotificationOrder);
             materialCard2.Depth = 0;
@@ -195,25 +563,25 @@ namespace Dashboard
             materialCard2.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialCard2.Name = "materialCard2";
             materialCard2.Padding = new Padding(14);
-            materialCard2.Size = new Size(864, 50);
+            materialCard2.Size = new Size(867, 50);
             materialCard2.TabIndex = 2;
             // 
-            // cboSearch
+            // hcbSearch
             // 
-            cboSearch.Dock = DockStyle.Right;
-            cboSearch.DrawMode = DrawMode.OwnerDrawFixed;
-            cboSearch.FlatStyle = FlatStyle.Flat;
-            cboSearch.Font = new Font("Segoe UI", 12F);
-            cboSearch.ForeColor = Color.Black;
-            cboSearch.FormattingEnabled = true;
-            cboSearch.ItemHeight = 21;
-            cboSearch.Location = new Point(568, 14);
-            cboSearch.Name = "cboSearch";
-            cboSearch.Size = new Size(242, 27);
-            cboSearch.TabIndex = 10;
-            cboSearch.Text = "Search...";
-            cboSearch.Enter += cboSearch_Enter;
-            cboSearch.Leave += cboSearch_Leave;
+            hcbSearch.Dock = DockStyle.Right;
+            hcbSearch.DrawMode = DrawMode.OwnerDrawFixed;
+            hcbSearch.FlatStyle = FlatStyle.Flat;
+            hcbSearch.Font = new Font("Segoe UI", 12F);
+            hcbSearch.ForeColor = Color.Black;
+            hcbSearch.FormattingEnabled = true;
+            hcbSearch.ItemHeight = 21;
+            hcbSearch.Location = new Point(571, 14);
+            hcbSearch.Name = "hcbSearch";
+            hcbSearch.Size = new Size(242, 27);
+            hcbSearch.TabIndex = 10;
+            hcbSearch.Text = "Search...";
+            hcbSearch.Enter += cboSearch_Enter;
+            hcbSearch.Leave += cboSearch_Leave;
             // 
             // materialLabel3
             // 
@@ -240,7 +608,7 @@ namespace Dashboard
             btnNotificationOrder.Icon = MyResources.bell;
             btnNotificationOrder.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Default;
             btnNotificationOrder.ImageKey = "(none)";
-            btnNotificationOrder.Location = new Point(810, 14);
+            btnNotificationOrder.Location = new Point(813, 14);
             btnNotificationOrder.Margin = new Padding(4, 6, 4, 6);
             btnNotificationOrder.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             btnNotificationOrder.Name = "btnNotificationOrder";
@@ -254,18 +622,1392 @@ namespace Dashboard
             // 
             // BodyMeasurement
             // 
+            BodyMeasurement.Controls.Add(panel2);
             BodyMeasurement.Controls.Add(materialCard4);
             BodyMeasurement.ImageKey = "bodyMeasurement.png";
             BodyMeasurement.Location = new Point(4, 24);
             BodyMeasurement.Name = "BodyMeasurement";
-            BodyMeasurement.Size = new Size(870, 366);
+            BodyMeasurement.Size = new Size(873, 505);
             BodyMeasurement.TabIndex = 2;
             BodyMeasurement.Text = "Body Measurement";
             BodyMeasurement.UseVisualStyleBackColor = true;
             // 
+            // panel2
+            // 
+            panel2.BorderStyle = BorderStyle.FixedSingle;
+            panel2.Controls.Add(materialCard9);
+            panel2.Dock = DockStyle.Fill;
+            panel2.Location = new Point(0, 50);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(873, 455);
+            panel2.TabIndex = 3;
+            // 
+            // materialCard9
+            // 
+            materialCard9.BackColor = Color.FromArgb(255, 255, 255);
+            materialCard9.Controls.Add(btnClear);
+            materialCard9.Controls.Add(btnSubmit);
+            materialCard9.Controls.Add(materialLabel42);
+            materialCard9.Controls.Add(materialLabel43);
+            materialCard9.Controls.Add(poisonTextBox21);
+            materialCard9.Controls.Add(poisonTextBox22);
+            materialCard9.Controls.Add(materialLabel57);
+            materialCard9.Controls.Add(materialLabel58);
+            materialCard9.Controls.Add(materialLabel32);
+            materialCard9.Controls.Add(materialLabel33);
+            materialCard9.Controls.Add(materialLabel34);
+            materialCard9.Controls.Add(materialLabel35);
+            materialCard9.Controls.Add(poisonTextBox9);
+            materialCard9.Controls.Add(materialLabel36);
+            materialCard9.Controls.Add(poisonTextBox10);
+            materialCard9.Controls.Add(materialLabel37);
+            materialCard9.Controls.Add(poisonTextBox11);
+            materialCard9.Controls.Add(poisonTextBox12);
+            materialCard9.Controls.Add(materialLabel38);
+            materialCard9.Controls.Add(materialLabel39);
+            materialCard9.Controls.Add(materialLabel24);
+            materialCard9.Controls.Add(materialLabel25);
+            materialCard9.Controls.Add(materialLabel26);
+            materialCard9.Controls.Add(materialLabel27);
+            materialCard9.Controls.Add(poisonTextBox5);
+            materialCard9.Controls.Add(materialLabel28);
+            materialCard9.Controls.Add(poisonTextBox6);
+            materialCard9.Controls.Add(materialLabel29);
+            materialCard9.Controls.Add(poisonTextBox7);
+            materialCard9.Controls.Add(poisonTextBox8);
+            materialCard9.Controls.Add(materialLabel30);
+            materialCard9.Controls.Add(materialLabel31);
+            materialCard9.Controls.Add(materialLabel16);
+            materialCard9.Controls.Add(materialLabel17);
+            materialCard9.Controls.Add(materialLabel18);
+            materialCard9.Controls.Add(materialLabel19);
+            materialCard9.Controls.Add(poisonTextBox1);
+            materialCard9.Controls.Add(materialLabel20);
+            materialCard9.Controls.Add(poisonTextBox2);
+            materialCard9.Controls.Add(materialLabel21);
+            materialCard9.Controls.Add(poisonTextBox3);
+            materialCard9.Controls.Add(poisonTextBox4);
+            materialCard9.Controls.Add(materialLabel22);
+            materialCard9.Controls.Add(materialLabel23);
+            materialCard9.Controls.Add(materialLabel53);
+            materialCard9.Controls.Add(poisonTextBox20);
+            materialCard9.Controls.Add(materialLabel54);
+            materialCard9.Controls.Add(materialLabel45);
+            materialCard9.Controls.Add(materialLabel46);
+            materialCard9.Controls.Add(materialLabel47);
+            materialCard9.Controls.Add(materialLabel48);
+            materialCard9.Controls.Add(poisonTextBox13);
+            materialCard9.Controls.Add(materialLabel49);
+            materialCard9.Controls.Add(poisonTextBox14);
+            materialCard9.Controls.Add(materialLabel50);
+            materialCard9.Controls.Add(poisonTextBox18);
+            materialCard9.Controls.Add(poisonTextBox19);
+            materialCard9.Controls.Add(materialLabel51);
+            materialCard9.Controls.Add(materialLabel52);
+            materialCard9.Controls.Add(materialLabel44);
+            materialCard9.Controls.Add(pictureBox6);
+            materialCard9.Controls.Add(materialLabel15);
+            materialCard9.Controls.Add(pictureBox5);
+            materialCard9.Controls.Add(poisonTextBox15);
+            materialCard9.Controls.Add(pictureBox4);
+            materialCard9.Controls.Add(materialLabel14);
+            materialCard9.Controls.Add(pdtOrderDeadline);
+            materialCard9.Controls.Add(materialLabel13);
+            materialCard9.Controls.Add(hcbGender);
+            materialCard9.Controls.Add(materialLabel12);
+            materialCard9.Controls.Add(materialLabel11);
+            materialCard9.Controls.Add(materialLabel10);
+            materialCard9.Depth = 0;
+            materialCard9.Dock = DockStyle.Fill;
+            materialCard9.ForeColor = Color.FromArgb(222, 0, 0, 0);
+            materialCard9.Location = new Point(0, 0);
+            materialCard9.Margin = new Padding(14);
+            materialCard9.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            materialCard9.Name = "materialCard9";
+            materialCard9.Padding = new Padding(14);
+            materialCard9.Size = new Size(871, 453);
+            materialCard9.TabIndex = 0;
+            // 
+            // btnClear
+            // 
+            btnClear.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnClear.BorderColor = Color.FromArgb(141, 182, 0);
+            btnClear.ButtonType = ReaLTaiizor.Util.HopeButtonType.Primary;
+            btnClear.DangerColor = Color.FromArgb(245, 108, 108);
+            btnClear.DefaultColor = Color.FromArgb(255, 255, 255);
+            btnClear.Font = new Font("Segoe UI", 12F);
+            btnClear.HoverTextColor = Color.FromArgb(120, 160, 0);
+            btnClear.InfoColor = Color.FromArgb(144, 147, 153);
+            btnClear.Location = new Point(571, 401);
+            btnClear.Name = "btnClear";
+            btnClear.PrimaryColor = Color.White;
+            btnClear.Size = new Size(120, 35);
+            btnClear.SuccessColor = Color.FromArgb(103, 194, 58);
+            btnClear.TabIndex = 158;
+            btnClear.Text = "Clear";
+            btnClear.TextColor = Color.FromArgb(141, 182, 0);
+            btnClear.WarningColor = Color.FromArgb(230, 162, 60);
+            // 
+            // btnSubmit
+            // 
+            btnSubmit.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnSubmit.BorderColor = Color.FromArgb(220, 223, 230);
+            btnSubmit.ButtonType = ReaLTaiizor.Util.HopeButtonType.Primary;
+            btnSubmit.DangerColor = Color.FromArgb(245, 108, 108);
+            btnSubmit.DefaultColor = Color.FromArgb(255, 255, 255);
+            btnSubmit.Font = new Font("Segoe UI", 12F);
+            btnSubmit.HoverTextColor = Color.FromArgb(120, 160, 0);
+            btnSubmit.InfoColor = Color.FromArgb(144, 147, 153);
+            btnSubmit.Location = new Point(719, 401);
+            btnSubmit.Name = "btnSubmit";
+            btnSubmit.PrimaryColor = Color.FromArgb(141, 182, 0);
+            btnSubmit.Size = new Size(120, 35);
+            btnSubmit.SuccessColor = Color.FromArgb(103, 194, 58);
+            btnSubmit.TabIndex = 157;
+            btnSubmit.Text = "Submit";
+            btnSubmit.TextColor = Color.White;
+            btnSubmit.WarningColor = Color.FromArgb(230, 162, 60);
+            // 
+            // materialLabel42
+            // 
+            materialLabel42.AutoSize = true;
+            materialLabel42.Depth = 0;
+            materialLabel42.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            materialLabel42.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
+            materialLabel42.Location = new Point(511, 285);
+            materialLabel42.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            materialLabel42.Name = "materialLabel42";
+            materialLabel42.Size = new Size(20, 17);
+            materialLabel42.TabIndex = 156;
+            materialLabel42.Text = "cm";
+            // 
+            // materialLabel43
+            // 
+            materialLabel43.AutoSize = true;
+            materialLabel43.Depth = 0;
+            materialLabel43.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            materialLabel43.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
+            materialLabel43.Location = new Point(511, 233);
+            materialLabel43.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            materialLabel43.Name = "materialLabel43";
+            materialLabel43.Size = new Size(20, 17);
+            materialLabel43.TabIndex = 155;
+            materialLabel43.Text = "cm";
+            // 
+            // poisonTextBox21
+            // 
+            // 
+            // 
+            // 
+            poisonTextBox21.CustomButton.Image = null;
+            poisonTextBox21.CustomButton.Location = new Point(57, 1);
+            poisonTextBox21.CustomButton.Name = "";
+            poisonTextBox21.CustomButton.Size = new Size(21, 21);
+            poisonTextBox21.CustomButton.Style = ReaLTaiizor.Enum.Poison.ColorStyle.Blue;
+            poisonTextBox21.CustomButton.TabIndex = 1;
+            poisonTextBox21.CustomButton.Theme = ReaLTaiizor.Enum.Poison.ThemeStyle.Light;
+            poisonTextBox21.CustomButton.UseSelectable = true;
+            poisonTextBox21.CustomButton.Visible = false;
+            poisonTextBox21.Location = new Point(426, 279);
+            poisonTextBox21.MaxLength = 32767;
+            poisonTextBox21.Name = "poisonTextBox21";
+            poisonTextBox21.PasswordChar = '\0';
+            poisonTextBox21.ScrollBars = ScrollBars.None;
+            poisonTextBox21.SelectedText = "";
+            poisonTextBox21.SelectionLength = 0;
+            poisonTextBox21.SelectionStart = 0;
+            poisonTextBox21.ShortcutsEnabled = true;
+            poisonTextBox21.Size = new Size(79, 23);
+            poisonTextBox21.TabIndex = 150;
+            poisonTextBox21.UseSelectable = true;
+            poisonTextBox21.WaterMarkColor = Color.FromArgb(109, 109, 109);
+            poisonTextBox21.WaterMarkFont = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Pixel);
+            // 
+            // poisonTextBox22
+            // 
+            // 
+            // 
+            // 
+            poisonTextBox22.CustomButton.Image = null;
+            poisonTextBox22.CustomButton.Location = new Point(57, 1);
+            poisonTextBox22.CustomButton.Name = "";
+            poisonTextBox22.CustomButton.Size = new Size(21, 21);
+            poisonTextBox22.CustomButton.Style = ReaLTaiizor.Enum.Poison.ColorStyle.Blue;
+            poisonTextBox22.CustomButton.TabIndex = 1;
+            poisonTextBox22.CustomButton.Theme = ReaLTaiizor.Enum.Poison.ThemeStyle.Light;
+            poisonTextBox22.CustomButton.UseSelectable = true;
+            poisonTextBox22.CustomButton.Visible = false;
+            poisonTextBox22.Location = new Point(426, 227);
+            poisonTextBox22.MaxLength = 32767;
+            poisonTextBox22.Name = "poisonTextBox22";
+            poisonTextBox22.PasswordChar = '\0';
+            poisonTextBox22.ScrollBars = ScrollBars.None;
+            poisonTextBox22.SelectedText = "";
+            poisonTextBox22.SelectionLength = 0;
+            poisonTextBox22.SelectionStart = 0;
+            poisonTextBox22.ShortcutsEnabled = true;
+            poisonTextBox22.Size = new Size(79, 23);
+            poisonTextBox22.TabIndex = 149;
+            poisonTextBox22.UseSelectable = true;
+            poisonTextBox22.WaterMarkColor = Color.FromArgb(109, 109, 109);
+            poisonTextBox22.WaterMarkFont = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Pixel);
+            // 
+            // materialLabel57
+            // 
+            materialLabel57.AutoSize = true;
+            materialLabel57.Depth = 0;
+            materialLabel57.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            materialLabel57.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
+            materialLabel57.Location = new Point(426, 259);
+            materialLabel57.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            materialLabel57.Name = "materialLabel57";
+            materialLabel57.Size = new Size(96, 17);
+            materialLabel57.TabIndex = 148;
+            materialLabel57.Text = "Sleeve Length:";
+            // 
+            // materialLabel58
+            // 
+            materialLabel58.AutoSize = true;
+            materialLabel58.Depth = 0;
+            materialLabel58.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            materialLabel58.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
+            materialLabel58.Location = new Point(426, 207);
+            materialLabel58.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            materialLabel58.Name = "materialLabel58";
+            materialLabel58.Size = new Size(128, 17);
+            materialLabel58.TabIndex = 147;
+            materialLabel58.Text = "Arm Circumference:";
+            // 
+            // materialLabel32
+            // 
+            materialLabel32.AutoSize = true;
+            materialLabel32.Depth = 0;
+            materialLabel32.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            materialLabel32.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
+            materialLabel32.Location = new Point(383, 391);
+            materialLabel32.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            materialLabel32.Name = "materialLabel32";
+            materialLabel32.Size = new Size(20, 17);
+            materialLabel32.TabIndex = 146;
+            materialLabel32.Text = "cm";
+            // 
+            // materialLabel33
+            // 
+            materialLabel33.AutoSize = true;
+            materialLabel33.Depth = 0;
+            materialLabel33.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            materialLabel33.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
+            materialLabel33.Location = new Point(383, 336);
+            materialLabel33.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            materialLabel33.Name = "materialLabel33";
+            materialLabel33.Size = new Size(20, 17);
+            materialLabel33.TabIndex = 145;
+            materialLabel33.Text = "cm";
+            // 
+            // materialLabel34
+            // 
+            materialLabel34.AutoSize = true;
+            materialLabel34.Depth = 0;
+            materialLabel34.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            materialLabel34.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
+            materialLabel34.Location = new Point(383, 285);
+            materialLabel34.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            materialLabel34.Name = "materialLabel34";
+            materialLabel34.Size = new Size(20, 17);
+            materialLabel34.TabIndex = 144;
+            materialLabel34.Text = "cm";
+            // 
+            // materialLabel35
+            // 
+            materialLabel35.AutoSize = true;
+            materialLabel35.Depth = 0;
+            materialLabel35.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            materialLabel35.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
+            materialLabel35.Location = new Point(383, 233);
+            materialLabel35.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            materialLabel35.Name = "materialLabel35";
+            materialLabel35.Size = new Size(20, 17);
+            materialLabel35.TabIndex = 143;
+            materialLabel35.Text = "cm";
+            // 
+            // poisonTextBox9
+            // 
+            // 
+            // 
+            // 
+            poisonTextBox9.CustomButton.Image = null;
+            poisonTextBox9.CustomButton.Location = new Point(57, 1);
+            poisonTextBox9.CustomButton.Name = "";
+            poisonTextBox9.CustomButton.Size = new Size(21, 21);
+            poisonTextBox9.CustomButton.Style = ReaLTaiizor.Enum.Poison.ColorStyle.Blue;
+            poisonTextBox9.CustomButton.TabIndex = 1;
+            poisonTextBox9.CustomButton.Theme = ReaLTaiizor.Enum.Poison.ThemeStyle.Light;
+            poisonTextBox9.CustomButton.UseSelectable = true;
+            poisonTextBox9.CustomButton.Visible = false;
+            poisonTextBox9.Location = new Point(298, 385);
+            poisonTextBox9.MaxLength = 32767;
+            poisonTextBox9.Name = "poisonTextBox9";
+            poisonTextBox9.PasswordChar = '\0';
+            poisonTextBox9.ScrollBars = ScrollBars.None;
+            poisonTextBox9.SelectedText = "";
+            poisonTextBox9.SelectionLength = 0;
+            poisonTextBox9.SelectionStart = 0;
+            poisonTextBox9.ShortcutsEnabled = true;
+            poisonTextBox9.Size = new Size(79, 23);
+            poisonTextBox9.TabIndex = 142;
+            poisonTextBox9.UseSelectable = true;
+            poisonTextBox9.WaterMarkColor = Color.FromArgb(109, 109, 109);
+            poisonTextBox9.WaterMarkFont = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Pixel);
+            // 
+            // materialLabel36
+            // 
+            materialLabel36.AutoSize = true;
+            materialLabel36.Depth = 0;
+            materialLabel36.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            materialLabel36.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
+            materialLabel36.Location = new Point(298, 365);
+            materialLabel36.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            materialLabel36.Name = "materialLabel36";
+            materialLabel36.Size = new Size(64, 17);
+            materialLabel36.TabIndex = 141;
+            materialLabel36.Text = "Arm Hole:";
+            // 
+            // poisonTextBox10
+            // 
+            // 
+            // 
+            // 
+            poisonTextBox10.CustomButton.Image = null;
+            poisonTextBox10.CustomButton.Location = new Point(57, 1);
+            poisonTextBox10.CustomButton.Name = "";
+            poisonTextBox10.CustomButton.Size = new Size(21, 21);
+            poisonTextBox10.CustomButton.Style = ReaLTaiizor.Enum.Poison.ColorStyle.Blue;
+            poisonTextBox10.CustomButton.TabIndex = 1;
+            poisonTextBox10.CustomButton.Theme = ReaLTaiizor.Enum.Poison.ThemeStyle.Light;
+            poisonTextBox10.CustomButton.UseSelectable = true;
+            poisonTextBox10.CustomButton.Visible = false;
+            poisonTextBox10.Location = new Point(298, 330);
+            poisonTextBox10.MaxLength = 32767;
+            poisonTextBox10.Name = "poisonTextBox10";
+            poisonTextBox10.PasswordChar = '\0';
+            poisonTextBox10.ScrollBars = ScrollBars.None;
+            poisonTextBox10.SelectedText = "";
+            poisonTextBox10.SelectionLength = 0;
+            poisonTextBox10.SelectionStart = 0;
+            poisonTextBox10.ShortcutsEnabled = true;
+            poisonTextBox10.Size = new Size(79, 23);
+            poisonTextBox10.TabIndex = 140;
+            poisonTextBox10.UseSelectable = true;
+            poisonTextBox10.WaterMarkColor = Color.FromArgb(109, 109, 109);
+            poisonTextBox10.WaterMarkFont = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Pixel);
+            // 
+            // materialLabel37
+            // 
+            materialLabel37.AutoSize = true;
+            materialLabel37.Depth = 0;
+            materialLabel37.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            materialLabel37.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
+            materialLabel37.Location = new Point(298, 310);
+            materialLabel37.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            materialLabel37.Name = "materialLabel37";
+            materialLabel37.Size = new Size(61, 17);
+            materialLabel37.TabIndex = 139;
+            materialLabel37.Text = "Neck Dip:";
+            // 
+            // poisonTextBox11
+            // 
+            // 
+            // 
+            // 
+            poisonTextBox11.CustomButton.Image = null;
+            poisonTextBox11.CustomButton.Location = new Point(57, 1);
+            poisonTextBox11.CustomButton.Name = "";
+            poisonTextBox11.CustomButton.Size = new Size(21, 21);
+            poisonTextBox11.CustomButton.Style = ReaLTaiizor.Enum.Poison.ColorStyle.Blue;
+            poisonTextBox11.CustomButton.TabIndex = 1;
+            poisonTextBox11.CustomButton.Theme = ReaLTaiizor.Enum.Poison.ThemeStyle.Light;
+            poisonTextBox11.CustomButton.UseSelectable = true;
+            poisonTextBox11.CustomButton.Visible = false;
+            poisonTextBox11.Location = new Point(298, 279);
+            poisonTextBox11.MaxLength = 32767;
+            poisonTextBox11.Name = "poisonTextBox11";
+            poisonTextBox11.PasswordChar = '\0';
+            poisonTextBox11.ScrollBars = ScrollBars.None;
+            poisonTextBox11.SelectedText = "";
+            poisonTextBox11.SelectionLength = 0;
+            poisonTextBox11.SelectionStart = 0;
+            poisonTextBox11.ShortcutsEnabled = true;
+            poisonTextBox11.Size = new Size(79, 23);
+            poisonTextBox11.TabIndex = 138;
+            poisonTextBox11.UseSelectable = true;
+            poisonTextBox11.WaterMarkColor = Color.FromArgb(109, 109, 109);
+            poisonTextBox11.WaterMarkFont = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Pixel);
+            // 
+            // poisonTextBox12
+            // 
+            // 
+            // 
+            // 
+            poisonTextBox12.CustomButton.Image = null;
+            poisonTextBox12.CustomButton.Location = new Point(57, 1);
+            poisonTextBox12.CustomButton.Name = "";
+            poisonTextBox12.CustomButton.Size = new Size(21, 21);
+            poisonTextBox12.CustomButton.Style = ReaLTaiizor.Enum.Poison.ColorStyle.Blue;
+            poisonTextBox12.CustomButton.TabIndex = 1;
+            poisonTextBox12.CustomButton.Theme = ReaLTaiizor.Enum.Poison.ThemeStyle.Light;
+            poisonTextBox12.CustomButton.UseSelectable = true;
+            poisonTextBox12.CustomButton.Visible = false;
+            poisonTextBox12.Location = new Point(298, 227);
+            poisonTextBox12.MaxLength = 32767;
+            poisonTextBox12.Name = "poisonTextBox12";
+            poisonTextBox12.PasswordChar = '\0';
+            poisonTextBox12.ScrollBars = ScrollBars.None;
+            poisonTextBox12.SelectedText = "";
+            poisonTextBox12.SelectionLength = 0;
+            poisonTextBox12.SelectionStart = 0;
+            poisonTextBox12.ShortcutsEnabled = true;
+            poisonTextBox12.Size = new Size(79, 23);
+            poisonTextBox12.TabIndex = 137;
+            poisonTextBox12.UseSelectable = true;
+            poisonTextBox12.WaterMarkColor = Color.FromArgb(109, 109, 109);
+            poisonTextBox12.WaterMarkFont = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Pixel);
+            // 
+            // materialLabel38
+            // 
+            materialLabel38.AutoSize = true;
+            materialLabel38.Depth = 0;
+            materialLabel38.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            materialLabel38.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
+            materialLabel38.Location = new Point(298, 259);
+            materialLabel38.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            materialLabel38.Name = "materialLabel38";
+            materialLabel38.Size = new Size(65, 17);
+            materialLabel38.TabIndex = 136;
+            materialLabel38.Text = "Waistline:";
+            // 
+            // materialLabel39
+            // 
+            materialLabel39.AutoSize = true;
+            materialLabel39.Depth = 0;
+            materialLabel39.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            materialLabel39.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
+            materialLabel39.Location = new Point(298, 207);
+            materialLabel39.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            materialLabel39.Name = "materialLabel39";
+            materialLabel39.Size = new Size(75, 17);
+            materialLabel39.TabIndex = 135;
+            materialLabel39.Text = "Upper Hips:";
+            // 
+            // materialLabel24
+            // 
+            materialLabel24.AutoSize = true;
+            materialLabel24.Depth = 0;
+            materialLabel24.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            materialLabel24.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
+            materialLabel24.Location = new Point(249, 391);
+            materialLabel24.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            materialLabel24.Name = "materialLabel24";
+            materialLabel24.Size = new Size(20, 17);
+            materialLabel24.TabIndex = 134;
+            materialLabel24.Text = "cm";
+            // 
+            // materialLabel25
+            // 
+            materialLabel25.AutoSize = true;
+            materialLabel25.Depth = 0;
+            materialLabel25.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            materialLabel25.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
+            materialLabel25.Location = new Point(249, 336);
+            materialLabel25.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            materialLabel25.Name = "materialLabel25";
+            materialLabel25.Size = new Size(20, 17);
+            materialLabel25.TabIndex = 133;
+            materialLabel25.Text = "cm";
+            // 
+            // materialLabel26
+            // 
+            materialLabel26.AutoSize = true;
+            materialLabel26.Depth = 0;
+            materialLabel26.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            materialLabel26.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
+            materialLabel26.Location = new Point(249, 285);
+            materialLabel26.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            materialLabel26.Name = "materialLabel26";
+            materialLabel26.Size = new Size(20, 17);
+            materialLabel26.TabIndex = 132;
+            materialLabel26.Text = "cm";
+            // 
+            // materialLabel27
+            // 
+            materialLabel27.AutoSize = true;
+            materialLabel27.Depth = 0;
+            materialLabel27.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            materialLabel27.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
+            materialLabel27.Location = new Point(249, 233);
+            materialLabel27.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            materialLabel27.Name = "materialLabel27";
+            materialLabel27.Size = new Size(20, 17);
+            materialLabel27.TabIndex = 131;
+            materialLabel27.Text = "cm";
+            // 
+            // poisonTextBox5
+            // 
+            // 
+            // 
+            // 
+            poisonTextBox5.CustomButton.Image = null;
+            poisonTextBox5.CustomButton.Location = new Point(57, 1);
+            poisonTextBox5.CustomButton.Name = "";
+            poisonTextBox5.CustomButton.Size = new Size(21, 21);
+            poisonTextBox5.CustomButton.Style = ReaLTaiizor.Enum.Poison.ColorStyle.Blue;
+            poisonTextBox5.CustomButton.TabIndex = 1;
+            poisonTextBox5.CustomButton.Theme = ReaLTaiizor.Enum.Poison.ThemeStyle.Light;
+            poisonTextBox5.CustomButton.UseSelectable = true;
+            poisonTextBox5.CustomButton.Visible = false;
+            poisonTextBox5.Location = new Point(164, 385);
+            poisonTextBox5.MaxLength = 32767;
+            poisonTextBox5.Name = "poisonTextBox5";
+            poisonTextBox5.PasswordChar = '\0';
+            poisonTextBox5.ScrollBars = ScrollBars.None;
+            poisonTextBox5.SelectedText = "";
+            poisonTextBox5.SelectionLength = 0;
+            poisonTextBox5.SelectionStart = 0;
+            poisonTextBox5.ShortcutsEnabled = true;
+            poisonTextBox5.Size = new Size(79, 23);
+            poisonTextBox5.TabIndex = 130;
+            poisonTextBox5.UseSelectable = true;
+            poisonTextBox5.WaterMarkColor = Color.FromArgb(109, 109, 109);
+            poisonTextBox5.WaterMarkFont = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Pixel);
+            // 
+            // materialLabel28
+            // 
+            materialLabel28.AutoSize = true;
+            materialLabel28.Depth = 0;
+            materialLabel28.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            materialLabel28.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
+            materialLabel28.Location = new Point(164, 365);
+            materialLabel28.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            materialLabel28.Name = "materialLabel28";
+            materialLabel28.Size = new Size(76, 17);
+            materialLabel28.TabIndex = 129;
+            materialLabel28.Text = "Back Chest:";
+            // 
+            // poisonTextBox6
+            // 
+            // 
+            // 
+            // 
+            poisonTextBox6.CustomButton.Image = null;
+            poisonTextBox6.CustomButton.Location = new Point(57, 1);
+            poisonTextBox6.CustomButton.Name = "";
+            poisonTextBox6.CustomButton.Size = new Size(21, 21);
+            poisonTextBox6.CustomButton.Style = ReaLTaiizor.Enum.Poison.ColorStyle.Blue;
+            poisonTextBox6.CustomButton.TabIndex = 1;
+            poisonTextBox6.CustomButton.Theme = ReaLTaiizor.Enum.Poison.ThemeStyle.Light;
+            poisonTextBox6.CustomButton.UseSelectable = true;
+            poisonTextBox6.CustomButton.Visible = false;
+            poisonTextBox6.Location = new Point(164, 330);
+            poisonTextBox6.MaxLength = 32767;
+            poisonTextBox6.Name = "poisonTextBox6";
+            poisonTextBox6.PasswordChar = '\0';
+            poisonTextBox6.ScrollBars = ScrollBars.None;
+            poisonTextBox6.SelectedText = "";
+            poisonTextBox6.SelectionLength = 0;
+            poisonTextBox6.SelectionStart = 0;
+            poisonTextBox6.ShortcutsEnabled = true;
+            poisonTextBox6.Size = new Size(79, 23);
+            poisonTextBox6.TabIndex = 128;
+            poisonTextBox6.UseSelectable = true;
+            poisonTextBox6.WaterMarkColor = Color.FromArgb(109, 109, 109);
+            poisonTextBox6.WaterMarkFont = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Pixel);
+            // 
+            // materialLabel29
+            // 
+            materialLabel29.AutoSize = true;
+            materialLabel29.Depth = 0;
+            materialLabel29.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            materialLabel29.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
+            materialLabel29.Location = new Point(164, 310);
+            materialLabel29.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            materialLabel29.Name = "materialLabel29";
+            materialLabel29.Size = new Size(79, 17);
+            materialLabel29.TabIndex = 127;
+            materialLabel29.Text = "Front Chest:";
+            // 
+            // poisonTextBox7
+            // 
+            // 
+            // 
+            // 
+            poisonTextBox7.CustomButton.Image = null;
+            poisonTextBox7.CustomButton.Location = new Point(57, 1);
+            poisonTextBox7.CustomButton.Name = "";
+            poisonTextBox7.CustomButton.Size = new Size(21, 21);
+            poisonTextBox7.CustomButton.Style = ReaLTaiizor.Enum.Poison.ColorStyle.Blue;
+            poisonTextBox7.CustomButton.TabIndex = 1;
+            poisonTextBox7.CustomButton.Theme = ReaLTaiizor.Enum.Poison.ThemeStyle.Light;
+            poisonTextBox7.CustomButton.UseSelectable = true;
+            poisonTextBox7.CustomButton.Visible = false;
+            poisonTextBox7.Location = new Point(164, 279);
+            poisonTextBox7.MaxLength = 32767;
+            poisonTextBox7.Name = "poisonTextBox7";
+            poisonTextBox7.PasswordChar = '\0';
+            poisonTextBox7.ScrollBars = ScrollBars.None;
+            poisonTextBox7.SelectedText = "";
+            poisonTextBox7.SelectionLength = 0;
+            poisonTextBox7.SelectionStart = 0;
+            poisonTextBox7.ShortcutsEnabled = true;
+            poisonTextBox7.Size = new Size(79, 23);
+            poisonTextBox7.TabIndex = 126;
+            poisonTextBox7.UseSelectable = true;
+            poisonTextBox7.WaterMarkColor = Color.FromArgb(109, 109, 109);
+            poisonTextBox7.WaterMarkFont = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Pixel);
+            // 
+            // poisonTextBox8
+            // 
+            // 
+            // 
+            // 
+            poisonTextBox8.CustomButton.Image = null;
+            poisonTextBox8.CustomButton.Location = new Point(57, 1);
+            poisonTextBox8.CustomButton.Name = "";
+            poisonTextBox8.CustomButton.Size = new Size(21, 21);
+            poisonTextBox8.CustomButton.Style = ReaLTaiizor.Enum.Poison.ColorStyle.Blue;
+            poisonTextBox8.CustomButton.TabIndex = 1;
+            poisonTextBox8.CustomButton.Theme = ReaLTaiizor.Enum.Poison.ThemeStyle.Light;
+            poisonTextBox8.CustomButton.UseSelectable = true;
+            poisonTextBox8.CustomButton.Visible = false;
+            poisonTextBox8.Location = new Point(164, 227);
+            poisonTextBox8.MaxLength = 32767;
+            poisonTextBox8.Name = "poisonTextBox8";
+            poisonTextBox8.PasswordChar = '\0';
+            poisonTextBox8.ScrollBars = ScrollBars.None;
+            poisonTextBox8.SelectedText = "";
+            poisonTextBox8.SelectionLength = 0;
+            poisonTextBox8.SelectionStart = 0;
+            poisonTextBox8.ShortcutsEnabled = true;
+            poisonTextBox8.Size = new Size(79, 23);
+            poisonTextBox8.TabIndex = 125;
+            poisonTextBox8.UseSelectable = true;
+            poisonTextBox8.WaterMarkColor = Color.FromArgb(109, 109, 109);
+            poisonTextBox8.WaterMarkFont = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Pixel);
+            // 
+            // materialLabel30
+            // 
+            materialLabel30.AutoSize = true;
+            materialLabel30.Depth = 0;
+            materialLabel30.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            materialLabel30.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
+            materialLabel30.Location = new Point(164, 259);
+            materialLabel30.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            materialLabel30.Name = "materialLabel30";
+            materialLabel30.Size = new Size(80, 17);
+            materialLabel30.TabIndex = 124;
+            materialLabel30.Text = "Back Figure:";
+            // 
+            // materialLabel31
+            // 
+            materialLabel31.AutoSize = true;
+            materialLabel31.Depth = 0;
+            materialLabel31.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            materialLabel31.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
+            materialLabel31.Location = new Point(164, 207);
+            materialLabel31.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            materialLabel31.Name = "materialLabel31";
+            materialLabel31.Size = new Size(83, 17);
+            materialLabel31.TabIndex = 123;
+            materialLabel31.Text = "Front Figure:";
+            // 
+            // materialLabel16
+            // 
+            materialLabel16.AutoSize = true;
+            materialLabel16.Depth = 0;
+            materialLabel16.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            materialLabel16.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
+            materialLabel16.Location = new Point(118, 391);
+            materialLabel16.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            materialLabel16.Name = "materialLabel16";
+            materialLabel16.Size = new Size(20, 17);
+            materialLabel16.TabIndex = 122;
+            materialLabel16.Text = "cm";
+            // 
+            // materialLabel17
+            // 
+            materialLabel17.AutoSize = true;
+            materialLabel17.Depth = 0;
+            materialLabel17.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            materialLabel17.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
+            materialLabel17.Location = new Point(118, 336);
+            materialLabel17.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            materialLabel17.Name = "materialLabel17";
+            materialLabel17.Size = new Size(20, 17);
+            materialLabel17.TabIndex = 121;
+            materialLabel17.Text = "cm";
+            // 
+            // materialLabel18
+            // 
+            materialLabel18.AutoSize = true;
+            materialLabel18.Depth = 0;
+            materialLabel18.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            materialLabel18.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
+            materialLabel18.Location = new Point(118, 285);
+            materialLabel18.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            materialLabel18.Name = "materialLabel18";
+            materialLabel18.Size = new Size(20, 17);
+            materialLabel18.TabIndex = 120;
+            materialLabel18.Text = "cm";
+            // 
+            // materialLabel19
+            // 
+            materialLabel19.AutoSize = true;
+            materialLabel19.Depth = 0;
+            materialLabel19.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            materialLabel19.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
+            materialLabel19.Location = new Point(118, 233);
+            materialLabel19.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            materialLabel19.Name = "materialLabel19";
+            materialLabel19.Size = new Size(20, 17);
+            materialLabel19.TabIndex = 119;
+            materialLabel19.Text = "cm";
+            // 
+            // poisonTextBox1
+            // 
+            // 
+            // 
+            // 
+            poisonTextBox1.CustomButton.Image = null;
+            poisonTextBox1.CustomButton.Location = new Point(57, 1);
+            poisonTextBox1.CustomButton.Name = "";
+            poisonTextBox1.CustomButton.Size = new Size(21, 21);
+            poisonTextBox1.CustomButton.Style = ReaLTaiizor.Enum.Poison.ColorStyle.Blue;
+            poisonTextBox1.CustomButton.TabIndex = 1;
+            poisonTextBox1.CustomButton.Theme = ReaLTaiizor.Enum.Poison.ThemeStyle.Light;
+            poisonTextBox1.CustomButton.UseSelectable = true;
+            poisonTextBox1.CustomButton.Visible = false;
+            poisonTextBox1.Location = new Point(33, 385);
+            poisonTextBox1.MaxLength = 32767;
+            poisonTextBox1.Name = "poisonTextBox1";
+            poisonTextBox1.PasswordChar = '\0';
+            poisonTextBox1.ScrollBars = ScrollBars.None;
+            poisonTextBox1.SelectedText = "";
+            poisonTextBox1.SelectionLength = 0;
+            poisonTextBox1.SelectionStart = 0;
+            poisonTextBox1.ShortcutsEnabled = true;
+            poisonTextBox1.Size = new Size(79, 23);
+            poisonTextBox1.TabIndex = 118;
+            poisonTextBox1.UseSelectable = true;
+            poisonTextBox1.WaterMarkColor = Color.FromArgb(109, 109, 109);
+            poisonTextBox1.WaterMarkFont = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Pixel);
+            // 
+            // materialLabel20
+            // 
+            materialLabel20.AutoSize = true;
+            materialLabel20.Depth = 0;
+            materialLabel20.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            materialLabel20.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
+            materialLabel20.Location = new Point(33, 365);
+            materialLabel20.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            materialLabel20.Name = "materialLabel20";
+            materialLabel20.Size = new Size(76, 17);
+            materialLabel20.TabIndex = 117;
+            materialLabel20.Text = "Lower Bust:";
+            // 
+            // poisonTextBox2
+            // 
+            // 
+            // 
+            // 
+            poisonTextBox2.CustomButton.Image = null;
+            poisonTextBox2.CustomButton.Location = new Point(57, 1);
+            poisonTextBox2.CustomButton.Name = "";
+            poisonTextBox2.CustomButton.Size = new Size(21, 21);
+            poisonTextBox2.CustomButton.Style = ReaLTaiizor.Enum.Poison.ColorStyle.Blue;
+            poisonTextBox2.CustomButton.TabIndex = 1;
+            poisonTextBox2.CustomButton.Theme = ReaLTaiizor.Enum.Poison.ThemeStyle.Light;
+            poisonTextBox2.CustomButton.UseSelectable = true;
+            poisonTextBox2.CustomButton.Visible = false;
+            poisonTextBox2.Location = new Point(33, 330);
+            poisonTextBox2.MaxLength = 32767;
+            poisonTextBox2.Name = "poisonTextBox2";
+            poisonTextBox2.PasswordChar = '\0';
+            poisonTextBox2.ScrollBars = ScrollBars.None;
+            poisonTextBox2.SelectedText = "";
+            poisonTextBox2.SelectionLength = 0;
+            poisonTextBox2.SelectionStart = 0;
+            poisonTextBox2.ShortcutsEnabled = true;
+            poisonTextBox2.Size = new Size(79, 23);
+            poisonTextBox2.TabIndex = 116;
+            poisonTextBox2.UseSelectable = true;
+            poisonTextBox2.WaterMarkColor = Color.FromArgb(109, 109, 109);
+            poisonTextBox2.WaterMarkFont = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Pixel);
+            // 
+            // materialLabel21
+            // 
+            materialLabel21.AutoSize = true;
+            materialLabel21.Depth = 0;
+            materialLabel21.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            materialLabel21.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
+            materialLabel21.Location = new Point(33, 310);
+            materialLabel21.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            materialLabel21.Name = "materialLabel21";
+            materialLabel21.Size = new Size(34, 17);
+            materialLabel21.TabIndex = 115;
+            materialLabel21.Text = "Bust:";
+            // 
+            // poisonTextBox3
+            // 
+            // 
+            // 
+            // 
+            poisonTextBox3.CustomButton.Image = null;
+            poisonTextBox3.CustomButton.Location = new Point(57, 1);
+            poisonTextBox3.CustomButton.Name = "";
+            poisonTextBox3.CustomButton.Size = new Size(21, 21);
+            poisonTextBox3.CustomButton.Style = ReaLTaiizor.Enum.Poison.ColorStyle.Blue;
+            poisonTextBox3.CustomButton.TabIndex = 1;
+            poisonTextBox3.CustomButton.Theme = ReaLTaiizor.Enum.Poison.ThemeStyle.Light;
+            poisonTextBox3.CustomButton.UseSelectable = true;
+            poisonTextBox3.CustomButton.Visible = false;
+            poisonTextBox3.Location = new Point(33, 279);
+            poisonTextBox3.MaxLength = 32767;
+            poisonTextBox3.Name = "poisonTextBox3";
+            poisonTextBox3.PasswordChar = '\0';
+            poisonTextBox3.ScrollBars = ScrollBars.None;
+            poisonTextBox3.SelectedText = "";
+            poisonTextBox3.SelectionLength = 0;
+            poisonTextBox3.SelectionStart = 0;
+            poisonTextBox3.ShortcutsEnabled = true;
+            poisonTextBox3.Size = new Size(79, 23);
+            poisonTextBox3.TabIndex = 114;
+            poisonTextBox3.UseSelectable = true;
+            poisonTextBox3.WaterMarkColor = Color.FromArgb(109, 109, 109);
+            poisonTextBox3.WaterMarkFont = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Pixel);
+            // 
+            // poisonTextBox4
+            // 
+            // 
+            // 
+            // 
+            poisonTextBox4.CustomButton.Image = null;
+            poisonTextBox4.CustomButton.Location = new Point(57, 1);
+            poisonTextBox4.CustomButton.Name = "";
+            poisonTextBox4.CustomButton.Size = new Size(21, 21);
+            poisonTextBox4.CustomButton.Style = ReaLTaiizor.Enum.Poison.ColorStyle.Blue;
+            poisonTextBox4.CustomButton.TabIndex = 1;
+            poisonTextBox4.CustomButton.Theme = ReaLTaiizor.Enum.Poison.ThemeStyle.Light;
+            poisonTextBox4.CustomButton.UseSelectable = true;
+            poisonTextBox4.CustomButton.Visible = false;
+            poisonTextBox4.Location = new Point(33, 227);
+            poisonTextBox4.MaxLength = 32767;
+            poisonTextBox4.Name = "poisonTextBox4";
+            poisonTextBox4.PasswordChar = '\0';
+            poisonTextBox4.ScrollBars = ScrollBars.None;
+            poisonTextBox4.SelectedText = "";
+            poisonTextBox4.SelectionLength = 0;
+            poisonTextBox4.SelectionStart = 0;
+            poisonTextBox4.ShortcutsEnabled = true;
+            poisonTextBox4.Size = new Size(79, 23);
+            poisonTextBox4.TabIndex = 113;
+            poisonTextBox4.UseSelectable = true;
+            poisonTextBox4.WaterMarkColor = Color.FromArgb(109, 109, 109);
+            poisonTextBox4.WaterMarkFont = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Pixel);
+            // 
+            // materialLabel22
+            // 
+            materialLabel22.AutoSize = true;
+            materialLabel22.Depth = 0;
+            materialLabel22.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            materialLabel22.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
+            materialLabel22.Location = new Point(33, 259);
+            materialLabel22.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            materialLabel22.Name = "materialLabel22";
+            materialLabel22.Size = new Size(75, 17);
+            materialLabel22.TabIndex = 112;
+            materialLabel22.Text = "Upper Bust:";
+            // 
+            // materialLabel23
+            // 
+            materialLabel23.AutoSize = true;
+            materialLabel23.Depth = 0;
+            materialLabel23.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            materialLabel23.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
+            materialLabel23.Location = new Point(33, 207);
+            materialLabel23.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            materialLabel23.Name = "materialLabel23";
+            materialLabel23.Size = new Size(62, 17);
+            materialLabel23.TabIndex = 111;
+            materialLabel23.Text = "Shoulder:";
+            // 
+            // materialLabel53
+            // 
+            materialLabel53.Anchor = AnchorStyles.Top;
+            materialLabel53.AutoSize = true;
+            materialLabel53.Depth = 0;
+            materialLabel53.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            materialLabel53.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
+            materialLabel53.Location = new Point(804, 233);
+            materialLabel53.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            materialLabel53.Name = "materialLabel53";
+            materialLabel53.Size = new Size(20, 17);
+            materialLabel53.TabIndex = 110;
+            materialLabel53.Text = "cm";
+            // 
+            // poisonTextBox20
+            // 
+            poisonTextBox20.Anchor = AnchorStyles.Top;
+            // 
+            // 
+            // 
+            poisonTextBox20.CustomButton.Image = null;
+            poisonTextBox20.CustomButton.Location = new Point(57, 1);
+            poisonTextBox20.CustomButton.Name = "";
+            poisonTextBox20.CustomButton.Size = new Size(21, 21);
+            poisonTextBox20.CustomButton.Style = ReaLTaiizor.Enum.Poison.ColorStyle.Blue;
+            poisonTextBox20.CustomButton.TabIndex = 1;
+            poisonTextBox20.CustomButton.Theme = ReaLTaiizor.Enum.Poison.ThemeStyle.Light;
+            poisonTextBox20.CustomButton.UseSelectable = true;
+            poisonTextBox20.CustomButton.Visible = false;
+            poisonTextBox20.Location = new Point(719, 227);
+            poisonTextBox20.MaxLength = 32767;
+            poisonTextBox20.Name = "poisonTextBox20";
+            poisonTextBox20.PasswordChar = '\0';
+            poisonTextBox20.ScrollBars = ScrollBars.None;
+            poisonTextBox20.SelectedText = "";
+            poisonTextBox20.SelectionLength = 0;
+            poisonTextBox20.SelectionStart = 0;
+            poisonTextBox20.ShortcutsEnabled = true;
+            poisonTextBox20.Size = new Size(79, 23);
+            poisonTextBox20.TabIndex = 109;
+            poisonTextBox20.UseSelectable = true;
+            poisonTextBox20.WaterMarkColor = Color.FromArgb(109, 109, 109);
+            poisonTextBox20.WaterMarkFont = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Pixel);
+            // 
+            // materialLabel54
+            // 
+            materialLabel54.Anchor = AnchorStyles.Top;
+            materialLabel54.AutoSize = true;
+            materialLabel54.Depth = 0;
+            materialLabel54.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            materialLabel54.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
+            materialLabel54.Location = new Point(719, 207);
+            materialLabel54.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            materialLabel54.Name = "materialLabel54";
+            materialLabel54.Size = new Size(50, 17);
+            materialLabel54.TabIndex = 108;
+            materialLabel54.Text = "Length:";
+            // 
+            // materialLabel45
+            // 
+            materialLabel45.Anchor = AnchorStyles.Top;
+            materialLabel45.AutoSize = true;
+            materialLabel45.Depth = 0;
+            materialLabel45.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            materialLabel45.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
+            materialLabel45.Location = new Point(671, 336);
+            materialLabel45.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            materialLabel45.Name = "materialLabel45";
+            materialLabel45.Size = new Size(20, 17);
+            materialLabel45.TabIndex = 107;
+            materialLabel45.Text = "cm";
+            // 
+            // materialLabel46
+            // 
+            materialLabel46.Anchor = AnchorStyles.Top;
+            materialLabel46.AutoSize = true;
+            materialLabel46.Depth = 0;
+            materialLabel46.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            materialLabel46.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
+            materialLabel46.Location = new Point(804, 285);
+            materialLabel46.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            materialLabel46.Name = "materialLabel46";
+            materialLabel46.Size = new Size(20, 17);
+            materialLabel46.TabIndex = 106;
+            materialLabel46.Text = "cm";
+            // 
+            // materialLabel47
+            // 
+            materialLabel47.Anchor = AnchorStyles.Top;
+            materialLabel47.AutoSize = true;
+            materialLabel47.Depth = 0;
+            materialLabel47.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            materialLabel47.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
+            materialLabel47.Location = new Point(671, 285);
+            materialLabel47.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            materialLabel47.Name = "materialLabel47";
+            materialLabel47.Size = new Size(20, 17);
+            materialLabel47.TabIndex = 105;
+            materialLabel47.Text = "cm";
+            // 
+            // materialLabel48
+            // 
+            materialLabel48.Anchor = AnchorStyles.Top;
+            materialLabel48.AutoSize = true;
+            materialLabel48.Depth = 0;
+            materialLabel48.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            materialLabel48.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
+            materialLabel48.Location = new Point(671, 233);
+            materialLabel48.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            materialLabel48.Name = "materialLabel48";
+            materialLabel48.Size = new Size(20, 17);
+            materialLabel48.TabIndex = 104;
+            materialLabel48.Text = "cm";
+            // 
+            // poisonTextBox13
+            // 
+            poisonTextBox13.Anchor = AnchorStyles.Top;
+            // 
+            // 
+            // 
+            poisonTextBox13.CustomButton.Image = null;
+            poisonTextBox13.CustomButton.Location = new Point(57, 1);
+            poisonTextBox13.CustomButton.Name = "";
+            poisonTextBox13.CustomButton.Size = new Size(21, 21);
+            poisonTextBox13.CustomButton.Style = ReaLTaiizor.Enum.Poison.ColorStyle.Blue;
+            poisonTextBox13.CustomButton.TabIndex = 1;
+            poisonTextBox13.CustomButton.Theme = ReaLTaiizor.Enum.Poison.ThemeStyle.Light;
+            poisonTextBox13.CustomButton.UseSelectable = true;
+            poisonTextBox13.CustomButton.Visible = false;
+            poisonTextBox13.Location = new Point(586, 330);
+            poisonTextBox13.MaxLength = 32767;
+            poisonTextBox13.Name = "poisonTextBox13";
+            poisonTextBox13.PasswordChar = '\0';
+            poisonTextBox13.ScrollBars = ScrollBars.None;
+            poisonTextBox13.SelectedText = "";
+            poisonTextBox13.SelectionLength = 0;
+            poisonTextBox13.SelectionStart = 0;
+            poisonTextBox13.ShortcutsEnabled = true;
+            poisonTextBox13.Size = new Size(79, 23);
+            poisonTextBox13.TabIndex = 103;
+            poisonTextBox13.UseSelectable = true;
+            poisonTextBox13.WaterMarkColor = Color.FromArgb(109, 109, 109);
+            poisonTextBox13.WaterMarkFont = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Pixel);
+            // 
+            // materialLabel49
+            // 
+            materialLabel49.Anchor = AnchorStyles.Top;
+            materialLabel49.AutoSize = true;
+            materialLabel49.Depth = 0;
+            materialLabel49.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            materialLabel49.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
+            materialLabel49.Location = new Point(586, 310);
+            materialLabel49.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            materialLabel49.Name = "materialLabel49";
+            materialLabel49.Size = new Size(128, 17);
+            materialLabel49.TabIndex = 102;
+            materialLabel49.Text = "Calf Circumference:";
+            // 
+            // poisonTextBox14
+            // 
+            poisonTextBox14.Anchor = AnchorStyles.Top;
+            // 
+            // 
+            // 
+            poisonTextBox14.CustomButton.Image = null;
+            poisonTextBox14.CustomButton.Location = new Point(57, 1);
+            poisonTextBox14.CustomButton.Name = "";
+            poisonTextBox14.CustomButton.Size = new Size(21, 21);
+            poisonTextBox14.CustomButton.Style = ReaLTaiizor.Enum.Poison.ColorStyle.Blue;
+            poisonTextBox14.CustomButton.TabIndex = 1;
+            poisonTextBox14.CustomButton.Theme = ReaLTaiizor.Enum.Poison.ThemeStyle.Light;
+            poisonTextBox14.CustomButton.UseSelectable = true;
+            poisonTextBox14.CustomButton.Visible = false;
+            poisonTextBox14.Location = new Point(719, 279);
+            poisonTextBox14.MaxLength = 32767;
+            poisonTextBox14.Name = "poisonTextBox14";
+            poisonTextBox14.PasswordChar = '\0';
+            poisonTextBox14.ScrollBars = ScrollBars.None;
+            poisonTextBox14.SelectedText = "";
+            poisonTextBox14.SelectionLength = 0;
+            poisonTextBox14.SelectionStart = 0;
+            poisonTextBox14.ShortcutsEnabled = true;
+            poisonTextBox14.Size = new Size(79, 23);
+            poisonTextBox14.TabIndex = 101;
+            poisonTextBox14.UseSelectable = true;
+            poisonTextBox14.WaterMarkColor = Color.FromArgb(109, 109, 109);
+            poisonTextBox14.WaterMarkFont = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Pixel);
+            // 
+            // materialLabel50
+            // 
+            materialLabel50.Anchor = AnchorStyles.Top;
+            materialLabel50.AutoSize = true;
+            materialLabel50.Depth = 0;
+            materialLabel50.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            materialLabel50.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
+            materialLabel50.Location = new Point(719, 259);
+            materialLabel50.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            materialLabel50.Name = "materialLabel50";
+            materialLabel50.Size = new Size(42, 17);
+            materialLabel50.TabIndex = 100;
+            materialLabel50.Text = "Thigh:";
+            // 
+            // poisonTextBox18
+            // 
+            poisonTextBox18.Anchor = AnchorStyles.Top;
+            // 
+            // 
+            // 
+            poisonTextBox18.CustomButton.Image = null;
+            poisonTextBox18.CustomButton.Location = new Point(57, 1);
+            poisonTextBox18.CustomButton.Name = "";
+            poisonTextBox18.CustomButton.Size = new Size(21, 21);
+            poisonTextBox18.CustomButton.Style = ReaLTaiizor.Enum.Poison.ColorStyle.Blue;
+            poisonTextBox18.CustomButton.TabIndex = 1;
+            poisonTextBox18.CustomButton.Theme = ReaLTaiizor.Enum.Poison.ThemeStyle.Light;
+            poisonTextBox18.CustomButton.UseSelectable = true;
+            poisonTextBox18.CustomButton.Visible = false;
+            poisonTextBox18.Location = new Point(586, 279);
+            poisonTextBox18.MaxLength = 32767;
+            poisonTextBox18.Name = "poisonTextBox18";
+            poisonTextBox18.PasswordChar = '\0';
+            poisonTextBox18.ScrollBars = ScrollBars.None;
+            poisonTextBox18.SelectedText = "";
+            poisonTextBox18.SelectionLength = 0;
+            poisonTextBox18.SelectionStart = 0;
+            poisonTextBox18.ShortcutsEnabled = true;
+            poisonTextBox18.Size = new Size(79, 23);
+            poisonTextBox18.TabIndex = 99;
+            poisonTextBox18.UseSelectable = true;
+            poisonTextBox18.WaterMarkColor = Color.FromArgb(109, 109, 109);
+            poisonTextBox18.WaterMarkFont = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Pixel);
+            // 
+            // poisonTextBox19
+            // 
+            poisonTextBox19.Anchor = AnchorStyles.Top;
+            // 
+            // 
+            // 
+            poisonTextBox19.CustomButton.Image = null;
+            poisonTextBox19.CustomButton.Location = new Point(57, 1);
+            poisonTextBox19.CustomButton.Name = "";
+            poisonTextBox19.CustomButton.Size = new Size(21, 21);
+            poisonTextBox19.CustomButton.Style = ReaLTaiizor.Enum.Poison.ColorStyle.Blue;
+            poisonTextBox19.CustomButton.TabIndex = 1;
+            poisonTextBox19.CustomButton.Theme = ReaLTaiizor.Enum.Poison.ThemeStyle.Light;
+            poisonTextBox19.CustomButton.UseSelectable = true;
+            poisonTextBox19.CustomButton.Visible = false;
+            poisonTextBox19.Location = new Point(586, 227);
+            poisonTextBox19.MaxLength = 32767;
+            poisonTextBox19.Name = "poisonTextBox19";
+            poisonTextBox19.PasswordChar = '\0';
+            poisonTextBox19.ScrollBars = ScrollBars.None;
+            poisonTextBox19.SelectedText = "";
+            poisonTextBox19.SelectionLength = 0;
+            poisonTextBox19.SelectionStart = 0;
+            poisonTextBox19.ShortcutsEnabled = true;
+            poisonTextBox19.Size = new Size(79, 23);
+            poisonTextBox19.TabIndex = 98;
+            poisonTextBox19.UseSelectable = true;
+            poisonTextBox19.WaterMarkColor = Color.FromArgb(109, 109, 109);
+            poisonTextBox19.WaterMarkFont = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Pixel);
+            // 
+            // materialLabel51
+            // 
+            materialLabel51.Anchor = AnchorStyles.Top;
+            materialLabel51.AutoSize = true;
+            materialLabel51.Depth = 0;
+            materialLabel51.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            materialLabel51.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
+            materialLabel51.Location = new Point(586, 259);
+            materialLabel51.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            materialLabel51.Name = "materialLabel51";
+            materialLabel51.Size = new Size(47, 17);
+            materialLabel51.TabIndex = 97;
+            materialLabel51.Text = "Crotch:";
+            // 
+            // materialLabel52
+            // 
+            materialLabel52.Anchor = AnchorStyles.Top;
+            materialLabel52.AutoSize = true;
+            materialLabel52.Depth = 0;
+            materialLabel52.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            materialLabel52.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
+            materialLabel52.Location = new Point(586, 207);
+            materialLabel52.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            materialLabel52.Name = "materialLabel52";
+            materialLabel52.Size = new Size(76, 17);
+            materialLabel52.TabIndex = 96;
+            materialLabel52.Text = "Lower Hips:";
+            // 
+            // materialLabel44
+            // 
+            materialLabel44.Anchor = AnchorStyles.Top;
+            materialLabel44.AutoSize = true;
+            materialLabel44.Depth = 0;
+            materialLabel44.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
+            materialLabel44.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.H6;
+            materialLabel44.Location = new Point(611, 167);
+            materialLabel44.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            materialLabel44.Name = "materialLabel44";
+            materialLabel44.Size = new Size(53, 24);
+            materialLabel44.TabIndex = 95;
+            materialLabel44.Text = "Pants";
+            // 
+            // pictureBox6
+            // 
+            pictureBox6.Anchor = AnchorStyles.Top;
+            pictureBox6.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
+            pictureBox6.Location = new Point(571, 162);
+            pictureBox6.Name = "pictureBox6";
+            pictureBox6.Size = new Size(34, 35);
+            pictureBox6.TabIndex = 94;
+            pictureBox6.TabStop = false;
+            // 
+            // materialLabel15
+            // 
+            materialLabel15.AutoSize = true;
+            materialLabel15.Depth = 0;
+            materialLabel15.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
+            materialLabel15.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.H6;
+            materialLabel15.Location = new Point(57, 162);
+            materialLabel15.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            materialLabel15.Name = "materialLabel15";
+            materialLabel15.Size = new Size(52, 24);
+            materialLabel15.TabIndex = 51;
+            materialLabel15.Text = "Torso";
+            // 
+            // pictureBox5
+            // 
+            pictureBox5.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
+            pictureBox5.Location = new Point(17, 157);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(34, 35);
+            pictureBox5.TabIndex = 50;
+            pictureBox5.TabStop = false;
+            // 
+            // poisonTextBox15
+            // 
+            // 
+            // 
+            // 
+            poisonTextBox15.CustomButton.Image = null;
+            poisonTextBox15.CustomButton.Location = new Point(153, 1);
+            poisonTextBox15.CustomButton.Name = "";
+            poisonTextBox15.CustomButton.Size = new Size(21, 21);
+            poisonTextBox15.CustomButton.Style = ReaLTaiizor.Enum.Poison.ColorStyle.Blue;
+            poisonTextBox15.CustomButton.TabIndex = 1;
+            poisonTextBox15.CustomButton.Theme = ReaLTaiizor.Enum.Poison.ThemeStyle.Light;
+            poisonTextBox15.CustomButton.UseSelectable = true;
+            poisonTextBox15.CustomButton.Visible = false;
+            poisonTextBox15.Location = new Point(42, 71);
+            poisonTextBox15.MaxLength = 32767;
+            poisonTextBox15.Name = "poisonTextBox15";
+            poisonTextBox15.PasswordChar = '\0';
+            poisonTextBox15.ScrollBars = ScrollBars.None;
+            poisonTextBox15.SelectedText = "";
+            poisonTextBox15.SelectionLength = 0;
+            poisonTextBox15.SelectionStart = 0;
+            poisonTextBox15.ShortcutsEnabled = true;
+            poisonTextBox15.Size = new Size(175, 23);
+            poisonTextBox15.TabIndex = 49;
+            poisonTextBox15.UseSelectable = true;
+            poisonTextBox15.WaterMarkColor = Color.FromArgb(109, 109, 109);
+            poisonTextBox15.WaterMarkFont = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Pixel);
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureBox4.Image = MyResources.dashboard;
+            pictureBox4.Location = new Point(42, 116);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(34, 35);
+            pictureBox4.TabIndex = 18;
+            pictureBox4.TabStop = false;
+            // 
+            // materialLabel14
+            // 
+            materialLabel14.AutoSize = true;
+            materialLabel14.Depth = 0;
+            materialLabel14.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialLabel14.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle1;
+            materialLabel14.Location = new Point(79, 125);
+            materialLabel14.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            materialLabel14.Name = "materialLabel14";
+            materialLabel14.Size = new Size(98, 19);
+            materialLabel14.TabIndex = 17;
+            materialLabel14.Text = "Measurement";
+            // 
+            // pdtOrderDeadline
+            // 
+            pdtOrderDeadline.FontSize = ReaLTaiizor.Extension.Poison.PoisonDateTimeSize.Small;
+            pdtOrderDeadline.Location = new Point(547, 72);
+            pdtOrderDeadline.MinimumSize = new Size(0, 25);
+            pdtOrderDeadline.Name = "pdtOrderDeadline";
+            pdtOrderDeadline.Size = new Size(200, 26);
+            pdtOrderDeadline.Style = ReaLTaiizor.Enum.Poison.ColorStyle.Green;
+            pdtOrderDeadline.TabIndex = 16;
+            pdtOrderDeadline.Theme = ReaLTaiizor.Enum.Poison.ThemeStyle.Light;
+            // 
+            // materialLabel13
+            // 
+            materialLabel13.AutoSize = true;
+            materialLabel13.Depth = 0;
+            materialLabel13.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            materialLabel13.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
+            materialLabel13.Location = new Point(547, 51);
+            materialLabel13.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            materialLabel13.Name = "materialLabel13";
+            materialLabel13.Size = new Size(101, 17);
+            materialLabel13.TabIndex = 15;
+            materialLabel13.Text = "Order Deadline:";
+            // 
+            // hcbGender
+            // 
+            hcbGender.DrawMode = DrawMode.OwnerDrawFixed;
+            hcbGender.FlatStyle = FlatStyle.Flat;
+            hcbGender.Font = new Font("Segoe UI", 12F);
+            hcbGender.FormattingEnabled = true;
+            hcbGender.ItemHeight = 21;
+            hcbGender.Items.AddRange(new object[] { "Male", "Female", "Other" });
+            hcbGender.Location = new Point(321, 74);
+            hcbGender.Name = "hcbGender";
+            hcbGender.Size = new Size(130, 27);
+            hcbGender.TabIndex = 14;
+            // 
+            // materialLabel12
+            // 
+            materialLabel12.AutoSize = true;
+            materialLabel12.Depth = 0;
+            materialLabel12.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            materialLabel12.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
+            materialLabel12.Location = new Point(321, 51);
+            materialLabel12.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            materialLabel12.Name = "materialLabel12";
+            materialLabel12.Size = new Size(52, 17);
+            materialLabel12.TabIndex = 13;
+            materialLabel12.Text = "Gender:";
+            // 
+            // materialLabel11
+            // 
+            materialLabel11.AutoSize = true;
+            materialLabel11.Depth = 0;
+            materialLabel11.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            materialLabel11.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
+            materialLabel11.Location = new Point(42, 51);
+            materialLabel11.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            materialLabel11.Name = "materialLabel11";
+            materialLabel11.Size = new Size(43, 17);
+            materialLabel11.TabIndex = 11;
+            materialLabel11.Text = "Name:";
+            // 
+            // materialLabel10
+            // 
+            materialLabel10.AutoSize = true;
+            materialLabel10.Depth = 0;
+            materialLabel10.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
+            materialLabel10.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.H6;
+            materialLabel10.Location = new Point(17, 13);
+            materialLabel10.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            materialLabel10.Name = "materialLabel10";
+            materialLabel10.Size = new Size(189, 24);
+            materialLabel10.TabIndex = 10;
+            materialLabel10.Text = "Personal Information";
+            // 
             // materialCard4
             // 
             materialCard4.BackColor = Color.FromArgb(255, 255, 255);
+            materialCard4.BorderStyle = BorderStyle.FixedSingle;
             materialCard4.Controls.Add(materialLabel4);
             materialCard4.Controls.Add(btnNotificationBodyMeasurement);
             materialCard4.Depth = 0;
@@ -276,7 +2018,7 @@ namespace Dashboard
             materialCard4.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialCard4.Name = "materialCard4";
             materialCard4.Padding = new Padding(14);
-            materialCard4.Size = new Size(870, 50);
+            materialCard4.Size = new Size(873, 50);
             materialCard4.TabIndex = 2;
             // 
             // materialLabel4
@@ -304,16 +2046,17 @@ namespace Dashboard
             btnNotificationBodyMeasurement.Icon = MyResources.bell;
             btnNotificationBodyMeasurement.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Default;
             btnNotificationBodyMeasurement.ImageKey = "(none)";
-            btnNotificationBodyMeasurement.Location = new Point(816, 14);
+            btnNotificationBodyMeasurement.Location = new Point(817, 14);
             btnNotificationBodyMeasurement.Margin = new Padding(4, 6, 4, 6);
             btnNotificationBodyMeasurement.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             btnNotificationBodyMeasurement.Name = "btnNotificationBodyMeasurement";
             btnNotificationBodyMeasurement.NoAccentTextColor = Color.Empty;
-            btnNotificationBodyMeasurement.Size = new Size(40, 22);
+            btnNotificationBodyMeasurement.Size = new Size(40, 20);
             btnNotificationBodyMeasurement.TabIndex = 2;
             btnNotificationBodyMeasurement.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Text;
             btnNotificationBodyMeasurement.UseAccentColor = false;
             btnNotificationBodyMeasurement.UseVisualStyleBackColor = true;
+            btnNotificationBodyMeasurement.Click += btnNotificationBodyMeasurement_Click;
             // 
             // CostConsumption
             // 
@@ -321,7 +2064,7 @@ namespace Dashboard
             CostConsumption.ImageKey = "cost.png";
             CostConsumption.Location = new Point(4, 24);
             CostConsumption.Name = "CostConsumption";
-            CostConsumption.Size = new Size(870, 366);
+            CostConsumption.Size = new Size(873, 505);
             CostConsumption.TabIndex = 3;
             CostConsumption.Text = "Cost Consumption";
             CostConsumption.UseVisualStyleBackColor = true;
@@ -339,7 +2082,7 @@ namespace Dashboard
             materialCard5.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialCard5.Name = "materialCard5";
             materialCard5.Padding = new Padding(14);
-            materialCard5.Size = new Size(870, 50);
+            materialCard5.Size = new Size(873, 50);
             materialCard5.TabIndex = 3;
             // 
             // materialLabel5
@@ -367,7 +2110,7 @@ namespace Dashboard
             btnNotificationCostConsumption.Icon = MyResources.bell;
             btnNotificationCostConsumption.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Default;
             btnNotificationCostConsumption.ImageKey = "(none)";
-            btnNotificationCostConsumption.Location = new Point(816, 14);
+            btnNotificationCostConsumption.Location = new Point(819, 14);
             btnNotificationCostConsumption.Margin = new Padding(4, 6, 4, 6);
             btnNotificationCostConsumption.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             btnNotificationCostConsumption.Name = "btnNotificationCostConsumption";
@@ -385,7 +2128,7 @@ namespace Dashboard
             Revenue.ImageKey = "revenue.png";
             Revenue.Location = new Point(4, 24);
             Revenue.Name = "Revenue";
-            Revenue.Size = new Size(870, 366);
+            Revenue.Size = new Size(873, 505);
             Revenue.TabIndex = 4;
             Revenue.Text = "Revenue";
             Revenue.UseVisualStyleBackColor = true;
@@ -403,7 +2146,7 @@ namespace Dashboard
             materialCard6.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialCard6.Name = "materialCard6";
             materialCard6.Padding = new Padding(14);
-            materialCard6.Size = new Size(870, 50);
+            materialCard6.Size = new Size(873, 50);
             materialCard6.TabIndex = 3;
             // 
             // materialLabel6
@@ -431,7 +2174,7 @@ namespace Dashboard
             btnNotificationRevenue.Icon = MyResources.bell;
             btnNotificationRevenue.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Default;
             btnNotificationRevenue.ImageKey = "(none)";
-            btnNotificationRevenue.Location = new Point(816, 14);
+            btnNotificationRevenue.Location = new Point(819, 14);
             btnNotificationRevenue.Margin = new Padding(4, 6, 4, 6);
             btnNotificationRevenue.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             btnNotificationRevenue.Name = "btnNotificationRevenue";
@@ -513,12 +2256,16 @@ namespace Dashboard
             btnCloseNotification.UseVisualStyleBackColor = true;
             btnCloseNotification.Click += btnCloseNotification_Click;
             // 
+            // animationTimer
+            // 
+            animationTimer.Tick += animationTimer_Tick;
+            // 
             // dashboardPanel
             // 
             AutoScaleMode = AutoScaleMode.Inherit;
             AutoValidate = AutoValidate.EnablePreventFocusChange;
             BackColor = SystemColors.Control;
-            ClientSize = new Size(884, 461);
+            ClientSize = new Size(884, 600);
             Controls.Add(btn);
             Controls.Add(pnlNotification);
             DrawerAutoHide = false;
@@ -528,17 +2275,36 @@ namespace Dashboard
             DrawerTabControl = btn;
             DrawerUseColors = true;
             Name = "dashboardPanel";
+            Padding = new Padding(0, 64, 3, 3);
             StartPosition = FormStartPosition.CenterScreen;
             Text = "RE Sewing Creations";
             WindowState = FormWindowState.Maximized;
             btn.ResumeLayout(false);
             MainDashboard.ResumeLayout(false);
+            materialCard7.ResumeLayout(false);
+            materialCard7.PerformLayout();
+            panel1.ResumeLayout(false);
+            tableLayoutPanel1.ResumeLayout(false);
+            pgpNewCustomer.ResumeLayout(false);
+            pgpProfit.ResumeLayout(false);
+            pgpTurnover.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             materialCard1.ResumeLayout(false);
             materialCard1.PerformLayout();
             Order.ResumeLayout(false);
+            materialCard8.ResumeLayout(false);
+            materialCard8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             materialCard2.ResumeLayout(false);
             materialCard2.PerformLayout();
             BodyMeasurement.ResumeLayout(false);
+            panel2.ResumeLayout(false);
+            materialCard9.ResumeLayout(false);
+            materialCard9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             materialCard4.ResumeLayout(false);
             materialCard4.PerformLayout();
             CostConsumption.ResumeLayout(false);
@@ -563,15 +2329,11 @@ namespace Dashboard
         private TabPage Revenue;
         private ReaLTaiizor.Controls.MaterialCard materialCard1;
         private ReaLTaiizor.Controls.MaterialButton btnNotification;
-        private ReaLTaiizor.Controls.MaterialCard pnlNotification;
         private ReaLTaiizor.Controls.MaterialLabel materialLabel1;
-        private ReaLTaiizor.Controls.MaterialButton btnCloseNotification;
-        private ReaLTaiizor.Controls.MaterialCard materialCard3;
-        private ReaLTaiizor.Controls.MaterialLabel materialLabel2;
         private ReaLTaiizor.Controls.MaterialCard materialCard2;
         private ReaLTaiizor.Controls.MaterialLabel materialLabel3;
         private ReaLTaiizor.Controls.MaterialButton btnNotificationOrder;
-        private ReaLTaiizor.Controls.HopeComboBox cboSearch;
+        private ReaLTaiizor.Controls.HopeComboBox hcbSearch;
         private ReaLTaiizor.Controls.MaterialCard materialCard4;
         private ReaLTaiizor.Controls.MaterialLabel materialLabel4;
         private ReaLTaiizor.Controls.MaterialButton btnNotificationBodyMeasurement;
@@ -581,5 +2343,101 @@ namespace Dashboard
         private ReaLTaiizor.Controls.MaterialCard materialCard6;
         private ReaLTaiizor.Controls.MaterialLabel materialLabel6;
         private ReaLTaiizor.Controls.MaterialButton btnNotificationRevenue;
+        private ReaLTaiizor.Controls.MaterialCard pnlNotification;
+        private ReaLTaiizor.Controls.MaterialCard materialCard3;
+        private ReaLTaiizor.Controls.MaterialLabel materialLabel2;
+        private ReaLTaiizor.Controls.MaterialButton btnCloseNotification;
+        private System.Windows.Forms.Timer animationTimer;
+        private ReaLTaiizor.Controls.MaterialCard materialCard7;
+        private PictureBox pictureBox1;
+        private ReaLTaiizor.Controls.MaterialLabel materialLabel7;
+        private PictureBox pictureBox2;
+        private ReaLTaiizor.Controls.MaterialCard materialCard8;
+        private ReaLTaiizor.Controls.MaterialLabel materialLabel8;
+        private PictureBox pictureBox3;
+        private FlowLayoutPanel flwpnlOrderList;
+        private Panel panel1;
+        private TableLayoutPanel tableLayoutPanel1;
+        private ReaLTaiizor.Controls.ParrotGradientPanel pgpTurnover;
+        private ReaLTaiizor.Controls.ParrotGradientPanel pgpNewCustomer;
+        private ReaLTaiizor.Controls.ParrotGradientPanel pgpProfit;
+        private TableLayoutPanel tlpNewCustomer;
+        private TableLayoutPanel tlpProfit;
+        private TableLayoutPanel tlpTurnover;
+        private ReaLTaiizor.Controls.MaterialLabel materialLabel9;
+        private Panel panel2;
+        private ReaLTaiizor.Controls.MaterialCard materialCard9;
+        private ReaLTaiizor.Controls.PoisonDateTime pdtOrderDeadline;
+        private ReaLTaiizor.Controls.MaterialLabel materialLabel13;
+        private ReaLTaiizor.Controls.HopeComboBox hcbGender;
+        private ReaLTaiizor.Controls.MaterialLabel materialLabel12;
+        private ReaLTaiizor.Controls.MaterialLabel materialLabel11;
+        private ReaLTaiizor.Controls.MaterialLabel materialLabel10;
+        private PictureBox pictureBox4;
+        private ReaLTaiizor.Controls.MaterialLabel materialLabel14;
+        private ReaLTaiizor.Controls.PoisonTextBox poisonTextBox15;
+        private ReaLTaiizor.Controls.MaterialLabel materialLabel15;
+        private PictureBox pictureBox5;
+        private ReaLTaiizor.Controls.MaterialLabel materialLabel45;
+        private ReaLTaiizor.Controls.MaterialLabel materialLabel46;
+        private ReaLTaiizor.Controls.MaterialLabel materialLabel47;
+        private ReaLTaiizor.Controls.MaterialLabel materialLabel48;
+        private ReaLTaiizor.Controls.PoisonTextBox poisonTextBox13;
+        private ReaLTaiizor.Controls.MaterialLabel materialLabel49;
+        private ReaLTaiizor.Controls.PoisonTextBox poisonTextBox14;
+        private ReaLTaiizor.Controls.MaterialLabel materialLabel50;
+        private ReaLTaiizor.Controls.PoisonTextBox poisonTextBox18;
+        private ReaLTaiizor.Controls.PoisonTextBox poisonTextBox19;
+        private ReaLTaiizor.Controls.MaterialLabel materialLabel51;
+        private ReaLTaiizor.Controls.MaterialLabel materialLabel52;
+        private ReaLTaiizor.Controls.MaterialLabel materialLabel44;
+        private PictureBox pictureBox6;
+        private ReaLTaiizor.Controls.MaterialLabel materialLabel53;
+        private ReaLTaiizor.Controls.PoisonTextBox poisonTextBox20;
+        private ReaLTaiizor.Controls.MaterialLabel materialLabel54;
+        private ReaLTaiizor.Controls.MaterialLabel materialLabel42;
+        private ReaLTaiizor.Controls.MaterialLabel materialLabel43;
+        private ReaLTaiizor.Controls.PoisonTextBox poisonTextBox21;
+        private ReaLTaiizor.Controls.PoisonTextBox poisonTextBox22;
+        private ReaLTaiizor.Controls.MaterialLabel materialLabel57;
+        private ReaLTaiizor.Controls.MaterialLabel materialLabel58;
+        private ReaLTaiizor.Controls.MaterialLabel materialLabel32;
+        private ReaLTaiizor.Controls.MaterialLabel materialLabel33;
+        private ReaLTaiizor.Controls.MaterialLabel materialLabel34;
+        private ReaLTaiizor.Controls.MaterialLabel materialLabel35;
+        private ReaLTaiizor.Controls.PoisonTextBox poisonTextBox9;
+        private ReaLTaiizor.Controls.MaterialLabel materialLabel36;
+        private ReaLTaiizor.Controls.PoisonTextBox poisonTextBox10;
+        private ReaLTaiizor.Controls.MaterialLabel materialLabel37;
+        private ReaLTaiizor.Controls.PoisonTextBox poisonTextBox11;
+        private ReaLTaiizor.Controls.PoisonTextBox poisonTextBox12;
+        private ReaLTaiizor.Controls.MaterialLabel materialLabel38;
+        private ReaLTaiizor.Controls.MaterialLabel materialLabel39;
+        private ReaLTaiizor.Controls.MaterialLabel materialLabel24;
+        private ReaLTaiizor.Controls.MaterialLabel materialLabel25;
+        private ReaLTaiizor.Controls.MaterialLabel materialLabel26;
+        private ReaLTaiizor.Controls.MaterialLabel materialLabel27;
+        private ReaLTaiizor.Controls.PoisonTextBox poisonTextBox5;
+        private ReaLTaiizor.Controls.MaterialLabel materialLabel28;
+        private ReaLTaiizor.Controls.PoisonTextBox poisonTextBox6;
+        private ReaLTaiizor.Controls.MaterialLabel materialLabel29;
+        private ReaLTaiizor.Controls.PoisonTextBox poisonTextBox7;
+        private ReaLTaiizor.Controls.PoisonTextBox poisonTextBox8;
+        private ReaLTaiizor.Controls.MaterialLabel materialLabel30;
+        private ReaLTaiizor.Controls.MaterialLabel materialLabel31;
+        private ReaLTaiizor.Controls.MaterialLabel materialLabel16;
+        private ReaLTaiizor.Controls.MaterialLabel materialLabel17;
+        private ReaLTaiizor.Controls.MaterialLabel materialLabel18;
+        private ReaLTaiizor.Controls.MaterialLabel materialLabel19;
+        private ReaLTaiizor.Controls.PoisonTextBox poisonTextBox1;
+        private ReaLTaiizor.Controls.MaterialLabel materialLabel20;
+        private ReaLTaiizor.Controls.PoisonTextBox poisonTextBox2;
+        private ReaLTaiizor.Controls.MaterialLabel materialLabel21;
+        private ReaLTaiizor.Controls.PoisonTextBox poisonTextBox3;
+        private ReaLTaiizor.Controls.PoisonTextBox poisonTextBox4;
+        private ReaLTaiizor.Controls.MaterialLabel materialLabel22;
+        private ReaLTaiizor.Controls.MaterialLabel materialLabel23;
+        private ReaLTaiizor.Controls.HopeButton btnClear;
+        private ReaLTaiizor.Controls.HopeButton btnSubmit;
     }
 }
