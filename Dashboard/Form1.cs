@@ -33,8 +33,31 @@ namespace Dashboard
 
         }
 
+        private void UpdateGrandTotal()
+        {
+            double materialSum = 0;
 
+            foreach (DataGridViewRow row in dgvMaterialList.Rows)
+            {
+                if (row.Cells[3].Value != null)
+                {
+                    materialSum += Convert.ToDouble(row.Cells[3].Value);
+                }
+            }
+            txtMaterialTotal.Text = materialSum.ToString("N2");
 
+            double labor = 0;
+            double.TryParse(txtLaborCost.Text, out labor);
+            double quantity = 0;
+            double.TryParse(txtQuantity.Text, out quantity);
+
+            double totalLabor = labor * quantity;
+            txtTotalLabor.Text = totalLabor.ToString("N2");
+
+            double grandTotal = materialSum + totalLabor;
+            lblGrandTotalCost.Text = "₱ " + grandTotal.ToString("N2");
+
+        }
         private int targetHeight = 400;
 
         public void NotificationPanel()
@@ -140,6 +163,61 @@ namespace Dashboard
             flwpnlOrderList.Focus();
         }
 
-       
+        private void btnCostAdd_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtItem.Text) || string.IsNullOrWhiteSpace(txtMetersNeed.Text))
+            {
+                MessageBox.Show("Please enter the Item and Meters");
+                return;
+            }
+
+            try
+            {
+                double m = Convert.ToDouble(txtMetersNeed.Text);
+                double p = Convert.ToDouble(txtPrice.Text);
+                double rowTotal = m * p;
+
+                dgvMaterialList.Rows.Add(txtItem.Text, m, p, rowTotal);
+
+                txtItem.Clear();
+                txtMetersNeed.Clear();
+                txtPrice.Clear();
+                txtItem.Focus();
+
+                UpdateGrandTotal();
+            }
+            catch { MessageBox.Show("Please enter valid number"); }
+        }
+
+        private void txtQuantity_TextChanged(object sender, EventArgs e)
+        {
+            UpdateGrandTotal();
+        }
+
+        private void txtLaborCost_TextChanged(object sender, EventArgs e)
+        {
+            UpdateGrandTotal();
+        }
+
+        private void btnCostClear_Click(object sender, EventArgs e)
+        {
+            txtItem.Clear();
+            txtMetersNeed.Clear();
+            txtPrice.Clear();
+
+            dgvMaterialList.Rows.Clear();
+
+            txtMaterialTotal.Clear();
+            txtLaborCost.Clear();
+            txtQuantity.Clear();
+            txtTotalLabor.Clear();
+
+            lblGrandTotalCost.Text = "₱ 0.00";
+
+            txtItem.Focus();
+        }
+
+
+    
     }
 }

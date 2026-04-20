@@ -43,6 +43,11 @@ namespace Dashboard
             MainDashboard = new TabPage();
             materialCard7 = new ReaLTaiizor.Controls.MaterialCard();
             dgvData = new ReaLTaiizor.Controls.PoisonDataGridView();
+            Column5 = new DataGridViewTextBoxColumn();
+            Column6 = new DataGridViewTextBoxColumn();
+            Column7 = new DataGridViewTextBoxColumn();
+            Column8 = new DataGridViewTextBoxColumn();
+            Column9 = new DataGridViewTextBoxColumn();
             materialLabel9 = new ReaLTaiizor.Controls.MaterialLabel();
             panel1 = new Panel();
             tableLayoutPanel1 = new TableLayoutPanel();
@@ -147,11 +152,11 @@ namespace Dashboard
             btnNotificationBodyMeasurement = new ReaLTaiizor.Controls.MaterialButton();
             CostConsumption = new TabPage();
             materialCard10 = new ReaLTaiizor.Controls.MaterialCard();
-            dtvMaterialList = new ReaLTaiizor.Controls.PoisonDataGridView();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
+            dgvMaterialList = new ReaLTaiizor.Controls.PoisonDataGridView();
+            colItem = new DataGridViewTextBoxColumn();
+            ColMeters = new DataGridViewTextBoxColumn();
+            colPricePerMeter = new DataGridViewTextBoxColumn();
+            colTotal = new DataGridViewTextBoxColumn();
             groupBox1 = new ReaLTaiizor.Controls.GroupBox();
             lblGrandTotalCost = new ReaLTaiizor.Controls.PoisonLabel();
             materialLabel64 = new ReaLTaiizor.Controls.MaterialLabel();
@@ -215,7 +220,7 @@ namespace Dashboard
             materialCard4.SuspendLayout();
             CostConsumption.SuspendLayout();
             materialCard10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dtvMaterialList).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvMaterialList).BeginInit();
             groupBox1.SuspendLayout();
             materialCard5.SuspendLayout();
             Revenue.SuspendLayout();
@@ -296,20 +301,20 @@ namespace Dashboard
             // dgvData
             // 
             dgvData.AllowUserToResizeRows = false;
-            dgvData.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             dgvData.BackgroundColor = Color.FromArgb(255, 255, 255);
             dgvData.BorderStyle = BorderStyle.None;
             dgvData.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dgvData.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(0, 174, 219);
+            dataGridViewCellStyle1.BackColor = Color.WhiteSmoke;
             dataGridViewCellStyle1.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
-            dataGridViewCellStyle1.ForeColor = Color.FromArgb(255, 255, 255);
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(0, 198, 247);
-            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(17, 17, 17);
+            dataGridViewCellStyle1.ForeColor = Color.FromArgb(141, 182, 0);
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(230, 240, 210);
+            dataGridViewCellStyle1.SelectionForeColor = Color.Black;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dgvData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvData.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvData.Columns.AddRange(new DataGridViewColumn[] { Column5, Column6, Column7, Column8, Column9 });
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(255, 255, 255);
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
@@ -318,12 +323,13 @@ namespace Dashboard
             dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(17, 17, 17);
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dgvData.DefaultCellStyle = dataGridViewCellStyle2;
+            dgvData.Dock = DockStyle.Bottom;
             dgvData.EnableHeadersVisualStyles = false;
             dgvData.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
             dgvData.GridColor = Color.FromArgb(255, 255, 255);
-            dgvData.Location = new Point(17, 234);
+            dgvData.Location = new Point(14, 237);
             dgvData.Name = "dgvData";
-            dgvData.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgvData.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.FromArgb(0, 174, 219);
             dataGridViewCellStyle3.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
@@ -332,10 +338,41 @@ namespace Dashboard
             dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(17, 17, 17);
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
             dgvData.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dgvData.RowHeadersVisible = false;
             dgvData.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dgvData.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvData.Size = new Size(838, 196);
+            dgvData.Size = new Size(837, 196);
             dgvData.TabIndex = 7;
+            // 
+            // Column5
+            // 
+            Column5.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column5.HeaderText = "Costumer Name";
+            Column5.Name = "Column5";
+            // 
+            // Column6
+            // 
+            Column6.HeaderText = "Order Value";
+            Column6.Name = "Column6";
+            Column6.Width = 120;
+            // 
+            // Column7
+            // 
+            Column7.HeaderText = "Order Date";
+            Column7.Name = "Column7";
+            Column7.Width = 120;
+            // 
+            // Column8
+            // 
+            Column8.HeaderText = "Status";
+            Column8.Name = "Column8";
+            Column8.Width = 130;
+            // 
+            // Column9
+            // 
+            Column9.HeaderText = "Selection";
+            Column9.Name = "Column9";
+            Column9.Width = 60;
             // 
             // materialLabel9
             // 
@@ -2165,7 +2202,7 @@ namespace Dashboard
             // 
             materialCard10.BackColor = Color.FromArgb(255, 255, 255);
             materialCard10.BorderStyle = BorderStyle.FixedSingle;
-            materialCard10.Controls.Add(dtvMaterialList);
+            materialCard10.Controls.Add(dgvMaterialList);
             materialCard10.Controls.Add(groupBox1);
             materialCard10.Controls.Add(materialLabel59);
             materialCard10.Controls.Add(btnCostClear);
@@ -2188,13 +2225,14 @@ namespace Dashboard
             materialCard10.Size = new Size(873, 455);
             materialCard10.TabIndex = 4;
             // 
-            // dtvMaterialList
+            // dgvMaterialList
             // 
-            dtvMaterialList.AllowUserToResizeRows = false;
-            dtvMaterialList.BackgroundColor = Color.FromArgb(255, 255, 255);
-            dtvMaterialList.BorderStyle = BorderStyle.None;
-            dtvMaterialList.CellBorderStyle = DataGridViewCellBorderStyle.None;
-            dtvMaterialList.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgvMaterialList.AllowUserToOrderColumns = true;
+            dgvMaterialList.AllowUserToResizeRows = false;
+            dgvMaterialList.BackgroundColor = Color.FromArgb(255, 255, 255);
+            dgvMaterialList.BorderStyle = BorderStyle.None;
+            dgvMaterialList.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            dgvMaterialList.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = Color.FromArgb(141, 182, 0);
             dataGridViewCellStyle4.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
@@ -2202,9 +2240,9 @@ namespace Dashboard
             dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(141, 182, 0);
             dataGridViewCellStyle4.SelectionForeColor = Color.FromArgb(17, 17, 17);
             dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            dtvMaterialList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            dtvMaterialList.ColumnHeadersHeight = 40;
-            dtvMaterialList.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4 });
+            dgvMaterialList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dgvMaterialList.ColumnHeadersHeight = 40;
+            dgvMaterialList.Columns.AddRange(new DataGridViewColumn[] { colItem, ColMeters, colPricePerMeter, colTotal });
             dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = Color.White;
             dataGridViewCellStyle5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -2212,13 +2250,13 @@ namespace Dashboard
             dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(141, 182, 0);
             dataGridViewCellStyle5.SelectionForeColor = Color.FromArgb(17, 17, 17);
             dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
-            dtvMaterialList.DefaultCellStyle = dataGridViewCellStyle5;
-            dtvMaterialList.EnableHeadersVisualStyles = false;
-            dtvMaterialList.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
-            dtvMaterialList.GridColor = Color.FromArgb(141, 182, 0);
-            dtvMaterialList.Location = new Point(17, 157);
-            dtvMaterialList.Name = "dtvMaterialList";
-            dtvMaterialList.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgvMaterialList.DefaultCellStyle = dataGridViewCellStyle5;
+            dgvMaterialList.EnableHeadersVisualStyles = false;
+            dgvMaterialList.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
+            dgvMaterialList.GridColor = Color.FromArgb(141, 182, 0);
+            dgvMaterialList.Location = new Point(17, 157);
+            dgvMaterialList.Name = "dgvMaterialList";
+            dgvMaterialList.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = Color.FromArgb(0, 174, 219);
             dataGridViewCellStyle6.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
@@ -2226,34 +2264,34 @@ namespace Dashboard
             dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(0, 198, 247);
             dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(17, 17, 17);
             dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
-            dtvMaterialList.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            dtvMaterialList.RowHeadersVisible = false;
-            dtvMaterialList.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dtvMaterialList.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dtvMaterialList.Size = new Size(484, 284);
-            dtvMaterialList.TabIndex = 161;
+            dgvMaterialList.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dgvMaterialList.RowHeadersVisible = false;
+            dgvMaterialList.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dgvMaterialList.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvMaterialList.Size = new Size(484, 284);
+            dgvMaterialList.TabIndex = 161;
             // 
-            // Column1
+            // colItem
             // 
-            Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column1.HeaderText = "Items";
-            Column1.Name = "Column1";
+            colItem.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            colItem.HeaderText = "Item";
+            colItem.Name = "colItem";
             // 
-            // Column2
+            // ColMeters
             // 
-            Column2.HeaderText = "Meters";
-            Column2.Name = "Column2";
-            Column2.Width = 80;
+            ColMeters.HeaderText = "Meters";
+            ColMeters.Name = "ColMeters";
+            ColMeters.Width = 80;
             // 
-            // Column3
+            // colPricePerMeter
             // 
-            Column3.HeaderText = "Price per meter";
-            Column3.Name = "Column3";
+            colPricePerMeter.HeaderText = "Price per meter";
+            colPricePerMeter.Name = "colPricePerMeter";
             // 
-            // Column4
+            // colTotal
             // 
-            Column4.HeaderText = "Total";
-            Column4.Name = "Column4";
+            colTotal.HeaderText = "Total";
+            colTotal.Name = "colTotal";
             // 
             // groupBox1
             // 
@@ -2291,10 +2329,9 @@ namespace Dashboard
             lblGrandTotalCost.FontSize = ReaLTaiizor.Extension.Poison.PoisonLabelSize.Tall;
             lblGrandTotalCost.Location = new Point(117, 247);
             lblGrandTotalCost.Name = "lblGrandTotalCost";
-            lblGrandTotalCost.Size = new Size(45, 25);
+            lblGrandTotalCost.Size = new Size(0, 0);
             lblGrandTotalCost.Style = ReaLTaiizor.Enum.Poison.ColorStyle.Green;
             lblGrandTotalCost.TabIndex = 170;
-            lblGrandTotalCost.Text = "Cost";
             lblGrandTotalCost.Theme = ReaLTaiizor.Enum.Poison.ThemeStyle.Light;
             // 
             // materialLabel64
@@ -2328,6 +2365,7 @@ namespace Dashboard
             txtTotalLabor.MaxLength = 32767;
             txtTotalLabor.Name = "txtTotalLabor";
             txtTotalLabor.PasswordChar = '\0';
+            txtTotalLabor.ReadOnly = true;
             txtTotalLabor.ScrollBars = ScrollBars.None;
             txtTotalLabor.SelectedText = "";
             txtTotalLabor.SelectionLength = 0;
@@ -2380,6 +2418,7 @@ namespace Dashboard
             txtQuantity.UseSelectable = true;
             txtQuantity.WaterMarkColor = Color.FromArgb(109, 109, 109);
             txtQuantity.WaterMarkFont = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Pixel);
+            txtQuantity.TextChanged += txtQuantity_TextChanged;
             // 
             // materialLabel62
             // 
@@ -2422,6 +2461,7 @@ namespace Dashboard
             txtLaborCost.UseSelectable = true;
             txtLaborCost.WaterMarkColor = Color.FromArgb(109, 109, 109);
             txtLaborCost.WaterMarkFont = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Pixel);
+            txtLaborCost.TextChanged += txtLaborCost_TextChanged;
             // 
             // materialLabel61
             // 
@@ -2454,6 +2494,7 @@ namespace Dashboard
             txtMaterialTotal.MaxLength = 32767;
             txtMaterialTotal.Name = "txtMaterialTotal";
             txtMaterialTotal.PasswordChar = '\0';
+            txtMaterialTotal.ReadOnly = true;
             txtMaterialTotal.ScrollBars = ScrollBars.None;
             txtMaterialTotal.SelectedText = "";
             txtMaterialTotal.SelectionLength = 0;
@@ -2510,6 +2551,7 @@ namespace Dashboard
             btnCostClear.Text = "Clear";
             btnCostClear.TextColor = Color.FromArgb(141, 182, 0);
             btnCostClear.WarningColor = Color.FromArgb(230, 162, 60);
+            btnCostClear.Click += btnCostClear_Click;
             // 
             // btnCostAdd
             // 
@@ -2530,6 +2572,7 @@ namespace Dashboard
             btnCostAdd.Text = "Add";
             btnCostAdd.TextColor = Color.White;
             btnCostAdd.WarningColor = Color.FromArgb(230, 162, 60);
+            btnCostAdd.Click += btnCostAdd_Click;
             // 
             // txtPrice
             // 
@@ -2986,7 +3029,7 @@ namespace Dashboard
             CostConsumption.ResumeLayout(false);
             materialCard10.ResumeLayout(false);
             materialCard10.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dtvMaterialList).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvMaterialList).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             materialCard5.ResumeLayout(false);
@@ -3136,11 +3179,7 @@ namespace Dashboard
         private ReaLTaiizor.Controls.HopeButton btnCostClear;
         private ReaLTaiizor.Controls.MaterialLabel materialLabel59;
         private ReaLTaiizor.Controls.GroupBox groupBox1;
-        private ReaLTaiizor.Controls.PoisonDataGridView dtvMaterialList;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column4;
+        private ReaLTaiizor.Controls.PoisonDataGridView dgvMaterialList;
         private ReaLTaiizor.Controls.MaterialLabel materialLabel60;
         private ReaLTaiizor.Controls.MaterialLabel materialLabel64;
         private ReaLTaiizor.Controls.PoisonTextBox txtTotalLabor;
@@ -3156,5 +3195,14 @@ namespace Dashboard
         private ReaLTaiizor.Controls.MaterialCard materialCard11;
         private ReaLTaiizor.Controls.MaterialLabel materialLabel65;
         private ReaLTaiizor.Controls.MaterialButton btnNotificationDesign;
+        private DataGridViewTextBoxColumn Column5;
+        private DataGridViewTextBoxColumn Column6;
+        private DataGridViewTextBoxColumn Column7;
+        private DataGridViewTextBoxColumn Column8;
+        private DataGridViewTextBoxColumn Column9;
+        private DataGridViewTextBoxColumn colItem;
+        private DataGridViewTextBoxColumn ColMeters;
+        private DataGridViewTextBoxColumn colPricePerMeter;
+        private DataGridViewTextBoxColumn colTotal;
     }
 }
