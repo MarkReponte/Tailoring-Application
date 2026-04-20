@@ -122,7 +122,7 @@ namespace Dashboard
 
         private void btnNotificationBodyMeasurement_Click(object sender, EventArgs e)
         {
-            NotificationPanel();    
+            NotificationPanel();
         }
 
         private void btnNotificationCostConsumption_Click(object sender, EventArgs e)
@@ -140,10 +140,6 @@ namespace Dashboard
             flwpnlOrderList.Focus();
         }
 
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
+       
     }
 }
