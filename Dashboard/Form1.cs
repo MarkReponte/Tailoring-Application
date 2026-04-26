@@ -160,7 +160,17 @@ namespace Dashboard
 
         private void flwpnlOrderList_MouseEnter(object sender, EventArgs e)
         {
-            flwpnlOrderList.Focus();
+            fplOrderList.Focus();
+        }
+
+        private void txtQuantity_TextChanged(object sender, EventArgs e)
+        {
+            UpdateGrandTotal();
+        }
+
+        private void txtLaborCost_TextChanged(object sender, EventArgs e)
+        {
+            UpdateGrandTotal();
         }
 
         private void btnCostAdd_Click(object sender, EventArgs e)
@@ -189,16 +199,6 @@ namespace Dashboard
             catch { MessageBox.Show("Please enter valid number"); }
         }
 
-        private void txtQuantity_TextChanged(object sender, EventArgs e)
-        {
-            UpdateGrandTotal();
-        }
-
-        private void txtLaborCost_TextChanged(object sender, EventArgs e)
-        {
-            UpdateGrandTotal();
-        }
-
         private void btnCostClear_Click(object sender, EventArgs e)
         {
             txtItem.Clear();
@@ -217,7 +217,80 @@ namespace Dashboard
             txtItem.Focus();
         }
 
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            if (hcbGender.SelectedItem == null)
+            {
+                MessageBox.Show("Select a Gender before submitting.",
+                                "Input Missing",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
 
-    
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtName.Text))
+            {
+                MessageBox.Show("Enter the Customer's Name.", "Input Missing");
+                return;
+            }
+
+            if (pdtOrderDeadline.Value.Date < DateTime.Now)
+            {
+                DialogResult dialog = MessageBox.Show("The deadline cannot be a date in the past!",
+                                                       "Invalid Date",
+                                                       MessageBoxButtons.OK,
+                                                       MessageBoxIcon.Error);
+                return;
+            }
+
+            if (pdtOrderDeadline.Value.Date == DateTime.Today)
+            {
+                DialogResult dialog = MessageBox.Show("The deadline is set to Today. Is this correct?",
+                                                      "Confirm Date",
+                                                      MessageBoxButtons.YesNo);
+                if (dialog == DialogResult.No) return;
+            }
+
+            OrderCard newCard = new OrderCard();
+
+            newCard.CustomerName = txtName.Text;
+            newCard.OrderDate = DateTime.Now.ToString("MM/dd/yy");
+            newCard.Deadline = pdtOrderDeadline.Value.ToString("MM/dd/yy");
+            newCard.Gender = hcbGender.SelectedItem.ToString();
+
+            newCard.AllMeasurements = $"━━━━━━━━━━━━━━━━━━━━\n" +
+                                      $"Torso\n" +
+                                      $"━━━━━━━━━━━━━━━━━━━━\n\n" +
+                                      $"Shoulder: {txtShoulder.Text} cm\n" +
+                                      $"Upper Bust: {txtUpperBust.Text} cm\n" +
+                                      $"Bust: {txtBust.Text} cm\n" +
+                                      $"Lower Bust: {txtLowerBust.Text} cm\n" +
+                                      $"Front Figure: {txtFrontFigure.Text} cm\n" +
+                                      $"Back Figure: {txtBackFigure.Text} cm\n" +
+                                      $"Front Chest: {txtFrontChest.Text} cm\n" +
+                                      $"Back Chest: {txtBackChest.Text} cm\n" +
+                                      $"Upper Hips: {txtUpperHips.Text} cm\n" +
+                                      $"Waistline: {txtWaistline.Text} cm\n" +
+                                      $"Neck Dip: {txtNeckDip.Text} cm\n" +
+                                      $"Arm Hole: {txtArmHole.Text} cm\n" +
+                                      $"Arm Circumference: {txtArmCircumference.Text} cm\n" +
+                                      $"Sleeve Length: {txtSleeveLength.Text} cm\n\n" +
+                                      $"━━━━━━━━━━━━━━━━━━━━\n" +
+                                      $"Pants\n" +
+                                      $"━━━━━━━━━━━━━━━━━━━━\n\n" +
+                                      $"Lower Hips: {txtLowerHips.Text} cm\n" +
+                                      $"Crotch: {txtCrotch.Text} cm\n" +
+                                      $"Thigh: {txtThigh.Text} cm\n" +
+                                      $"Calf Circumference: {txtCalfCircumference.Text} cm\n" +
+                                      $"Length: {txtLength.Text} cm\n";
+
+           
+
+          
+            fplOrderList.Controls.Add(newCard);
+
+            MessageBox.Show("Order Created!");
+        }
     }
 }
