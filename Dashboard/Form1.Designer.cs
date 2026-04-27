@@ -181,12 +181,10 @@ namespace Dashboard
             materialCard5 = new ReaLTaiizor.Controls.MaterialCard();
             materialLabel5 = new ReaLTaiizor.Controls.MaterialLabel();
             btnNotificationCostConsumption = new ReaLTaiizor.Controls.MaterialButton();
-            Revenue = new TabPage();
-            materialCard6 = new ReaLTaiizor.Controls.MaterialCard();
-            materialLabel6 = new ReaLTaiizor.Controls.MaterialLabel();
-            btnNotificationRevenue = new ReaLTaiizor.Controls.MaterialButton();
             Design = new TabPage();
-            flowLayoutPanel1 = new FlowLayoutPanel();
+            panel3 = new Panel();
+            btnAddDesign = new ReaLTaiizor.Controls.HopeButton();
+            flpDesignGallery = new FlowLayoutPanel();
             materialCard11 = new ReaLTaiizor.Controls.MaterialCard();
             materialLabel65 = new ReaLTaiizor.Controls.MaterialLabel();
             btnNotificationDesign = new ReaLTaiizor.Controls.MaterialButton();
@@ -223,9 +221,8 @@ namespace Dashboard
             ((System.ComponentModel.ISupportInitialize)dgvMaterialList).BeginInit();
             groupBox1.SuspendLayout();
             materialCard5.SuspendLayout();
-            Revenue.SuspendLayout();
-            materialCard6.SuspendLayout();
             Design.SuspendLayout();
+            panel3.SuspendLayout();
             materialCard11.SuspendLayout();
             pnlNotification.SuspendLayout();
             materialCard3.SuspendLayout();
@@ -250,7 +247,6 @@ namespace Dashboard
             mtcSelectionControl.Controls.Add(Order);
             mtcSelectionControl.Controls.Add(BodyMeasurement);
             mtcSelectionControl.Controls.Add(CostConsumption);
-            mtcSelectionControl.Controls.Add(Revenue);
             mtcSelectionControl.Controls.Add(Design);
             mtcSelectionControl.Depth = 0;
             mtcSelectionControl.Dock = DockStyle.Fill;
@@ -2769,73 +2765,10 @@ namespace Dashboard
             btnNotificationCostConsumption.UseVisualStyleBackColor = true;
             btnNotificationCostConsumption.Click += btnNotificationCostConsumption_Click;
             // 
-            // Revenue
-            // 
-            Revenue.Controls.Add(materialCard6);
-            Revenue.ImageKey = "revenue.png";
-            Revenue.Location = new Point(4, 24);
-            Revenue.Name = "Revenue";
-            Revenue.Size = new Size(873, 505);
-            Revenue.TabIndex = 4;
-            Revenue.Text = "Revenue";
-            Revenue.UseVisualStyleBackColor = true;
-            // 
-            // materialCard6
-            // 
-            materialCard6.BackColor = Color.FromArgb(255, 255, 255);
-            materialCard6.Controls.Add(materialLabel6);
-            materialCard6.Controls.Add(btnNotificationRevenue);
-            materialCard6.Depth = 0;
-            materialCard6.Dock = DockStyle.Top;
-            materialCard6.ForeColor = Color.FromArgb(222, 0, 0, 0);
-            materialCard6.Location = new Point(0, 0);
-            materialCard6.Margin = new Padding(14);
-            materialCard6.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            materialCard6.Name = "materialCard6";
-            materialCard6.Padding = new Padding(14);
-            materialCard6.Size = new Size(873, 50);
-            materialCard6.TabIndex = 3;
-            // 
-            // materialLabel6
-            // 
-            materialLabel6.AutoSize = true;
-            materialLabel6.Depth = 0;
-            materialLabel6.Dock = DockStyle.Left;
-            materialLabel6.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
-            materialLabel6.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.H6;
-            materialLabel6.Location = new Point(14, 14);
-            materialLabel6.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            materialLabel6.Name = "materialLabel6";
-            materialLabel6.Size = new Size(78, 24);
-            materialLabel6.TabIndex = 2;
-            materialLabel6.Text = "Revenue";
-            // 
-            // btnNotificationRevenue
-            // 
-            btnNotificationRevenue.AutoSize = false;
-            btnNotificationRevenue.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            btnNotificationRevenue.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
-            btnNotificationRevenue.Depth = 0;
-            btnNotificationRevenue.Dock = DockStyle.Right;
-            btnNotificationRevenue.HighEmphasis = true;
-            btnNotificationRevenue.Icon = MyResources.bell;
-            btnNotificationRevenue.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Default;
-            btnNotificationRevenue.ImageKey = "(none)";
-            btnNotificationRevenue.Location = new Point(819, 14);
-            btnNotificationRevenue.Margin = new Padding(4, 6, 4, 6);
-            btnNotificationRevenue.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            btnNotificationRevenue.Name = "btnNotificationRevenue";
-            btnNotificationRevenue.NoAccentTextColor = Color.Empty;
-            btnNotificationRevenue.Size = new Size(40, 22);
-            btnNotificationRevenue.TabIndex = 2;
-            btnNotificationRevenue.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Text;
-            btnNotificationRevenue.UseAccentColor = false;
-            btnNotificationRevenue.UseVisualStyleBackColor = true;
-            btnNotificationRevenue.Click += btnNotificationRevenue_Click;
-            // 
             // Design
             // 
-            Design.Controls.Add(flowLayoutPanel1);
+            Design.Controls.Add(panel3);
+            Design.Controls.Add(flpDesignGallery);
             Design.Controls.Add(materialCard11);
             Design.ImageKey = "design.png";
             Design.Location = new Point(4, 24);
@@ -2845,13 +2778,44 @@ namespace Dashboard
             Design.Text = "Design";
             Design.UseVisualStyleBackColor = true;
             // 
-            // flowLayoutPanel1
+            // panel3
             // 
-            flowLayoutPanel1.Dock = DockStyle.Fill;
-            flowLayoutPanel1.Location = new Point(0, 50);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(873, 455);
-            flowLayoutPanel1.TabIndex = 5;
+            panel3.Controls.Add(btnAddDesign);
+            panel3.Dock = DockStyle.Bottom;
+            panel3.Location = new Point(0, 445);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(873, 60);
+            panel3.TabIndex = 6;
+            // 
+            // btnAddDesign
+            // 
+            btnAddDesign.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnAddDesign.BorderColor = Color.FromArgb(220, 223, 230);
+            btnAddDesign.ButtonType = ReaLTaiizor.Util.HopeButtonType.Primary;
+            btnAddDesign.DangerColor = Color.FromArgb(245, 108, 108);
+            btnAddDesign.DefaultColor = Color.FromArgb(255, 255, 255);
+            btnAddDesign.Font = new Font("Segoe UI", 12F);
+            btnAddDesign.HoverTextColor = Color.FromArgb(120, 160, 0);
+            btnAddDesign.InfoColor = Color.FromArgb(144, 147, 153);
+            btnAddDesign.Location = new Point(737, 15);
+            btnAddDesign.Name = "btnAddDesign";
+            btnAddDesign.PrimaryColor = Color.FromArgb(141, 182, 0);
+            btnAddDesign.Size = new Size(120, 35);
+            btnAddDesign.SuccessColor = Color.FromArgb(103, 194, 58);
+            btnAddDesign.TabIndex = 159;
+            btnAddDesign.Text = "+ Add Design";
+            btnAddDesign.TextColor = Color.White;
+            btnAddDesign.WarningColor = Color.FromArgb(230, 162, 60);
+            btnAddDesign.Click += btnAddDesign_Click;
+            // 
+            // flpDesignGallery
+            // 
+            flpDesignGallery.AutoScroll = true;
+            flpDesignGallery.Dock = DockStyle.Fill;
+            flpDesignGallery.Location = new Point(0, 50);
+            flpDesignGallery.Name = "flpDesignGallery";
+            flpDesignGallery.Size = new Size(873, 455);
+            flpDesignGallery.TabIndex = 5;
             // 
             // materialCard11
             // 
@@ -2879,9 +2843,9 @@ namespace Dashboard
             materialLabel65.Location = new Point(14, 14);
             materialLabel65.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialLabel65.Name = "materialLabel65";
-            materialLabel65.Size = new Size(62, 24);
+            materialLabel65.Size = new Size(130, 24);
             materialLabel65.TabIndex = 2;
-            materialLabel65.Text = "Design";
+            materialLabel65.Text = "Design Gallery";
             // 
             // btnNotificationDesign
             // 
@@ -3035,10 +2999,8 @@ namespace Dashboard
             groupBox1.PerformLayout();
             materialCard5.ResumeLayout(false);
             materialCard5.PerformLayout();
-            Revenue.ResumeLayout(false);
-            materialCard6.ResumeLayout(false);
-            materialCard6.PerformLayout();
             Design.ResumeLayout(false);
+            panel3.ResumeLayout(false);
             materialCard11.ResumeLayout(false);
             materialCard11.PerformLayout();
             pnlNotification.ResumeLayout(false);
@@ -3054,7 +3016,6 @@ namespace Dashboard
         private TabPage Order;
         private TabPage BodyMeasurement;
         private TabPage CostConsumption;
-        private TabPage Revenue;
         private ReaLTaiizor.Controls.MaterialCard materialCard1;
         private ReaLTaiizor.Controls.MaterialButton btnNotification;
         private ReaLTaiizor.Controls.MaterialLabel materialLabel1;
@@ -3068,9 +3029,6 @@ namespace Dashboard
         private ReaLTaiizor.Controls.MaterialCard materialCard5;
         private ReaLTaiizor.Controls.MaterialLabel materialLabel5;
         private ReaLTaiizor.Controls.MaterialButton btnNotificationCostConsumption;
-        private ReaLTaiizor.Controls.MaterialCard materialCard6;
-        private ReaLTaiizor.Controls.MaterialLabel materialLabel6;
-        private ReaLTaiizor.Controls.MaterialButton btnNotificationRevenue;
         private ReaLTaiizor.Controls.MaterialCard pnlNotification;
         private ReaLTaiizor.Controls.MaterialCard materialCard3;
         private ReaLTaiizor.Controls.MaterialLabel materialLabel2;
@@ -3192,7 +3150,7 @@ namespace Dashboard
         private ReaLTaiizor.Controls.PoisonTextBox txtMaterialTotal;
         private ReaLTaiizor.Controls.PoisonLabel lblGrandTotalCost;
         private TabPage Design;
-        private FlowLayoutPanel flowLayoutPanel1;
+        private FlowLayoutPanel flpDesignGallery;
         private ReaLTaiizor.Controls.MaterialCard materialCard11;
         private ReaLTaiizor.Controls.MaterialLabel materialLabel65;
         private ReaLTaiizor.Controls.MaterialButton btnNotificationDesign;
@@ -3205,5 +3163,7 @@ namespace Dashboard
         private DataGridViewTextBoxColumn ColMeters;
         private DataGridViewTextBoxColumn colPricePerMeter;
         private DataGridViewTextBoxColumn colTotal;
+        private Panel panel3;
+        private ReaLTaiizor.Controls.HopeButton btnAddDesign;
     }
 }

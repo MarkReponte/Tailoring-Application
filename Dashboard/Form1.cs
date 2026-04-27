@@ -6,6 +6,8 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 using MyResources = Dashboard.Properties.Resources;
+using System.Drawing.Drawing2D;
+using ReaLTaiizor.Controls;
 
 
 
@@ -31,6 +33,17 @@ namespace Dashboard
             );
 
 
+        }
+
+        private void RoundedItem(Control ctrl, int radius)
+        {
+            GraphicsPath path = new GraphicsPath();
+            path.AddArc(0, 0, radius, radius, 180, 90);
+            path.AddArc(ctrl.Width - radius, 0, radius, radius, 270, 90);
+            path.AddArc(ctrl.Width - radius, ctrl.Height - radius, radius, radius, 0, 90);
+            path.AddArc(0, ctrl.Height - radius, radius, radius, 90, 90);
+            path.CloseAllFigures();
+            ctrl.Region = new Region(path);
         }
 
         private void UpdateGrandTotal()
@@ -285,12 +298,93 @@ namespace Dashboard
                                       $"Calf Circumference: {txtCalfCircumference.Text} cm\n" +
                                       $"Length: {txtLength.Text} cm\n";
 
-           
 
-          
+
+
             fplOrderList.Controls.Add(newCard);
 
             MessageBox.Show("Order Created!");
+        }
+
+        private void btnAddDesign_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog ofd = new OpenFileDialog())
+            {
+                ofd.Filter = "Image Files|*.jpg;*.jpeg;*.png";
+                if(ofd.ShowDialog() == DialogResult.OK)
+                {
+                    MaterialCard pnlBorder = new MaterialCard();
+                    pnlBorder.Size = new Size(160, 160);
+                    pnlBorder.BackColor = Color.FromArgb(142, 188, 30);
+                    pnlBorder.Padding = new Padding(5);
+                    pnlBorder.Margin = new Padding(10);
+
+                    pnlBorder.HandleCreated += (s, e) => RoundedItem(pnlBorder, 30);
+
+                    PictureBox pb = new PictureBox();
+                    byte[] imageBytes = File.ReadAllBytes(ofd.FileName);
+                    using (MemoryStream ms = new MemoryStream(imageBytes))
+                    {
+                        pb.Image = Image.FromStream(ms);
+                    }
+                    pb.SizeMode = PictureBoxSizeMode.Zoom;
+                    pb.Dock = DockStyle.Fill;
+                    pb.BackColor = Color.White;
+                    pb.Margin = new Padding(10);
+                    
+                    if(File.Exists(ofd.FileName))
+                    {
+                        using (var stream = new MemoryStream(File.ReadAllBytes(ofd.FileName)))
+                        {
+                            pb.Image = Image.FromStream(stream);
+                        }
+                    }
+
+                  
+
+                    HopeButton btnRemove = new HopeButton();
+                    btnRemove.Text = "✕";
+                    btnRemove.Size = new Size(30, 30);
+                    btnRemove.ButtonType = HopeButtonType.Primary;
+                    btnRemove.Location = new Point(pnlBorder.Width - 35, 5);
+                    btnRemove.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+                    btnRemove.PrimaryColor = Color.FromArgb(255, 80, 80);
+                    btnRemove.ForeColor = Color.White;
+
+                    btnRemove.HandleCreated += (s, e) => RoundedItem(btnRemove, 10);
+
+                    flpDesignGallery.Controls.Add(pb);
+
+                    pb.Click += (s, ev) =>
+                    {
+                        Form zoomForm = new Form();
+                        zoomForm.Size = new Size(800, 600);
+                        zoomForm.StartPosition = FormStartPosition.CenterScreen;
+                        PictureBox zoomPb = new PictureBox 
+                        {
+                            Image = pb.Image,
+                            Dock = DockStyle.Fill,
+                            SizeMode = PictureBoxSizeMode.Zoom
+                        };
+                        zoomForm.Controls.Add(zoomPb);
+                        zoomForm.ShowDialog();
+                    };
+
+                    btnRemove.Click += (s, ev) =>
+                    {
+                        flpDesignGallery.Controls.Remove(pnlBorder);
+                        pnlBorder.Dispose();
+                    };
+
+                    pnlBorder.Controls.Add(btnRemove);
+                    pnlBorder.Controls.Add(pb);
+                    btnRemove.BringToFront();
+
+                    flpDesignGallery.Controls.Add(pnlBorder);
+
+                    MessageBox.Show("Image has been added!");
+                }
+            }
         }
     }
 }
