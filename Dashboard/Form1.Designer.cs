@@ -550,7 +550,7 @@ namespace Dashboard
             // pictureBox1
             // 
             pictureBox1.Image = MyResources.dashboard;
-            pictureBox1.Location = new Point(14, 12);
+            pictureBox1.Location = new Point(5, 3);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(34, 35);
             pictureBox1.TabIndex = 3;
@@ -2804,6 +2804,7 @@ namespace Dashboard
             // 
             // panel3
             // 
+            panel3.BackColor = Color.White;
             panel3.Controls.Add(btnAddDesign);
             panel3.Dock = DockStyle.Bottom;
             panel3.Location = new Point(0, 448);
@@ -2835,6 +2836,7 @@ namespace Dashboard
             // flpDesignGallery
             // 
             flpDesignGallery.AutoScroll = true;
+            flpDesignGallery.BackColor = Color.White;
             flpDesignGallery.Dock = DockStyle.Fill;
             flpDesignGallery.Location = new Point(0, 50);
             flpDesignGallery.Name = "flpDesignGallery";
