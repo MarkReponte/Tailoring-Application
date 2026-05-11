@@ -18,7 +18,7 @@ namespace Dashboard
 
         private void OrderCard_Load(object sender, EventArgs e)
         {
-            RoundControl(lblStatusBadge, 15);
+            RoundControl(lblStatusBadge, 20);
         }
 
         private void OrderCard_Clicked(object sender, EventArgs e)
@@ -38,6 +38,8 @@ namespace Dashboard
             control.Region = new Region(path);
         }
 
+
+
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public string CustomerName
         {
@@ -55,7 +57,7 @@ namespace Dashboard
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public string Deadline
         {
-            get => lblDeadlineDate.Text; 
+            get => lblDeadlineDate.Text;
             set => lblDeadlineDate.Text = value;
         }
 
@@ -68,6 +70,31 @@ namespace Dashboard
 
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public string AllMeasurements { get; set; }
+
+
+
+        private void lblStatusBadge_Click(object sender, EventArgs e)
+        {
+            if (lblStatusBadge.Text == "In Progress")
+            {
+                lblStatusBadge.Text = "Completed";
+                lblStatusBadge.BackColor = Color.Gray;
+
+                Form1 main = (Form1)Application.OpenForms["Form1"];
+
+                if(main != null)
+                {
+                    if(this.Parent != null)
+                    {
+                        this.Parent.Controls.Remove(this);
+                    }
+
+                    main.GlobalHistoryList.Add(this);
+
+                    MessageBox.Show("Order marked as completed and added to history.", "Status Updated");
+                }
+            }
+        }
     }
 }
     
