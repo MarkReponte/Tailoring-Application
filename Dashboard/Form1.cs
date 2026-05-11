@@ -8,17 +8,22 @@ using System.Windows.Forms;
 using MyResources = Dashboard.Properties.Resources;
 using System.Drawing.Drawing2D;
 using ReaLTaiizor.Controls;
+using System.Security.Cryptography.X509Certificates;
+using System.Data;
 
 
 
 namespace Dashboard
 {
-    public partial class dashboardPanel : MaterialForm
+    public partial class Form1 : MaterialForm
     {
+        public List<OrderCard> GlobalHistoryList = new List<OrderCard>();
 
-        public dashboardPanel()
+        public Form1()
         {
             InitializeComponent();
+
+
 
             var materialSkinManager = ReaLTaiizor.Manager.MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
@@ -31,9 +36,9 @@ namespace Dashboard
                accent: System.Drawing.Color.FromArgb(255, 204, 0),
                textShade: ReaLTaiizor.Util.MaterialTextShade.WHITE
             );
-
-
         }
+
+
 
         private void RoundedItem(Control ctrl, int radius)
         {
@@ -173,7 +178,7 @@ namespace Dashboard
 
         private void flwpnlOrderList_MouseEnter(object sender, EventArgs e)
         {
-            fplOrderList.Focus();
+            flpOrderList.Focus();
         }
 
         private void txtQuantity_TextChanged(object sender, EventArgs e)
@@ -301,7 +306,7 @@ namespace Dashboard
 
 
 
-            fplOrderList.Controls.Add(newCard);
+            flpOrderList.Controls.Add(newCard);
 
             MessageBox.Show("Order Created!");
         }
@@ -311,7 +316,7 @@ namespace Dashboard
             using (OpenFileDialog ofd = new OpenFileDialog())
             {
                 ofd.Filter = "Image Files|*.jpg;*.jpeg;*.png";
-                if(ofd.ShowDialog() == DialogResult.OK)
+                if (ofd.ShowDialog() == DialogResult.OK)
                 {
                     MaterialCard pnlBorder = new MaterialCard();
                     pnlBorder.Size = new Size(160, 160);
@@ -331,8 +336,8 @@ namespace Dashboard
                     pb.Dock = DockStyle.Fill;
                     pb.BackColor = Color.White;
                     pb.Margin = new Padding(10);
-                    
-                    if(File.Exists(ofd.FileName))
+
+                    if (File.Exists(ofd.FileName))
                     {
                         using (var stream = new MemoryStream(File.ReadAllBytes(ofd.FileName)))
                         {
@@ -340,7 +345,7 @@ namespace Dashboard
                         }
                     }
 
-                  
+
 
                     HopeButton btnRemove = new HopeButton();
                     btnRemove.Text = "✕";
@@ -360,7 +365,7 @@ namespace Dashboard
                         Form zoomForm = new Form();
                         zoomForm.Size = new Size(800, 600);
                         zoomForm.StartPosition = FormStartPosition.CenterScreen;
-                        PictureBox zoomPb = new PictureBox 
+                        PictureBox zoomPb = new PictureBox
                         {
                             Image = pb.Image,
                             Dock = DockStyle.Fill,
@@ -386,5 +391,24 @@ namespace Dashboard
                 }
             }
         }
+
+        private void btnOrderHistory_Click(object sender, EventArgs e)
+        {
+            OrderHistoryPopup orderHistoryPopup = new OrderHistoryPopup();
+
+            foreach (OrderCard card in GlobalHistoryList)
+            {
+                orderHistoryPopup.flpOrderHistory.Controls.Add(card);
+                card.Visible = true;
+            }
+
+            orderHistoryPopup.StartPosition = FormStartPosition.CenterScreen;
+            orderHistoryPopup.ShowDialog();
+
+
+            orderHistoryPopup.flpOrderHistory.Controls.Clear();
+        }
+
+      
     }
 }
