@@ -103,7 +103,6 @@
             lblStatusBadge.Size = new Size(113, 25);
             lblStatusBadge.TabIndex = 8;
             lblStatusBadge.Text = "In Progress";
-            lblStatusBadge.Click += lblStatusBadge_Click;
             // 
             // lblCustomerName
             // 
@@ -167,11 +166,11 @@
         private Panel panel1;
         private ReaLTaiizor.Controls.FoxLabel foxLabel1;
         private ReaLTaiizor.Controls.FoxLabel foxLabel2;
+        private ReaLTaiizor.Controls.SkyLabel lblStatusBadge;
         public ReaLTaiizor.Controls.SkyLabel lblCustomerName;
         public ReaLTaiizor.Controls.FoxLabel lblOrderDate;
         public ReaLTaiizor.Controls.FoxLabel lblDeadlineDate;
         private ReaLTaiizor.Controls.FoxLabel poison;
         public ReaLTaiizor.Controls.FoxLabel lblGender;
-        public ReaLTaiizor.Controls.SkyLabel lblStatusBadge;
     }
 }
