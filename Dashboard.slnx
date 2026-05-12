@@ -1,3 +1,5 @@
 <Solution>
+  <Project Path="AppDomain/AppDomain.csproj" Id="520d3a47-d366-4bba-b68d-f46f06418b5b" />
+  <Project Path="AppInfrastructure/AppInfrastructure.csproj" Id="c1be46d9-169a-4d8f-9ebc-bcd3e34f46cd" />
   <Project Path="Dashboard/Dashboard.csproj" />
 </Solution>
