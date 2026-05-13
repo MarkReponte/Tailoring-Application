@@ -126,6 +126,7 @@
             Controls.Add(materialCard1);
             Name = "OrderHistoryPopup";
             Padding = new Padding(0);
+            Load += OrderHistoryPopup_Load;
             materialCard1.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

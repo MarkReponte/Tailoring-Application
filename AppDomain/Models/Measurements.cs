@@ -9,6 +9,7 @@ namespace AppDomain.Models
         public string CustomerName { get; set; }
         public string Gender { get; set; }
         public DateTime OrderDeadline { get; set; }
+        public string Status { get; set; }
 
         //Torso Measurements
         public double Shoulder { get; set; }

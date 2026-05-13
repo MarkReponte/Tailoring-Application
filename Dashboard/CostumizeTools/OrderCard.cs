@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AppDomain.Models;
+using AppInfrastructure.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -6,7 +8,8 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Text;
 using System.Windows.Forms;
-
+using Microsoft.EntityFrameworkCore;
+    
 namespace Dashboard
 {
     public partial class OrderCard : UserControl
@@ -73,26 +76,40 @@ namespace Dashboard
 
 
 
-        private void lblStatusBadge_Click(object sender, EventArgs e)
+        private async void lblStatusBadge_Click(object sender, EventArgs e)
         {
             if (lblStatusBadge.Text == "In Progress")
             {
-                lblStatusBadge.Text = "Completed";
-                lblStatusBadge.BackColor = Color.Gray;
-
-                Form1 main = (Form1)Application.OpenForms["Form1"];
-
-                if(main != null)
+                try
                 {
-                    if(this.Parent != null)
+                    using (var db = new SewingDbContext())
                     {
-                        this.Parent.Controls.Remove(this);
+                        var record = await db.Measurements.FirstOrDefaultAsync(m => m.CustomerName == this.CustomerName);
+
+                        if (record != null)
+                        {
+                            record.Status = "Completed";
+                            int rowsAffected = await db.SaveChangesAsync();
+
+                            if (rowsAffected > 0)
+                            {
+                                MessageBox.Show("Saved to Database Successfully!");
+                            }
+                        }
                     }
-
-                    main.GlobalHistoryList.Add(this);
-
-                    MessageBox.Show("Order marked as completed and added to history.", "Status Updated");
                 }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Database failed to update: " + ex.Message);
+                    return;
+                }
+
+                if(this.Parent != null)
+                {
+                    this.Parent.Controls.Remove(this);
+                }
+
+                MessageBox.Show("Order marked as Completed. You can view it in the History window.");
             }
         }
     }

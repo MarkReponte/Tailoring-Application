@@ -1,16 +1,22 @@
-using ReaLTaiizor.Forms;
+using AppDomain.Models;
+using AppInfrastructure.Data;
+using Dashboard.Formatter;
+using Dashboard.Logics;
 using ReaLTaiizor.Colors;
+using ReaLTaiizor.Controls;
+using ReaLTaiizor.Forms;
 using ReaLTaiizor.Manager;
 using ReaLTaiizor.Util;
 using System;
+using System.Data;
+using System.Diagnostics.Metrics;
 using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.Security.Cryptography.X509Certificates;
+using System.Text;
 using System.Windows.Forms;
 using MyResources = Dashboard.Properties.Resources;
-using System.Drawing.Drawing2D;
-using ReaLTaiizor.Controls;
-using System.Security.Cryptography.X509Certificates;
-using System.Data;
-
+using Microsoft.EntityFrameworkCore;
 
 
 namespace Dashboard
@@ -22,7 +28,7 @@ namespace Dashboard
         public Form1()
         {
             InitializeComponent();
-
+            LoadOrdersFromDatabase();
 
 
             var materialSkinManager = ReaLTaiizor.Manager.MaterialSkinManager.Instance;
@@ -37,19 +43,122 @@ namespace Dashboard
                textShade: ReaLTaiizor.Util.MaterialTextShade.WHITE
             );
         }
-
-
-
-        private void RoundedItem(Control ctrl, int radius)
+        private async void Form1_Load(object sender, EventArgs e)
         {
-            GraphicsPath path = new GraphicsPath();
-            path.AddArc(0, 0, radius, radius, 180, 90);
-            path.AddArc(ctrl.Width - radius, 0, radius, radius, 270, 90);
-            path.AddArc(ctrl.Width - radius, ctrl.Height - radius, radius, radius, 0, 90);
-            path.AddArc(0, ctrl.Height - radius, radius, radius, 90, 90);
-            path.CloseAllFigures();
-            ctrl.Region = new Region(path);
+            await LoadActiveOrderAsync();
         }
+
+        private async Task LoadActiveOrderAsync()
+        {
+            flpOrderList.Controls.Clear();
+
+            using (var db = new SewingDbContext())
+            {
+                var activeOrders = await db.Measurements
+                                           .Where(m => m.Status != "Completed")
+                                           .ToListAsync();
+
+                foreach (var m in activeOrders)
+                {
+                    OrderCard card = new OrderCard
+                    {
+                        CustomerName = m.CustomerName,
+                        Gender = m.Gender,
+                        Deadline = m.OrderDeadline.ToString("MM/dd/yy"),
+                        OrderDate = DateTime.Now.ToString("MM/dd/yy"),
+                        AllMeasurements = MeasurementFormatter.ToDisplayString(m)
+                    };
+
+                    flpOrderList.Controls.Add(card);
+                }
+
+            }
+        }
+
+        private double GetValue(string text)
+        {
+            return double.TryParse(text, out double result) ? result : 0;
+        }
+
+        private void ClearForm()
+        {
+            txtName.Clear();
+            hcbGender.SelectedIndex = -1;
+            pdtOrderDeadline.Value = DateTime.Now;
+
+            foreach (Control c in mcMeasurement.Controls)
+            {
+                if (c is TextBox tb)
+                {
+                    tb.Clear();
+                }
+            }
+        }
+
+        private void LoadOrdersFromDatabase()
+        {
+            flpOrderList.Controls.Clear();
+
+            try
+            {
+                using (var db = new SewingDbContext())
+                {
+                    var savedOrders = db.Measurements.ToList();
+
+                    foreach (var measurements in savedOrders)
+                    {
+                        OrderCard card = new OrderCard
+                        {
+                            CustomerName = measurements.CustomerName,
+                            Gender = measurements.Gender,
+                            Deadline = measurements.OrderDeadline.ToString("MM/dd/yy"),
+                            OrderDate = DateTime.Now.ToString("MM/dd/yy"),
+
+                            AllMeasurements = MeasurementFormatter.ToDisplayString(measurements)
+                        };
+
+                        flpOrderList.Controls.Add(card);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Could not load orders: {ex.Message}");
+            }
+        }
+
+        private string GenerateMeasurementString()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine("━━━━━━━━━━━━━━━━━━━━");
+            sb.AppendLine("Torso Measurements:");
+            sb.AppendLine($"Shoulder: {txtShoulder.Text} cm");
+            sb.AppendLine($"Upper Bust: {txtUpperBust.Text} cm");
+            sb.AppendLine($"Bust: {txtBust.Text} cm");
+            sb.AppendLine($"Lower Bust: {txtLowerBust.Text} cm");
+            sb.AppendLine($"Front Figure: {txtFrontFigure.Text} cm");
+            sb.AppendLine($"Back Figure: {txtBackFigure.Text} cm");
+            sb.AppendLine($"Front Chest: {txtFrontChest.Text} cm");
+            sb.AppendLine($"Back Chest: {txtBackChest.Text} cm");
+            sb.AppendLine($"Upper Hips: {txtUpperHips.Text} cm");
+            sb.AppendLine($"Waistline: {txtWaistline.Text} cm");
+            sb.AppendLine($"Neck Dip: {txtNeckDip.Text} cm");
+            sb.AppendLine($"Arm Hole: {txtArmHole.Text} cm");
+            sb.AppendLine($"Arm Circumference: {txtArmCircumference.Text} cm");
+            sb.AppendLine($"Sleeve Length: {txtSleeveLength.Text} cm");
+
+            sb.AppendLine("━━━━━━━━━━━━━━━━━━━━");
+            sb.AppendLine("Pants Measurements:");
+            sb.AppendLine("━━━━━━━━━━━━━━━━━━━━");
+            sb.AppendLine($"Lower Hips: {txtLowerHips.Text} cm");
+            sb.AppendLine($"Crotch: {txtCrotch.Text} cm");
+            sb.AppendLine($"Thigh: {txtThigh.Text} cm");
+            sb.AppendLine($"Calf Circumference: {txtCalfCircumference.Text} cm");
+            sb.AppendLine($"Length: {txtLength.Text} cm");
+
+            return sb.ToString();
+        }
+
 
         private void UpdateGrandTotal()
         {
@@ -235,7 +344,7 @@ namespace Dashboard
             txtItem.Focus();
         }
 
-        private void btnSubmit_Click(object sender, EventArgs e)
+        private async void btnSubmit_Click(object sender, EventArgs e)
         {
             if (hcbGender.SelectedItem == null)
             {
@@ -270,45 +379,64 @@ namespace Dashboard
                 if (dialog == DialogResult.No) return;
             }
 
-            OrderCard newCard = new OrderCard();
+            try
+            {
+                using (var db = new SewingDbContext())
+                {
+                    var measurements = new Measurements
+                    {
+                        CustomerName = txtName.Text,
+                        Gender = hcbGender.SelectedItem.ToString(),
+                        OrderDeadline = pdtOrderDeadline.Value.Date,
+                        Status = "In Progress",
 
-            newCard.CustomerName = txtName.Text;
-            newCard.OrderDate = DateTime.Now.ToString("MM/dd/yy");
-            newCard.Deadline = pdtOrderDeadline.Value.ToString("MM/dd/yy");
-            newCard.Gender = hcbGender.SelectedItem.ToString();
+                        Shoulder = GetValue(txtShoulder.Text),
+                        UpperBust = GetValue(txtUpperBust.Text),
+                        Bust = GetValue(txtBust.Text),
+                        LowerBust = GetValue(txtLowerBust.Text),
+                        FrontFigure = GetValue(txtFrontFigure.Text),
+                        BackFigure = GetValue(txtBackFigure.Text),
+                        FrontChest = GetValue(txtFrontChest.Text),
+                        BackChest = GetValue(txtBackChest.Text),
+                        UpperHips = GetValue(txtUpperHips.Text),
+                        Waistline = GetValue(txtWaistline.Text),
+                        NeckDip = GetValue(txtNeckDip.Text),
+                        ArmHole = GetValue(txtArmHole.Text),
+                        ArmCircumference = GetValue(txtArmCircumference.Text),
+                        SleeveLength = GetValue(txtSleeveLength.Text),
 
-            newCard.AllMeasurements = $"━━━━━━━━━━━━━━━━━━━━\n" +
-                                      $"Torso\n" +
-                                      $"━━━━━━━━━━━━━━━━━━━━\n\n" +
-                                      $"Shoulder: {txtShoulder.Text} cm\n" +
-                                      $"Upper Bust: {txtUpperBust.Text} cm\n" +
-                                      $"Bust: {txtBust.Text} cm\n" +
-                                      $"Lower Bust: {txtLowerBust.Text} cm\n" +
-                                      $"Front Figure: {txtFrontFigure.Text} cm\n" +
-                                      $"Back Figure: {txtBackFigure.Text} cm\n" +
-                                      $"Front Chest: {txtFrontChest.Text} cm\n" +
-                                      $"Back Chest: {txtBackChest.Text} cm\n" +
-                                      $"Upper Hips: {txtUpperHips.Text} cm\n" +
-                                      $"Waistline: {txtWaistline.Text} cm\n" +
-                                      $"Neck Dip: {txtNeckDip.Text} cm\n" +
-                                      $"Arm Hole: {txtArmHole.Text} cm\n" +
-                                      $"Arm Circumference: {txtArmCircumference.Text} cm\n" +
-                                      $"Sleeve Length: {txtSleeveLength.Text} cm\n\n" +
-                                      $"━━━━━━━━━━━━━━━━━━━━\n" +
-                                      $"Pants\n" +
-                                      $"━━━━━━━━━━━━━━━━━━━━\n\n" +
-                                      $"Lower Hips: {txtLowerHips.Text} cm\n" +
-                                      $"Crotch: {txtCrotch.Text} cm\n" +
-                                      $"Thigh: {txtThigh.Text} cm\n" +
-                                      $"Calf Circumference: {txtCalfCircumference.Text} cm\n" +
-                                      $"Length: {txtLength.Text} cm\n";
+                        LowerHips = GetValue(txtLowerHips.Text),
+                        Crotch = GetValue(txtCrotch.Text),
+                        Thigh = GetValue(txtThigh.Text),
+                        CalfCircumference = GetValue(txtCalfCircumference.Text),
+                        Length = GetValue(txtLength.Text)
+                    };
 
+                    db.Measurements.Add(measurements);
+                    await db.SaveChangesAsync();
 
+                    OrderCard newCard = new OrderCard();
 
+                    newCard.CustomerName = txtName.Text;
+                    newCard.OrderDate = DateTime.Now.ToString("MM/dd/yyyy");
+                    newCard.Deadline = pdtOrderDeadline.Value.ToString("MM/dd/yyyy");
+                    newCard.Gender = hcbGender.SelectedItem.ToString();
+                    newCard.AllMeasurements = MeasurementFormatter.ToDisplayString(measurements);
 
-            flpOrderList.Controls.Add(newCard);
+                    flpOrderList.Controls.Add(newCard);
+                    MessageBox.Show("Order Created and Saved!");
+                }
+            }
+            catch (Exception ex)
+            {
+                Exception realError = ex;
+                while (realError.InnerException != null)
+                    realError = realError.InnerException;
 
-            MessageBox.Show("Order Created!");
+                MessageBox.Show($"Actual SQL Error: {realError.Message}");
+            }
+
+            ClearForm();
         }
 
         private void btnAddDesign_Click(object sender, EventArgs e)
@@ -324,7 +452,7 @@ namespace Dashboard
                     pnlBorder.Padding = new Padding(5);
                     pnlBorder.Margin = new Padding(10);
 
-                    pnlBorder.HandleCreated += (s, e) => RoundedItem(pnlBorder, 30);
+                    pnlBorder.HandleCreated += (s, e) => RoundedItem.MakeRounded(pnlBorder, 30);
 
                     PictureBox pb = new PictureBox();
                     byte[] imageBytes = File.ReadAllBytes(ofd.FileName);
@@ -356,7 +484,7 @@ namespace Dashboard
                     btnRemove.PrimaryColor = Color.FromArgb(255, 80, 80);
                     btnRemove.ForeColor = Color.White;
 
-                    btnRemove.HandleCreated += (s, e) => RoundedItem(btnRemove, 10);
+                    btnRemove.HandleCreated += (s, e) => RoundedItem.MakeRounded(btnRemove, 10);
 
                     flpDesignGallery.Controls.Add(pb);
 
@@ -409,6 +537,5 @@ namespace Dashboard
             orderHistoryPopup.flpOrderHistory.Controls.Clear();
         }
 
-      
     }
 }
