@@ -153,12 +153,14 @@ namespace Dashboard
             btnNotificationBodyMeasurement = new ReaLTaiizor.Controls.MaterialButton();
             CostConsumption = new TabPage();
             materialCard10 = new ReaLTaiizor.Controls.MaterialCard();
+            btnCostHistory = new ReaLTaiizor.Controls.HopeButton();
             dgvMaterialList = new ReaLTaiizor.Controls.PoisonDataGridView();
             colItem = new DataGridViewTextBoxColumn();
             ColMeters = new DataGridViewTextBoxColumn();
             colPricePerMeter = new DataGridViewTextBoxColumn();
             colTotal = new DataGridViewTextBoxColumn();
             groupBox1 = new ReaLTaiizor.Controls.GroupBox();
+            btnSaveCost = new ReaLTaiizor.Controls.HopeButton();
             lblGrandTotalCost = new ReaLTaiizor.Controls.PoisonLabel();
             materialLabel64 = new ReaLTaiizor.Controls.MaterialLabel();
             txtTotalLabor = new ReaLTaiizor.Controls.PoisonTextBox();
@@ -2223,6 +2225,7 @@ namespace Dashboard
             // 
             materialCard10.BackColor = Color.FromArgb(255, 255, 255);
             materialCard10.BorderStyle = BorderStyle.FixedSingle;
+            materialCard10.Controls.Add(btnCostHistory);
             materialCard10.Controls.Add(dgvMaterialList);
             materialCard10.Controls.Add(groupBox1);
             materialCard10.Controls.Add(materialLabel59);
@@ -2245,6 +2248,27 @@ namespace Dashboard
             materialCard10.Padding = new Padding(14);
             materialCard10.Size = new Size(876, 458);
             materialCard10.TabIndex = 4;
+            // 
+            // btnCostHistory
+            // 
+            btnCostHistory.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnCostHistory.BorderColor = Color.FromArgb(220, 223, 230);
+            btnCostHistory.ButtonType = ReaLTaiizor.Util.HopeButtonType.Primary;
+            btnCostHistory.DangerColor = Color.FromArgb(245, 108, 108);
+            btnCostHistory.DefaultColor = Color.FromArgb(255, 255, 255);
+            btnCostHistory.Font = new Font("Segoe UI", 12F);
+            btnCostHistory.HoverTextColor = Color.FromArgb(120, 160, 0);
+            btnCostHistory.InfoColor = Color.FromArgb(144, 147, 153);
+            btnCostHistory.Location = new Point(744, 16);
+            btnCostHistory.Name = "btnCostHistory";
+            btnCostHistory.PrimaryColor = Color.FromArgb(141, 182, 0);
+            btnCostHistory.Size = new Size(102, 38);
+            btnCostHistory.SuccessColor = Color.FromArgb(103, 194, 58);
+            btnCostHistory.TabIndex = 162;
+            btnCostHistory.Text = "Cost History";
+            btnCostHistory.TextColor = Color.White;
+            btnCostHistory.WarningColor = Color.FromArgb(230, 162, 60);
+            btnCostHistory.Click += btnCostHistory_Click;
             // 
             // dgvMaterialList
             // 
@@ -2322,6 +2346,7 @@ namespace Dashboard
             groupBox1.BaseColor = Color.Transparent;
             groupBox1.BorderColorG = Color.FromArgb(159, 159, 161);
             groupBox1.BorderColorH = Color.FromArgb(182, 180, 186);
+            groupBox1.Controls.Add(btnSaveCost);
             groupBox1.Controls.Add(lblGrandTotalCost);
             groupBox1.Controls.Add(materialLabel64);
             groupBox1.Controls.Add(txtTotalLabor);
@@ -2344,15 +2369,37 @@ namespace Dashboard
             groupBox1.TabIndex = 160;
             groupBox1.Text = "Order Summary";
             // 
+            // btnSaveCost
+            // 
+            btnSaveCost.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnSaveCost.BorderColor = Color.FromArgb(220, 223, 230);
+            btnSaveCost.ButtonType = ReaLTaiizor.Util.HopeButtonType.Primary;
+            btnSaveCost.DangerColor = Color.FromArgb(245, 108, 108);
+            btnSaveCost.DefaultColor = Color.FromArgb(255, 255, 255);
+            btnSaveCost.Font = new Font("Segoe UI", 12F);
+            btnSaveCost.HoverTextColor = Color.FromArgb(120, 160, 0);
+            btnSaveCost.InfoColor = Color.FromArgb(144, 147, 153);
+            btnSaveCost.Location = new Point(219, 268);
+            btnSaveCost.Name = "btnSaveCost";
+            btnSaveCost.PrimaryColor = Color.FromArgb(141, 182, 0);
+            btnSaveCost.Size = new Size(67, 24);
+            btnSaveCost.SuccessColor = Color.FromArgb(103, 194, 58);
+            btnSaveCost.TabIndex = 171;
+            btnSaveCost.Text = "Save";
+            btnSaveCost.TextColor = Color.White;
+            btnSaveCost.WarningColor = Color.FromArgb(230, 162, 60);
+            btnSaveCost.Click += btnSaveCost_Click;
+            // 
             // lblGrandTotalCost
             // 
             lblGrandTotalCost.AutoSize = true;
             lblGrandTotalCost.FontSize = ReaLTaiizor.Extension.Poison.PoisonLabelSize.Tall;
             lblGrandTotalCost.Location = new Point(117, 247);
             lblGrandTotalCost.Name = "lblGrandTotalCost";
-            lblGrandTotalCost.Size = new Size(0, 0);
+            lblGrandTotalCost.Size = new Size(52, 25);
             lblGrandTotalCost.Style = ReaLTaiizor.Enum.Poison.ColorStyle.Green;
             lblGrandTotalCost.TabIndex = 170;
+            lblGrandTotalCost.Text = "0,000";
             lblGrandTotalCost.Theme = ReaLTaiizor.Enum.Poison.ThemeStyle.Light;
             // 
             // materialLabel64
@@ -3193,5 +3240,7 @@ namespace Dashboard
         private ReaLTaiizor.Controls.HopeButton btnAddDesign;
         private ReaLTaiizor.Controls.HopeButton btnOrderHistory;
         public FlowLayoutPanel flpOrderList;
+        private ReaLTaiizor.Controls.HopeButton btnCostHistory;
+        private ReaLTaiizor.Controls.HopeButton btnSaveCost;
     }
 }

@@ -17,6 +17,7 @@ using System.Text;
 using System.Windows.Forms;
 using MyResources = Dashboard.Properties.Resources;
 using Microsoft.EntityFrameworkCore;
+using Dashboard.CostumizeTools;
 
 
 namespace Dashboard
@@ -537,5 +538,30 @@ namespace Dashboard
             orderHistoryPopup.flpOrderHistory.Controls.Clear();
         }
 
+        private void btnCostHistory_Click(object sender, EventArgs e)
+        {
+            ComputationHistoryPopup computationHistoryPopup = new ComputationHistoryPopup();
+
+            computationHistoryPopup.StartPosition = FormStartPosition.CenterScreen;
+            computationHistoryPopup.ShowDialog();
+        }
+
+        private void btnSaveCost_Click(object sender, EventArgs e)
+        {
+            var summary = new MaterialCost
+            {
+                MaterialTotal = decimal.TryParse(txtMaterialTotal.Text, out var mt) ? mt : 0,
+
+                LaborCost = decimal.TryParse(txtLaborCost.Text, out var lc) ? lc : 0,
+                Quantity = double.TryParse(txtQuantity.Text, out var q) ? q : 0,
+                TotalLabor = decimal.TryParse(txtTotalLabor.Text, out var tl) ? tl : 0,
+
+                GrandTotalCost = decimal.TryParse(lblGrandTotalCost.Text.Replace("₱", "").Trim(), out var gt) ? gt :0
+            };
+
+            CostCustomerNamePopup namePopup = new CostCustomerNamePopup(summary);
+            namePopup.StartPosition = FormStartPosition.CenterScreen;
+            namePopup.ShowDialog();
+        }
     }
 }
