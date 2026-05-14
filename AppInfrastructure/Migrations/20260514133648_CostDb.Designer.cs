@@ -4,6 +4,7 @@ using AppInfrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AppInfrastructure.Migrations
 {
     [DbContext(typeof(CostDBContext))]
-    partial class CostDBContextModelSnapshot : ModelSnapshot
+    [Migration("20260514133648_CostDb")]
+    partial class CostDb
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -56,34 +59,6 @@ namespace AppInfrastructure.Migrations
                     b.ToTable("MaterialCosts");
                 });
 
-            modelBuilder.Entity("AppDomain.Models.MaterialItem", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("ItemName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<Guid>("MaterialCostId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Meters")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Price")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("MaterialCostId");
-
-                    b.ToTable("MaterialItems");
-                });
-
             modelBuilder.Entity("AppDomain.Models.OrderSummary", b =>
                 {
                     b.Property<Guid>("Id")
@@ -108,20 +83,6 @@ namespace AppInfrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("OrderSummaries");
-                });
-
-            modelBuilder.Entity("AppDomain.Models.MaterialItem", b =>
-                {
-                    b.HasOne("AppDomain.Models.MaterialCost", null)
-                        .WithMany("Items")
-                        .HasForeignKey("MaterialCostId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("AppDomain.Models.MaterialCost", b =>
-                {
-                    b.Navigation("Items");
                 });
 #pragma warning restore 612, 618
         }

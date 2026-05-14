@@ -1,6 +1,6 @@
 ﻿namespace Dashboard.CostumizeTools
 {
-    partial class CostCustomerNamePopup
+    partial class CostCostumerNamePopup
     {
         /// <summary>
         /// Required designer variable.
@@ -156,7 +156,7 @@
             txtDescription.WaterMark = "(e.g. Pants, Shirt)";
             txtDescription.WaterMarkColor = Color.FromArgb(109, 109, 109);
             txtDescription.WaterMarkFont = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Pixel);
-            txtDescription.Click += txtDescription_Click;
+           
             // 
             // materialLabel41
             // 

@@ -546,22 +546,47 @@ namespace Dashboard
             computationHistoryPopup.ShowDialog();
         }
 
-        private void btnSaveCost_Click(object sender, EventArgs e)
+        private async void btnSaveCost_Click(object sender, EventArgs e)
         {
+
             var summary = new MaterialCost
             {
+                Id = Guid.NewGuid(),
                 MaterialTotal = decimal.TryParse(txtMaterialTotal.Text, out var mt) ? mt : 0,
-
                 LaborCost = decimal.TryParse(txtLaborCost.Text, out var lc) ? lc : 0,
                 Quantity = double.TryParse(txtQuantity.Text, out var q) ? q : 0,
                 TotalLabor = decimal.TryParse(txtTotalLabor.Text, out var tl) ? tl : 0,
+                GrandTotalCost = decimal.TryParse(lblGrandTotalCost.Text.Replace("₱", "").Trim(), out var gt) ? gt : 0,
 
-                GrandTotalCost = decimal.TryParse(lblGrandTotalCost.Text.Replace("₱", "").Trim(), out var gt) ? gt :0
+                Items = new List<MaterialItem>()
             };
 
-            CostCustomerNamePopup namePopup = new CostCustomerNamePopup(summary);
-            namePopup.StartPosition = FormStartPosition.CenterScreen;
-            namePopup.ShowDialog();
+            foreach (DataGridViewRow row in dgvMaterialList.Rows)
+            {
+                if (row.IsNewRow || row.Cells[0].Value == null) continue;
+
+                summary.Items.Add(new MaterialItem
+                {
+                    Id = Guid.NewGuid(),
+                    ItemName = row.Cells[0].Value.ToString(),
+                    Meters = row.Cells[1].Value.ToString(),
+                    Price = row.Cells[2].Value.ToString(),
+                    MaterialCostId = summary.Id
+                });
+            }
+
+            using (var costPopup = new CostCostumerNamePopup(summary)) 
+            { 
+                if(costPopup.ShowDialog() == DialogResult.OK)
+                {
+                    dgvMaterialList.Rows.Clear();
+                    MessageBox.Show("Saved to History successfully!");
+                }
+
+                costPopup.StartPosition = FormStartPosition.CenterScreen;
+            }
+            
+         
         }
     }
 }

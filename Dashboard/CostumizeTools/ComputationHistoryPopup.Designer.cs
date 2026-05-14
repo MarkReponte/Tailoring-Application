@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             materialCard1 = new ReaLTaiizor.Controls.MaterialCard();
+            flpComputationHistory = new FlowLayoutPanel();
             panel1 = new Panel();
             btnViewCostConsumption = new ReaLTaiizor.Controls.HopeButton();
             btnViewOrders = new ReaLTaiizor.Controls.HopeButton();
@@ -42,6 +43,7 @@
             // materialCard1
             // 
             materialCard1.BackColor = Color.FromArgb(255, 255, 255);
+            materialCard1.Controls.Add(flpComputationHistory);
             materialCard1.Controls.Add(panel1);
             materialCard1.Depth = 0;
             materialCard1.Dock = DockStyle.Fill;
@@ -53,6 +55,17 @@
             materialCard1.Padding = new Padding(1);
             materialCard1.Size = new Size(820, 449);
             materialCard1.TabIndex = 0;
+            // 
+            // flpComputationHistory
+            // 
+            flpComputationHistory.AutoScroll = true;
+            flpComputationHistory.Dock = DockStyle.Fill;
+            flpComputationHistory.FlowDirection = FlowDirection.TopDown;
+            flpComputationHistory.Location = new Point(1, 66);
+            flpComputationHistory.Name = "flpComputationHistory";
+            flpComputationHistory.Size = new Size(818, 382);
+            flpComputationHistory.TabIndex = 2;
+            flpComputationHistory.WrapContents = false;
             // 
             // panel1
             // 
@@ -138,6 +151,7 @@
             Name = "ComputationHistoryPopup";
             Padding = new Padding(0);
             Text = "ComputationHistoryPopup";
+            Load += ComputationHistoryPop_Load;
             materialCard1.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
@@ -153,5 +167,6 @@
         private PictureBox pictureBox3;
         private ReaLTaiizor.Controls.MaterialLabel lblOrderHistory;
         private ReaLTaiizor.Controls.HopeButton btnViewCostConsumption;
+        private FlowLayoutPanel flpComputationHistory;
     }
 }

@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AppInfrastructure.Migrations
 {
     [DbContext(typeof(CostDBContext))]
-    [Migration("20260512132949_TailoringAppDb")]
-    partial class TailoringAppDb
+    [Migration("20260514144627_AddMaterialItemTable")]
+    partial class AddMaterialItemTable
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -31,98 +31,60 @@ namespace AppInfrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<double>("CostPerMeter")
-                        .HasColumnType("float");
-
-                    b.Property<string>("Item")
+                    b.Property<string>("CustomerNameCost")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<double>("Meters")
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("GrandTotalCost")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("LaborCost")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("MaterialTotal")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<double>("Quantity")
                         .HasColumnType("float");
+
+                    b.Property<decimal>("TotalLabor")
+                        .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
 
                     b.ToTable("MaterialCosts");
                 });
 
-            modelBuilder.Entity("AppDomain.Models.Measurements", b =>
+            modelBuilder.Entity("AppDomain.Models.MaterialItem", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<double>("ArmCircumference")
-                        .HasColumnType("float");
-
-                    b.Property<double>("ArmHole")
-                        .HasColumnType("float");
-
-                    b.Property<double>("BackChest")
-                        .HasColumnType("float");
-
-                    b.Property<double>("BackFigure")
-                        .HasColumnType("float");
-
-                    b.Property<double>("Bust")
-                        .HasColumnType("float");
-
-                    b.Property<double>("CalfCircumference")
-                        .HasColumnType("float");
-
-                    b.Property<double>("Crotch")
-                        .HasColumnType("float");
-
-                    b.Property<string>("CustomerName")
+                    b.Property<string>("ItemName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<double>("FrontChest")
-                        .HasColumnType("float");
+                    b.Property<Guid>("MaterialCostId")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<double>("FrontFigure")
-                        .HasColumnType("float");
-
-                    b.Property<string>("Gender")
+                    b.Property<string>("Meters")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<double>("Length")
-                        .HasColumnType("float");
-
-                    b.Property<double>("LowerBust")
-                        .HasColumnType("float");
-
-                    b.Property<double>("LowerHips")
-                        .HasColumnType("float");
-
-                    b.Property<double>("NeckDip")
-                        .HasColumnType("float");
-
-                    b.Property<DateTime>("OrderDeadline")
-                        .HasColumnType("datetime2");
-
-                    b.Property<double>("Shoulder")
-                        .HasColumnType("float");
-
-                    b.Property<double>("SleeveLength")
-                        .HasColumnType("float");
-
-                    b.Property<double>("Thigh")
-                        .HasColumnType("float");
-
-                    b.Property<double>("UpperBust")
-                        .HasColumnType("float");
-
-                    b.Property<double>("UpperHips")
-                        .HasColumnType("float");
-
-                    b.Property<double>("Waistline")
-                        .HasColumnType("float");
+                    b.Property<string>("Price")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Measurements");
+                    b.HasIndex("MaterialCostId");
+
+                    b.ToTable("MaterialItems");
                 });
 
             modelBuilder.Entity("AppDomain.Models.OrderSummary", b =>
@@ -149,6 +111,20 @@ namespace AppInfrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("OrderSummaries");
+                });
+
+            modelBuilder.Entity("AppDomain.Models.MaterialItem", b =>
+                {
+                    b.HasOne("AppDomain.Models.MaterialCost", null)
+                        .WithMany("Items")
+                        .HasForeignKey("MaterialCostId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("AppDomain.Models.MaterialCost", b =>
+                {
+                    b.Navigation("Items");
                 });
 #pragma warning restore 612, 618
         }
