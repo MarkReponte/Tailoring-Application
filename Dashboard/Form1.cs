@@ -19,17 +19,28 @@ using MyResources = Dashboard.Properties.Resources;
 using Microsoft.EntityFrameworkCore;
 using Dashboard.CostumizeTools;
 using System.IO;
+using AppInfrastructure.Repository;
 
 
 namespace Dashboard
 {
     public partial class Form1 : MaterialForm
     {
-        public List<OrderCard> GlobalHistoryList = new List<OrderCard>();
+        private readonly MeasurementRepository _measurementRepo;
+        private readonly CostRepository _costRepo;
+
+        private void ShowWarning(string msg) => MessageBox.Show(msg, "Input Missing", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        private void ShowError(string msg) => MessageBox.Show(msg, "Invalid Date", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
         public Form1()
         {
             InitializeComponent();
+
+            var sewingDb = new SewingDbContext();
+            var costDb = new CostDBContext();
+
+            _measurementRepo = new MeasurementRepository(sewingDb);
+            _costRepo = new CostRepository(costDb);
         
 
 
@@ -51,6 +62,41 @@ namespace Dashboard
             await LoadSavedDesignsAsync();
             await LoadOrdersFromDatabaseAsync();
 
+        }
+
+        private bool ValidateOrderInput()
+        {
+
+            if (hcbGender.SelectedItem == null)
+            {
+                ShowWarning("Select a Gender before submitting.");
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtName.Text))
+            {
+                ShowWarning("Enter the Customer's Name.");
+                return false;
+            }
+
+            DateTime selectedDate = pdtOrderDeadline.Value.Date;
+            DateTime today = DateTime.Today;
+
+            if (selectedDate < today)
+            {
+                ShowError("The deadline cannot be a date in the past!");
+                return false;
+            }
+
+            if (selectedDate == today)
+            {
+                var result = MessageBox.Show("The deadline is set to Today. Is this correct?",
+                    "Confirm Date", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.No) return false;
+            }
+
+            return true;
         }
 
         private async Task LoadSavedDesignsAsync()
@@ -155,27 +201,27 @@ namespace Dashboard
         private async Task LoadActiveOrderAsync()
         {
             flpOrderList.Controls.Clear();
-
-            using (var db = new SewingDbContext())
+            try
             {
-                var activeOrders = await db.Measurements
-                                           .Where(m => m.Status != "Completed")
-                                           .ToListAsync();
+                var activeOrders = await _measurementRepo.GetActiveOrdersAsync();
 
-                foreach (var measurements in activeOrders)
+                foreach (var m in activeOrders)
                 {
-                    OrderCard card = new OrderCard
+                    OrderCard orderCard = new OrderCard
                     {
-                        CustomerName = measurements.CustomerName,
-                        Gender = measurements.Gender,
-                        Deadline = measurements.OrderDeadline.ToString("MM/dd/yy"),
-                        OrderDate = measurements.DateCreated.ToString("MM/dd/yy"),
-                        AllMeasurements = MeasurementFormatter.ToDisplayString(measurements)
+                        CustomerName = m.CustomerName,
+                        Gender = m.Gender,
+                        Deadline = m.OrderDeadline.ToString("MM/dd/yy"),
+                        OrderDate = m.DateCreated.ToString("MM/dd/yy"),
+                        AllMeasurements = MeasurementFormatter.ToDisplayString(m)
                     };
 
-                    flpOrderList.Controls.Add(card);
+                    flpOrderList.Controls.Add(orderCard);
                 }
-
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading active orders: {ex.Message}");
             }
         }
 
@@ -438,86 +484,60 @@ namespace Dashboard
 
         private async void btnSubmit_Click(object sender, EventArgs e)
         {
-            if (hcbGender.SelectedItem == null)
-            {
-                MessageBox.Show("Select a Gender before submitting.",
-                                "Input Missing",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Warning);
+           
 
+            if (!ValidateOrderInput())
+            {
+                MessageBox.Show("Please fill in all required fields.");
                 return;
-            }
-
-            if (string.IsNullOrWhiteSpace(txtName.Text))
-            {
-                MessageBox.Show("Enter the Customer's Name.", "Input Missing");
-                return;
-            }
-
-            if (pdtOrderDeadline.Value.Date < DateTime.Now)
-            {
-                DialogResult dialog = MessageBox.Show("The deadline cannot be a date in the past!",
-                                                       "Invalid Date",
-                                                       MessageBoxButtons.OK,
-                                                       MessageBoxIcon.Error);
-                return;
-            }
-
-            if (pdtOrderDeadline.Value.Date == DateTime.Today)
-            {
-                DialogResult dialog = MessageBox.Show("The deadline is set to Today. Is this correct?",
-                                                      "Confirm Date",
-                                                      MessageBoxButtons.YesNo);
-                if (dialog == DialogResult.No) return;
             }
 
             try
             {
-                using (var db = new SewingDbContext())
+
+                var measurements = new Measurements
                 {
-                    var measurements = new Measurements
-                    {
-                        CustomerName = txtName.Text,
-                        Gender = hcbGender.SelectedItem.ToString(),
-                        OrderDeadline = pdtOrderDeadline.Value.Date,
-                        Status = "In Progress",
+                    CustomerName = txtName.Text,
+                    Gender = hcbGender.SelectedItem.ToString(),
+                    OrderDeadline = pdtOrderDeadline.Value.Date,
+                    Status = "In Progress",
 
-                        Shoulder = GetValue(txtShoulder.Text),
-                        UpperBust = GetValue(txtUpperBust.Text),
-                        Bust = GetValue(txtBust.Text),
-                        LowerBust = GetValue(txtLowerBust.Text),
-                        FrontFigure = GetValue(txtFrontFigure.Text),
-                        BackFigure = GetValue(txtBackFigure.Text),
-                        FrontChest = GetValue(txtFrontChest.Text),
-                        BackChest = GetValue(txtBackChest.Text),
-                        UpperHips = GetValue(txtUpperHips.Text),
-                        Waistline = GetValue(txtWaistline.Text),
-                        NeckDip = GetValue(txtNeckDip.Text),
-                        ArmHole = GetValue(txtArmHole.Text),
-                        ArmCircumference = GetValue(txtArmCircumference.Text),
-                        SleeveLength = GetValue(txtSleeveLength.Text),
+                    Shoulder = GetValue(txtShoulder.Text),
+                    UpperBust = GetValue(txtUpperBust.Text),
+                    Bust = GetValue(txtBust.Text),
+                    LowerBust = GetValue(txtLowerBust.Text),
+                    FrontFigure = GetValue(txtFrontFigure.Text),
+                    BackFigure = GetValue(txtBackFigure.Text),
+                    FrontChest = GetValue(txtFrontChest.Text),
+                    BackChest = GetValue(txtBackChest.Text),
+                    UpperHips = GetValue(txtUpperHips.Text),
+                    Waistline = GetValue(txtWaistline.Text),
+                    NeckDip = GetValue(txtNeckDip.Text),
+                    ArmHole = GetValue(txtArmHole.Text),
+                    ArmCircumference = GetValue(txtArmCircumference.Text),
+                    SleeveLength = GetValue(txtSleeveLength.Text),
 
-                        LowerHips = GetValue(txtLowerHips.Text),
-                        Crotch = GetValue(txtCrotch.Text),
-                        Thigh = GetValue(txtThigh.Text),
-                        CalfCircumference = GetValue(txtCalfCircumference.Text),
-                        Length = GetValue(txtLength.Text)
-                    };
+                    LowerHips = GetValue(txtLowerHips.Text),
+                    Crotch = GetValue(txtCrotch.Text),
+                    Thigh = GetValue(txtThigh.Text),
+                    CalfCircumference = GetValue(txtCalfCircumference.Text),
+                    Length = GetValue(txtLength.Text)
+                };
 
-                    db.Measurements.Add(measurements);
-                    await db.SaveChangesAsync();
+                await _measurementRepo.AddAsync(measurements);
+                await _measurementRepo.SaveAsync();
 
-                    OrderCard newCard = new OrderCard();
+                OrderCard orderCard = new OrderCard();
 
-                    newCard.CustomerName = txtName.Text;
-                    newCard.OrderDate = measurements.DateCreated.ToString("MM/dd/yy");
-                    newCard.Deadline = pdtOrderDeadline.Value.ToString("MM/dd/yy");
-                    newCard.Gender = hcbGender.SelectedItem.ToString();
-                    newCard.AllMeasurements = MeasurementFormatter.ToDisplayString(measurements);
+                orderCard.CustomerName = txtName.Text;
+                orderCard.OrderDate = measurements.DateCreated.ToString("MM/dd/yy");
+                orderCard.Deadline = pdtOrderDeadline.Value.ToString("MM/dd/yy");
+                orderCard.Gender = hcbGender.SelectedItem.ToString();
+                orderCard.AllMeasurements = MeasurementFormatter.ToDisplayString(measurements);
 
-                    flpOrderList.Controls.Add(newCard);
-                    MessageBox.Show("Order Created and Saved!");
-                }
+                flpOrderList.Controls.Add(orderCard);
+                MessageBox.Show("Order Created and Saved!");
+
             }
             catch (Exception ex)
             {
@@ -570,29 +590,18 @@ namespace Dashboard
         {
             try
             {
-                OrderHistoryPopup orderHistoryPopup = new OrderHistoryPopup();
-                orderHistoryPopup.StartPosition = FormStartPosition.CenterScreen;
-
-                await orderHistoryPopup.LoadCompleteOrdersAsync();
-
-                orderHistoryPopup.flpOrderHistory.SuspendLayout();
-
-                foreach (OrderCard card in GlobalHistoryList)
+                using (OrderHistoryPopup historyPopup = new OrderHistoryPopup(_measurementRepo))
                 {
-                    card.Visible = true;
-                    orderHistoryPopup.flpOrderHistory.Controls.Add(card);
+                    historyPopup.StartPosition = FormStartPosition.CenterScreen;
+
+                    await historyPopup.LoadCompleteOrdersAsync();
+                    historyPopup.ShowDialog();
                 }
-
-                orderHistoryPopup.flpOrderHistory.ResumeLayout();
-
-                await Task.Run(() => { });
-
-                orderHistoryPopup.ShowDialog();
-                orderHistoryPopup.flpOrderHistory.Controls.Clear();
             }
-            catch (Exception ex)
+            catch ( Exception ex )
             {
-                MessageBox.Show($"Error loading history: {ex.Message}");
+                MessageBox.Show($"Error opening history: {ex.Message}", "History Error",
+                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -641,7 +650,7 @@ namespace Dashboard
                 });
             }
 
-            using (var costPopup = new CostCostumerNamePopup(summary)) 
+            using (var costPopup = new CostCostumerNamePopup(summary, _costRepo)) 
             { 
                 if(costPopup.ShowDialog() == DialogResult.OK)
                 {

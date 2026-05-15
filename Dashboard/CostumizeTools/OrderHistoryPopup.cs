@@ -8,14 +8,18 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using Microsoft.EntityFrameworkCore;
+using System.Diagnostics.Metrics;
+using AppInfrastructure.Repository;
 
 namespace Dashboard
 {
     public partial class OrderHistoryPopup : MaterialForm
     {
-        public OrderHistoryPopup()
+        private readonly MeasurementRepository _measurementRepo;
+        public OrderHistoryPopup(MeasurementRepository measurementRepo)
         {
             InitializeComponent();
+            _measurementRepo = measurementRepo;
             
         }
 

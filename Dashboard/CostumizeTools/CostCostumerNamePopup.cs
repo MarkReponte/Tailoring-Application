@@ -1,5 +1,6 @@
 ﻿using AppDomain.Models;
 using AppInfrastructure.Data;
+using AppInfrastructure.Repository;
 using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
@@ -16,11 +17,13 @@ namespace Dashboard.CostumizeTools
     public partial class CostCostumerNamePopup : MaterialForm
     {
         private MaterialCost _finalData;
+        private readonly CostRepository _costRepo;
 
-        public CostCostumerNamePopup(MaterialCost mathResults)
+        public CostCostumerNamePopup(MaterialCost mathResults, CostRepository costRepo)
         {
             InitializeComponent();
             _finalData = mathResults;
+            _costRepo = costRepo;
         }
 
         private void btnBackCost_Click(object sender, EventArgs e)
@@ -46,13 +49,9 @@ namespace Dashboard.CostumizeTools
             {
                 _finalData.CustomerNameCost = name;
                 _finalData.Description = description;
-
-                using (var db = new CostDBContext())
-                {
-                    db.MaterialCosts.Add(_finalData);
-
-                    await db.SaveChangesAsync();
-                }
+                
+                await _costRepo.AddAsync(_finalData);
+                await _costRepo.SaveAsync();
 
                 MessageBox.Show("Saved Successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
