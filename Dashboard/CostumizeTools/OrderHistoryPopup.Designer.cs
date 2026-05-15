@@ -58,11 +58,14 @@
             // 
             // flpOrderHistory
             // 
+            flpOrderHistory.AutoScroll = true;
             flpOrderHistory.Dock = DockStyle.Fill;
+            flpOrderHistory.FlowDirection = FlowDirection.TopDown;
             flpOrderHistory.Location = new Point(1, 66);
             flpOrderHistory.Name = "flpOrderHistory";
             flpOrderHistory.Size = new Size(816, 380);
             flpOrderHistory.TabIndex = 1;
+            flpOrderHistory.WrapContents = false;
             // 
             // panel1
             // 

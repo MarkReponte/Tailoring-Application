@@ -27,33 +27,32 @@ namespace Dashboard.CostumizeTools
 
             dgvMaterialListSaved.Rows.Clear();
 
-            if (!string.IsNullOrEmpty(_data.Description))
+           if(_data.Items != null && _data.Items.Count > 0)
             {
-                string[] lines = _data.Description.Split(new[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
-
-                foreach (string l in lines)
+                foreach (var item in _data.Items)
                 {
-                    string[] parts = l.Split(new[] { " - " }, StringSplitOptions.None);
+                    string itemName = item.ItemName;
+                    string meters = item.Meters;
+                    string price = item.Price;
 
-                    if (parts.Length >= 3)
-                    {
-                        string item = parts[0].Trim();
-                        string metersStr = parts[1].Replace("m", "").Trim();
-                        string priceStr = parts[2].Replace("₱", "").Trim();
 
-                        double.TryParse(metersStr, out var m);
-                        decimal.TryParse(priceStr, out var p);
-                        decimal rowTotal = (decimal)m * p;
+                    decimal.TryParse(meters.Replace("m", ""), out var m);
+                    decimal.TryParse(price.Replace("₱", ""), out var p);
+                    decimal rowTotal = (decimal)m * p;
 
-                        dgvMaterialListSaved.Rows.Add(item, metersStr + "m", "₱" + p.ToString("N2"), "₱" + rowTotal.ToString("N2"));
-                    }
+                    dgvMaterialListSaved.Rows.Add(
+                        itemName,
+                        meters.EndsWith("m") ? meters : meters + "m",
+                        price.StartsWith("₱") ? price : "₱" + price,
+                        "₱" + rowTotal.ToString("N2"));
                 }
             }
         }
 
-        private void btnBackToComputationHistory_Click(object sender, EventArgs e)
+        private async void btnBackToComputationHistory_Click(object sender, EventArgs e)
         {
             this.Close();
+            
         }
     }
 }

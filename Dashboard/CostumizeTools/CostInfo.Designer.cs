@@ -32,9 +32,7 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             materialCard1 = new ReaLTaiizor.Controls.MaterialCard();
-            lblDescription = new ReaLTaiizor.Controls.MaterialLabel();
             lblCostumerName = new ReaLTaiizor.Controls.MaterialLabel();
-            materialLabel2 = new ReaLTaiizor.Controls.MaterialLabel();
             materialLabel1 = new ReaLTaiizor.Controls.MaterialLabel();
             panel1 = new Panel();
             btnBackToComputationHistory = new ReaLTaiizor.Controls.HopeButton();
@@ -67,9 +65,7 @@
             // 
             materialCard1.BackColor = Color.FromArgb(255, 255, 255);
             materialCard1.BorderStyle = BorderStyle.FixedSingle;
-            materialCard1.Controls.Add(lblDescription);
             materialCard1.Controls.Add(lblCostumerName);
-            materialCard1.Controls.Add(materialLabel2);
             materialCard1.Controls.Add(materialLabel1);
             materialCard1.Controls.Add(panel1);
             materialCard1.Controls.Add(groupBox1);
@@ -85,19 +81,6 @@
             materialCard1.Size = new Size(750, 370);
             materialCard1.TabIndex = 0;
             // 
-            // lblDescription
-            // 
-            lblDescription.AutoSize = true;
-            lblDescription.Depth = 0;
-            lblDescription.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
-            lblDescription.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
-            lblDescription.Location = new Point(281, 73);
-            lblDescription.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            lblDescription.Name = "lblDescription";
-            lblDescription.Size = new Size(74, 17);
-            lblDescription.TabIndex = 168;
-            lblDescription.Text = "Description";
-            // 
             // lblCostumerName
             // 
             lblCostumerName.AutoSize = true;
@@ -110,19 +93,6 @@
             lblCostumerName.Size = new Size(104, 17);
             lblCostumerName.TabIndex = 167;
             lblCostumerName.Text = "Costumer Name";
-            // 
-            // materialLabel2
-            // 
-            materialLabel2.AutoSize = true;
-            materialLabel2.Depth = 0;
-            materialLabel2.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
-            materialLabel2.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
-            materialLabel2.Location = new Point(197, 73);
-            materialLabel2.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            materialLabel2.Name = "materialLabel2";
-            materialLabel2.Size = new Size(78, 17);
-            materialLabel2.TabIndex = 166;
-            materialLabel2.Text = "Description:";
             // 
             // materialLabel1
             // 
@@ -418,6 +388,7 @@
             Controls.Add(materialCard1);
             Name = "CostInfo";
             Padding = new Padding(0);
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "CostInfo";
             materialCard1.ResumeLayout(false);
             materialCard1.PerformLayout();
@@ -449,9 +420,7 @@
         private PictureBox pictureBox3;
         private ReaLTaiizor.Controls.MaterialLabel lblOrderHistory;
         private ReaLTaiizor.Controls.HopeButton btnBackToComputationHistory;
-        private ReaLTaiizor.Controls.MaterialLabel lblDescription;
         private ReaLTaiizor.Controls.MaterialLabel lblCostumerName;
-        private ReaLTaiizor.Controls.MaterialLabel materialLabel2;
         private ReaLTaiizor.Controls.MaterialLabel materialLabel1;
         private ReaLTaiizor.Controls.PoisonLabel lblTotalLaborSaved;
         private ReaLTaiizor.Controls.PoisonLabel lblQuantitySaved;

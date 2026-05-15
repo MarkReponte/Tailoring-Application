@@ -31,7 +31,7 @@ namespace Dashboard
             {
                 using (var db = new SewingDbContext())
                 {
-                    var completed = await db.Measurements.Where(m => m.Status == "Completed").ToListAsync();
+                    var completed = await db.Measurements.Where(m => m.Status.ToLower() == "completed").ToListAsync();
 
                     foreach (var m in completed)
                     {

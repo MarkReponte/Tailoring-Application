@@ -39,12 +39,16 @@ namespace Dashboard.CostumizeTools
                     card.Click += (s, ev) =>
                     {
                         var infoForm = new CostInfo(cost);
-                        infoForm.ShowDialog();
-                        infoForm.StartPosition = FormStartPosition.CenterScreen;
-
+                        infoForm.Owner = this.Owner;
+                        infoForm.StartPosition = FormStartPosition.CenterParent;
+                        this.Opacity = 0;
+                        infoForm.ShowDialog(this.Owner);
+                        this.Opacity = 1;
                     };
 
+
                 }
+              
             }
         }
 

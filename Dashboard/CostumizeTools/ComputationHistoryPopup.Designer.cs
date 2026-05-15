@@ -59,6 +59,7 @@
             // flpComputationHistory
             // 
             flpComputationHistory.AutoScroll = true;
+            flpComputationHistory.BorderStyle = BorderStyle.FixedSingle;
             flpComputationHistory.Dock = DockStyle.Fill;
             flpComputationHistory.FlowDirection = FlowDirection.TopDown;
             flpComputationHistory.Location = new Point(1, 66);
@@ -69,6 +70,7 @@
             // 
             // panel1
             // 
+            panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(btnViewCostConsumption);
             panel1.Controls.Add(btnViewOrders);
             panel1.Controls.Add(pictureBox3);
@@ -89,7 +91,7 @@
             btnViewCostConsumption.Font = new Font("Segoe UI", 12F);
             btnViewCostConsumption.HoverTextColor = Color.FromArgb(120, 160, 0);
             btnViewCostConsumption.InfoColor = Color.FromArgb(144, 147, 153);
-            btnViewCostConsumption.Location = new Point(666, 15);
+            btnViewCostConsumption.Location = new Point(664, 13);
             btnViewCostConsumption.Name = "btnViewCostConsumption";
             btnViewCostConsumption.PrimaryColor = Color.FromArgb(141, 182, 0);
             btnViewCostConsumption.Size = new Size(120, 35);
@@ -110,7 +112,7 @@
             btnViewOrders.Font = new Font("Segoe UI", 12F);
             btnViewOrders.HoverTextColor = Color.FromArgb(120, 160, 0);
             btnViewOrders.InfoColor = Color.FromArgb(144, 147, 153);
-            btnViewOrders.Location = new Point(1290, -20);
+            btnViewOrders.Location = new Point(1288, -22);
             btnViewOrders.Name = "btnViewOrders";
             btnViewOrders.PrimaryColor = Color.FromArgb(141, 182, 0);
             btnViewOrders.Size = new Size(120, 35);

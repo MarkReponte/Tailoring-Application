@@ -117,7 +117,7 @@
             materialLabel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             materialLabel1.AutoSize = true;
             materialLabel1.Depth = 0;
-            materialLabel1.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            materialLabel1.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
             materialLabel1.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
             materialLabel1.Location = new Point(44, 95);
             materialLabel1.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
@@ -156,14 +156,13 @@
             txtDescription.WaterMark = "(e.g. Pants, Shirt)";
             txtDescription.WaterMarkColor = Color.FromArgb(109, 109, 109);
             txtDescription.WaterMarkFont = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Pixel);
-           
             // 
             // materialLabel41
             // 
             materialLabel41.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             materialLabel41.AutoSize = true;
             materialLabel41.Depth = 0;
-            materialLabel41.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            materialLabel41.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
             materialLabel41.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
             materialLabel41.Location = new Point(44, 66);
             materialLabel41.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
@@ -209,6 +208,7 @@
             Controls.Add(materialCard1);
             Name = "CostCostumerNamePopup";
             Padding = new Padding(0);
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "CostCostumerNamePopup";
             materialCard1.ResumeLayout(false);
             materialCard1.PerformLayout();

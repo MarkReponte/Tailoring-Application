@@ -84,19 +84,29 @@ namespace Dashboard
                 {
                     using (var db = new SewingDbContext())
                     {
-                        var record = await db.Measurements.FirstOrDefaultAsync(m => m.CustomerName == this.CustomerName);
+                        var record = await db.Measurements.FirstOrDefaultAsync(m => m.CustomerName == this.CustomerName && m.Status == "In Progress");
 
                         if (record != null)
                         {
                             record.Status = "Completed";
-                            int rowsAffected = await db.SaveChangesAsync();
+                            await db.SaveChangesAsync();
 
-                            if (rowsAffected > 0)
+                            MessageBox.Show("Order marked as Completed!");
+
+                            
+                            if (this.Parent != null)
                             {
-                                MessageBox.Show("Saved to Database Successfully!");
+                                
+                                this.Parent.Controls.Remove(this);
+                                this.Dispose();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Could not find the active order in the database.");
                             }
                         }
                     }
+                    
                 }
                 catch (Exception ex)
                 {

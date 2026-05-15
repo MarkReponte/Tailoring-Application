@@ -18,6 +18,7 @@ using System.Windows.Forms;
 using MyResources = Dashboard.Properties.Resources;
 using Microsoft.EntityFrameworkCore;
 using Dashboard.CostumizeTools;
+using System.IO;
 
 
 namespace Dashboard
@@ -29,7 +30,7 @@ namespace Dashboard
         public Form1()
         {
             InitializeComponent();
-            LoadOrdersFromDatabase();
+        
 
 
             var materialSkinManager = ReaLTaiizor.Manager.MaterialSkinManager.Instance;
@@ -47,6 +48,108 @@ namespace Dashboard
         private async void Form1_Load(object sender, EventArgs e)
         {
             await LoadActiveOrderAsync();
+            await LoadSavedDesignsAsync();
+            await LoadOrdersFromDatabaseAsync();
+
+        }
+
+        private async Task LoadSavedDesignsAsync()
+        {
+
+            flpDesignGallery.Controls.Clear();
+            string folderPath = GetGalleryPath();
+
+            if (!Directory.Exists(folderPath)) return;
+
+            string[] files = await Task.Run(() =>
+                Directory.GetFiles(folderPath, "*.*")
+                         .Where(f => f.EndsWith(".jpg") || f.EndsWith(".png") || f.EndsWith(".jpeg"))
+                         .ToArray()
+            );
+
+            foreach (string filePath in files)
+            {
+                await AddDesignCardToGalleryAsync(filePath);
+            }
+        }
+
+        private async Task AddDesignCardToGalleryAsync(string imagePath)
+        {
+
+            MaterialCard pnlBorder = new MaterialCard
+            {
+                Size = new Size(160, 160),
+                BackColor = Color.FromArgb(142, 188, 30),
+                Padding = new Padding(5),
+                Margin = new Padding(10)
+            };
+            pnlBorder.HandleCreated += (s, ev) => RoundedItem.MakeRounded(pnlBorder, 30);
+
+            PictureBox pb = new PictureBox
+            {
+                SizeMode = PictureBoxSizeMode.Zoom,
+                Dock = DockStyle.Fill,
+                BackColor = Color.White
+            };
+
+            try
+            {
+                byte[] imageBytes = await File.ReadAllBytesAsync(imagePath);
+                using (MemoryStream ms = new MemoryStream(imageBytes))
+                {
+                    pb.Image = Image.FromStream(ms);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error loading image: {ex.Message}");
+            }
+
+            HopeButton btnRemove = new HopeButton
+            {
+                Text = "✕",
+                Size = new Size(30, 30),
+                Location = new Point(pnlBorder.Width - 35, 5),
+                Anchor = AnchorStyles.Top | AnchorStyles.Right,
+                PrimaryColor = Color.FromArgb(255, 80, 80),
+                ForeColor = Color.White
+            };
+            btnRemove.HandleCreated += (s, ev) => RoundedItem.MakeRounded(btnRemove, 10);
+
+            pb.Click += (s, ev) => {
+                Form zoomForm = new Form { Size = new Size(800, 600), StartPosition = FormStartPosition.CenterScreen };
+                zoomForm.Controls.Add(new PictureBox { Image = pb.Image, Dock = DockStyle.Fill, SizeMode = PictureBoxSizeMode.Zoom });
+                zoomForm.ShowDialog();
+            };
+
+            btnRemove.Click += (s, ev) => {
+                flpDesignGallery.Controls.Remove(pnlBorder);
+                pnlBorder.Dispose();
+           
+            };
+
+            pnlBorder.Controls.Add(btnRemove);
+            pnlBorder.Controls.Add(pb);
+            btnRemove.BringToFront();
+
+            flpDesignGallery.Controls.Add(pnlBorder);
+        }
+
+        private string GetGalleryPath()
+        {
+            return Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "GalleryImages");
+        }
+
+        private async Task CreateGalleryFolderAsync()
+        {
+            await Task.Run(() =>
+            {
+                string folderPath = Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "GalleryImages");
+                if (!Directory.Exists(folderPath))
+                {
+                    Directory.CreateDirectory(folderPath);
+                }
+            });
         }
 
         private async Task LoadActiveOrderAsync()
@@ -59,15 +162,15 @@ namespace Dashboard
                                            .Where(m => m.Status != "Completed")
                                            .ToListAsync();
 
-                foreach (var m in activeOrders)
+                foreach (var measurements in activeOrders)
                 {
                     OrderCard card = new OrderCard
                     {
-                        CustomerName = m.CustomerName,
-                        Gender = m.Gender,
-                        Deadline = m.OrderDeadline.ToString("MM/dd/yy"),
-                        OrderDate = DateTime.Now.ToString("MM/dd/yy"),
-                        AllMeasurements = MeasurementFormatter.ToDisplayString(m)
+                        CustomerName = measurements.CustomerName,
+                        Gender = measurements.Gender,
+                        Deadline = measurements.OrderDeadline.ToString("MM/dd/yy"),
+                        OrderDate = measurements.DateCreated.ToString("MM/dd/yy"),
+                        AllMeasurements = MeasurementFormatter.ToDisplayString(measurements)
                     };
 
                     flpOrderList.Controls.Add(card);
@@ -96,7 +199,7 @@ namespace Dashboard
             }
         }
 
-        private void LoadOrdersFromDatabase()
+        private async Task LoadOrdersFromDatabaseAsync()
         {
             flpOrderList.Controls.Clear();
 
@@ -104,7 +207,7 @@ namespace Dashboard
             {
                 using (var db = new SewingDbContext())
                 {
-                    var savedOrders = db.Measurements.ToList();
+                    var savedOrders = await db.Measurements.Where(m => m.Status != "Completed").ToListAsync();
 
                     foreach (var measurements in savedOrders)
                     {
@@ -113,11 +216,10 @@ namespace Dashboard
                             CustomerName = measurements.CustomerName,
                             Gender = measurements.Gender,
                             Deadline = measurements.OrderDeadline.ToString("MM/dd/yy"),
-                            OrderDate = DateTime.Now.ToString("MM/dd/yy"),
-
+                            OrderDate = measurements.DateCreated.ToString("MM/dd/yy"),
                             AllMeasurements = MeasurementFormatter.ToDisplayString(measurements)
                         };
-
+ 
                         flpOrderList.Controls.Add(card);
                     }
                 }
@@ -128,63 +230,39 @@ namespace Dashboard
             }
         }
 
-        private string GenerateMeasurementString()
+        private async Task UpdateGrandTotalAsync()
         {
-            StringBuilder sb = new StringBuilder();
-            sb.AppendLine("━━━━━━━━━━━━━━━━━━━━");
-            sb.AppendLine("Torso Measurements:");
-            sb.AppendLine($"Shoulder: {txtShoulder.Text} cm");
-            sb.AppendLine($"Upper Bust: {txtUpperBust.Text} cm");
-            sb.AppendLine($"Bust: {txtBust.Text} cm");
-            sb.AppendLine($"Lower Bust: {txtLowerBust.Text} cm");
-            sb.AppendLine($"Front Figure: {txtFrontFigure.Text} cm");
-            sb.AppendLine($"Back Figure: {txtBackFigure.Text} cm");
-            sb.AppendLine($"Front Chest: {txtFrontChest.Text} cm");
-            sb.AppendLine($"Back Chest: {txtBackChest.Text} cm");
-            sb.AppendLine($"Upper Hips: {txtUpperHips.Text} cm");
-            sb.AppendLine($"Waistline: {txtWaistline.Text} cm");
-            sb.AppendLine($"Neck Dip: {txtNeckDip.Text} cm");
-            sb.AppendLine($"Arm Hole: {txtArmHole.Text} cm");
-            sb.AppendLine($"Arm Circumference: {txtArmCircumference.Text} cm");
-            sb.AppendLine($"Sleeve Length: {txtSleeveLength.Text} cm");
-
-            sb.AppendLine("━━━━━━━━━━━━━━━━━━━━");
-            sb.AppendLine("Pants Measurements:");
-            sb.AppendLine("━━━━━━━━━━━━━━━━━━━━");
-            sb.AppendLine($"Lower Hips: {txtLowerHips.Text} cm");
-            sb.AppendLine($"Crotch: {txtCrotch.Text} cm");
-            sb.AppendLine($"Thigh: {txtThigh.Text} cm");
-            sb.AppendLine($"Calf Circumference: {txtCalfCircumference.Text} cm");
-            sb.AppendLine($"Length: {txtLength.Text} cm");
-
-            return sb.ToString();
-        }
-
-
-        private void UpdateGrandTotal()
-        {
-            double materialSum = 0;
-
-            foreach (DataGridViewRow row in dgvMaterialList.Rows)
+            var calculations = await Task.Run(() =>
             {
-                if (row.Cells[3].Value != null)
+                decimal materialSum = 0;
+
+                foreach (DataGridViewRow row in dgvMaterialList.Rows)
                 {
-                    materialSum += Convert.ToDouble(row.Cells[3].Value);
+                    if (row.Cells[3].Value != null)
+                    {
+ 
+                        decimal.TryParse(row.Cells[3].Value.ToString(), out decimal rowVal);
+                        materialSum += rowVal;
+                    }
                 }
-            }
-            txtMaterialTotal.Text = materialSum.ToString("N2");
 
-            double labor = 0;
-            double.TryParse(txtLaborCost.Text, out labor);
-            double quantity = 0;
-            double.TryParse(txtQuantity.Text, out quantity);
+                decimal.TryParse(txtLaborCost.Text, out decimal labor);
+                decimal.TryParse(txtQuantity.Text, out decimal quantity);
 
-            double totalLabor = labor * quantity;
-            txtTotalLabor.Text = totalLabor.ToString("N2");
+                decimal totalLabor = labor * quantity;
+                decimal grandTotal = materialSum + totalLabor;
 
-            double grandTotal = materialSum + totalLabor;
-            lblGrandTotalCost.Text = "₱ " + grandTotal.ToString("N2");
+                return new
+                {
+                    MaterialSum = materialSum,
+                    TotalLabor = totalLabor,
+                    GrandTotal = grandTotal
+                };
+            });
 
+            txtMaterialTotal.Text = calculations.MaterialSum.ToString("N2");
+            txtTotalLabor.Text = calculations.TotalLabor.ToString("N2");
+            lblGrandTotalCost.Text = "₱ " + calculations.GrandTotal.ToString("N2");
         }
         private int targetHeight = 400;
 
@@ -219,6 +297,7 @@ namespace Dashboard
 
         private void dashboardPanel_Load(object sender, EventArgs e)
         {
+       
             hcbSearch.Text = "Search...";
             hcbSearch.ForeColor = Color.FromArgb(150, 150, 150);
             this.ActiveControl = null;
@@ -291,17 +370,17 @@ namespace Dashboard
             flpOrderList.Focus();
         }
 
-        private void txtQuantity_TextChanged(object sender, EventArgs e)
+        private async void txtQuantity_TextChanged(object sender, EventArgs e)
         {
-            UpdateGrandTotal();
+            await UpdateGrandTotalAsync();
         }
 
-        private void txtLaborCost_TextChanged(object sender, EventArgs e)
+        private async void txtLaborCost_TextChanged(object sender, EventArgs e)
         {
-            UpdateGrandTotal();
+            await UpdateGrandTotalAsync();
         }
 
-        private void btnCostAdd_Click(object sender, EventArgs e)
+        private async void btnCostAdd_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtItem.Text) || string.IsNullOrWhiteSpace(txtMetersNeed.Text))
             {
@@ -311,23 +390,35 @@ namespace Dashboard
 
             try
             {
-                double m = Convert.ToDouble(txtMetersNeed.Text);
-                double p = Convert.ToDouble(txtPrice.Text);
-                double rowTotal = m * p;
 
-                dgvMaterialList.Rows.Add(txtItem.Text, m, p, rowTotal);
+                string item = txtItem.Text;
+                string metersText = txtMetersNeed.Text;
+                string priceText = txtPrice.Text;
+
+                var result = await Task.Run(() =>
+                {
+                    decimal.TryParse(metersText, out decimal m);
+                    decimal.TryParse(priceText, out decimal p);
+                    decimal total = m * p;
+                    return new { Meters = m, Price = p, Total = total };
+                });
+
+                dgvMaterialList.Rows.Add(item, result.Meters, result.Price, result.Total);
 
                 txtItem.Clear();
                 txtMetersNeed.Clear();
                 txtPrice.Clear();
                 txtItem.Focus();
 
-                UpdateGrandTotal();
+                await UpdateGrandTotalAsync();
             }
-            catch { MessageBox.Show("Please enter valid number"); }
+            catch
+            {
+                MessageBox.Show("Please enter valid numbers");
+            }
         }
 
-        private void btnCostClear_Click(object sender, EventArgs e)
+        private async void btnCostClear_Click(object sender, EventArgs e)
         {
             txtItem.Clear();
             txtMetersNeed.Clear();
@@ -419,8 +510,8 @@ namespace Dashboard
                     OrderCard newCard = new OrderCard();
 
                     newCard.CustomerName = txtName.Text;
-                    newCard.OrderDate = DateTime.Now.ToString("MM/dd/yyyy");
-                    newCard.Deadline = pdtOrderDeadline.Value.ToString("MM/dd/yyyy");
+                    newCard.OrderDate = measurements.DateCreated.ToString("MM/dd/yy");
+                    newCard.Deadline = pdtOrderDeadline.Value.ToString("MM/dd/yy");
                     newCard.Gender = hcbGender.SelectedItem.ToString();
                     newCard.AllMeasurements = MeasurementFormatter.ToDisplayString(measurements);
 
@@ -440,110 +531,85 @@ namespace Dashboard
             ClearForm();
         }
 
-        private void btnAddDesign_Click(object sender, EventArgs e)
+        private async void btnAddDesign_Click(object sender, EventArgs e)
         {
             using (OpenFileDialog ofd = new OpenFileDialog())
             {
                 ofd.Filter = "Image Files|*.jpg;*.jpeg;*.png";
+
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
-                    MaterialCard pnlBorder = new MaterialCard();
-                    pnlBorder.Size = new Size(160, 160);
-                    pnlBorder.BackColor = Color.FromArgb(142, 188, 30);
-                    pnlBorder.Padding = new Padding(5);
-                    pnlBorder.Margin = new Padding(10);
-
-                    pnlBorder.HandleCreated += (s, e) => RoundedItem.MakeRounded(pnlBorder, 30);
-
-                    PictureBox pb = new PictureBox();
-                    byte[] imageBytes = File.ReadAllBytes(ofd.FileName);
-                    using (MemoryStream ms = new MemoryStream(imageBytes))
+                    try
                     {
-                        pb.Image = Image.FromStream(ms);
+                        await CreateGalleryFolderAsync();
+
+                        
+                        string extension = Path.GetExtension(ofd.FileName);
+                        string uniqueFileName = $"{Guid.NewGuid()}{extension}";
+                        string destinationPath = Path.Combine(GetGalleryPath(), uniqueFileName);
+
+                        byte[] imageBytes = await File.ReadAllBytesAsync(ofd.FileName);
+                        await File.WriteAllBytesAsync(destinationPath, imageBytes);
+
+                      
+                        await AddDesignCardToGalleryAsync(destinationPath);
+
+                        MessageBox.Show("Design added and saved locally!");
                     }
-                    pb.SizeMode = PictureBoxSizeMode.Zoom;
-                    pb.Dock = DockStyle.Fill;
-                    pb.BackColor = Color.White;
-                    pb.Margin = new Padding(10);
-
-                    if (File.Exists(ofd.FileName))
+                    catch (Exception ex)
                     {
-                        using (var stream = new MemoryStream(File.ReadAllBytes(ofd.FileName)))
-                        {
-                            pb.Image = Image.FromStream(stream);
-                        }
+                        MessageBox.Show($"Error saving design: {ex.Message}");
                     }
-
-
-
-                    HopeButton btnRemove = new HopeButton();
-                    btnRemove.Text = "✕";
-                    btnRemove.Size = new Size(30, 30);
-                    btnRemove.ButtonType = HopeButtonType.Primary;
-                    btnRemove.Location = new Point(pnlBorder.Width - 35, 5);
-                    btnRemove.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-                    btnRemove.PrimaryColor = Color.FromArgb(255, 80, 80);
-                    btnRemove.ForeColor = Color.White;
-
-                    btnRemove.HandleCreated += (s, e) => RoundedItem.MakeRounded(btnRemove, 10);
-
-                    flpDesignGallery.Controls.Add(pb);
-
-                    pb.Click += (s, ev) =>
-                    {
-                        Form zoomForm = new Form();
-                        zoomForm.Size = new Size(800, 600);
-                        zoomForm.StartPosition = FormStartPosition.CenterScreen;
-                        PictureBox zoomPb = new PictureBox
-                        {
-                            Image = pb.Image,
-                            Dock = DockStyle.Fill,
-                            SizeMode = PictureBoxSizeMode.Zoom
-                        };
-                        zoomForm.Controls.Add(zoomPb);
-                        zoomForm.ShowDialog();
-                    };
-
-                    btnRemove.Click += (s, ev) =>
-                    {
-                        flpDesignGallery.Controls.Remove(pnlBorder);
-                        pnlBorder.Dispose();
-                    };
-
-                    pnlBorder.Controls.Add(btnRemove);
-                    pnlBorder.Controls.Add(pb);
-                    btnRemove.BringToFront();
-
-                    flpDesignGallery.Controls.Add(pnlBorder);
-
-                    MessageBox.Show("Image has been added!");
                 }
             }
         }
 
-        private void btnOrderHistory_Click(object sender, EventArgs e)
+
+
+        private async void btnOrderHistory_Click(object sender, EventArgs e)
         {
-            OrderHistoryPopup orderHistoryPopup = new OrderHistoryPopup();
-
-            foreach (OrderCard card in GlobalHistoryList)
+            try
             {
-                orderHistoryPopup.flpOrderHistory.Controls.Add(card);
-                card.Visible = true;
+                OrderHistoryPopup orderHistoryPopup = new OrderHistoryPopup();
+                orderHistoryPopup.StartPosition = FormStartPosition.CenterScreen;
+
+                await orderHistoryPopup.LoadCompleteOrdersAsync();
+
+                orderHistoryPopup.flpOrderHistory.SuspendLayout();
+
+                foreach (OrderCard card in GlobalHistoryList)
+                {
+                    card.Visible = true;
+                    orderHistoryPopup.flpOrderHistory.Controls.Add(card);
+                }
+
+                orderHistoryPopup.flpOrderHistory.ResumeLayout();
+
+                await Task.Run(() => { });
+
+                orderHistoryPopup.ShowDialog();
+                orderHistoryPopup.flpOrderHistory.Controls.Clear();
             }
-
-            orderHistoryPopup.StartPosition = FormStartPosition.CenterScreen;
-            orderHistoryPopup.ShowDialog();
-
-
-            orderHistoryPopup.flpOrderHistory.Controls.Clear();
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading history: {ex.Message}");
+            }
         }
 
-        private void btnCostHistory_Click(object sender, EventArgs e)
-        {
-            ComputationHistoryPopup computationHistoryPopup = new ComputationHistoryPopup();
+        private async void btnCostHistory_Click(object sender, EventArgs e)
+        {   
+            try
+            {
+                ComputationHistoryPopup computationHistoryPopup = new ComputationHistoryPopup();
+                computationHistoryPopup.StartPosition = FormStartPosition.CenterScreen;
+                computationHistoryPopup.ShowDialog();
 
-            computationHistoryPopup.StartPosition = FormStartPosition.CenterScreen;
-            computationHistoryPopup.ShowDialog();
+                await Task.Delay(100);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error opening cost history: {ex.Message}");
+            }
         }
 
         private async void btnSaveCost_Click(object sender, EventArgs e)

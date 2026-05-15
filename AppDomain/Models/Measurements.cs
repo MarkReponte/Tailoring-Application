@@ -8,6 +8,7 @@ namespace AppDomain.Models
     {
         public string CustomerName { get; set; }
         public string Gender { get; set; }
+        public DateTime DateCreated {  get; set; } = DateTime.Now;
         public DateTime OrderDeadline { get; set; }
         public string Status { get; set; }
 
