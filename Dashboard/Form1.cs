@@ -20,6 +20,7 @@ using Microsoft.EntityFrameworkCore;
 using Dashboard.CostumizeTools;
 using System.IO;
 using AppInfrastructure.Repository;
+using Dashboard.Popup;
 
 
 namespace Dashboard
@@ -28,6 +29,7 @@ namespace Dashboard
     {
         private readonly MeasurementRepository _measurementRepo;
         private readonly CostRepository _costRepo;
+        private FormWindowState _lastWindowState;
 
         private void ShowWarning(string msg) => MessageBox.Show(msg, "Input Missing", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         private void ShowError(string msg) => MessageBox.Show(msg, "Invalid Date", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -35,13 +37,15 @@ namespace Dashboard
         public Form1()
         {
             InitializeComponent();
+            ConfigureCenteredWindowBounds();
 
+            notificationPopup = new NotificationPopup();
             var sewingDb = new SewingDbContext();
             var costDb = new CostDBContext();
 
             _measurementRepo = new MeasurementRepository(sewingDb);
             _costRepo = new CostRepository(costDb);
-        
+
 
 
             var materialSkinManager = ReaLTaiizor.Manager.MaterialSkinManager.Instance;
@@ -50,18 +54,67 @@ namespace Dashboard
 
             materialSkinManager.ColorScheme = new ReaLTaiizor.Colors.MaterialColorScheme(
                primary: System.Drawing.Color.FromArgb(141, 182, 0),
-               darkPrimary: System.Drawing.Color.FromArgb(110, 145, 0),
-               lightPrimary: System.Drawing.Color.FromArgb(180, 215, 60),
-               accent: System.Drawing.Color.FromArgb(255, 204, 0),
+               darkPrimary: System.Drawing.Color.FromArgb(70, 95, 0),
+               lightPrimary: System.Drawing.Color.FromArgb(215, 235, 150),
+               accent: System.Drawing.Color.FromArgb(45, 65, 0),
                textShade: ReaLTaiizor.Util.MaterialTextShade.WHITE
             );
         }
+
+        private void ConfigureCenteredWindowBounds()
+        {
+            WindowState = FormWindowState.Normal;
+
+            Rectangle workingArea = Screen.FromControl(this).WorkingArea;
+            int width = Math.Min(1440, Math.Max(900, workingArea.Width - 80));
+            int height = Math.Min(900, Math.Max(600, workingArea.Height - 80));
+
+            Size = new Size(width, height);
+            CenterWindowInCurrentScreen();
+
+            _lastWindowState = WindowState;
+            Shown += (_, _) => WindowState = FormWindowState.Maximized;
+            Resize += Form1_Resize;
+        }
+
+        private void CenterWindowInCurrentScreen()
+        {
+            Rectangle workingArea = Screen.FromControl(this).WorkingArea;
+            Location = new Point(
+                workingArea.Left + (workingArea.Width - Width) / 2,
+                workingArea.Top + (workingArea.Height - Height) / 2
+            );
+        }
+
+        private void Form1_Resize(object? sender, EventArgs e)
+        {
+            if (_lastWindowState == FormWindowState.Maximized && WindowState == FormWindowState.Normal)
+            {
+                CenterWindowInCurrentScreen();
+            }
+
+            _lastWindowState = WindowState;
+        }
         private async void Form1_Load(object sender, EventArgs e)
         {
+            ConfigureInputFonts();
+            btnOrderHistory.Font = new Font("Segoe UI", 11f, FontStyle.Bold);
             await LoadActiveOrderAsync();
             await LoadSavedDesignsAsync();
             await LoadOrdersFromDatabaseAsync();
 
+        }
+
+        private void ConfigureInputFonts()
+        {
+            Font inputFont = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+
+            txtName.UseCustomFont = true;
+            txtName.Font = inputFont;
+
+            hcbGender.DrawItem -= hcbGender_DrawItem;
+            hcbGender.DrawMode = DrawMode.Normal;
+            hcbGender.Font = inputFont;
         }
 
         private bool ValidateOrderInput()
@@ -162,16 +215,18 @@ namespace Dashboard
             };
             btnRemove.HandleCreated += (s, ev) => RoundedItem.MakeRounded(btnRemove, 10);
 
-            pb.Click += (s, ev) => {
+            pb.Click += (s, ev) =>
+            {
                 Form zoomForm = new Form { Size = new Size(800, 600), StartPosition = FormStartPosition.CenterScreen };
                 zoomForm.Controls.Add(new PictureBox { Image = pb.Image, Dock = DockStyle.Fill, SizeMode = PictureBoxSizeMode.Zoom });
                 zoomForm.ShowDialog();
             };
 
-            btnRemove.Click += (s, ev) => {
+            btnRemove.Click += (s, ev) =>
+            {
                 flpDesignGallery.Controls.Remove(pnlBorder);
                 pnlBorder.Dispose();
-           
+
             };
 
             pnlBorder.Controls.Add(btnRemove);
@@ -197,6 +252,7 @@ namespace Dashboard
                 }
             });
         }
+
 
         private async Task LoadActiveOrderAsync()
         {
@@ -265,7 +321,7 @@ namespace Dashboard
                             OrderDate = measurements.DateCreated.ToString("MM/dd/yy"),
                             AllMeasurements = MeasurementFormatter.ToDisplayString(measurements)
                         };
- 
+
                         flpOrderList.Controls.Add(card);
                     }
                 }
@@ -286,7 +342,7 @@ namespace Dashboard
                 {
                     if (row.Cells[3].Value != null)
                     {
- 
+
                         decimal.TryParse(row.Cells[3].Value.ToString(), out decimal rowVal);
                         materialSum += rowVal;
                     }
@@ -311,6 +367,7 @@ namespace Dashboard
             lblGrandTotalCost.Text = "₱ " + calculations.GrandTotal.ToString("N2");
         }
         private int targetHeight = 400;
+        private NotificationPopup notificationPopup;
 
         public void NotificationPanel()
         {
@@ -343,7 +400,7 @@ namespace Dashboard
 
         private void dashboardPanel_Load(object sender, EventArgs e)
         {
-       
+
             hcbSearch.Text = "Search...";
             hcbSearch.ForeColor = Color.FromArgb(150, 150, 150);
             this.ActiveControl = null;
@@ -387,28 +444,28 @@ namespace Dashboard
         private void btnNotification_Click(object sender, EventArgs e)
         {
 
-            NotificationPanel();
+            notificationPopup.ShowPopup(this, btnNotificationOrder);
 
         }
 
         private void btnNotificationOrder_Click(object sender, EventArgs e)
         {
-            NotificationPanel();
+            notificationPopup.ShowPopup(this, btnNotificationOrder);
         }
 
         private void btnNotificationBodyMeasurement_Click(object sender, EventArgs e)
         {
-            NotificationPanel();
+            notificationPopup.ShowPopup(this, btnNotificationBodyMeasurement);
         }
 
         private void btnNotificationCostConsumption_Click(object sender, EventArgs e)
         {
-            NotificationPanel();
+            notificationPopup.ShowPopup(this, btnNotificationCostConsumption);
         }
 
         private void btnNotificationRevenue_Click(object sender, EventArgs e)
         {
-            NotificationPanel();
+            notificationPopup.ShowPopup(this, btnNotificationDesign);
         }
 
         private void flwpnlOrderList_MouseEnter(object sender, EventArgs e)
@@ -484,7 +541,7 @@ namespace Dashboard
 
         private async void btnSubmit_Click(object sender, EventArgs e)
         {
-           
+
 
             if (!ValidateOrderInput())
             {
@@ -563,7 +620,7 @@ namespace Dashboard
                     {
                         await CreateGalleryFolderAsync();
 
-                        
+
                         string extension = Path.GetExtension(ofd.FileName);
                         string uniqueFileName = $"{Guid.NewGuid()}{extension}";
                         string destinationPath = Path.Combine(GetGalleryPath(), uniqueFileName);
@@ -571,7 +628,7 @@ namespace Dashboard
                         byte[] imageBytes = await File.ReadAllBytesAsync(ofd.FileName);
                         await File.WriteAllBytesAsync(destinationPath, imageBytes);
 
-                      
+
                         await AddDesignCardToGalleryAsync(destinationPath);
 
                         MessageBox.Show("Design added and saved locally!");
@@ -598,7 +655,7 @@ namespace Dashboard
                     historyPopup.ShowDialog();
                 }
             }
-            catch ( Exception ex )
+            catch (Exception ex)
             {
                 MessageBox.Show($"Error opening history: {ex.Message}", "History Error",
                      MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -606,7 +663,7 @@ namespace Dashboard
         }
 
         private async void btnCostHistory_Click(object sender, EventArgs e)
-        {   
+        {
             try
             {
                 ComputationHistoryPopup computationHistoryPopup = new ComputationHistoryPopup();
@@ -650,9 +707,9 @@ namespace Dashboard
                 });
             }
 
-            using (var costPopup = new CostCostumerNamePopup(summary, _costRepo)) 
-            { 
-                if(costPopup.ShowDialog() == DialogResult.OK)
+            using (var costPopup = new CostCostumerNamePopup(summary, _costRepo))
+            {
+                if (costPopup.ShowDialog() == DialogResult.OK)
                 {
                     dgvMaterialList.Rows.Clear();
                     MessageBox.Show("Saved to History successfully!");
@@ -660,8 +717,70 @@ namespace Dashboard
 
                 costPopup.StartPosition = FormStartPosition.CenterScreen;
             }
-            
-         
+
+
         }
+        private void hcbSearch_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            if (e.Index < 0) return;
+
+            e.DrawBackground();
+
+            using (var font = new Font("Segoe UI", 18F))
+            using (var brush = new SolidBrush(e.ForeColor))
+            {
+                string text = hcbSearch.Items[e.Index].ToString();
+                e.Graphics.DrawString(text, font, brush, e.Bounds);
+            }
+
+            e.DrawFocusRectangle();
+        }
+
+        private void hcbGender_DrawItem(object? sender, DrawItemEventArgs e)
+        {
+            if (e.Index < 0 || e.Bounds.Width <= 0 || e.Bounds.Height <= 0) return;
+
+            ComboBox? comboBox = sender as ComboBox;
+            Font font = comboBox?.Font ?? hcbGender.Font;
+            string text = comboBox?.Items[e.Index]?.ToString() ?? string.Empty;
+            bool isSelected = (e.State & DrawItemState.Selected) == DrawItemState.Selected;
+            Color backColor = isSelected ? SystemColors.Highlight : hcbGender.BackColor;
+            Color foreColor = isSelected ? SystemColors.HighlightText : hcbGender.ForeColor;
+
+            using (var backgroundBrush = new SolidBrush(backColor))
+            {
+                e.Graphics.FillRectangle(backgroundBrush, e.Bounds);
+            }
+
+            using (var brush = new SolidBrush(foreColor))
+            {
+                var textLocation = new PointF(e.Bounds.Left + 4, e.Bounds.Top + (e.Bounds.Height - font.Height) / 2f);
+                e.Graphics.DrawString(text, font, brush, textLocation);
+            }
+        }
+        private void hcbSearch_Paint(object sender, PaintEventArgs e)
+        {
+            ComboBox cmb = sender as ComboBox;
+
+            e.Graphics.FillRectangle(new SolidBrush(cmb.BackColor), cmb.ClientRectangle);
+
+            using (var font = new Font("Segoe UI", 18F))
+            using (var brush = new SolidBrush(cmb.ForeColor))
+            {
+                string text = cmb.SelectedItem?.ToString() ?? cmb.Text;
+                e.Graphics.DrawString(text, font, brush, new PointF(4, (cmb.Height - font.GetHeight()) / 2));
+            }
+        }
+        private void materialLabel3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialLabel23_Click(object sender, EventArgs e)
+        {
+
+        }
+
+       
     }
 }
