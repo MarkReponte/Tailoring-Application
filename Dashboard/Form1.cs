@@ -30,6 +30,7 @@ namespace Dashboard
         private readonly MeasurementRepository _measurementRepo;
         private readonly CostRepository _costRepo;
         private FormWindowState _lastWindowState;
+        private static readonly Color CostConsumptionBackgroundColor = Color.FromArgb(249, 250, 252);
 
         private void ShowWarning(string msg) => MessageBox.Show(msg, "Input Missing", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         private void ShowError(string msg) => MessageBox.Show(msg, "Invalid Date", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -37,7 +38,8 @@ namespace Dashboard
         public Form1()
         {
             InitializeComponent();
-            ConfigureCenteredWindowBounds();
+
+
 
             notificationPopup = new NotificationPopup();
             var sewingDb = new SewingDbContext();
@@ -56,7 +58,7 @@ namespace Dashboard
                primary: System.Drawing.Color.FromArgb(141, 182, 0),
                darkPrimary: System.Drawing.Color.FromArgb(70, 95, 0),
                lightPrimary: System.Drawing.Color.FromArgb(215, 235, 150),
-               accent: System.Drawing.Color.FromArgb(45, 65, 0),
+               accent: System.Drawing.Color.FromArgb(69, 98, 20),
                textShade: ReaLTaiizor.Util.MaterialTextShade.WHITE
             );
         }
@@ -97,12 +99,37 @@ namespace Dashboard
         }
         private async void Form1_Load(object sender, EventArgs e)
         {
+            mcMeasurement.Padding = new Padding(0, 17, 0, 0);
+            ConfigureCostConsumptionBackground();
+            //OrderSummary
+            {
+                foxLabel1.BackColor = Color.Transparent;
+                foxLabel1.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+                foxLabel1.ForeColor = Color.FromArgb(102, 140, 48);
+
+                foxLabel1.Name = "foxLabel1";
+                foxLabel1.Size = new Size(261, 50);
+                foxLabel1.TabIndex = 174;
+                foxLabel1.Text = "Order Summary";
+            }
             ConfigureInputFonts();
+            ConfigureCostButtonPreview();
+            ConfigureCostSaveButton();
             btnOrderHistory.Font = new Font("Segoe UI", 11f, FontStyle.Bold);
             await LoadActiveOrderAsync();
             await LoadSavedDesignsAsync();
             await LoadOrdersFromDatabaseAsync();
 
+        }
+
+        private void ConfigureCostConsumptionBackground()
+        {
+            CostConsumption.UseVisualStyleBackColor = true;
+            CostConsumption.BackColor = CostConsumptionBackgroundColor;
+            if (materialCard10 == null) return;
+
+            materialCard10.BackColor = CostConsumptionBackgroundColor;
+            materialCard10.Invalidate();
         }
 
         private void ConfigureInputFonts()
@@ -115,6 +142,77 @@ namespace Dashboard
             hcbGender.DrawItem -= hcbGender_DrawItem;
             hcbGender.DrawMode = DrawMode.Normal;
             hcbGender.Font = inputFont;
+        }
+
+        private void ConfigureCostButtonPreview()
+        {
+            if (materialCard10 == null) return;
+
+            System.Windows.Forms.Button? costButton =
+                materialCard10.Controls.Find("button1", false).FirstOrDefault() as System.Windows.Forms.Button;
+            if (costButton == null) return;
+
+            costButton.UseVisualStyleBackColor = false;
+            costButton.FlatStyle = FlatStyle.Flat;
+            costButton.BackColor = Color.Blue;
+            costButton.ForeColor = Color.White;
+            costButton.FlatAppearance.BorderSize = 0;
+            costButton.FlatAppearance.MouseOverBackColor = Color.RoyalBlue;
+            costButton.FlatAppearance.MouseDownBackColor = Color.Navy;
+            costButton.BringToFront();
+        }
+
+        private void ConfigureCostSaveButton()
+        {
+            ConfigureAccentHoverButton(btnSaveCost);
+            ConfigureAccentHoverButton(btnCostHistory);
+        }
+        private void RoundPanelCorners(System.Windows.Forms.Panel panel, int radius)
+        {
+            Rectangle bounds = panel.ClientRectangle;
+            int diameter = radius * 2;
+
+            using GraphicsPath path = new GraphicsPath();
+            path.AddArc(bounds.X, bounds.Y, diameter, diameter, 180, 90);
+            path.AddArc(bounds.Right - diameter, bounds.Y, diameter, diameter, 270, 90);
+            path.AddArc(bounds.Right - diameter, bounds.Bottom - diameter, diameter, diameter, 0, 90);
+            path.AddArc(bounds.X, bounds.Bottom - diameter, diameter, diameter, 90, 90);
+            path.CloseFigure();
+
+            panel.Region = new Region(path);
+        }
+        private void ConfigureAccentHoverButton(MaterialButton button)
+        {
+            button.Type = MaterialButton.MaterialButtonType.Contained;
+            button.HighEmphasis = true;
+            button.NoAccentTextColor = Color.White;
+            button.UseAccentColor = false;
+            button.UseVisualStyleBackColor = true;
+
+            button.MouseEnter -= CostMaterialButton_MouseEnter;
+            button.MouseLeave -= CostMaterialButton_MouseLeave;
+            button.MouseEnter += CostMaterialButton_MouseEnter;
+            button.MouseLeave += CostMaterialButton_MouseLeave;
+
+            button.Invalidate();
+        }
+
+        private void CostMaterialButton_MouseEnter(object? sender, EventArgs e)
+        {
+            if (sender is MaterialButton button)
+            {
+                button.UseAccentColor = true;
+                button.Invalidate();
+            }
+        }
+
+        private void CostMaterialButton_MouseLeave(object? sender, EventArgs e)
+        {
+            if (sender is MaterialButton button)
+            {
+                button.UseAccentColor = false;
+                button.Invalidate();
+            }
         }
 
         private bool ValidateOrderInput()
@@ -771,16 +869,15 @@ namespace Dashboard
                 e.Graphics.DrawString(text, font, brush, new PointF(4, (cmb.Height - font.GetHeight()) / 2));
             }
         }
-        private void materialLabel3_Click(object sender, EventArgs e)
+
+        private void styledPanel7_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
-        private void materialLabel23_Click(object sender, EventArgs e)
+        private void txtArmCircumference_Click(object sender, EventArgs e)
         {
 
         }
-
-       
     }
 }
