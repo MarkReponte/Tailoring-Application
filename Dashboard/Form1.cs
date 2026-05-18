@@ -99,6 +99,7 @@ namespace Dashboard
         }
         private async void Form1_Load(object sender, EventArgs e)
         {
+            materialCard10.Padding = new Padding(0);
             mcMeasurement.Padding = new Padding(0, 17, 0, 0);
             ConfigureCostConsumptionBackground();
             //OrderSummary
@@ -390,12 +391,34 @@ namespace Dashboard
             hcbGender.SelectedIndex = -1;
             pdtOrderDeadline.Value = DateTime.Now;
 
-            foreach (Control c in mcMeasurement.Controls)
+            var cyberFields = new ReaLTaiizor.Controls.CyberTextBox[]
             {
-                if (c is TextBox tb)
+        txtShoulder, txtFrontFigure, txtUpperHips, txtArmCircumference,
+        txtUpperBust, txtBackFigure, txtWaistline, txtSleeveLength,
+        txtBust, txtFrontChest, txtNeckDip,
+        txtLowerBust, txtBackChest, txtArmHole,
+        txtLowerHips, txtLength,
+        txtCrotch, txtThigh,
+        txtCalfCircumference
+            };
+
+            foreach (var field in cyberFields)
+            {
+                if (field == null) continue;
+
+                
+                foreach (Control c in field.Controls)
                 {
-                    tb.Clear();
+                    if (c is TextBox tb)
+                    {
+                        tb.Text = "";
+                        break;
+                    }
                 }
+
+                // Also reset the top-level Text property
+                field.Text = "";
+                field.Invalidate();
             }
         }
 
@@ -430,40 +453,31 @@ namespace Dashboard
             }
         }
 
-        private async Task UpdateGrandTotalAsync()
+        private void UpdateGrandTotal()
         {
-            var calculations = await Task.Run(() =>
+
+            decimal materialSum = 0;
+
+            foreach (DataGridViewRow row in dgvMaterialList.Rows)
             {
-                decimal materialSum = 0;
-
-                foreach (DataGridViewRow row in dgvMaterialList.Rows)
+                if (row.Cells[3].Value != null)
                 {
-                    if (row.Cells[3].Value != null)
-                    {
-
-                        decimal.TryParse(row.Cells[3].Value.ToString(), out decimal rowVal);
-                        materialSum += rowVal;
-                    }
+                    decimal.TryParse(row.Cells[3].Value.ToString(), out decimal rowVal);
+                    materialSum += rowVal;
                 }
+            }
 
-                decimal.TryParse(txtLaborCost.Text, out decimal labor);
-                decimal.TryParse(txtQuantity.Text, out decimal quantity);
+            decimal.TryParse(txtLaborCost.Text, out decimal labor);
+            decimal.TryParse(txtQuantity.Text, out decimal quantity);
 
-                decimal totalLabor = labor * quantity;
-                decimal grandTotal = materialSum + totalLabor;
+            decimal totalLabor = labor * quantity;
+            decimal grandTotal = materialSum + totalLabor;
 
-                return new
-                {
-                    MaterialSum = materialSum,
-                    TotalLabor = totalLabor,
-                    GrandTotal = grandTotal
-                };
-            });
-
-            txtMaterialTotal.Text = calculations.MaterialSum.ToString("N2");
-            txtTotalLabor.Text = calculations.TotalLabor.ToString("N2");
-            lblGrandTotalCost.Text = "₱ " + calculations.GrandTotal.ToString("N2");
+            txtMaterialTotal.Text = materialSum.ToString("N2");
+            txtTotalLabor.Text = totalLabor.ToString("N2");
+            lblGrandTotalCost.Text = "₱ " + grandTotal.ToString("N2");
         }
+
         private int targetHeight = 400;
         private NotificationPopup notificationPopup;
 
@@ -573,12 +587,12 @@ namespace Dashboard
 
         private async void txtQuantity_TextChanged(object sender, EventArgs e)
         {
-            await UpdateGrandTotalAsync();
+            UpdateGrandTotal();
         }
 
         private async void txtLaborCost_TextChanged(object sender, EventArgs e)
         {
-            await UpdateGrandTotalAsync();
+            UpdateGrandTotal();
         }
 
         private async void btnCostAdd_Click(object sender, EventArgs e)
@@ -611,7 +625,7 @@ namespace Dashboard
                 txtPrice.Clear();
                 txtItem.Focus();
 
-                await UpdateGrandTotalAsync();
+                UpdateGrandTotal();
             }
             catch
             {
@@ -870,14 +884,41 @@ namespace Dashboard
             }
         }
 
-        private void styledPanel7_Paint(object sender, PaintEventArgs e)
+        private void hcbSearch_TextChanged(object sender, EventArgs e)
         {
+            string searchText = hcbSearch.Text.Trim().ToLower();
 
+
+            if (string.IsNullOrWhiteSpace(searchText) || searchText == "search...")
+            {
+                foreach (Control c in flpOrderList.Controls)
+                {
+                    c.Visible = true;
+                }
+                return;
+            }
+
+
+            flpOrderList.SuspendLayout();
+            foreach (Control c in flpOrderList.Controls)
+            {
+                if (c is OrderCard card)
+                {
+                    bool matches =
+                        card.CustomerName?.ToLower().Contains(searchText) == true ||
+                        card.Gender?.ToLower().Contains(searchText) == true ||
+                        card.Deadline?.ToLower().Contains(searchText) == true ||
+                        card.OrderDate?.ToLower().Contains(searchText) == true;
+
+                    c.Visible = matches;
+                }
+            }
+            flpOrderList.ResumeLayout();
         }
 
-        private void txtArmCircumference_Click(object sender, EventArgs e)
+        private void btnClear_Click(object sender, EventArgs e)
         {
-
+            ClearForm();
         }
     }
 }
