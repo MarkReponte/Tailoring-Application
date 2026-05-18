@@ -658,10 +658,11 @@ namespace Dashboard
                     Status = "In Progress",
 
                     Shoulder = GetValue(txtShoulder.Text),
+                    ArmCircumference = GetValue(txtArmCircumference.Text),
+                    FrontFigure = GetValue(txtFrontFigure.Text),
                     UpperBust = GetValue(txtUpperBust.Text),
                     Bust = GetValue(txtBust.Text),
                     LowerBust = GetValue(txtLowerBust.Text),
-                    FrontFigure = GetValue(txtFrontFigure.Text),
                     BackFigure = GetValue(txtBackFigure.Text),
                     FrontChest = GetValue(txtFrontChest.Text),
                     BackChest = GetValue(txtBackChest.Text),
@@ -669,7 +670,6 @@ namespace Dashboard
                     Waistline = GetValue(txtWaistline.Text),
                     NeckDip = GetValue(txtNeckDip.Text),
                     ArmHole = GetValue(txtArmHole.Text),
-                    ArmCircumference = GetValue(txtArmCircumference.Text),
                     SleeveLength = GetValue(txtSleeveLength.Text),
 
                     LowerHips = GetValue(txtLowerHips.Text),

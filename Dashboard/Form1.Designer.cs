@@ -32,12 +32,12 @@ namespace Dashboard
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
             imageList = new ImageList(components);
             mtcSelectionControl = new ReaLTaiizor.Controls.MaterialTabControl();
             MainDashboard = new TabPage();
@@ -78,18 +78,19 @@ namespace Dashboard
             panel2 = new Panel();
             mcMeasurement = new ReaLTaiizor.Controls.MaterialCard();
             styledPanel5 = new Tailoring_Application.Dashboard.StyledPanel();
+            txtThigh = new ReaLTaiizor.Controls.CyberTextBox();
+            txtCalfCircumference = new ReaLTaiizor.Controls.CyberTextBox();
+            txtCrotch = new ReaLTaiizor.Controls.CyberTextBox();
+            txtLowerHips = new ReaLTaiizor.Controls.CyberTextBox();
+            txtLength = new ReaLTaiizor.Controls.CyberTextBox();
+            spaceSeparatorHorizontal2 = new ReaLTaiizor.Controls.SpaceSeparatorHorizontal();
             materialLabel52 = new ReaLTaiizor.Controls.MaterialLabel();
             materialLabel44 = new ReaLTaiizor.Controls.MaterialLabel();
-            txtCalfCircumference = new ReaLTaiizor.Controls.PoisonTextBox();
             pictureBox6 = new PictureBox();
-            txtThigh = new ReaLTaiizor.Controls.PoisonTextBox();
             materialLabel45 = new ReaLTaiizor.Controls.MaterialLabel();
             materialLabel51 = new ReaLTaiizor.Controls.MaterialLabel();
             materialLabel47 = new ReaLTaiizor.Controls.MaterialLabel();
-            txtCrotch = new ReaLTaiizor.Controls.PoisonTextBox();
             materialLabel54 = new ReaLTaiizor.Controls.MaterialLabel();
-            txtLength = new ReaLTaiizor.Controls.PoisonTextBox();
-            txtLowerHips = new ReaLTaiizor.Controls.PoisonTextBox();
             materialLabel48 = new ReaLTaiizor.Controls.MaterialLabel();
             materialLabel49 = new ReaLTaiizor.Controls.MaterialLabel();
             materialLabel46 = new ReaLTaiizor.Controls.MaterialLabel();
@@ -99,6 +100,7 @@ namespace Dashboard
             btnSubmit = new ReaLTaiizor.Controls.HopeButton();
             btnClear = new ReaLTaiizor.Controls.HopeButton();
             styledPanel4 = new Tailoring_Application.Dashboard.StyledPanel();
+            spaceSeparatorHorizontal3 = new ReaLTaiizor.Controls.SpaceSeparatorHorizontal();
             pdtOrderDeadline = new ReaLTaiizor.Controls.PoisonDateTime();
             materialLabel10 = new ReaLTaiizor.Controls.MaterialLabel();
             materialLabel13 = new ReaLTaiizor.Controls.MaterialLabel();
@@ -111,47 +113,47 @@ namespace Dashboard
             txtArmCircumference = new ReaLTaiizor.Controls.CyberTextBox();
             txtUpperHips = new ReaLTaiizor.Controls.CyberTextBox();
             txtFrontFigure = new ReaLTaiizor.Controls.CyberTextBox();
+            txtSleeveLength = new ReaLTaiizor.Controls.CyberTextBox();
+            txtWaistline = new ReaLTaiizor.Controls.CyberTextBox();
+            txtBackFigure = new ReaLTaiizor.Controls.CyberTextBox();
+            txtNeckDip = new ReaLTaiizor.Controls.CyberTextBox();
+            txtFrontChest = new ReaLTaiizor.Controls.CyberTextBox();
+            txtArmHole = new ReaLTaiizor.Controls.CyberTextBox();
+            txtBackChest = new ReaLTaiizor.Controls.CyberTextBox();
+            txtLowerBust = new ReaLTaiizor.Controls.CyberTextBox();
+            txtBust = new ReaLTaiizor.Controls.CyberTextBox();
+            txtUpperBust = new ReaLTaiizor.Controls.CyberTextBox();
             txtShoulder = new ReaLTaiizor.Controls.CyberTextBox();
             spaceSeparatorHorizontal1 = new ReaLTaiizor.Controls.SpaceSeparatorHorizontal();
             materialLabel20 = new ReaLTaiizor.Controls.MaterialLabel();
-            txtLowerBust = new ReaLTaiizor.Controls.PoisonTextBox();
             materialLabel57 = new ReaLTaiizor.Controls.MaterialLabel();
             materialLabel33 = new ReaLTaiizor.Controls.MaterialLabel();
             materialLabel15 = new ReaLTaiizor.Controls.MaterialLabel();
             materialLabel16 = new ReaLTaiizor.Controls.MaterialLabel();
             materialLabel42 = new ReaLTaiizor.Controls.MaterialLabel();
-            txtNeckDip = new ReaLTaiizor.Controls.PoisonTextBox();
             materialLabel23 = new ReaLTaiizor.Controls.MaterialLabel();
             materialLabel37 = new ReaLTaiizor.Controls.MaterialLabel();
-            txtSleeveLength = new ReaLTaiizor.Controls.PoisonTextBox();
             materialLabel43 = new ReaLTaiizor.Controls.MaterialLabel();
             materialLabel22 = new ReaLTaiizor.Controls.MaterialLabel();
             pictureBox5 = new PictureBox();
             materialLabel34 = new ReaLTaiizor.Controls.MaterialLabel();
             materialLabel58 = new ReaLTaiizor.Controls.MaterialLabel();
             materialLabel21 = new ReaLTaiizor.Controls.MaterialLabel();
-            txtWaistline = new ReaLTaiizor.Controls.PoisonTextBox();
             materialLabel27 = new ReaLTaiizor.Controls.MaterialLabel();
             materialLabel38 = new ReaLTaiizor.Controls.MaterialLabel();
             materialLabel32 = new ReaLTaiizor.Controls.MaterialLabel();
-            txtBust = new ReaLTaiizor.Controls.PoisonTextBox();
             materialLabel35 = new ReaLTaiizor.Controls.MaterialLabel();
-            txtUpperBust = new ReaLTaiizor.Controls.PoisonTextBox();
             materialLabel31 = new ReaLTaiizor.Controls.MaterialLabel();
             materialLabel19 = new ReaLTaiizor.Controls.MaterialLabel();
-            txtArmHole = new ReaLTaiizor.Controls.PoisonTextBox();
-            txtBackFigure = new ReaLTaiizor.Controls.PoisonTextBox();
             materialLabel36 = new ReaLTaiizor.Controls.MaterialLabel();
             materialLabel39 = new ReaLTaiizor.Controls.MaterialLabel();
             materialLabel30 = new ReaLTaiizor.Controls.MaterialLabel();
             materialLabel18 = new ReaLTaiizor.Controls.MaterialLabel();
             materialLabel26 = new ReaLTaiizor.Controls.MaterialLabel();
             materialLabel17 = new ReaLTaiizor.Controls.MaterialLabel();
-            txtFrontChest = new ReaLTaiizor.Controls.PoisonTextBox();
             materialLabel25 = new ReaLTaiizor.Controls.MaterialLabel();
             materialLabel29 = new ReaLTaiizor.Controls.MaterialLabel();
             materialLabel28 = new ReaLTaiizor.Controls.MaterialLabel();
-            txtBackChest = new ReaLTaiizor.Controls.PoisonTextBox();
             materialLabel24 = new ReaLTaiizor.Controls.MaterialLabel();
             hopeGroupBox3 = new ReaLTaiizor.Controls.HopeGroupBox();
             materialCard4 = new ReaLTaiizor.Controls.MaterialCard();
@@ -211,6 +213,7 @@ namespace Dashboard
             materialLabel2 = new ReaLTaiizor.Controls.MaterialLabel();
             btnCloseNotification = new ReaLTaiizor.Controls.MaterialButton();
             animationTimer = new System.Windows.Forms.Timer(components);
+            spaceSeparatorHorizontal4 = new ReaLTaiizor.Controls.SpaceSeparatorHorizontal();
             mtcSelectionControl.SuspendLayout();
             MainDashboard.SuspendLayout();
             materialCard7.SuspendLayout();
@@ -286,7 +289,7 @@ namespace Dashboard
             mtcSelectionControl.Name = "mtcSelectionControl";
             mtcSelectionControl.Padding = new Point(0, 0);
             mtcSelectionControl.SelectedIndex = 0;
-            mtcSelectionControl.Size = new Size(1942, 994);
+            mtcSelectionControl.Size = new Size(1936, 986);
             mtcSelectionControl.TabIndex = 0;
             // 
             // MainDashboard
@@ -296,7 +299,7 @@ namespace Dashboard
             MainDashboard.ImageKey = "dashboard.png";
             MainDashboard.Location = new Point(4, 29);
             MainDashboard.Name = "MainDashboard";
-            MainDashboard.Size = new Size(1934, 961);
+            MainDashboard.Size = new Size(1928, 953);
             MainDashboard.TabIndex = 0;
             MainDashboard.Text = "Dashboard";
             MainDashboard.UseVisualStyleBackColor = true;
@@ -319,7 +322,7 @@ namespace Dashboard
             materialCard7.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialCard7.Name = "materialCard7";
             materialCard7.Padding = new Padding(5);
-            materialCard7.Size = new Size(1934, 896);
+            materialCard7.Size = new Size(1928, 888);
             materialCard7.TabIndex = 3;
             // 
             // dgvData
@@ -329,38 +332,38 @@ namespace Dashboard
             dgvData.BorderStyle = BorderStyle.None;
             dgvData.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dgvData.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.WhiteSmoke;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
-            dataGridViewCellStyle1.ForeColor = Color.FromArgb(141, 182, 0);
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(230, 240, 210);
-            dataGridViewCellStyle1.SelectionForeColor = Color.Black;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = Color.WhiteSmoke;
+            dataGridViewCellStyle10.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
+            dataGridViewCellStyle10.ForeColor = Color.FromArgb(141, 182, 0);
+            dataGridViewCellStyle10.SelectionBackColor = Color.FromArgb(230, 240, 210);
+            dataGridViewCellStyle10.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle10.WrapMode = DataGridViewTriState.True;
+            dgvData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             dgvData.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvData.Columns.AddRange(new DataGridViewColumn[] { Column5, Column6, Column7, Column8, Column9 });
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(255, 255, 255);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
-            dataGridViewCellStyle2.ForeColor = Color.FromArgb(136, 136, 136);
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(0, 198, 247);
-            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(17, 17, 17);
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgvData.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = Color.FromArgb(255, 255, 255);
+            dataGridViewCellStyle11.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
+            dataGridViewCellStyle11.ForeColor = Color.FromArgb(136, 136, 136);
+            dataGridViewCellStyle11.SelectionBackColor = Color.FromArgb(0, 198, 247);
+            dataGridViewCellStyle11.SelectionForeColor = Color.FromArgb(17, 17, 17);
+            dataGridViewCellStyle11.WrapMode = DataGridViewTriState.False;
+            dgvData.DefaultCellStyle = dataGridViewCellStyle11;
             dgvData.EnableHeadersVisualStyles = false;
             dgvData.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
             dgvData.GridColor = Color.FromArgb(255, 255, 255);
             dgvData.Location = new Point(4, 234);
             dgvData.Name = "dgvData";
             dgvData.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(0, 174, 219);
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
-            dataGridViewCellStyle3.ForeColor = Color.FromArgb(255, 255, 255);
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(0, 198, 247);
-            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(17, 17, 17);
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dgvData.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle12.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = Color.FromArgb(0, 174, 219);
+            dataGridViewCellStyle12.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
+            dataGridViewCellStyle12.ForeColor = Color.FromArgb(255, 255, 255);
+            dataGridViewCellStyle12.SelectionBackColor = Color.FromArgb(0, 198, 247);
+            dataGridViewCellStyle12.SelectionForeColor = Color.FromArgb(17, 17, 17);
+            dataGridViewCellStyle12.WrapMode = DataGridViewTriState.True;
+            dgvData.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             dgvData.RowHeadersVisible = false;
             dgvData.RowHeadersWidth = 51;
             dgvData.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
@@ -423,7 +426,7 @@ namespace Dashboard
             panel1.Controls.Add(tableLayoutPanel1);
             panel1.Location = new Point(-6, 44);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1947, 134);
+            panel1.Size = new Size(1941, 134);
             panel1.TabIndex = 5;
             // 
             // tableLayoutPanel1
@@ -443,7 +446,7 @@ namespace Dashboard
             tableLayoutPanel1.RowCount = 1;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 105F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.Size = new Size(1947, 134);
+            tableLayoutPanel1.Size = new Size(1941, 134);
             tableLayoutPanel1.TabIndex = 0;
             // 
             // pgpNewCustomer
@@ -454,12 +457,12 @@ namespace Dashboard
             pgpNewCustomer.Controls.Add(tlpNewCustomer);
             pgpNewCustomer.Dock = DockStyle.Fill;
             pgpNewCustomer.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
-            pgpNewCustomer.Location = new Point(1300, 10);
+            pgpNewCustomer.Location = new Point(1296, 10);
             pgpNewCustomer.Margin = new Padding(5);
             pgpNewCustomer.Name = "pgpNewCustomer";
             pgpNewCustomer.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
             pgpNewCustomer.PrimerColor = Color.YellowGreen;
-            pgpNewCustomer.Size = new Size(637, 114);
+            pgpNewCustomer.Size = new Size(635, 114);
             pgpNewCustomer.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
             pgpNewCustomer.Style = ReaLTaiizor.Controls.ParrotGradientPanel.GradientStyle.Corners;
             pgpNewCustomer.TabIndex = 8;
@@ -479,7 +482,7 @@ namespace Dashboard
             tlpNewCustomer.RowCount = 2;
             tlpNewCustomer.RowStyles.Add(new RowStyle(SizeType.Percent, 40F));
             tlpNewCustomer.RowStyles.Add(new RowStyle(SizeType.Percent, 60F));
-            tlpNewCustomer.Size = new Size(637, 114);
+            tlpNewCustomer.Size = new Size(635, 114);
             tlpNewCustomer.TabIndex = 1;
             tlpNewCustomer.Visible = false;
             // 
@@ -491,12 +494,12 @@ namespace Dashboard
             pgpProfit.Controls.Add(tlpProfit);
             pgpProfit.Dock = DockStyle.Fill;
             pgpProfit.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
-            pgpProfit.Location = new Point(655, 10);
+            pgpProfit.Location = new Point(653, 10);
             pgpProfit.Margin = new Padding(5);
             pgpProfit.Name = "pgpProfit";
             pgpProfit.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
             pgpProfit.PrimerColor = Color.YellowGreen;
-            pgpProfit.Size = new Size(635, 114);
+            pgpProfit.Size = new Size(633, 114);
             pgpProfit.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
             pgpProfit.Style = ReaLTaiizor.Controls.ParrotGradientPanel.GradientStyle.Corners;
             pgpProfit.TabIndex = 7;
@@ -516,7 +519,7 @@ namespace Dashboard
             tlpProfit.RowCount = 2;
             tlpProfit.RowStyles.Add(new RowStyle(SizeType.Percent, 40F));
             tlpProfit.RowStyles.Add(new RowStyle(SizeType.Percent, 60F));
-            tlpProfit.Size = new Size(635, 114);
+            tlpProfit.Size = new Size(633, 114);
             tlpProfit.TabIndex = 1;
             tlpProfit.Visible = false;
             // 
@@ -533,7 +536,7 @@ namespace Dashboard
             pgpTurnover.Name = "pgpTurnover";
             pgpTurnover.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.None;
             pgpTurnover.PrimerColor = Color.YellowGreen;
-            pgpTurnover.Size = new Size(635, 114);
+            pgpTurnover.Size = new Size(633, 114);
             pgpTurnover.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
             pgpTurnover.Style = ReaLTaiizor.Controls.ParrotGradientPanel.GradientStyle.Corners;
             pgpTurnover.TabIndex = 6;
@@ -553,7 +556,7 @@ namespace Dashboard
             tlpTurnover.RowCount = 2;
             tlpTurnover.RowStyles.Add(new RowStyle(SizeType.Percent, 40F));
             tlpTurnover.RowStyles.Add(new RowStyle(SizeType.Percent, 60F));
-            tlpTurnover.Size = new Size(635, 114);
+            tlpTurnover.Size = new Size(633, 114);
             tlpTurnover.TabIndex = 2;
             tlpTurnover.Visible = false;
             // 
@@ -603,7 +606,7 @@ namespace Dashboard
             materialCard1.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialCard1.Name = "materialCard1";
             materialCard1.Padding = new Padding(14);
-            materialCard1.Size = new Size(1934, 65);
+            materialCard1.Size = new Size(1928, 65);
             materialCard1.TabIndex = 1;
             // 
             // materialLabel1
@@ -631,7 +634,7 @@ namespace Dashboard
             btnNotification.Icon = MyResources.bell;
             btnNotification.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Default;
             btnNotification.ImageKey = "(none)";
-            btnNotification.Location = new Point(1878, 14);
+            btnNotification.Location = new Point(1872, 14);
             btnNotification.Margin = new Padding(4, 6, 4, 6);
             btnNotification.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             btnNotification.Name = "btnNotification";
@@ -650,7 +653,7 @@ namespace Dashboard
             Order.ImageKey = "order.png";
             Order.Location = new Point(4, 29);
             Order.Name = "Order";
-            Order.Size = new Size(1934, 961);
+            Order.Size = new Size(1910, 906);
             Order.TabIndex = 1;
             Order.Text = "Order";
             Order.UseVisualStyleBackColor = true;
@@ -671,7 +674,7 @@ namespace Dashboard
             materialCard2.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialCard2.Name = "materialCard2";
             materialCard2.Padding = new Padding(14);
-            materialCard2.Size = new Size(1934, 65);
+            materialCard2.Size = new Size(1910, 65);
             materialCard2.TabIndex = 2;
             // 
             // hcbSearch
@@ -683,7 +686,7 @@ namespace Dashboard
             hcbSearch.ForeColor = Color.Black;
             hcbSearch.FormattingEnabled = true;
             hcbSearch.ItemHeight = 23;
-            hcbSearch.Location = new Point(1636, 14);
+            hcbSearch.Location = new Point(1612, 14);
             hcbSearch.Name = "hcbSearch";
             hcbSearch.Size = new Size(242, 29);
             hcbSearch.TabIndex = 10;
@@ -715,7 +718,7 @@ namespace Dashboard
             btnNotificationOrder.Icon = MyResources.bell;
             btnNotificationOrder.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Default;
             btnNotificationOrder.ImageKey = "(none)";
-            btnNotificationOrder.Location = new Point(1878, 14);
+            btnNotificationOrder.Location = new Point(1854, 14);
             btnNotificationOrder.Margin = new Padding(4, 6, 4, 6);
             btnNotificationOrder.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             btnNotificationOrder.Name = "btnNotificationOrder";
@@ -744,7 +747,7 @@ namespace Dashboard
             mcOrders.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             mcOrders.Name = "mcOrders";
             mcOrders.Padding = new Padding(14);
-            mcOrders.Size = new Size(1934, 961);
+            mcOrders.Size = new Size(1910, 906);
             mcOrders.TabIndex = 3;
             // 
             // btnOrderHistory
@@ -757,7 +760,7 @@ namespace Dashboard
             btnOrderHistory.Font = new Font("Segoe UI Semibold", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnOrderHistory.HoverTextColor = Color.FromArgb(120, 160, 0);
             btnOrderHistory.InfoColor = Color.FromArgb(144, 147, 153);
-            btnOrderHistory.Location = new Point(1782, 81);
+            btnOrderHistory.Location = new Point(1758, 81);
             btnOrderHistory.Name = "btnOrderHistory";
             btnOrderHistory.PrimaryColor = Color.FromArgb(141, 182, 0);
             btnOrderHistory.Size = new Size(133, 47);
@@ -813,7 +816,7 @@ namespace Dashboard
             hopeGroupBox1.Location = new Point(14, 14);
             hopeGroupBox1.Name = "hopeGroupBox1";
             hopeGroupBox1.ShowText = false;
-            hopeGroupBox1.Size = new Size(1904, 931);
+            hopeGroupBox1.Size = new Size(1880, 876);
             hopeGroupBox1.TabIndex = 160;
             hopeGroupBox1.TabStop = false;
             hopeGroupBox1.Text = "hopeGroupBox1";
@@ -826,7 +829,7 @@ namespace Dashboard
             BodyMeasurement.ImageKey = "bodyMeasurement.png";
             BodyMeasurement.Location = new Point(4, 29);
             BodyMeasurement.Name = "BodyMeasurement";
-            BodyMeasurement.Size = new Size(1934, 961);
+            BodyMeasurement.Size = new Size(1928, 953);
             BodyMeasurement.TabIndex = 2;
             BodyMeasurement.Text = "Body Measurement";
             BodyMeasurement.UseVisualStyleBackColor = true;
@@ -838,7 +841,7 @@ namespace Dashboard
             panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(0, 65);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1934, 896);
+            panel2.Size = new Size(1928, 888);
             panel2.TabIndex = 3;
             // 
             // mcMeasurement
@@ -857,33 +860,213 @@ namespace Dashboard
             mcMeasurement.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             mcMeasurement.Name = "mcMeasurement";
             mcMeasurement.Padding = new Padding(0, 17, 0, 0);
-            mcMeasurement.Size = new Size(1932, 894);
+            mcMeasurement.Size = new Size(1926, 886);
             mcMeasurement.TabIndex = 0;
             // 
             // styledPanel5
             // 
             styledPanel5.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            styledPanel5.Controls.Add(txtThigh);
+            styledPanel5.Controls.Add(txtCalfCircumference);
+            styledPanel5.Controls.Add(txtCrotch);
+            styledPanel5.Controls.Add(txtLowerHips);
+            styledPanel5.Controls.Add(txtLength);
+            styledPanel5.Controls.Add(spaceSeparatorHorizontal2);
             styledPanel5.Controls.Add(materialLabel52);
             styledPanel5.Controls.Add(materialLabel44);
-            styledPanel5.Controls.Add(txtCalfCircumference);
             styledPanel5.Controls.Add(pictureBox6);
-            styledPanel5.Controls.Add(txtThigh);
             styledPanel5.Controls.Add(materialLabel45);
             styledPanel5.Controls.Add(materialLabel51);
             styledPanel5.Controls.Add(materialLabel47);
-            styledPanel5.Controls.Add(txtCrotch);
             styledPanel5.Controls.Add(materialLabel54);
-            styledPanel5.Controls.Add(txtLength);
-            styledPanel5.Controls.Add(txtLowerHips);
             styledPanel5.Controls.Add(materialLabel48);
             styledPanel5.Controls.Add(materialLabel49);
             styledPanel5.Controls.Add(materialLabel46);
             styledPanel5.Controls.Add(materialLabel50);
             styledPanel5.Controls.Add(materialLabel53);
-            styledPanel5.Location = new Point(1305, 165);
+            styledPanel5.Location = new Point(1299, 207);
             styledPanel5.Name = "styledPanel5";
-            styledPanel5.Size = new Size(604, 506);
+            styledPanel5.Size = new Size(604, 505);
             styledPanel5.TabIndex = 169;
+            // 
+            // txtThigh
+            // 
+            txtThigh.AccessibleName = "txtArmCircumference";
+            txtThigh.Alpha = 20;
+            txtThigh.Anchor = AnchorStyles.Top;
+            txtThigh.BackColor = Color.Transparent;
+            txtThigh.Background_WidthPen = 2F;
+            txtThigh.BackgroundPen = true;
+            txtThigh.ColorBackground = Color.White;
+            txtThigh.ColorBackground_Pen = Color.FromArgb(153, 153, 153);
+            txtThigh.ColorLighting = Color.FromArgb(29, 200, 238);
+            txtThigh.ColorPen_1 = Color.FromArgb(29, 200, 238);
+            txtThigh.ColorPen_2 = Color.FromArgb(37, 52, 68);
+            txtThigh.CyberTextBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            txtThigh.Font = new Font("Arial", 10F);
+            txtThigh.ForeColor = Color.Black;
+            txtThigh.Lighting = false;
+            txtThigh.LinearGradientPen = false;
+            txtThigh.Location = new Point(374, 223);
+            txtThigh.Name = "txtThigh";
+            txtThigh.PenWidth = 10;
+            txtThigh.RGB = false;
+            txtThigh.Rounding = true;
+            txtThigh.RoundingInt = 25;
+            txtThigh.Size = new Size(161, 40);
+            txtThigh.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            txtThigh.TabIndex = 159;
+            txtThigh.Tag = "Cyber";
+            txtThigh.TextAlign = HorizontalAlignment.Left;
+            txtThigh.TextButton = "";
+            txtThigh.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            txtThigh.Timer_RGB = 300;
+            // 
+            // txtCalfCircumference
+            // 
+            txtCalfCircumference.AccessibleName = "txtArmCircumference";
+            txtCalfCircumference.Alpha = 20;
+            txtCalfCircumference.Anchor = AnchorStyles.Top;
+            txtCalfCircumference.BackColor = Color.Transparent;
+            txtCalfCircumference.Background_WidthPen = 2F;
+            txtCalfCircumference.BackgroundPen = true;
+            txtCalfCircumference.ColorBackground = Color.White;
+            txtCalfCircumference.ColorBackground_Pen = Color.FromArgb(153, 153, 153);
+            txtCalfCircumference.ColorLighting = Color.FromArgb(29, 200, 238);
+            txtCalfCircumference.ColorPen_1 = Color.FromArgb(29, 200, 238);
+            txtCalfCircumference.ColorPen_2 = Color.FromArgb(37, 52, 68);
+            txtCalfCircumference.CyberTextBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            txtCalfCircumference.Font = new Font("Arial", 10F);
+            txtCalfCircumference.ForeColor = Color.Black;
+            txtCalfCircumference.Lighting = false;
+            txtCalfCircumference.LinearGradientPen = false;
+            txtCalfCircumference.Location = new Point(53, 343);
+            txtCalfCircumference.Name = "txtCalfCircumference";
+            txtCalfCircumference.PenWidth = 10;
+            txtCalfCircumference.RGB = false;
+            txtCalfCircumference.Rounding = true;
+            txtCalfCircumference.RoundingInt = 25;
+            txtCalfCircumference.Size = new Size(161, 40);
+            txtCalfCircumference.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            txtCalfCircumference.TabIndex = 159;
+            txtCalfCircumference.Tag = "Cyber";
+            txtCalfCircumference.TextAlign = HorizontalAlignment.Left;
+            txtCalfCircumference.TextButton = "";
+            txtCalfCircumference.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            txtCalfCircumference.Timer_RGB = 300;
+            // 
+            // txtCrotch
+            // 
+            txtCrotch.AccessibleName = "txtArmCircumference";
+            txtCrotch.Alpha = 20;
+            txtCrotch.Anchor = AnchorStyles.Top;
+            txtCrotch.BackColor = Color.Transparent;
+            txtCrotch.Background_WidthPen = 2F;
+            txtCrotch.BackgroundPen = true;
+            txtCrotch.ColorBackground = Color.White;
+            txtCrotch.ColorBackground_Pen = Color.FromArgb(153, 153, 153);
+            txtCrotch.ColorLighting = Color.FromArgb(29, 200, 238);
+            txtCrotch.ColorPen_1 = Color.FromArgb(29, 200, 238);
+            txtCrotch.ColorPen_2 = Color.FromArgb(37, 52, 68);
+            txtCrotch.CyberTextBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            txtCrotch.Font = new Font("Arial", 10F);
+            txtCrotch.ForeColor = Color.Black;
+            txtCrotch.Lighting = false;
+            txtCrotch.LinearGradientPen = false;
+            txtCrotch.Location = new Point(51, 223);
+            txtCrotch.Name = "txtCrotch";
+            txtCrotch.PenWidth = 10;
+            txtCrotch.RGB = false;
+            txtCrotch.Rounding = true;
+            txtCrotch.RoundingInt = 25;
+            txtCrotch.Size = new Size(161, 40);
+            txtCrotch.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            txtCrotch.TabIndex = 159;
+            txtCrotch.Tag = "Cyber";
+            txtCrotch.TextAlign = HorizontalAlignment.Left;
+            txtCrotch.TextButton = "";
+            txtCrotch.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            txtCrotch.Timer_RGB = 300;
+            // 
+            // txtLowerHips
+            // 
+            txtLowerHips.AccessibleName = "txtArmCircumference";
+            txtLowerHips.Alpha = 20;
+            txtLowerHips.Anchor = AnchorStyles.Top;
+            txtLowerHips.BackColor = Color.Transparent;
+            txtLowerHips.Background_WidthPen = 2F;
+            txtLowerHips.BackgroundPen = true;
+            txtLowerHips.ColorBackground = Color.White;
+            txtLowerHips.ColorBackground_Pen = Color.FromArgb(153, 153, 153);
+            txtLowerHips.ColorLighting = Color.FromArgb(29, 200, 238);
+            txtLowerHips.ColorPen_1 = Color.FromArgb(29, 200, 238);
+            txtLowerHips.ColorPen_2 = Color.FromArgb(37, 52, 68);
+            txtLowerHips.CyberTextBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            txtLowerHips.Font = new Font("Arial", 10F);
+            txtLowerHips.ForeColor = Color.Black;
+            txtLowerHips.Lighting = false;
+            txtLowerHips.LinearGradientPen = false;
+            txtLowerHips.Location = new Point(51, 117);
+            txtLowerHips.Name = "txtLowerHips";
+            txtLowerHips.PenWidth = 10;
+            txtLowerHips.RGB = false;
+            txtLowerHips.Rounding = true;
+            txtLowerHips.RoundingInt = 25;
+            txtLowerHips.Size = new Size(161, 40);
+            txtLowerHips.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            txtLowerHips.TabIndex = 159;
+            txtLowerHips.Tag = "Cyber";
+            txtLowerHips.TextAlign = HorizontalAlignment.Left;
+            txtLowerHips.TextButton = "";
+            txtLowerHips.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            txtLowerHips.Timer_RGB = 300;
+            // 
+            // txtLength
+            // 
+            txtLength.AccessibleName = "txtArmCircumference";
+            txtLength.Alpha = 20;
+            txtLength.Anchor = AnchorStyles.Top;
+            txtLength.BackColor = Color.Transparent;
+            txtLength.Background_WidthPen = 2F;
+            txtLength.BackgroundPen = true;
+            txtLength.ColorBackground = Color.White;
+            txtLength.ColorBackground_Pen = Color.FromArgb(153, 153, 153);
+            txtLength.ColorLighting = Color.FromArgb(29, 200, 238);
+            txtLength.ColorPen_1 = Color.FromArgb(29, 200, 238);
+            txtLength.ColorPen_2 = Color.FromArgb(37, 52, 68);
+            txtLength.CyberTextBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            txtLength.Font = new Font("Arial", 10F);
+            txtLength.ForeColor = Color.Black;
+            txtLength.Lighting = false;
+            txtLength.LinearGradientPen = false;
+            txtLength.Location = new Point(374, 117);
+            txtLength.Name = "txtLength";
+            txtLength.PenWidth = 10;
+            txtLength.RGB = false;
+            txtLength.Rounding = true;
+            txtLength.RoundingInt = 25;
+            txtLength.Size = new Size(161, 40);
+            txtLength.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            txtLength.TabIndex = 159;
+            txtLength.Tag = "Cyber";
+            txtLength.TextAlign = HorizontalAlignment.Left;
+            txtLength.TextButton = "";
+            txtLength.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            txtLength.Timer_RGB = 300;
+            // 
+            // spaceSeparatorHorizontal2
+            // 
+            spaceSeparatorHorizontal2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            spaceSeparatorHorizontal2.Customization = "Kioq/yoqKv8jIyP/Kioq/w==";
+            spaceSeparatorHorizontal2.Font = new Font("Verdana", 8F);
+            spaceSeparatorHorizontal2.Image = null;
+            spaceSeparatorHorizontal2.Location = new Point(22, 66);
+            spaceSeparatorHorizontal2.Name = "spaceSeparatorHorizontal2";
+            spaceSeparatorHorizontal2.NoRounding = false;
+            spaceSeparatorHorizontal2.Size = new Size(550, 4);
+            spaceSeparatorHorizontal2.TabIndex = 158;
+            spaceSeparatorHorizontal2.Text = "spaceSeparatorHorizontal2";
+            spaceSeparatorHorizontal2.Transparent = false;
             // 
             // materialLabel52
             // 
@@ -912,36 +1095,6 @@ namespace Dashboard
             materialLabel44.TabIndex = 95;
             materialLabel44.Text = "Pants";
             // 
-            // txtCalfCircumference
-            // 
-            txtCalfCircumference.Anchor = AnchorStyles.Top;
-            // 
-            // 
-            // 
-            txtCalfCircumference.CustomButton.Image = null;
-            txtCalfCircumference.CustomButton.Location = new Point(165, 1);
-            txtCalfCircumference.CustomButton.Name = "";
-            txtCalfCircumference.CustomButton.Size = new Size(41, 41);
-            txtCalfCircumference.CustomButton.Style = ReaLTaiizor.Enum.Poison.ColorStyle.Blue;
-            txtCalfCircumference.CustomButton.TabIndex = 1;
-            txtCalfCircumference.CustomButton.Theme = ReaLTaiizor.Enum.Poison.ThemeStyle.Light;
-            txtCalfCircumference.CustomButton.UseSelectable = true;
-            txtCalfCircumference.CustomButton.Visible = false;
-            txtCalfCircumference.Location = new Point(53, 343);
-            txtCalfCircumference.MaxLength = 32767;
-            txtCalfCircumference.Name = "txtCalfCircumference";
-            txtCalfCircumference.PasswordChar = '\0';
-            txtCalfCircumference.ScrollBars = ScrollBars.None;
-            txtCalfCircumference.SelectedText = "";
-            txtCalfCircumference.SelectionLength = 0;
-            txtCalfCircumference.SelectionStart = 0;
-            txtCalfCircumference.ShortcutsEnabled = true;
-            txtCalfCircumference.Size = new Size(207, 43);
-            txtCalfCircumference.TabIndex = 103;
-            txtCalfCircumference.UseSelectable = true;
-            txtCalfCircumference.WaterMarkColor = Color.FromArgb(109, 109, 109);
-            txtCalfCircumference.WaterMarkFont = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Pixel);
-            // 
             // pictureBox6
             // 
             pictureBox6.BackgroundImageLayout = ImageLayout.Zoom;
@@ -952,36 +1105,6 @@ namespace Dashboard
             pictureBox6.TabIndex = 94;
             pictureBox6.TabStop = false;
             // 
-            // txtThigh
-            // 
-            txtThigh.Anchor = AnchorStyles.Top;
-            // 
-            // 
-            // 
-            txtThigh.CustomButton.Image = null;
-            txtThigh.CustomButton.Location = new Point(169, 2);
-            txtThigh.CustomButton.Name = "";
-            txtThigh.CustomButton.Size = new Size(37, 37);
-            txtThigh.CustomButton.Style = ReaLTaiizor.Enum.Poison.ColorStyle.Blue;
-            txtThigh.CustomButton.TabIndex = 1;
-            txtThigh.CustomButton.Theme = ReaLTaiizor.Enum.Poison.ThemeStyle.Light;
-            txtThigh.CustomButton.UseSelectable = true;
-            txtThigh.CustomButton.Visible = false;
-            txtThigh.Location = new Point(374, 223);
-            txtThigh.MaxLength = 32767;
-            txtThigh.Name = "txtThigh";
-            txtThigh.PasswordChar = '\0';
-            txtThigh.ScrollBars = ScrollBars.None;
-            txtThigh.SelectedText = "";
-            txtThigh.SelectionLength = 0;
-            txtThigh.SelectionStart = 0;
-            txtThigh.ShortcutsEnabled = true;
-            txtThigh.Size = new Size(209, 42);
-            txtThigh.TabIndex = 101;
-            txtThigh.UseSelectable = true;
-            txtThigh.WaterMarkColor = Color.FromArgb(109, 109, 109);
-            txtThigh.WaterMarkFont = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Pixel);
-            // 
             // materialLabel45
             // 
             materialLabel45.Anchor = AnchorStyles.Top;
@@ -989,7 +1112,7 @@ namespace Dashboard
             materialLabel45.Depth = 0;
             materialLabel45.Font = new Font("Roboto Medium", 17.5F, FontStyle.Bold, GraphicsUnit.Pixel);
             materialLabel45.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
-            materialLabel45.Location = new Point(273, 353);
+            materialLabel45.Location = new Point(228, 353);
             materialLabel45.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialLabel45.Name = "materialLabel45";
             materialLabel45.Size = new Size(26, 22);
@@ -1017,42 +1140,12 @@ namespace Dashboard
             materialLabel47.Depth = 0;
             materialLabel47.Font = new Font("Roboto Medium", 17.5F, FontStyle.Bold, GraphicsUnit.Pixel);
             materialLabel47.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
-            materialLabel47.Location = new Point(275, 233);
+            materialLabel47.Location = new Point(228, 233);
             materialLabel47.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialLabel47.Name = "materialLabel47";
             materialLabel47.Size = new Size(26, 22);
             materialLabel47.TabIndex = 105;
             materialLabel47.Text = "cm";
-            // 
-            // txtCrotch
-            // 
-            txtCrotch.Anchor = AnchorStyles.Top;
-            // 
-            // 
-            // 
-            txtCrotch.CustomButton.Image = null;
-            txtCrotch.CustomButton.Location = new Point(169, 2);
-            txtCrotch.CustomButton.Name = "";
-            txtCrotch.CustomButton.Size = new Size(37, 37);
-            txtCrotch.CustomButton.Style = ReaLTaiizor.Enum.Poison.ColorStyle.Blue;
-            txtCrotch.CustomButton.TabIndex = 1;
-            txtCrotch.CustomButton.Theme = ReaLTaiizor.Enum.Poison.ThemeStyle.Light;
-            txtCrotch.CustomButton.UseSelectable = true;
-            txtCrotch.CustomButton.Visible = false;
-            txtCrotch.Location = new Point(53, 223);
-            txtCrotch.MaxLength = 32767;
-            txtCrotch.Name = "txtCrotch";
-            txtCrotch.PasswordChar = '\0';
-            txtCrotch.ScrollBars = ScrollBars.None;
-            txtCrotch.SelectedText = "";
-            txtCrotch.SelectionLength = 0;
-            txtCrotch.SelectionStart = 0;
-            txtCrotch.ShortcutsEnabled = true;
-            txtCrotch.Size = new Size(209, 42);
-            txtCrotch.TabIndex = 99;
-            txtCrotch.UseSelectable = true;
-            txtCrotch.WaterMarkColor = Color.FromArgb(109, 109, 109);
-            txtCrotch.WaterMarkFont = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Pixel);
             // 
             // materialLabel54
             // 
@@ -1068,66 +1161,6 @@ namespace Dashboard
             materialLabel54.TabIndex = 108;
             materialLabel54.Text = "Length:";
             // 
-            // txtLength
-            // 
-            txtLength.Anchor = AnchorStyles.Top;
-            // 
-            // 
-            // 
-            txtLength.CustomButton.Image = null;
-            txtLength.CustomButton.Location = new Point(173, 2);
-            txtLength.CustomButton.Name = "";
-            txtLength.CustomButton.Size = new Size(33, 33);
-            txtLength.CustomButton.Style = ReaLTaiizor.Enum.Poison.ColorStyle.Blue;
-            txtLength.CustomButton.TabIndex = 1;
-            txtLength.CustomButton.Theme = ReaLTaiizor.Enum.Poison.ThemeStyle.Light;
-            txtLength.CustomButton.UseSelectable = true;
-            txtLength.CustomButton.Visible = false;
-            txtLength.Location = new Point(374, 112);
-            txtLength.MaxLength = 32767;
-            txtLength.Name = "txtLength";
-            txtLength.PasswordChar = '\0';
-            txtLength.ScrollBars = ScrollBars.None;
-            txtLength.SelectedText = "";
-            txtLength.SelectionLength = 0;
-            txtLength.SelectionStart = 0;
-            txtLength.ShortcutsEnabled = true;
-            txtLength.Size = new Size(209, 38);
-            txtLength.TabIndex = 109;
-            txtLength.UseSelectable = true;
-            txtLength.WaterMarkColor = Color.FromArgb(109, 109, 109);
-            txtLength.WaterMarkFont = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Pixel);
-            // 
-            // txtLowerHips
-            // 
-            txtLowerHips.Anchor = AnchorStyles.Top;
-            // 
-            // 
-            // 
-            txtLowerHips.CustomButton.Image = null;
-            txtLowerHips.CustomButton.Location = new Point(173, 2);
-            txtLowerHips.CustomButton.Name = "";
-            txtLowerHips.CustomButton.Size = new Size(33, 33);
-            txtLowerHips.CustomButton.Style = ReaLTaiizor.Enum.Poison.ColorStyle.Blue;
-            txtLowerHips.CustomButton.TabIndex = 1;
-            txtLowerHips.CustomButton.Theme = ReaLTaiizor.Enum.Poison.ThemeStyle.Light;
-            txtLowerHips.CustomButton.UseSelectable = true;
-            txtLowerHips.CustomButton.Visible = false;
-            txtLowerHips.Location = new Point(53, 112);
-            txtLowerHips.MaxLength = 32767;
-            txtLowerHips.Name = "txtLowerHips";
-            txtLowerHips.PasswordChar = '\0';
-            txtLowerHips.ScrollBars = ScrollBars.None;
-            txtLowerHips.SelectedText = "";
-            txtLowerHips.SelectionLength = 0;
-            txtLowerHips.SelectionStart = 0;
-            txtLowerHips.ShortcutsEnabled = true;
-            txtLowerHips.Size = new Size(209, 38);
-            txtLowerHips.TabIndex = 98;
-            txtLowerHips.UseSelectable = true;
-            txtLowerHips.WaterMarkColor = Color.FromArgb(109, 109, 109);
-            txtLowerHips.WaterMarkFont = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Pixel);
-            // 
             // materialLabel48
             // 
             materialLabel48.Anchor = AnchorStyles.Top;
@@ -1135,7 +1168,7 @@ namespace Dashboard
             materialLabel48.Depth = 0;
             materialLabel48.Font = new Font("Roboto Medium", 17.5F, FontStyle.Bold, GraphicsUnit.Pixel);
             materialLabel48.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
-            materialLabel48.Location = new Point(275, 118);
+            materialLabel48.Location = new Point(228, 128);
             materialLabel48.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialLabel48.Name = "materialLabel48";
             materialLabel48.Size = new Size(26, 22);
@@ -1163,7 +1196,7 @@ namespace Dashboard
             materialLabel46.Depth = 0;
             materialLabel46.Font = new Font("Roboto Medium", 17.5F, FontStyle.Bold, GraphicsUnit.Pixel);
             materialLabel46.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
-            materialLabel46.Location = new Point(820, 243);
+            materialLabel46.Location = new Point(541, 233);
             materialLabel46.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialLabel46.Name = "materialLabel46";
             materialLabel46.Size = new Size(26, 22);
@@ -1191,7 +1224,7 @@ namespace Dashboard
             materialLabel53.Depth = 0;
             materialLabel53.Font = new Font("Roboto Medium", 17.5F, FontStyle.Bold, GraphicsUnit.Pixel);
             materialLabel53.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
-            materialLabel53.Location = new Point(820, 128);
+            materialLabel53.Location = new Point(541, 118);
             materialLabel53.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialLabel53.Name = "materialLabel53";
             materialLabel53.Size = new Size(26, 22);
@@ -1207,12 +1240,12 @@ namespace Dashboard
             materialCard6.Depth = 0;
             materialCard6.Dock = DockStyle.Bottom;
             materialCard6.ForeColor = Color.FromArgb(222, 0, 0, 0);
-            materialCard6.Location = new Point(0, 808);
+            materialCard6.Location = new Point(0, 800);
             materialCard6.Margin = new Padding(14);
             materialCard6.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialCard6.Name = "materialCard6";
             materialCard6.Padding = new Padding(14);
-            materialCard6.Size = new Size(1932, 86);
+            materialCard6.Size = new Size(1926, 86);
             materialCard6.TabIndex = 3;
             // 
             // btnSubmit
@@ -1225,7 +1258,7 @@ namespace Dashboard
             btnSubmit.Font = new Font("Segoe UI", 12F);
             btnSubmit.HoverTextColor = Color.FromArgb(120, 160, 0);
             btnSubmit.InfoColor = Color.FromArgb(144, 147, 153);
-            btnSubmit.Location = new Point(1757, 21);
+            btnSubmit.Location = new Point(1751, 21);
             btnSubmit.Name = "btnSubmit";
             btnSubmit.PrimaryColor = Color.FromArgb(141, 182, 0);
             btnSubmit.Size = new Size(151, 49);
@@ -1246,7 +1279,7 @@ namespace Dashboard
             btnClear.Font = new Font("Segoe UI", 12F);
             btnClear.HoverTextColor = Color.FromArgb(120, 160, 0);
             btnClear.InfoColor = Color.FromArgb(144, 147, 153);
-            btnClear.Location = new Point(1599, 21);
+            btnClear.Location = new Point(1593, 21);
             btnClear.Name = "btnClear";
             btnClear.PrimaryColor = Color.White;
             btnClear.Size = new Size(139, 49);
@@ -1259,6 +1292,7 @@ namespace Dashboard
             // styledPanel4
             // 
             styledPanel4.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            styledPanel4.Controls.Add(spaceSeparatorHorizontal3);
             styledPanel4.Controls.Add(pdtOrderDeadline);
             styledPanel4.Controls.Add(materialLabel10);
             styledPanel4.Controls.Add(materialLabel13);
@@ -1269,14 +1303,28 @@ namespace Dashboard
             styledPanel4.Controls.Add(pictureBox7);
             styledPanel4.Location = new Point(14, 17);
             styledPanel4.Name = "styledPanel4";
-            styledPanel4.Size = new Size(1895, 130);
+            styledPanel4.Size = new Size(1889, 159);
             styledPanel4.TabIndex = 167;
+            // 
+            // spaceSeparatorHorizontal3
+            // 
+            spaceSeparatorHorizontal3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            spaceSeparatorHorizontal3.Customization = "Kioq/yoqKv8jIyP/Kioq/w==";
+            spaceSeparatorHorizontal3.Font = new Font("Verdana", 8F);
+            spaceSeparatorHorizontal3.Image = null;
+            spaceSeparatorHorizontal3.Location = new Point(23, 51);
+            spaceSeparatorHorizontal3.Name = "spaceSeparatorHorizontal3";
+            spaceSeparatorHorizontal3.NoRounding = false;
+            spaceSeparatorHorizontal3.Size = new Size(1786, 4);
+            spaceSeparatorHorizontal3.TabIndex = 158;
+            spaceSeparatorHorizontal3.Text = "spaceSeparatorHorizontal3";
+            spaceSeparatorHorizontal3.Transparent = false;
             // 
             // pdtOrderDeadline
             // 
             pdtOrderDeadline.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pdtOrderDeadline.FontSize = ReaLTaiizor.Extension.Poison.PoisonDateTimeSize.Tall;
-            pdtOrderDeadline.Location = new Point(1331, 75);
+            pdtOrderDeadline.Location = new Point(1323, 105);
             pdtOrderDeadline.MinimumSize = new Size(0, 35);
             pdtOrderDeadline.Name = "pdtOrderDeadline";
             pdtOrderDeadline.Size = new Size(323, 35);
@@ -1304,7 +1352,7 @@ namespace Dashboard
             materialLabel13.Depth = 0;
             materialLabel13.Font = new Font("Roboto Medium", 17.5F, FontStyle.Bold, GraphicsUnit.Pixel);
             materialLabel13.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
-            materialLabel13.Location = new Point(1331, 50);
+            materialLabel13.Location = new Point(1323, 80);
             materialLabel13.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialLabel13.Name = "materialLabel13";
             materialLabel13.Size = new Size(126, 22);
@@ -1317,7 +1365,7 @@ namespace Dashboard
             materialLabel11.Depth = 0;
             materialLabel11.Font = new Font("Roboto Medium", 17.5F, FontStyle.Bold, GraphicsUnit.Pixel);
             materialLabel11.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
-            materialLabel11.Location = new Point(92, 52);
+            materialLabel11.Location = new Point(90, 82);
             materialLabel11.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialLabel11.Name = "materialLabel11";
             materialLabel11.Size = new Size(55, 22);
@@ -1333,9 +1381,9 @@ namespace Dashboard
             hcbGender.FormattingEnabled = true;
             hcbGender.ItemHeight = 33;
             hcbGender.Items.AddRange(new object[] { "Male", "Female", "Other" });
-            hcbGender.Location = new Point(638, 71);
+            hcbGender.Location = new Point(636, 101);
             hcbGender.Name = "hcbGender";
-            hcbGender.Size = new Size(487, 39);
+            hcbGender.Size = new Size(481, 39);
             hcbGender.TabIndex = 14;
             // 
             // txtName
@@ -1353,7 +1401,7 @@ namespace Dashboard
             txtName.CustomButton.UseSelectable = true;
             txtName.CustomButton.Visible = false;
             txtName.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
-            txtName.Location = new Point(92, 79);
+            txtName.Location = new Point(90, 109);
             txtName.MaxLength = 32767;
             txtName.Name = "txtName";
             txtName.PasswordChar = '\0';
@@ -1374,7 +1422,7 @@ namespace Dashboard
             materialLabel12.Depth = 0;
             materialLabel12.Font = new Font("Roboto Medium", 17.5F, FontStyle.Bold, GraphicsUnit.Pixel);
             materialLabel12.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
-            materialLabel12.Location = new Point(638, 48);
+            materialLabel12.Location = new Point(636, 78);
             materialLabel12.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialLabel12.Name = "materialLabel12";
             materialLabel12.Size = new Size(64, 22);
@@ -1396,51 +1444,51 @@ namespace Dashboard
             styledPanel7.Controls.Add(txtArmCircumference);
             styledPanel7.Controls.Add(txtUpperHips);
             styledPanel7.Controls.Add(txtFrontFigure);
+            styledPanel7.Controls.Add(txtSleeveLength);
+            styledPanel7.Controls.Add(txtWaistline);
+            styledPanel7.Controls.Add(txtBackFigure);
+            styledPanel7.Controls.Add(txtNeckDip);
+            styledPanel7.Controls.Add(txtFrontChest);
+            styledPanel7.Controls.Add(txtArmHole);
+            styledPanel7.Controls.Add(txtBackChest);
+            styledPanel7.Controls.Add(txtLowerBust);
+            styledPanel7.Controls.Add(txtBust);
+            styledPanel7.Controls.Add(txtUpperBust);
             styledPanel7.Controls.Add(txtShoulder);
             styledPanel7.Controls.Add(spaceSeparatorHorizontal1);
             styledPanel7.Controls.Add(materialLabel20);
-            styledPanel7.Controls.Add(txtLowerBust);
             styledPanel7.Controls.Add(materialLabel57);
             styledPanel7.Controls.Add(materialLabel33);
             styledPanel7.Controls.Add(materialLabel15);
             styledPanel7.Controls.Add(materialLabel16);
             styledPanel7.Controls.Add(materialLabel42);
-            styledPanel7.Controls.Add(txtNeckDip);
             styledPanel7.Controls.Add(materialLabel23);
             styledPanel7.Controls.Add(materialLabel37);
-            styledPanel7.Controls.Add(txtSleeveLength);
             styledPanel7.Controls.Add(materialLabel43);
             styledPanel7.Controls.Add(materialLabel22);
             styledPanel7.Controls.Add(pictureBox5);
             styledPanel7.Controls.Add(materialLabel34);
             styledPanel7.Controls.Add(materialLabel58);
             styledPanel7.Controls.Add(materialLabel21);
-            styledPanel7.Controls.Add(txtWaistline);
             styledPanel7.Controls.Add(materialLabel27);
             styledPanel7.Controls.Add(materialLabel38);
             styledPanel7.Controls.Add(materialLabel32);
-            styledPanel7.Controls.Add(txtBust);
             styledPanel7.Controls.Add(materialLabel35);
-            styledPanel7.Controls.Add(txtUpperBust);
             styledPanel7.Controls.Add(materialLabel31);
             styledPanel7.Controls.Add(materialLabel19);
-            styledPanel7.Controls.Add(txtArmHole);
-            styledPanel7.Controls.Add(txtBackFigure);
             styledPanel7.Controls.Add(materialLabel36);
             styledPanel7.Controls.Add(materialLabel39);
             styledPanel7.Controls.Add(materialLabel30);
             styledPanel7.Controls.Add(materialLabel18);
             styledPanel7.Controls.Add(materialLabel26);
             styledPanel7.Controls.Add(materialLabel17);
-            styledPanel7.Controls.Add(txtFrontChest);
             styledPanel7.Controls.Add(materialLabel25);
             styledPanel7.Controls.Add(materialLabel29);
             styledPanel7.Controls.Add(materialLabel28);
-            styledPanel7.Controls.Add(txtBackChest);
             styledPanel7.Controls.Add(materialLabel24);
-            styledPanel7.Location = new Point(14, 165);
+            styledPanel7.Location = new Point(14, 207);
             styledPanel7.Name = "styledPanel7";
-            styledPanel7.Size = new Size(1261, 506);
+            styledPanel7.Size = new Size(1255, 505);
             styledPanel7.TabIndex = 168;
             styledPanel7.Paint += styledPanel7_Paint;
             // 
@@ -1448,7 +1496,7 @@ namespace Dashboard
             // 
             txtArmCircumference.AccessibleName = "txtArmCircumference";
             txtArmCircumference.Alpha = 20;
-            txtArmCircumference.Anchor = AnchorStyles.Left;
+            txtArmCircumference.Anchor = AnchorStyles.Top;
             txtArmCircumference.BackColor = Color.Transparent;
             txtArmCircumference.Background_WidthPen = 2F;
             txtArmCircumference.BackgroundPen = true;
@@ -1462,7 +1510,7 @@ namespace Dashboard
             txtArmCircumference.ForeColor = Color.Black;
             txtArmCircumference.Lighting = false;
             txtArmCircumference.LinearGradientPen = false;
-            txtArmCircumference.Location = new Point(1039, 152);
+            txtArmCircumference.Location = new Point(950, 128);
             txtArmCircumference.Name = "txtArmCircumference";
             txtArmCircumference.PenWidth = 10;
             txtArmCircumference.RGB = false;
@@ -1494,7 +1542,7 @@ namespace Dashboard
             txtUpperHips.ForeColor = Color.Black;
             txtUpperHips.Lighting = false;
             txtUpperHips.LinearGradientPen = false;
-            txtUpperHips.Location = new Point(528, 152);
+            txtUpperHips.Location = new Point(654, 127);
             txtUpperHips.Name = "txtUpperHips";
             txtUpperHips.PenWidth = 10;
             txtUpperHips.RGB = false;
@@ -1526,7 +1574,7 @@ namespace Dashboard
             txtFrontFigure.ForeColor = Color.Black;
             txtFrontFigure.Lighting = false;
             txtFrontFigure.LinearGradientPen = false;
-            txtFrontFigure.Location = new Point(265, 152);
+            txtFrontFigure.Location = new Point(362, 127);
             txtFrontFigure.Name = "txtFrontFigure";
             txtFrontFigure.PenWidth = 10;
             txtFrontFigure.RGB = false;
@@ -1540,6 +1588,326 @@ namespace Dashboard
             txtFrontFigure.TextButton = "";
             txtFrontFigure.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             txtFrontFigure.Timer_RGB = 300;
+            // 
+            // txtSleeveLength
+            // 
+            txtSleeveLength.Alpha = 20;
+            txtSleeveLength.Anchor = AnchorStyles.Top;
+            txtSleeveLength.BackColor = Color.Transparent;
+            txtSleeveLength.Background_WidthPen = 2F;
+            txtSleeveLength.BackgroundPen = true;
+            txtSleeveLength.ColorBackground = Color.White;
+            txtSleeveLength.ColorBackground_Pen = Color.FromArgb(153, 153, 153);
+            txtSleeveLength.ColorLighting = Color.FromArgb(29, 200, 238);
+            txtSleeveLength.ColorPen_1 = Color.FromArgb(29, 200, 238);
+            txtSleeveLength.ColorPen_2 = Color.FromArgb(37, 52, 68);
+            txtSleeveLength.CyberTextBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            txtSleeveLength.Font = new Font("Arial", 10F);
+            txtSleeveLength.ForeColor = Color.Black;
+            txtSleeveLength.Lighting = false;
+            txtSleeveLength.LinearGradientPen = false;
+            txtSleeveLength.Location = new Point(950, 233);
+            txtSleeveLength.Name = "txtSleeveLength";
+            txtSleeveLength.PenWidth = 10;
+            txtSleeveLength.RGB = false;
+            txtSleeveLength.Rounding = true;
+            txtSleeveLength.RoundingInt = 25;
+            txtSleeveLength.Size = new Size(160, 40);
+            txtSleeveLength.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            txtSleeveLength.TabIndex = 159;
+            txtSleeveLength.Tag = "Cyber";
+            txtSleeveLength.TextAlign = HorizontalAlignment.Left;
+            txtSleeveLength.TextButton = "";
+            txtSleeveLength.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            txtSleeveLength.Timer_RGB = 300;
+            // 
+            // txtWaistline
+            // 
+            txtWaistline.Alpha = 20;
+            txtWaistline.Anchor = AnchorStyles.Left;
+            txtWaistline.BackColor = Color.Transparent;
+            txtWaistline.Background_WidthPen = 2F;
+            txtWaistline.BackgroundPen = true;
+            txtWaistline.ColorBackground = Color.White;
+            txtWaistline.ColorBackground_Pen = Color.FromArgb(153, 153, 153);
+            txtWaistline.ColorLighting = Color.FromArgb(29, 200, 238);
+            txtWaistline.ColorPen_1 = Color.FromArgb(29, 200, 238);
+            txtWaistline.ColorPen_2 = Color.FromArgb(37, 52, 68);
+            txtWaistline.CyberTextBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            txtWaistline.Font = new Font("Arial", 10F);
+            txtWaistline.ForeColor = Color.Black;
+            txtWaistline.Lighting = false;
+            txtWaistline.LinearGradientPen = false;
+            txtWaistline.Location = new Point(654, 232);
+            txtWaistline.Name = "txtWaistline";
+            txtWaistline.PenWidth = 10;
+            txtWaistline.RGB = false;
+            txtWaistline.Rounding = true;
+            txtWaistline.RoundingInt = 25;
+            txtWaistline.Size = new Size(160, 40);
+            txtWaistline.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            txtWaistline.TabIndex = 159;
+            txtWaistline.Tag = "Cyber";
+            txtWaistline.TextAlign = HorizontalAlignment.Left;
+            txtWaistline.TextButton = "";
+            txtWaistline.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            txtWaistline.Timer_RGB = 300;
+            // 
+            // txtBackFigure
+            // 
+            txtBackFigure.Alpha = 20;
+            txtBackFigure.Anchor = AnchorStyles.Left;
+            txtBackFigure.BackColor = Color.Transparent;
+            txtBackFigure.Background_WidthPen = 2F;
+            txtBackFigure.BackgroundPen = true;
+            txtBackFigure.ColorBackground = Color.White;
+            txtBackFigure.ColorBackground_Pen = Color.FromArgb(153, 153, 153);
+            txtBackFigure.ColorLighting = Color.FromArgb(29, 200, 238);
+            txtBackFigure.ColorPen_1 = Color.FromArgb(29, 200, 238);
+            txtBackFigure.ColorPen_2 = Color.FromArgb(37, 52, 68);
+            txtBackFigure.CyberTextBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            txtBackFigure.Font = new Font("Arial", 10F);
+            txtBackFigure.ForeColor = Color.Black;
+            txtBackFigure.Lighting = false;
+            txtBackFigure.LinearGradientPen = false;
+            txtBackFigure.Location = new Point(362, 234);
+            txtBackFigure.Name = "txtBackFigure";
+            txtBackFigure.PenWidth = 10;
+            txtBackFigure.RGB = false;
+            txtBackFigure.Rounding = true;
+            txtBackFigure.RoundingInt = 25;
+            txtBackFigure.Size = new Size(160, 40);
+            txtBackFigure.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            txtBackFigure.TabIndex = 159;
+            txtBackFigure.Tag = "Cyber";
+            txtBackFigure.TextAlign = HorizontalAlignment.Left;
+            txtBackFigure.TextButton = "";
+            txtBackFigure.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            txtBackFigure.Timer_RGB = 300;
+            // 
+            // txtNeckDip
+            // 
+            txtNeckDip.Alpha = 20;
+            txtNeckDip.Anchor = AnchorStyles.Left;
+            txtNeckDip.BackColor = Color.Transparent;
+            txtNeckDip.Background_WidthPen = 2F;
+            txtNeckDip.BackgroundPen = true;
+            txtNeckDip.ColorBackground = Color.White;
+            txtNeckDip.ColorBackground_Pen = Color.FromArgb(153, 153, 153);
+            txtNeckDip.ColorLighting = Color.FromArgb(29, 200, 238);
+            txtNeckDip.ColorPen_1 = Color.FromArgb(29, 200, 238);
+            txtNeckDip.ColorPen_2 = Color.FromArgb(37, 52, 68);
+            txtNeckDip.CyberTextBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            txtNeckDip.Font = new Font("Arial", 10F);
+            txtNeckDip.ForeColor = Color.Black;
+            txtNeckDip.Lighting = false;
+            txtNeckDip.LinearGradientPen = false;
+            txtNeckDip.Location = new Point(654, 334);
+            txtNeckDip.Name = "txtNeckDip";
+            txtNeckDip.PenWidth = 10;
+            txtNeckDip.RGB = false;
+            txtNeckDip.Rounding = true;
+            txtNeckDip.RoundingInt = 25;
+            txtNeckDip.Size = new Size(160, 40);
+            txtNeckDip.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            txtNeckDip.TabIndex = 159;
+            txtNeckDip.Tag = "Cyber";
+            txtNeckDip.TextAlign = HorizontalAlignment.Left;
+            txtNeckDip.TextButton = "";
+            txtNeckDip.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            txtNeckDip.Timer_RGB = 300;
+            // 
+            // txtFrontChest
+            // 
+            txtFrontChest.Alpha = 20;
+            txtFrontChest.Anchor = AnchorStyles.Left;
+            txtFrontChest.BackColor = Color.Transparent;
+            txtFrontChest.Background_WidthPen = 2F;
+            txtFrontChest.BackgroundPen = true;
+            txtFrontChest.ColorBackground = Color.White;
+            txtFrontChest.ColorBackground_Pen = Color.FromArgb(153, 153, 153);
+            txtFrontChest.ColorLighting = Color.FromArgb(29, 200, 238);
+            txtFrontChest.ColorPen_1 = Color.FromArgb(29, 200, 238);
+            txtFrontChest.ColorPen_2 = Color.FromArgb(37, 52, 68);
+            txtFrontChest.CyberTextBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            txtFrontChest.Font = new Font("Arial", 10F);
+            txtFrontChest.ForeColor = Color.Black;
+            txtFrontChest.Lighting = false;
+            txtFrontChest.LinearGradientPen = false;
+            txtFrontChest.Location = new Point(362, 334);
+            txtFrontChest.Name = "txtFrontChest";
+            txtFrontChest.PenWidth = 10;
+            txtFrontChest.RGB = false;
+            txtFrontChest.Rounding = true;
+            txtFrontChest.RoundingInt = 25;
+            txtFrontChest.Size = new Size(160, 40);
+            txtFrontChest.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            txtFrontChest.TabIndex = 159;
+            txtFrontChest.Tag = "Cyber";
+            txtFrontChest.TextAlign = HorizontalAlignment.Left;
+            txtFrontChest.TextButton = "";
+            txtFrontChest.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            txtFrontChest.Timer_RGB = 300;
+            // 
+            // txtArmHole
+            // 
+            txtArmHole.Alpha = 20;
+            txtArmHole.Anchor = AnchorStyles.Left;
+            txtArmHole.BackColor = Color.Transparent;
+            txtArmHole.Background_WidthPen = 2F;
+            txtArmHole.BackgroundPen = true;
+            txtArmHole.ColorBackground = Color.White;
+            txtArmHole.ColorBackground_Pen = Color.FromArgb(153, 153, 153);
+            txtArmHole.ColorLighting = Color.FromArgb(29, 200, 238);
+            txtArmHole.ColorPen_1 = Color.FromArgb(29, 200, 238);
+            txtArmHole.ColorPen_2 = Color.FromArgb(37, 52, 68);
+            txtArmHole.CyberTextBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            txtArmHole.Font = new Font("Arial", 10F);
+            txtArmHole.ForeColor = Color.Black;
+            txtArmHole.Lighting = false;
+            txtArmHole.LinearGradientPen = false;
+            txtArmHole.Location = new Point(654, 436);
+            txtArmHole.Name = "txtArmHole";
+            txtArmHole.PenWidth = 10;
+            txtArmHole.RGB = false;
+            txtArmHole.Rounding = true;
+            txtArmHole.RoundingInt = 25;
+            txtArmHole.Size = new Size(160, 40);
+            txtArmHole.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            txtArmHole.TabIndex = 159;
+            txtArmHole.Tag = "Cyber";
+            txtArmHole.TextAlign = HorizontalAlignment.Left;
+            txtArmHole.TextButton = "";
+            txtArmHole.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            txtArmHole.Timer_RGB = 300;
+            // 
+            // txtBackChest
+            // 
+            txtBackChest.Alpha = 20;
+            txtBackChest.Anchor = AnchorStyles.Left;
+            txtBackChest.BackColor = Color.Transparent;
+            txtBackChest.Background_WidthPen = 2F;
+            txtBackChest.BackgroundPen = true;
+            txtBackChest.ColorBackground = Color.White;
+            txtBackChest.ColorBackground_Pen = Color.FromArgb(153, 153, 153);
+            txtBackChest.ColorLighting = Color.FromArgb(29, 200, 238);
+            txtBackChest.ColorPen_1 = Color.FromArgb(29, 200, 238);
+            txtBackChest.ColorPen_2 = Color.FromArgb(37, 52, 68);
+            txtBackChest.CyberTextBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            txtBackChest.Font = new Font("Arial", 10F);
+            txtBackChest.ForeColor = Color.Black;
+            txtBackChest.Lighting = false;
+            txtBackChest.LinearGradientPen = false;
+            txtBackChest.Location = new Point(362, 436);
+            txtBackChest.Name = "txtBackChest";
+            txtBackChest.PenWidth = 10;
+            txtBackChest.RGB = false;
+            txtBackChest.Rounding = true;
+            txtBackChest.RoundingInt = 25;
+            txtBackChest.Size = new Size(160, 40);
+            txtBackChest.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            txtBackChest.TabIndex = 159;
+            txtBackChest.Tag = "Cyber";
+            txtBackChest.TextAlign = HorizontalAlignment.Left;
+            txtBackChest.TextButton = "";
+            txtBackChest.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            txtBackChest.Timer_RGB = 300;
+            // 
+            // txtLowerBust
+            // 
+            txtLowerBust.Alpha = 20;
+            txtLowerBust.Anchor = AnchorStyles.Left;
+            txtLowerBust.BackColor = Color.Transparent;
+            txtLowerBust.Background_WidthPen = 2F;
+            txtLowerBust.BackgroundPen = true;
+            txtLowerBust.ColorBackground = Color.White;
+            txtLowerBust.ColorBackground_Pen = Color.FromArgb(153, 153, 153);
+            txtLowerBust.ColorLighting = Color.FromArgb(29, 200, 238);
+            txtLowerBust.ColorPen_1 = Color.FromArgb(29, 200, 238);
+            txtLowerBust.ColorPen_2 = Color.FromArgb(37, 52, 68);
+            txtLowerBust.CyberTextBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            txtLowerBust.Font = new Font("Arial", 10F);
+            txtLowerBust.ForeColor = Color.Black;
+            txtLowerBust.Lighting = false;
+            txtLowerBust.LinearGradientPen = false;
+            txtLowerBust.Location = new Point(70, 436);
+            txtLowerBust.Name = "txtLowerBust";
+            txtLowerBust.PenWidth = 10;
+            txtLowerBust.RGB = false;
+            txtLowerBust.Rounding = true;
+            txtLowerBust.RoundingInt = 25;
+            txtLowerBust.Size = new Size(160, 40);
+            txtLowerBust.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            txtLowerBust.TabIndex = 159;
+            txtLowerBust.Tag = "Cyber";
+            txtLowerBust.TextAlign = HorizontalAlignment.Left;
+            txtLowerBust.TextButton = "";
+            txtLowerBust.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            txtLowerBust.Timer_RGB = 300;
+            // 
+            // txtBust
+            // 
+            txtBust.Alpha = 20;
+            txtBust.Anchor = AnchorStyles.Left;
+            txtBust.BackColor = Color.Transparent;
+            txtBust.Background_WidthPen = 2F;
+            txtBust.BackgroundPen = true;
+            txtBust.ColorBackground = Color.White;
+            txtBust.ColorBackground_Pen = Color.FromArgb(153, 153, 153);
+            txtBust.ColorLighting = Color.FromArgb(29, 200, 238);
+            txtBust.ColorPen_1 = Color.FromArgb(29, 200, 238);
+            txtBust.ColorPen_2 = Color.FromArgb(37, 52, 68);
+            txtBust.CyberTextBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            txtBust.Font = new Font("Arial", 10F);
+            txtBust.ForeColor = Color.Black;
+            txtBust.Lighting = false;
+            txtBust.LinearGradientPen = false;
+            txtBust.Location = new Point(70, 334);
+            txtBust.Name = "txtBust";
+            txtBust.PenWidth = 10;
+            txtBust.RGB = false;
+            txtBust.Rounding = true;
+            txtBust.RoundingInt = 25;
+            txtBust.Size = new Size(160, 40);
+            txtBust.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            txtBust.TabIndex = 159;
+            txtBust.Tag = "Cyber";
+            txtBust.TextAlign = HorizontalAlignment.Left;
+            txtBust.TextButton = "";
+            txtBust.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            txtBust.Timer_RGB = 300;
+            // 
+            // txtUpperBust
+            // 
+            txtUpperBust.Alpha = 20;
+            txtUpperBust.Anchor = AnchorStyles.Left;
+            txtUpperBust.BackColor = Color.Transparent;
+            txtUpperBust.Background_WidthPen = 2F;
+            txtUpperBust.BackgroundPen = true;
+            txtUpperBust.ColorBackground = Color.White;
+            txtUpperBust.ColorBackground_Pen = Color.FromArgb(153, 153, 153);
+            txtUpperBust.ColorLighting = Color.FromArgb(29, 200, 238);
+            txtUpperBust.ColorPen_1 = Color.FromArgb(29, 200, 238);
+            txtUpperBust.ColorPen_2 = Color.FromArgb(37, 52, 68);
+            txtUpperBust.CyberTextBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            txtUpperBust.Font = new Font("Arial", 10F);
+            txtUpperBust.ForeColor = Color.Black;
+            txtUpperBust.Lighting = false;
+            txtUpperBust.LinearGradientPen = false;
+            txtUpperBust.Location = new Point(70, 234);
+            txtUpperBust.Name = "txtUpperBust";
+            txtUpperBust.PenWidth = 10;
+            txtUpperBust.RGB = false;
+            txtUpperBust.Rounding = true;
+            txtUpperBust.RoundingInt = 25;
+            txtUpperBust.Size = new Size(160, 40);
+            txtUpperBust.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            txtUpperBust.TabIndex = 159;
+            txtUpperBust.Tag = "Cyber";
+            txtUpperBust.TextAlign = HorizontalAlignment.Left;
+            txtUpperBust.TextButton = "";
+            txtUpperBust.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            txtUpperBust.Timer_RGB = 300;
             // 
             // txtShoulder
             // 
@@ -1558,7 +1926,7 @@ namespace Dashboard
             txtShoulder.ForeColor = Color.Black;
             txtShoulder.Lighting = false;
             txtShoulder.LinearGradientPen = false;
-            txtShoulder.Location = new Point(20, 152);
+            txtShoulder.Location = new Point(70, 127);
             txtShoulder.Name = "txtShoulder";
             txtShoulder.PenWidth = 10;
             txtShoulder.RGB = false;
@@ -1582,7 +1950,7 @@ namespace Dashboard
             spaceSeparatorHorizontal1.Location = new Point(23, 66);
             spaceSeparatorHorizontal1.Name = "spaceSeparatorHorizontal1";
             spaceSeparatorHorizontal1.NoRounding = false;
-            spaceSeparatorHorizontal1.Size = new Size(1152, 4);
+            spaceSeparatorHorizontal1.Size = new Size(1154, 4);
             spaceSeparatorHorizontal1.TabIndex = 157;
             spaceSeparatorHorizontal1.Text = "spaceSeparatorHorizontal1";
             spaceSeparatorHorizontal1.Transparent = false;
@@ -1594,51 +1962,21 @@ namespace Dashboard
             materialLabel20.Depth = 0;
             materialLabel20.Font = new Font("Roboto Medium", 17.5F, FontStyle.Bold, GraphicsUnit.Pixel);
             materialLabel20.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
-            materialLabel20.Location = new Point(26, 365);
+            materialLabel20.Location = new Point(73, 411);
             materialLabel20.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialLabel20.Name = "materialLabel20";
             materialLabel20.Size = new Size(95, 22);
             materialLabel20.TabIndex = 117;
             materialLabel20.Text = "Lower Bust:";
             // 
-            // txtLowerBust
-            // 
-            txtLowerBust.Anchor = AnchorStyles.Left;
-            // 
-            // 
-            // 
-            txtLowerBust.CustomButton.Image = null;
-            txtLowerBust.CustomButton.Location = new Point(122, 2);
-            txtLowerBust.CustomButton.Name = "";
-            txtLowerBust.CustomButton.Size = new Size(35, 35);
-            txtLowerBust.CustomButton.Style = ReaLTaiizor.Enum.Poison.ColorStyle.Blue;
-            txtLowerBust.CustomButton.TabIndex = 1;
-            txtLowerBust.CustomButton.Theme = ReaLTaiizor.Enum.Poison.ThemeStyle.Light;
-            txtLowerBust.CustomButton.UseSelectable = true;
-            txtLowerBust.CustomButton.Visible = false;
-            txtLowerBust.Location = new Point(26, 387);
-            txtLowerBust.MaxLength = 32767;
-            txtLowerBust.Name = "txtLowerBust";
-            txtLowerBust.PasswordChar = '\0';
-            txtLowerBust.ScrollBars = ScrollBars.None;
-            txtLowerBust.SelectedText = "";
-            txtLowerBust.SelectionLength = 0;
-            txtLowerBust.SelectionStart = 0;
-            txtLowerBust.ShortcutsEnabled = true;
-            txtLowerBust.Size = new Size(160, 40);
-            txtLowerBust.TabIndex = 118;
-            txtLowerBust.UseSelectable = true;
-            txtLowerBust.WaterMarkColor = Color.FromArgb(109, 109, 109);
-            txtLowerBust.WaterMarkFont = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Pixel);
-            // 
             // materialLabel57
             // 
-            materialLabel57.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            materialLabel57.Anchor = AnchorStyles.Top;
             materialLabel57.AutoSize = true;
             materialLabel57.Depth = 0;
             materialLabel57.Font = new Font("Roboto Medium", 17.5F, FontStyle.Bold, GraphicsUnit.Pixel);
             materialLabel57.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
-            materialLabel57.Location = new Point(1042, 197);
+            materialLabel57.Location = new Point(953, 205);
             materialLabel57.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialLabel57.Name = "materialLabel57";
             materialLabel57.Size = new Size(121, 22);
@@ -1647,12 +1985,12 @@ namespace Dashboard
             // 
             // materialLabel33
             // 
-            materialLabel33.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            materialLabel33.Anchor = AnchorStyles.Top;
             materialLabel33.AutoSize = true;
             materialLabel33.Depth = 0;
             materialLabel33.Font = new Font("Roboto Medium", 17.5F, FontStyle.Bold, GraphicsUnit.Pixel);
             materialLabel33.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
-            materialLabel33.Location = new Point(1208, 229);
+            materialLabel33.Location = new Point(1116, 241);
             materialLabel33.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialLabel33.Name = "materialLabel33";
             materialLabel33.Size = new Size(26, 22);
@@ -1679,7 +2017,7 @@ namespace Dashboard
             materialLabel16.Depth = 0;
             materialLabel16.Font = new Font("Roboto Medium", 17.5F, FontStyle.Bold, GraphicsUnit.Pixel);
             materialLabel16.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
-            materialLabel16.Location = new Point(712, 394);
+            materialLabel16.Location = new Point(820, 445);
             materialLabel16.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialLabel16.Name = "materialLabel16";
             materialLabel16.Size = new Size(26, 22);
@@ -1693,42 +2031,12 @@ namespace Dashboard
             materialLabel42.Depth = 0;
             materialLabel42.Font = new Font("Roboto Medium", 17.5F, FontStyle.Bold, GraphicsUnit.Pixel);
             materialLabel42.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
-            materialLabel42.Location = new Point(712, 318);
+            materialLabel42.Location = new Point(820, 343);
             materialLabel42.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialLabel42.Name = "materialLabel42";
             materialLabel42.Size = new Size(26, 22);
             materialLabel42.TabIndex = 156;
             materialLabel42.Text = "cm";
-            // 
-            // txtNeckDip
-            // 
-            txtNeckDip.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            // 
-            // 
-            // 
-            txtNeckDip.CustomButton.Image = null;
-            txtNeckDip.CustomButton.Location = new Point(374, 2);
-            txtNeckDip.CustomButton.Name = "";
-            txtNeckDip.CustomButton.Size = new Size(35, 35);
-            txtNeckDip.CustomButton.Style = ReaLTaiizor.Enum.Poison.ColorStyle.Blue;
-            txtNeckDip.CustomButton.TabIndex = 1;
-            txtNeckDip.CustomButton.Theme = ReaLTaiizor.Enum.Poison.ThemeStyle.Light;
-            txtNeckDip.CustomButton.UseSelectable = true;
-            txtNeckDip.CustomButton.Visible = false;
-            txtNeckDip.Location = new Point(528, 312);
-            txtNeckDip.MaxLength = 32767;
-            txtNeckDip.Name = "txtNeckDip";
-            txtNeckDip.PasswordChar = '\0';
-            txtNeckDip.ScrollBars = ScrollBars.None;
-            txtNeckDip.SelectedText = "";
-            txtNeckDip.SelectionLength = 0;
-            txtNeckDip.SelectionStart = 0;
-            txtNeckDip.ShortcutsEnabled = true;
-            txtNeckDip.Size = new Size(412, 40);
-            txtNeckDip.TabIndex = 140;
-            txtNeckDip.UseSelectable = true;
-            txtNeckDip.WaterMarkColor = Color.FromArgb(109, 109, 109);
-            txtNeckDip.WaterMarkFont = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Pixel);
             // 
             // materialLabel23
             // 
@@ -1737,7 +2045,7 @@ namespace Dashboard
             materialLabel23.Depth = 0;
             materialLabel23.Font = new Font("Roboto Medium", 17.5F, FontStyle.Bold, GraphicsUnit.Pixel);
             materialLabel23.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
-            materialLabel23.Location = new Point(20, 130);
+            materialLabel23.Location = new Point(70, 105);
             materialLabel23.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialLabel23.Name = "materialLabel23";
             materialLabel23.Size = new Size(78, 22);
@@ -1751,42 +2059,12 @@ namespace Dashboard
             materialLabel37.Depth = 0;
             materialLabel37.Font = new Font("Roboto Medium", 17.5F, FontStyle.Bold, GraphicsUnit.Pixel);
             materialLabel37.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
-            materialLabel37.Location = new Point(528, 284);
+            materialLabel37.Location = new Point(654, 309);
             materialLabel37.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialLabel37.Name = "materialLabel37";
             materialLabel37.Size = new Size(78, 22);
             materialLabel37.TabIndex = 139;
             materialLabel37.Text = "Neck Dip:";
-            // 
-            // txtSleeveLength
-            // 
-            txtSleeveLength.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            // 
-            // 
-            // 
-            txtSleeveLength.CustomButton.Image = null;
-            txtSleeveLength.CustomButton.Location = new Point(122, 2);
-            txtSleeveLength.CustomButton.Name = "";
-            txtSleeveLength.CustomButton.Size = new Size(35, 35);
-            txtSleeveLength.CustomButton.Style = ReaLTaiizor.Enum.Poison.ColorStyle.Blue;
-            txtSleeveLength.CustomButton.TabIndex = 1;
-            txtSleeveLength.CustomButton.Theme = ReaLTaiizor.Enum.Poison.ThemeStyle.Light;
-            txtSleeveLength.CustomButton.UseSelectable = true;
-            txtSleeveLength.CustomButton.Visible = false;
-            txtSleeveLength.Location = new Point(1042, 224);
-            txtSleeveLength.MaxLength = 32767;
-            txtSleeveLength.Name = "txtSleeveLength";
-            txtSleeveLength.PasswordChar = '\0';
-            txtSleeveLength.ScrollBars = ScrollBars.None;
-            txtSleeveLength.SelectedText = "";
-            txtSleeveLength.SelectionLength = 0;
-            txtSleeveLength.SelectionStart = 0;
-            txtSleeveLength.ShortcutsEnabled = true;
-            txtSleeveLength.Size = new Size(160, 40);
-            txtSleeveLength.TabIndex = 150;
-            txtSleeveLength.UseSelectable = true;
-            txtSleeveLength.WaterMarkColor = Color.FromArgb(109, 109, 109);
-            txtSleeveLength.WaterMarkFont = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Pixel);
             // 
             // materialLabel43
             // 
@@ -1795,7 +2073,7 @@ namespace Dashboard
             materialLabel43.Depth = 0;
             materialLabel43.Font = new Font("Roboto Medium", 17.5F, FontStyle.Bold, GraphicsUnit.Pixel);
             materialLabel43.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
-            materialLabel43.Location = new Point(192, 390);
+            materialLabel43.Location = new Point(236, 446);
             materialLabel43.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialLabel43.Name = "materialLabel43";
             materialLabel43.Size = new Size(26, 22);
@@ -1809,7 +2087,7 @@ namespace Dashboard
             materialLabel22.Depth = 0;
             materialLabel22.Font = new Font("Roboto Medium", 17.5F, FontStyle.Bold, GraphicsUnit.Pixel);
             materialLabel22.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
-            materialLabel22.Location = new Point(20, 197);
+            materialLabel22.Location = new Point(70, 209);
             materialLabel22.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialLabel22.Name = "materialLabel22";
             materialLabel22.Size = new Size(94, 22);
@@ -1828,12 +2106,12 @@ namespace Dashboard
             // 
             // materialLabel34
             // 
-            materialLabel34.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            materialLabel34.Anchor = AnchorStyles.Top;
             materialLabel34.AutoSize = true;
             materialLabel34.Depth = 0;
             materialLabel34.Font = new Font("Roboto Medium", 17.5F, FontStyle.Bold, GraphicsUnit.Pixel);
             materialLabel34.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
-            materialLabel34.Location = new Point(1208, 159);
+            materialLabel34.Location = new Point(1116, 135);
             materialLabel34.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialLabel34.Name = "materialLabel34";
             materialLabel34.Size = new Size(26, 22);
@@ -1842,12 +2120,12 @@ namespace Dashboard
             // 
             // materialLabel58
             // 
-            materialLabel58.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            materialLabel58.Anchor = AnchorStyles.Top;
             materialLabel58.AutoSize = true;
             materialLabel58.Depth = 0;
             materialLabel58.Font = new Font("Roboto Medium", 17.5F, FontStyle.Bold, GraphicsUnit.Pixel);
             materialLabel58.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
-            materialLabel58.Location = new Point(1039, 127);
+            materialLabel58.Location = new Point(950, 103);
             materialLabel58.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialLabel58.Name = "materialLabel58";
             materialLabel58.Size = new Size(163, 22);
@@ -1861,42 +2139,12 @@ namespace Dashboard
             materialLabel21.Depth = 0;
             materialLabel21.Font = new Font("Roboto Medium", 17.5F, FontStyle.Bold, GraphicsUnit.Pixel);
             materialLabel21.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
-            materialLabel21.Location = new Point(23, 278);
+            materialLabel21.Location = new Point(73, 307);
             materialLabel21.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialLabel21.Name = "materialLabel21";
             materialLabel21.Size = new Size(42, 22);
             materialLabel21.TabIndex = 115;
             materialLabel21.Text = "Bust:";
-            // 
-            // txtWaistline
-            // 
-            txtWaistline.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            // 
-            // 
-            // 
-            txtWaistline.CustomButton.Image = null;
-            txtWaistline.CustomButton.Location = new Point(374, 2);
-            txtWaistline.CustomButton.Name = "";
-            txtWaistline.CustomButton.Size = new Size(35, 35);
-            txtWaistline.CustomButton.Style = ReaLTaiizor.Enum.Poison.ColorStyle.Blue;
-            txtWaistline.CustomButton.TabIndex = 1;
-            txtWaistline.CustomButton.Theme = ReaLTaiizor.Enum.Poison.ThemeStyle.Light;
-            txtWaistline.CustomButton.UseSelectable = true;
-            txtWaistline.CustomButton.Visible = false;
-            txtWaistline.Location = new Point(528, 222);
-            txtWaistline.MaxLength = 32767;
-            txtWaistline.Name = "txtWaistline";
-            txtWaistline.PasswordChar = '\0';
-            txtWaistline.ScrollBars = ScrollBars.None;
-            txtWaistline.SelectedText = "";
-            txtWaistline.SelectionLength = 0;
-            txtWaistline.SelectionStart = 0;
-            txtWaistline.ShortcutsEnabled = true;
-            txtWaistline.Size = new Size(412, 40);
-            txtWaistline.TabIndex = 138;
-            txtWaistline.UseSelectable = true;
-            txtWaistline.WaterMarkColor = Color.FromArgb(109, 109, 109);
-            txtWaistline.WaterMarkFont = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Pixel);
             // 
             // materialLabel27
             // 
@@ -1905,7 +2153,7 @@ namespace Dashboard
             materialLabel27.Depth = 0;
             materialLabel27.Font = new Font("Roboto Medium", 17.5F, FontStyle.Bold, GraphicsUnit.Pixel);
             materialLabel27.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
-            materialLabel27.Location = new Point(712, 224);
+            materialLabel27.Location = new Point(820, 241);
             materialLabel27.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialLabel27.Name = "materialLabel27";
             materialLabel27.Size = new Size(26, 22);
@@ -1919,7 +2167,7 @@ namespace Dashboard
             materialLabel38.Depth = 0;
             materialLabel38.Font = new Font("Roboto Medium", 17.5F, FontStyle.Bold, GraphicsUnit.Pixel);
             materialLabel38.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
-            materialLabel38.Location = new Point(528, 200);
+            materialLabel38.Location = new Point(654, 207);
             materialLabel38.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialLabel38.Name = "materialLabel38";
             materialLabel38.Size = new Size(82, 22);
@@ -1933,42 +2181,12 @@ namespace Dashboard
             materialLabel32.Depth = 0;
             materialLabel32.Font = new Font("Roboto Medium", 17.5F, FontStyle.Bold, GraphicsUnit.Pixel);
             materialLabel32.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
-            materialLabel32.Location = new Point(435, 159);
+            materialLabel32.Location = new Point(528, 134);
             materialLabel32.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialLabel32.Name = "materialLabel32";
             materialLabel32.Size = new Size(26, 22);
             materialLabel32.TabIndex = 146;
             materialLabel32.Text = "cm";
-            // 
-            // txtBust
-            // 
-            txtBust.Anchor = AnchorStyles.Left;
-            // 
-            // 
-            // 
-            txtBust.CustomButton.Image = null;
-            txtBust.CustomButton.Location = new Point(122, 2);
-            txtBust.CustomButton.Name = "";
-            txtBust.CustomButton.Size = new Size(35, 35);
-            txtBust.CustomButton.Style = ReaLTaiizor.Enum.Poison.ColorStyle.Blue;
-            txtBust.CustomButton.TabIndex = 1;
-            txtBust.CustomButton.Theme = ReaLTaiizor.Enum.Poison.ThemeStyle.Light;
-            txtBust.CustomButton.UseSelectable = true;
-            txtBust.CustomButton.Visible = false;
-            txtBust.Location = new Point(26, 308);
-            txtBust.MaxLength = 32767;
-            txtBust.Name = "txtBust";
-            txtBust.PasswordChar = '\0';
-            txtBust.ScrollBars = ScrollBars.None;
-            txtBust.SelectedText = "";
-            txtBust.SelectionLength = 0;
-            txtBust.SelectionStart = 0;
-            txtBust.ShortcutsEnabled = true;
-            txtBust.Size = new Size(160, 40);
-            txtBust.TabIndex = 116;
-            txtBust.UseSelectable = true;
-            txtBust.WaterMarkColor = Color.FromArgb(109, 109, 109);
-            txtBust.WaterMarkFont = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Pixel);
             // 
             // materialLabel35
             // 
@@ -1977,42 +2195,12 @@ namespace Dashboard
             materialLabel35.Depth = 0;
             materialLabel35.Font = new Font("Roboto Medium", 17.5F, FontStyle.Bold, GraphicsUnit.Pixel);
             materialLabel35.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
-            materialLabel35.Location = new Point(192, 318);
+            materialLabel35.Location = new Point(236, 342);
             materialLabel35.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialLabel35.Name = "materialLabel35";
             materialLabel35.Size = new Size(26, 22);
             materialLabel35.TabIndex = 143;
             materialLabel35.Text = "cm";
-            // 
-            // txtUpperBust
-            // 
-            txtUpperBust.Anchor = AnchorStyles.Left;
-            // 
-            // 
-            // 
-            txtUpperBust.CustomButton.Image = null;
-            txtUpperBust.CustomButton.Location = new Point(122, 2);
-            txtUpperBust.CustomButton.Name = "";
-            txtUpperBust.CustomButton.Size = new Size(35, 35);
-            txtUpperBust.CustomButton.Style = ReaLTaiizor.Enum.Poison.ColorStyle.Blue;
-            txtUpperBust.CustomButton.TabIndex = 1;
-            txtUpperBust.CustomButton.Theme = ReaLTaiizor.Enum.Poison.ThemeStyle.Light;
-            txtUpperBust.CustomButton.UseSelectable = true;
-            txtUpperBust.CustomButton.Visible = false;
-            txtUpperBust.Location = new Point(20, 224);
-            txtUpperBust.MaxLength = 32767;
-            txtUpperBust.Name = "txtUpperBust";
-            txtUpperBust.PasswordChar = '\0';
-            txtUpperBust.ScrollBars = ScrollBars.None;
-            txtUpperBust.SelectedText = "";
-            txtUpperBust.SelectionLength = 0;
-            txtUpperBust.SelectionStart = 0;
-            txtUpperBust.ShortcutsEnabled = true;
-            txtUpperBust.Size = new Size(160, 40);
-            txtUpperBust.TabIndex = 114;
-            txtUpperBust.UseSelectable = true;
-            txtUpperBust.WaterMarkColor = Color.FromArgb(109, 109, 109);
-            txtUpperBust.WaterMarkFont = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Pixel);
             // 
             // materialLabel31
             // 
@@ -2021,7 +2209,7 @@ namespace Dashboard
             materialLabel31.Depth = 0;
             materialLabel31.Font = new Font("Roboto Medium", 17.5F, FontStyle.Bold, GraphicsUnit.Pixel);
             materialLabel31.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
-            materialLabel31.Location = new Point(265, 130);
+            materialLabel31.Location = new Point(362, 105);
             materialLabel31.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialLabel31.Name = "materialLabel31";
             materialLabel31.Size = new Size(103, 22);
@@ -2035,72 +2223,12 @@ namespace Dashboard
             materialLabel19.Depth = 0;
             materialLabel19.Font = new Font("Roboto Medium", 17.5F, FontStyle.Bold, GraphicsUnit.Pixel);
             materialLabel19.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
-            materialLabel19.Location = new Point(192, 159);
+            materialLabel19.Location = new Point(236, 134);
             materialLabel19.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialLabel19.Name = "materialLabel19";
             materialLabel19.Size = new Size(26, 22);
             materialLabel19.TabIndex = 119;
             materialLabel19.Text = "cm";
-            // 
-            // txtArmHole
-            // 
-            txtArmHole.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            // 
-            // 
-            // 
-            txtArmHole.CustomButton.Image = null;
-            txtArmHole.CustomButton.Location = new Point(374, 2);
-            txtArmHole.CustomButton.Name = "";
-            txtArmHole.CustomButton.Size = new Size(35, 35);
-            txtArmHole.CustomButton.Style = ReaLTaiizor.Enum.Poison.ColorStyle.Blue;
-            txtArmHole.CustomButton.TabIndex = 1;
-            txtArmHole.CustomButton.Theme = ReaLTaiizor.Enum.Poison.ThemeStyle.Light;
-            txtArmHole.CustomButton.UseSelectable = true;
-            txtArmHole.CustomButton.Visible = false;
-            txtArmHole.Location = new Point(528, 390);
-            txtArmHole.MaxLength = 32767;
-            txtArmHole.Name = "txtArmHole";
-            txtArmHole.PasswordChar = '\0';
-            txtArmHole.ScrollBars = ScrollBars.None;
-            txtArmHole.SelectedText = "";
-            txtArmHole.SelectionLength = 0;
-            txtArmHole.SelectionStart = 0;
-            txtArmHole.ShortcutsEnabled = true;
-            txtArmHole.Size = new Size(412, 40);
-            txtArmHole.TabIndex = 142;
-            txtArmHole.UseSelectable = true;
-            txtArmHole.WaterMarkColor = Color.FromArgb(109, 109, 109);
-            txtArmHole.WaterMarkFont = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Pixel);
-            // 
-            // txtBackFigure
-            // 
-            txtBackFigure.Anchor = AnchorStyles.Left;
-            // 
-            // 
-            // 
-            txtBackFigure.CustomButton.Image = null;
-            txtBackFigure.CustomButton.Location = new Point(122, 2);
-            txtBackFigure.CustomButton.Name = "";
-            txtBackFigure.CustomButton.Size = new Size(35, 35);
-            txtBackFigure.CustomButton.Style = ReaLTaiizor.Enum.Poison.ColorStyle.Blue;
-            txtBackFigure.CustomButton.TabIndex = 1;
-            txtBackFigure.CustomButton.Theme = ReaLTaiizor.Enum.Poison.ThemeStyle.Light;
-            txtBackFigure.CustomButton.UseSelectable = true;
-            txtBackFigure.CustomButton.Visible = false;
-            txtBackFigure.Location = new Point(265, 221);
-            txtBackFigure.MaxLength = 32767;
-            txtBackFigure.Name = "txtBackFigure";
-            txtBackFigure.PasswordChar = '\0';
-            txtBackFigure.ScrollBars = ScrollBars.None;
-            txtBackFigure.SelectedText = "";
-            txtBackFigure.SelectionLength = 0;
-            txtBackFigure.SelectionStart = 0;
-            txtBackFigure.ShortcutsEnabled = true;
-            txtBackFigure.Size = new Size(160, 40);
-            txtBackFigure.TabIndex = 126;
-            txtBackFigure.UseSelectable = true;
-            txtBackFigure.WaterMarkColor = Color.FromArgb(109, 109, 109);
-            txtBackFigure.WaterMarkFont = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Pixel);
             // 
             // materialLabel36
             // 
@@ -2109,7 +2237,7 @@ namespace Dashboard
             materialLabel36.Depth = 0;
             materialLabel36.Font = new Font("Roboto Medium", 17.5F, FontStyle.Bold, GraphicsUnit.Pixel);
             materialLabel36.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
-            materialLabel36.Location = new Point(528, 365);
+            materialLabel36.Location = new Point(654, 411);
             materialLabel36.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialLabel36.Name = "materialLabel36";
             materialLabel36.Size = new Size(82, 22);
@@ -2123,7 +2251,7 @@ namespace Dashboard
             materialLabel39.Depth = 0;
             materialLabel39.Font = new Font("Roboto Medium", 17.5F, FontStyle.Bold, GraphicsUnit.Pixel);
             materialLabel39.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
-            materialLabel39.Location = new Point(528, 127);
+            materialLabel39.Location = new Point(654, 102);
             materialLabel39.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialLabel39.Name = "materialLabel39";
             materialLabel39.Size = new Size(95, 22);
@@ -2137,7 +2265,7 @@ namespace Dashboard
             materialLabel30.Depth = 0;
             materialLabel30.Font = new Font("Roboto Medium", 17.5F, FontStyle.Bold, GraphicsUnit.Pixel);
             materialLabel30.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
-            materialLabel30.Location = new Point(265, 200);
+            materialLabel30.Location = new Point(362, 212);
             materialLabel30.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialLabel30.Name = "materialLabel30";
             materialLabel30.Size = new Size(100, 22);
@@ -2151,7 +2279,7 @@ namespace Dashboard
             materialLabel18.Depth = 0;
             materialLabel18.Font = new Font("Roboto Medium", 17.5F, FontStyle.Bold, GraphicsUnit.Pixel);
             materialLabel18.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
-            materialLabel18.Location = new Point(192, 229);
+            materialLabel18.Location = new Point(237, 242);
             materialLabel18.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialLabel18.Name = "materialLabel18";
             materialLabel18.Size = new Size(26, 22);
@@ -2165,7 +2293,7 @@ namespace Dashboard
             materialLabel26.Depth = 0;
             materialLabel26.Font = new Font("Roboto Medium", 17.5F, FontStyle.Bold, GraphicsUnit.Pixel);
             materialLabel26.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
-            materialLabel26.Location = new Point(694, 159);
+            materialLabel26.Location = new Point(820, 135);
             materialLabel26.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialLabel26.Name = "materialLabel26";
             materialLabel26.Size = new Size(26, 22);
@@ -2179,42 +2307,12 @@ namespace Dashboard
             materialLabel17.Depth = 0;
             materialLabel17.Font = new Font("Roboto Medium", 17.5F, FontStyle.Bold, GraphicsUnit.Pixel);
             materialLabel17.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
-            materialLabel17.Location = new Point(435, 224);
+            materialLabel17.Location = new Point(528, 242);
             materialLabel17.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialLabel17.Name = "materialLabel17";
             materialLabel17.Size = new Size(26, 22);
             materialLabel17.TabIndex = 121;
             materialLabel17.Text = "cm";
-            // 
-            // txtFrontChest
-            // 
-            txtFrontChest.Anchor = AnchorStyles.Left;
-            // 
-            // 
-            // 
-            txtFrontChest.CustomButton.Image = null;
-            txtFrontChest.CustomButton.Location = new Point(122, 2);
-            txtFrontChest.CustomButton.Name = "";
-            txtFrontChest.CustomButton.Size = new Size(35, 35);
-            txtFrontChest.CustomButton.Style = ReaLTaiizor.Enum.Poison.ColorStyle.Blue;
-            txtFrontChest.CustomButton.TabIndex = 1;
-            txtFrontChest.CustomButton.Theme = ReaLTaiizor.Enum.Poison.ThemeStyle.Light;
-            txtFrontChest.CustomButton.UseSelectable = true;
-            txtFrontChest.CustomButton.Visible = false;
-            txtFrontChest.Location = new Point(265, 308);
-            txtFrontChest.MaxLength = 32767;
-            txtFrontChest.Name = "txtFrontChest";
-            txtFrontChest.PasswordChar = '\0';
-            txtFrontChest.ScrollBars = ScrollBars.None;
-            txtFrontChest.SelectedText = "";
-            txtFrontChest.SelectionLength = 0;
-            txtFrontChest.SelectionStart = 0;
-            txtFrontChest.ShortcutsEnabled = true;
-            txtFrontChest.Size = new Size(160, 40);
-            txtFrontChest.TabIndex = 128;
-            txtFrontChest.UseSelectable = true;
-            txtFrontChest.WaterMarkColor = Color.FromArgb(109, 109, 109);
-            txtFrontChest.WaterMarkFont = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Pixel);
             // 
             // materialLabel25
             // 
@@ -2223,7 +2321,7 @@ namespace Dashboard
             materialLabel25.Depth = 0;
             materialLabel25.Font = new Font("Roboto Medium", 17.5F, FontStyle.Bold, GraphicsUnit.Pixel);
             materialLabel25.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
-            materialLabel25.Location = new Point(435, 318);
+            materialLabel25.Location = new Point(532, 349);
             materialLabel25.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialLabel25.Name = "materialLabel25";
             materialLabel25.Size = new Size(26, 22);
@@ -2237,7 +2335,7 @@ namespace Dashboard
             materialLabel29.Depth = 0;
             materialLabel29.Font = new Font("Roboto Medium", 17.5F, FontStyle.Bold, GraphicsUnit.Pixel);
             materialLabel29.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
-            materialLabel29.Location = new Point(265, 278);
+            materialLabel29.Location = new Point(362, 309);
             materialLabel29.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialLabel29.Name = "materialLabel29";
             materialLabel29.Size = new Size(99, 22);
@@ -2251,42 +2349,12 @@ namespace Dashboard
             materialLabel28.Depth = 0;
             materialLabel28.Font = new Font("Roboto Medium", 17.5F, FontStyle.Bold, GraphicsUnit.Pixel);
             materialLabel28.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
-            materialLabel28.Location = new Point(269, 359);
+            materialLabel28.Location = new Point(366, 411);
             materialLabel28.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialLabel28.Name = "materialLabel28";
             materialLabel28.Size = new Size(96, 22);
             materialLabel28.TabIndex = 129;
             materialLabel28.Text = "Back Chest:";
-            // 
-            // txtBackChest
-            // 
-            txtBackChest.Anchor = AnchorStyles.Left;
-            // 
-            // 
-            // 
-            txtBackChest.CustomButton.Image = null;
-            txtBackChest.CustomButton.Location = new Point(122, 2);
-            txtBackChest.CustomButton.Name = "";
-            txtBackChest.CustomButton.Size = new Size(35, 35);
-            txtBackChest.CustomButton.Style = ReaLTaiizor.Enum.Poison.ColorStyle.Blue;
-            txtBackChest.CustomButton.TabIndex = 1;
-            txtBackChest.CustomButton.Theme = ReaLTaiizor.Enum.Poison.ThemeStyle.Light;
-            txtBackChest.CustomButton.UseSelectable = true;
-            txtBackChest.CustomButton.Visible = false;
-            txtBackChest.Location = new Point(265, 390);
-            txtBackChest.MaxLength = 32767;
-            txtBackChest.Name = "txtBackChest";
-            txtBackChest.PasswordChar = '\0';
-            txtBackChest.ScrollBars = ScrollBars.None;
-            txtBackChest.SelectedText = "";
-            txtBackChest.SelectionLength = 0;
-            txtBackChest.SelectionStart = 0;
-            txtBackChest.ShortcutsEnabled = true;
-            txtBackChest.Size = new Size(160, 40);
-            txtBackChest.TabIndex = 130;
-            txtBackChest.UseSelectable = true;
-            txtBackChest.WaterMarkColor = Color.FromArgb(109, 109, 109);
-            txtBackChest.WaterMarkFont = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Pixel);
             // 
             // materialLabel24
             // 
@@ -2295,7 +2363,7 @@ namespace Dashboard
             materialLabel24.Depth = 0;
             materialLabel24.Font = new Font("Roboto Medium", 17.5F, FontStyle.Bold, GraphicsUnit.Pixel);
             materialLabel24.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
-            materialLabel24.Location = new Point(431, 394);
+            materialLabel24.Location = new Point(528, 446);
             materialLabel24.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialLabel24.Name = "materialLabel24";
             materialLabel24.Size = new Size(26, 22);
@@ -2312,7 +2380,7 @@ namespace Dashboard
             hopeGroupBox3.Location = new Point(0, 17);
             hopeGroupBox3.Name = "hopeGroupBox3";
             hopeGroupBox3.ShowText = false;
-            hopeGroupBox3.Size = new Size(1932, 877);
+            hopeGroupBox3.Size = new Size(1926, 869);
             hopeGroupBox3.TabIndex = 170;
             hopeGroupBox3.TabStop = false;
             hopeGroupBox3.Text = "hopeGroupBox3";
@@ -2332,7 +2400,7 @@ namespace Dashboard
             materialCard4.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialCard4.Name = "materialCard4";
             materialCard4.Padding = new Padding(14);
-            materialCard4.Size = new Size(1934, 65);
+            materialCard4.Size = new Size(1928, 65);
             materialCard4.TabIndex = 2;
             // 
             // materialLabel4
@@ -2360,7 +2428,7 @@ namespace Dashboard
             btnNotificationBodyMeasurement.Icon = MyResources.bell;
             btnNotificationBodyMeasurement.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Default;
             btnNotificationBodyMeasurement.ImageKey = "(none)";
-            btnNotificationBodyMeasurement.Location = new Point(1878, 14);
+            btnNotificationBodyMeasurement.Location = new Point(1872, 14);
             btnNotificationBodyMeasurement.Margin = new Padding(4, 6, 4, 6);
             btnNotificationBodyMeasurement.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             btnNotificationBodyMeasurement.Name = "btnNotificationBodyMeasurement";
@@ -2379,7 +2447,7 @@ namespace Dashboard
             CostConsumption.ImageKey = "cost.png";
             CostConsumption.Location = new Point(4, 29);
             CostConsumption.Name = "CostConsumption";
-            CostConsumption.Size = new Size(1934, 961);
+            CostConsumption.Size = new Size(1928, 953);
             CostConsumption.TabIndex = 3;
             CostConsumption.Text = "Cost Consumption";
             // 
@@ -2397,7 +2465,7 @@ namespace Dashboard
             materialCard10.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialCard10.Name = "materialCard10";
             materialCard10.Padding = new Padding(17);
-            materialCard10.Size = new Size(1934, 896);
+            materialCard10.Size = new Size(1928, 888);
             materialCard10.TabIndex = 4;
             // 
             // styledPanel3
@@ -2416,7 +2484,7 @@ namespace Dashboard
             styledPanel3.Controls.Add(btnCostHistory);
             styledPanel3.Location = new Point(25, 16);
             styledPanel3.Name = "styledPanel3";
-            styledPanel3.Size = new Size(1877, 152);
+            styledPanel3.Size = new Size(1871, 152);
             styledPanel3.TabIndex = 177;
             // 
             // materialLabel40
@@ -2565,7 +2633,7 @@ namespace Dashboard
             btnCostAdd.Font = new Font("Segoe UI", 12F);
             btnCostAdd.HoverTextColor = Color.FromArgb(120, 160, 0);
             btnCostAdd.InfoColor = Color.FromArgb(144, 147, 153);
-            btnCostAdd.Location = new Point(1755, 88);
+            btnCostAdd.Location = new Point(1749, 88);
             btnCostAdd.Name = "btnCostAdd";
             btnCostAdd.PrimaryColor = Color.FromArgb(141, 182, 0);
             btnCostAdd.Size = new Size(101, 40);
@@ -2599,7 +2667,7 @@ namespace Dashboard
             btnCostClear.Font = new Font("Segoe UI", 13F);
             btnCostClear.HoverTextColor = Color.FromArgb(120, 160, 0);
             btnCostClear.InfoColor = Color.FromArgb(144, 147, 153);
-            btnCostClear.Location = new Point(1628, 88);
+            btnCostClear.Location = new Point(1622, 88);
             btnCostClear.Name = "btnCostClear";
             btnCostClear.PrimaryColor = Color.White;
             btnCostClear.Size = new Size(108, 40);
@@ -2630,7 +2698,7 @@ namespace Dashboard
             btnCostHistory.Icon = MyResources.refresh;
             btnCostHistory.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Default;
             btnCostHistory.ImageKey = "(none)";
-            btnCostHistory.Location = new Point(1657, 21);
+            btnCostHistory.Location = new Point(1651, 21);
             btnCostHistory.Margin = new Padding(4, 6, 4, 6);
             btnCostHistory.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             btnCostHistory.Name = "btnCostHistory";
@@ -2656,7 +2724,7 @@ namespace Dashboard
             hopeGroupBox4.Location = new Point(17, 17);
             hopeGroupBox4.Name = "hopeGroupBox4";
             hopeGroupBox4.ShowText = false;
-            hopeGroupBox4.Size = new Size(1898, 860);
+            hopeGroupBox4.Size = new Size(1892, 852);
             hopeGroupBox4.TabIndex = 178;
             hopeGroupBox4.TabStop = false;
             hopeGroupBox4.Text = "hopeGroupBox4";
@@ -2665,6 +2733,7 @@ namespace Dashboard
             // styledPanel1
             // 
             styledPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            styledPanel1.Controls.Add(spaceSeparatorHorizontal4);
             styledPanel1.Controls.Add(btnSaveCost);
             styledPanel1.Controls.Add(lblGrandTotalCost);
             styledPanel1.Controls.Add(materialLabel67);
@@ -2678,7 +2747,7 @@ namespace Dashboard
             styledPanel1.Controls.Add(txtMaterialTotal);
             styledPanel1.Controls.Add(materialLabel8);
             styledPanel1.Controls.Add(txtLaborCost);
-            styledPanel1.Location = new Point(1418, 202);
+            styledPanel1.Location = new Point(1412, 202);
             styledPanel1.Name = "styledPanel1";
             styledPanel1.Size = new Size(450, 475);
             styledPanel1.TabIndex = 175;
@@ -2937,7 +3006,7 @@ namespace Dashboard
             styledPanel2.Controls.Add(pictureBox8);
             styledPanel2.Location = new Point(25, 202);
             styledPanel2.Name = "styledPanel2";
-            styledPanel2.Size = new Size(1310, 475);
+            styledPanel2.Size = new Size(1304, 475);
             styledPanel2.TabIndex = 176;
             // 
             // materialLabel59
@@ -2961,38 +3030,38 @@ namespace Dashboard
             dgvMaterialList.BorderStyle = BorderStyle.None;
             dgvMaterialList.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dgvMaterialList.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(141, 182, 0);
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
-            dataGridViewCellStyle4.ForeColor = Color.FromArgb(255, 255, 255);
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(141, 182, 0);
-            dataGridViewCellStyle4.SelectionForeColor = Color.FromArgb(17, 17, 17);
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            dgvMaterialList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = Color.FromArgb(141, 182, 0);
+            dataGridViewCellStyle7.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
+            dataGridViewCellStyle7.ForeColor = Color.FromArgb(255, 255, 255);
+            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(141, 182, 0);
+            dataGridViewCellStyle7.SelectionForeColor = Color.FromArgb(17, 17, 17);
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
+            dgvMaterialList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             dgvMaterialList.ColumnHeadersHeight = 40;
             dgvMaterialList.Columns.AddRange(new DataGridViewColumn[] { colItem, ColMeters, colPricePerMeter, colTotal });
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = Color.White;
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle5.ForeColor = Color.Black;
-            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(141, 182, 0);
-            dataGridViewCellStyle5.SelectionForeColor = Color.FromArgb(17, 17, 17);
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
-            dgvMaterialList.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = Color.White;
+            dataGridViewCellStyle8.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle8.ForeColor = Color.Black;
+            dataGridViewCellStyle8.SelectionBackColor = Color.FromArgb(141, 182, 0);
+            dataGridViewCellStyle8.SelectionForeColor = Color.FromArgb(17, 17, 17);
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
+            dgvMaterialList.DefaultCellStyle = dataGridViewCellStyle8;
             dgvMaterialList.EnableHeadersVisualStyles = false;
             dgvMaterialList.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
             dgvMaterialList.GridColor = Color.FromArgb(141, 182, 0);
             dgvMaterialList.Location = new Point(39, 78);
             dgvMaterialList.Name = "dgvMaterialList";
             dgvMaterialList.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = Color.FromArgb(0, 174, 219);
-            dataGridViewCellStyle6.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
-            dataGridViewCellStyle6.ForeColor = Color.FromArgb(255, 255, 255);
-            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(0, 198, 247);
-            dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(17, 17, 17);
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
-            dgvMaterialList.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = Color.FromArgb(0, 174, 219);
+            dataGridViewCellStyle9.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
+            dataGridViewCellStyle9.ForeColor = Color.FromArgb(255, 255, 255);
+            dataGridViewCellStyle9.SelectionBackColor = Color.FromArgb(0, 198, 247);
+            dataGridViewCellStyle9.SelectionForeColor = Color.FromArgb(17, 17, 17);
+            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.True;
+            dgvMaterialList.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             dgvMaterialList.RowHeadersVisible = false;
             dgvMaterialList.RowHeadersWidth = 51;
             dgvMaterialList.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
@@ -3051,7 +3120,7 @@ namespace Dashboard
             materialCard5.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialCard5.Name = "materialCard5";
             materialCard5.Padding = new Padding(14);
-            materialCard5.Size = new Size(1934, 65);
+            materialCard5.Size = new Size(1928, 65);
             materialCard5.TabIndex = 3;
             // 
             // materialLabel5
@@ -3079,7 +3148,7 @@ namespace Dashboard
             btnNotificationCostConsumption.Icon = MyResources.bell;
             btnNotificationCostConsumption.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Default;
             btnNotificationCostConsumption.ImageKey = "(none)";
-            btnNotificationCostConsumption.Location = new Point(1878, 14);
+            btnNotificationCostConsumption.Location = new Point(1872, 14);
             btnNotificationCostConsumption.Margin = new Padding(4, 6, 4, 6);
             btnNotificationCostConsumption.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             btnNotificationCostConsumption.Name = "btnNotificationCostConsumption";
@@ -3099,7 +3168,7 @@ namespace Dashboard
             Design.ImageKey = "design.png";
             Design.Location = new Point(4, 29);
             Design.Name = "Design";
-            Design.Size = new Size(1934, 961);
+            Design.Size = new Size(1910, 906);
             Design.TabIndex = 5;
             Design.Text = "Design";
             Design.UseVisualStyleBackColor = true;
@@ -3109,9 +3178,9 @@ namespace Dashboard
             panel3.BackColor = Color.White;
             panel3.Controls.Add(btnAddDesign);
             panel3.Dock = DockStyle.Bottom;
-            panel3.Location = new Point(0, 901);
+            panel3.Location = new Point(0, 846);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1934, 60);
+            panel3.Size = new Size(1910, 60);
             panel3.TabIndex = 6;
             // 
             // btnAddDesign
@@ -3124,7 +3193,7 @@ namespace Dashboard
             btnAddDesign.Font = new Font("Segoe UI", 12F);
             btnAddDesign.HoverTextColor = Color.FromArgb(120, 160, 0);
             btnAddDesign.InfoColor = Color.FromArgb(144, 147, 153);
-            btnAddDesign.Location = new Point(1780, 15);
+            btnAddDesign.Location = new Point(1756, 15);
             btnAddDesign.Name = "btnAddDesign";
             btnAddDesign.PrimaryColor = Color.FromArgb(141, 182, 0);
             btnAddDesign.Size = new Size(120, 35);
@@ -3142,7 +3211,7 @@ namespace Dashboard
             flpDesignGallery.Dock = DockStyle.Fill;
             flpDesignGallery.Location = new Point(0, 65);
             flpDesignGallery.Name = "flpDesignGallery";
-            flpDesignGallery.Size = new Size(1934, 896);
+            flpDesignGallery.Size = new Size(1910, 841);
             flpDesignGallery.TabIndex = 5;
             // 
             // materialCard11
@@ -3158,7 +3227,7 @@ namespace Dashboard
             materialCard11.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialCard11.Name = "materialCard11";
             materialCard11.Padding = new Padding(14);
-            materialCard11.Size = new Size(1934, 65);
+            materialCard11.Size = new Size(1910, 65);
             materialCard11.TabIndex = 4;
             // 
             // materialLabel65
@@ -3186,7 +3255,7 @@ namespace Dashboard
             btnNotificationDesign.Icon = MyResources.bell;
             btnNotificationDesign.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Default;
             btnNotificationDesign.ImageKey = "(none)";
-            btnNotificationDesign.Location = new Point(1880, 14);
+            btnNotificationDesign.Location = new Point(1856, 14);
             btnNotificationDesign.Margin = new Padding(4, 6, 4, 6);
             btnNotificationDesign.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             btnNotificationDesign.Name = "btnNotificationDesign";
@@ -3308,12 +3377,26 @@ namespace Dashboard
             // 
             animationTimer.Tick += animationTimer_Tick;
             // 
+            // spaceSeparatorHorizontal4
+            // 
+            spaceSeparatorHorizontal4.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            spaceSeparatorHorizontal4.Customization = "Kioq/yoqKv8jIyP/Kioq/w==";
+            spaceSeparatorHorizontal4.Font = new Font("Verdana", 8F);
+            spaceSeparatorHorizontal4.Image = null;
+            spaceSeparatorHorizontal4.Location = new Point(30, 337);
+            spaceSeparatorHorizontal4.Name = "spaceSeparatorHorizontal4";
+            spaceSeparatorHorizontal4.NoRounding = false;
+            spaceSeparatorHorizontal4.Size = new Size(400, 4);
+            spaceSeparatorHorizontal4.TabIndex = 175;
+            spaceSeparatorHorizontal4.Text = "spaceSeparatorHorizontal4";
+            spaceSeparatorHorizontal4.Transparent = false;
+            // 
             // Form1
             // 
             AutoScaleMode = AutoScaleMode.Inherit;
             AutoValidate = AutoValidate.EnablePreventFocusChange;
             BackColor = SystemColors.Control;
-            ClientSize = new Size(1942, 1102);
+            ClientSize = new Size(1936, 1094);
             Controls.Add(mtcSelectionControl);
             Controls.Add(pnlNotification);
             DrawerAutoHide = false;
@@ -3438,22 +3521,16 @@ namespace Dashboard
         private ReaLTaiizor.Controls.MaterialLabel materialLabel46;
         private ReaLTaiizor.Controls.MaterialLabel materialLabel47;
         private ReaLTaiizor.Controls.MaterialLabel materialLabel48;
-        private ReaLTaiizor.Controls.PoisonTextBox txtCalfCircumference;
         private ReaLTaiizor.Controls.MaterialLabel materialLabel49;
-        private ReaLTaiizor.Controls.PoisonTextBox txtThigh;
         private ReaLTaiizor.Controls.MaterialLabel materialLabel50;
-        private ReaLTaiizor.Controls.PoisonTextBox txtCrotch;
-        private ReaLTaiizor.Controls.PoisonTextBox txtLowerHips;
         private ReaLTaiizor.Controls.MaterialLabel materialLabel51;
         private ReaLTaiizor.Controls.MaterialLabel materialLabel52;
         private ReaLTaiizor.Controls.MaterialLabel materialLabel44;
         private PictureBox pictureBox6;
         private ReaLTaiizor.Controls.MaterialLabel materialLabel53;
-        private ReaLTaiizor.Controls.PoisonTextBox txtLength;
         private ReaLTaiizor.Controls.MaterialLabel materialLabel54;
         private ReaLTaiizor.Controls.MaterialLabel materialLabel42;
         private ReaLTaiizor.Controls.MaterialLabel materialLabel43;
-        private ReaLTaiizor.Controls.PoisonTextBox txtSleeveLength;
         
         private ReaLTaiizor.Controls.MaterialLabel materialLabel57;
         private ReaLTaiizor.Controls.MaterialLabel materialLabel58;
@@ -3461,11 +3538,8 @@ namespace Dashboard
         private ReaLTaiizor.Controls.MaterialLabel materialLabel33;
         private ReaLTaiizor.Controls.MaterialLabel materialLabel34;
         private ReaLTaiizor.Controls.MaterialLabel materialLabel35;
-        private ReaLTaiizor.Controls.PoisonTextBox txtArmHole;
         private ReaLTaiizor.Controls.MaterialLabel materialLabel36;
-        private ReaLTaiizor.Controls.PoisonTextBox txtNeckDip;
         private ReaLTaiizor.Controls.MaterialLabel materialLabel37;
-        private ReaLTaiizor.Controls.PoisonTextBox txtWaistline;
         
         private ReaLTaiizor.Controls.MaterialLabel materialLabel38;
         private ReaLTaiizor.Controls.MaterialLabel materialLabel39;
@@ -3473,22 +3547,16 @@ namespace Dashboard
         private ReaLTaiizor.Controls.MaterialLabel materialLabel25;
         private ReaLTaiizor.Controls.MaterialLabel materialLabel26;
         private ReaLTaiizor.Controls.MaterialLabel materialLabel27;
-        private ReaLTaiizor.Controls.PoisonTextBox txtBackChest;
         private ReaLTaiizor.Controls.MaterialLabel materialLabel28;
-        private ReaLTaiizor.Controls.PoisonTextBox txtFrontChest;
         private ReaLTaiizor.Controls.MaterialLabel materialLabel29;
-        private ReaLTaiizor.Controls.PoisonTextBox txtBackFigure;
         
         private ReaLTaiizor.Controls.MaterialLabel materialLabel30;
         private ReaLTaiizor.Controls.MaterialLabel materialLabel31;
         private ReaLTaiizor.Controls.MaterialLabel materialLabel17;
         private ReaLTaiizor.Controls.MaterialLabel materialLabel18;
         private ReaLTaiizor.Controls.MaterialLabel materialLabel19;
-        private ReaLTaiizor.Controls.PoisonTextBox txtLowerBust;
         private ReaLTaiizor.Controls.MaterialLabel materialLabel20;
-        private ReaLTaiizor.Controls.PoisonTextBox txtBust;
         private ReaLTaiizor.Controls.MaterialLabel materialLabel21;
-        private ReaLTaiizor.Controls.PoisonTextBox txtUpperBust;
         private ReaLTaiizor.Controls.MaterialLabel materialLabel22;
         private ReaLTaiizor.Controls.MaterialLabel materialLabel23;
         private ReaLTaiizor.Controls.HopeButton btnClear;
@@ -3568,5 +3636,23 @@ namespace Dashboard
         private ReaLTaiizor.Controls.CyberTextBox txtFrontFigure;
         private ReaLTaiizor.Controls.CyberTextBox txtUpperHips;
         private ReaLTaiizor.Controls.CyberTextBox txtArmCircumference;
+        private ReaLTaiizor.Controls.CyberTextBox txtSleeveLength;
+        private ReaLTaiizor.Controls.CyberTextBox txtWaistline;
+        private ReaLTaiizor.Controls.CyberTextBox txtBackFigure;
+        private ReaLTaiizor.Controls.CyberTextBox txtNeckDip;
+        private ReaLTaiizor.Controls.CyberTextBox txtFrontChest;
+        private ReaLTaiizor.Controls.CyberTextBox txtArmHole;
+        private ReaLTaiizor.Controls.CyberTextBox txtBackChest;
+        private ReaLTaiizor.Controls.CyberTextBox txtLowerBust;
+        private ReaLTaiizor.Controls.CyberTextBox txtBust;
+        private ReaLTaiizor.Controls.CyberTextBox txtUpperBust;
+        private ReaLTaiizor.Controls.SpaceSeparatorHorizontal spaceSeparatorHorizontal2;
+        private ReaLTaiizor.Controls.CyberTextBox txtLength;
+        private ReaLTaiizor.Controls.CyberTextBox txtThigh;
+        private ReaLTaiizor.Controls.CyberTextBox txtCalfCircumference;
+        private ReaLTaiizor.Controls.CyberTextBox txtCrotch;
+        private ReaLTaiizor.Controls.CyberTextBox txtLowerHips;
+        private ReaLTaiizor.Controls.SpaceSeparatorHorizontal spaceSeparatorHorizontal3;
+        private ReaLTaiizor.Controls.SpaceSeparatorHorizontal spaceSeparatorHorizontal4;
     }
 }
