@@ -793,7 +793,7 @@ namespace Dashboard
             flpOrderList.Size = new Size(1129, 546);
             flpOrderList.TabIndex = 6;
             flpOrderList.WrapContents = false;
-            flpOrderList.MouseEnter += flwpnlOrderList_MouseEnter;
+            flpOrderList.MouseEnter += FlwpnlOrderList_MouseEnter;
             // 
             // btnOrderHistory
             // 

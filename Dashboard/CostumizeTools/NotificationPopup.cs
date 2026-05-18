@@ -16,7 +16,7 @@ namespace Dashboard.CostumizeTools
         {
             this.FormBorderStyle = FormBorderStyle.None;
             this.StartPosition = FormStartPosition.Manual;
-            this.Size = new Size(470, 545);
+            this.Size = new Size(375, 450);
             this.BackColor = Color.White;
             this.ShowInTaskbar = false;
             this.TopMost = true;
@@ -61,6 +61,7 @@ namespace Dashboard.CostumizeTools
             title.ForeColor = Color.FromArgb(30, 30, 30);
             title.AutoSize = true;
             title.Location = new Point(35, 25);
+            title.Anchor = AnchorStyles.Left | AnchorStyles.Top;
 
             LinkLabel markRead = new LinkLabel();
             markRead.Text = "Mark all as read";
@@ -69,7 +70,8 @@ namespace Dashboard.CostumizeTools
             markRead.ActiveLinkColor = Color.FromArgb(38, 132, 255);
             markRead.VisitedLinkColor = Color.FromArgb(38, 132, 255);
             markRead.AutoSize = true;
-            markRead.Location = new Point(340, 28);
+            markRead.Location = new Point(100, 28);
+            markRead.Anchor = AnchorStyles.Top | AnchorStyles.Right;
 
             header.Controls.Add(title);
             header.Controls.Add(markRead);
@@ -97,6 +99,7 @@ namespace Dashboard.CostumizeTools
             viewAll.VisitedLinkColor = Color.FromArgb(38, 132, 255);
             viewAll.AutoSize = true;
             viewAll.Location = new Point((footer.Width - 135) / 2, 25);
+            viewAll.Anchor = AnchorStyles.Top;
 
             footer.Controls.Add(viewAll);
 

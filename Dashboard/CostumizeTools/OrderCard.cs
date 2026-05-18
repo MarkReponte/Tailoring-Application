@@ -161,6 +161,13 @@ namespace Dashboard
                 MessageBox.Show("Failed to delete order: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        public bool MatchesSearch(string searchText)
+        {
+            return CustomerName?.ToLower().Contains(searchText) == true ||
+                   Gender?.ToLower().Contains(searchText) == true ||
+                   Deadline?.ToLower().Contains(searchText) == true ||
+                   OrderDate?.ToLower().Contains(searchText) == true;
+        }
     }
 }
     
