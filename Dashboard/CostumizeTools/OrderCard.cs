@@ -1,5 +1,6 @@
 ﻿using AppDomain.Models;
 using AppInfrastructure.Data;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,7 +9,6 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Text;
 using System.Windows.Forms;
-using Microsoft.EntityFrameworkCore;
     
 namespace Dashboard
 {
@@ -73,8 +73,7 @@ namespace Dashboard
 
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public string AllMeasurements { get; set; }
-
-
+        public object?[]? MeasurementId { get; private set; }
 
         private async void lblStatusBadge_Click(object sender, EventArgs e)
         {
@@ -93,10 +92,10 @@ namespace Dashboard
 
                             MessageBox.Show("Order marked as Completed!");
 
-                            
+
                             if (this.Parent != null)
                             {
-                                
+
                                 this.Parent.Controls.Remove(this);
                                 this.Dispose();
                             }
@@ -106,7 +105,7 @@ namespace Dashboard
                             }
                         }
                     }
-                    
+
                 }
                 catch (Exception ex)
                 {
@@ -114,12 +113,52 @@ namespace Dashboard
                     return;
                 }
 
-                if(this.Parent != null)
+                if (this.Parent != null)
                 {
                     this.Parent.Controls.Remove(this);
                 }
 
                 MessageBox.Show("Order marked as Completed. You can view it in the History window.");
+            }
+        }
+
+        private void foxLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private async void hopeRoundButton1_ClickAsync(object sender, EventArgs e)
+        {
+            var confirm = MessageBox.Show(
+               $"Are you sure you want to delete the order for \"{CustomerName}\"? This cannot be undone.",
+               "Delete Order",
+               MessageBoxButtons.YesNo,
+               MessageBoxIcon.Warning);
+
+            if (confirm != DialogResult.Yes) return;
+
+            try
+            {
+                using (var db = new SewingDbContext())
+                {
+                    var record = await db.Measurements.FindAsync(MeasurementId);
+
+                    if (record != null)
+                    {
+                        db.Measurements.Remove(record);
+                        await db.SaveChangesAsync();
+                    }
+                }
+
+                if (this.Parent != null)
+                {
+                    this.Parent.Controls.Remove(this);
+                }
+                this.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed to delete order: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

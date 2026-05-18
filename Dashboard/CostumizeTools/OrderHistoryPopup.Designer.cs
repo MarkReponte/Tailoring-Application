@@ -31,6 +31,7 @@
             materialCard1 = new ReaLTaiizor.Controls.MaterialCard();
             flpOrderHistory = new FlowLayoutPanel();
             panel1 = new Panel();
+            hopeRoundButton1 = new ReaLTaiizor.Controls.HopeRoundButton();
             btnViewOrders = new ReaLTaiizor.Controls.HopeButton();
             pictureBox3 = new PictureBox();
             lblOrderHistory = new ReaLTaiizor.Controls.MaterialLabel();
@@ -69,6 +70,7 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(hopeRoundButton1);
             panel1.Controls.Add(btnViewOrders);
             panel1.Controls.Add(pictureBox3);
             panel1.Controls.Add(lblOrderHistory);
@@ -77,6 +79,26 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(816, 65);
             panel1.TabIndex = 0;
+            // 
+            // hopeRoundButton1
+            // 
+            hopeRoundButton1.BorderColor = Color.FromArgb(220, 223, 230);
+            hopeRoundButton1.ButtonType = ReaLTaiizor.Util.HopeButtonType.Primary;
+            hopeRoundButton1.DangerColor = Color.FromArgb(245, 108, 108);
+            hopeRoundButton1.DefaultColor = Color.FromArgb(255, 255, 255);
+            hopeRoundButton1.Font = new Font("Segoe UI", 12F);
+            hopeRoundButton1.HoverTextColor = Color.Gray;
+            hopeRoundButton1.InfoColor = Color.FromArgb(144, 147, 153);
+            hopeRoundButton1.Location = new Point(547, 15);
+            hopeRoundButton1.Name = "hopeRoundButton1";
+            hopeRoundButton1.PrimaryColor = Color.FromArgb(141, 182, 0);
+            hopeRoundButton1.Size = new Size(101, 35);
+            hopeRoundButton1.SuccessColor = Color.FromArgb(103, 194, 58);
+            hopeRoundButton1.TabIndex = 160;
+            hopeRoundButton1.Text = "Clear All";
+            hopeRoundButton1.TextColor = Color.White;
+            hopeRoundButton1.WarningColor = Color.FromArgb(230, 162, 60);
+            hopeRoundButton1.Click += btnClearAll_Click;
             // 
             // btnViewOrders
             // 
@@ -145,5 +167,6 @@
         private ReaLTaiizor.Controls.HopeButton btnViewOrders;
         public FlowLayoutPanel flpOrderHistory;
         private Panel panel1;
+        private ReaLTaiizor.Controls.HopeRoundButton hopeRoundButton1;
     }
 }

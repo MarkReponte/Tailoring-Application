@@ -35,7 +35,23 @@ namespace AppInfrastructure.Repository
         }
 
         public async Task SaveAsync() => await _context.SaveChangesAsync();
-    }
+    
+      public async Task DeleteAsync(Guid id)
+        {
+            var record = await _context.Measurements.FindAsync(id);
+            if (record != null)
+            {
+                _context.Measurements.Remove(record);
+                await _context.SaveChangesAsync();
+            }
+        }
 
+        public async Task DeleteAllCompletedAsync()
+        {
+            var completed = _context.Measurements.Where(m => m.Status == "Completed");
+            _context.Measurements.RemoveRange(completed);
+            await _context.SaveChangesAsync();
+        }
+    }
 }
 

@@ -239,9 +239,10 @@
             // 
             lblGrandTotalCostSaved.AutoSize = true;
             lblGrandTotalCostSaved.FontSize = ReaLTaiizor.Extension.Poison.PoisonLabelSize.Tall;
-            lblGrandTotalCostSaved.Location = new Point(117, 247);
+            lblGrandTotalCostSaved.FontWeight = ReaLTaiizor.Extension.Poison.PoisonLabelWeight.Regular;
+            lblGrandTotalCostSaved.Location = new Point(187, 205);
             lblGrandTotalCostSaved.Name = "lblGrandTotalCostSaved";
-            lblGrandTotalCostSaved.Size = new Size(52, 25);
+            lblGrandTotalCostSaved.Size = new Size(56, 25);
             lblGrandTotalCostSaved.Style = ReaLTaiizor.Enum.Poison.ColorStyle.Green;
             lblGrandTotalCostSaved.TabIndex = 170;
             lblGrandTotalCostSaved.Text = "0,000";

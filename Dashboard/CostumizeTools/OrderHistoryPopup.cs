@@ -64,5 +64,32 @@ namespace Dashboard
         {
             this.Close();
         }
+        private async void btnClearAll_Click(object sender, EventArgs e)
+        {
+            if (flpOrderHistory.Controls.Count == 0)
+            {
+                MessageBox.Show("There are no completed orders to clear.", "Nothing to Clear", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            var confirm = MessageBox.Show(
+                "Are you sure you want to permanently delete all completed orders? This cannot be undone.",
+                "Clear All Orders",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning);
+
+            if (confirm != DialogResult.Yes) return;
+
+            try
+            {
+                await _measurementRepo.DeleteAllCompletedAsync();
+                flpOrderHistory.Controls.Clear();
+                MessageBox.Show("All completed orders have been cleared.", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed to clear orders: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

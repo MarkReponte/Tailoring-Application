@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\bin.png" />
     <None Remove="Resources\Pants.png" />
   </ItemGroup>
 

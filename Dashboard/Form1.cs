@@ -20,7 +20,6 @@ using Microsoft.EntityFrameworkCore;
 using Dashboard.CostumizeTools;
 using System.IO;
 using AppInfrastructure.Repository;
-using Dashboard.Popup;
 
 
 namespace Dashboard
@@ -63,22 +62,6 @@ namespace Dashboard
             );
         }
 
-        private void ConfigureCenteredWindowBounds()
-        {
-            WindowState = FormWindowState.Normal;
-
-            Rectangle workingArea = Screen.FromControl(this).WorkingArea;
-            int width = Math.Min(1440, Math.Max(900, workingArea.Width - 80));
-            int height = Math.Min(900, Math.Max(600, workingArea.Height - 80));
-
-            Size = new Size(width, height);
-            CenterWindowInCurrentScreen();
-
-            _lastWindowState = WindowState;
-            Shown += (_, _) => WindowState = FormWindowState.Maximized;
-            Resize += Form1_Resize;
-        }
-
         private void CenterWindowInCurrentScreen()
         {
             Rectangle workingArea = Screen.FromControl(this).WorkingArea;
@@ -88,17 +71,14 @@ namespace Dashboard
             );
         }
 
-        private void Form1_Resize(object? sender, EventArgs e)
-        {
-            if (_lastWindowState == FormWindowState.Maximized && WindowState == FormWindowState.Normal)
-            {
-                CenterWindowInCurrentScreen();
-            }
-
-            _lastWindowState = WindowState;
-        }
+        
         private async void Form1_Load(object sender, EventArgs e)
         {
+            this.ClientSize = new Size(1360, 768);
+            this.MinimumSize = this.Size;
+            this.MaximumSize = this.Size;
+            this.FormBorderStyle = FormBorderStyle.None;
+
             materialCard10.Padding = new Padding(0);
             mcMeasurement.Padding = new Padding(0, 17, 0, 0);
             ConfigureCostConsumptionBackground();
@@ -168,20 +148,7 @@ namespace Dashboard
             ConfigureAccentHoverButton(btnSaveCost);
             ConfigureAccentHoverButton(btnCostHistory);
         }
-        private void RoundPanelCorners(System.Windows.Forms.Panel panel, int radius)
-        {
-            Rectangle bounds = panel.ClientRectangle;
-            int diameter = radius * 2;
 
-            using GraphicsPath path = new GraphicsPath();
-            path.AddArc(bounds.X, bounds.Y, diameter, diameter, 180, 90);
-            path.AddArc(bounds.Right - diameter, bounds.Y, diameter, diameter, 270, 90);
-            path.AddArc(bounds.Right - diameter, bounds.Bottom - diameter, diameter, diameter, 0, 90);
-            path.AddArc(bounds.X, bounds.Bottom - diameter, diameter, diameter, 90, 90);
-            path.CloseFigure();
-
-            panel.Region = new Region(path);
-        }
         private void ConfigureAccentHoverButton(MaterialButton button)
         {
             button.Type = MaterialButton.MaterialButtonType.Contained;
@@ -380,10 +347,7 @@ namespace Dashboard
             }
         }
 
-        private double GetValue(string text)
-        {
-            return double.TryParse(text, out double result) ? result : 0;
-        }
+    
 
         private void ClearForm()
         {
@@ -393,20 +357,20 @@ namespace Dashboard
 
             var cyberFields = new ReaLTaiizor.Controls.CyberTextBox[]
             {
-        txtShoulder, txtFrontFigure, txtUpperHips, txtArmCircumference,
-        txtUpperBust, txtBackFigure, txtWaistline, txtSleeveLength,
-        txtBust, txtFrontChest, txtNeckDip,
-        txtLowerBust, txtBackChest, txtArmHole,
-        txtLowerHips, txtLength,
-        txtCrotch, txtThigh,
-        txtCalfCircumference
+                txtShoulder, txtFrontFigure, txtUpperHips, txtArmCircumference,
+                txtUpperBust, txtBackFigure, txtWaistline, txtSleeveLength,
+                txtBust, txtFrontChest, txtNeckDip,
+                txtLowerBust, txtBackChest, txtArmHole,
+                txtLowerHips, txtLength,
+                txtCrotch, txtThigh,
+                txtCalfCircumference
             };
 
             foreach (var field in cyberFields)
             {
                 if (field == null) continue;
 
-                
+
                 foreach (Control c in field.Controls)
                 {
                     if (c is TextBox tb)
@@ -416,7 +380,7 @@ namespace Dashboard
                     }
                 }
 
-                // Also reset the top-level Text property
+
                 field.Text = "";
                 field.Invalidate();
             }
@@ -481,21 +445,7 @@ namespace Dashboard
         private int targetHeight = 400;
         private NotificationPopup notificationPopup;
 
-        public void NotificationPanel()
-        {
-            if (!pnlNotification.Visible)
-            {
-                int x = this.ClientSize.Width - pnlNotification.Width - 10;
-                int y = 60;
-                pnlNotification.Location = new Point(x, y);
-                pnlNotification.Size = new Size(300, 0);
-
-                pnlNotification.Visible = true;
-                pnlNotification.BringToFront();
-
-                animationTimer.Start();
-            }
-        }
+       
 
         private void animationTimer_Tick(object sender, EventArgs e)
         {
@@ -536,13 +486,7 @@ namespace Dashboard
             }
         }
 
-        private void cboSearch_TextChanged(object sender, EventArgs e)
-        {
-            if (hcbSearch.Text != "Search..." && hcbSearch.Text != "")
-            {
-                hcbSearch.ForeColor = Color.FromArgb(0, 0, 0);
-            }
-        }
+       
 
         private void cboSearch_Leave(Object sender, EventArgs e)
         {
@@ -671,26 +615,26 @@ namespace Dashboard
                     OrderDeadline = pdtOrderDeadline.Value.Date,
                     Status = "In Progress",
 
-                    Shoulder = GetValue(txtShoulder.Text),
-                    ArmCircumference = GetValue(txtArmCircumference.Text),
-                    FrontFigure = GetValue(txtFrontFigure.Text),
-                    UpperBust = GetValue(txtUpperBust.Text),
-                    Bust = GetValue(txtBust.Text),
-                    LowerBust = GetValue(txtLowerBust.Text),
-                    BackFigure = GetValue(txtBackFigure.Text),
-                    FrontChest = GetValue(txtFrontChest.Text),
-                    BackChest = GetValue(txtBackChest.Text),
-                    UpperHips = GetValue(txtUpperHips.Text),
-                    Waistline = GetValue(txtWaistline.Text),
-                    NeckDip = GetValue(txtNeckDip.Text),
-                    ArmHole = GetValue(txtArmHole.Text),
-                    SleeveLength = GetValue(txtSleeveLength.Text),
+                    Shoulder = GetCyberValue(txtShoulder),
+                    ArmCircumference = GetCyberValue(txtArmCircumference),
+                    FrontFigure = GetCyberValue(txtFrontFigure),
+                    UpperBust = GetCyberValue(txtUpperBust),
+                    Bust = GetCyberValue(txtBust),
+                    LowerBust = GetCyberValue(txtLowerBust),
+                    BackFigure = GetCyberValue(txtBackFigure),
+                    FrontChest = GetCyberValue(txtFrontChest),
+                    BackChest = GetCyberValue(txtBackChest),
+                    UpperHips = GetCyberValue(txtUpperHips),
+                    Waistline = GetCyberValue(txtWaistline),
+                    NeckDip = GetCyberValue(txtNeckDip),
+                    ArmHole = GetCyberValue(txtArmHole),
+                    SleeveLength = GetCyberValue(txtSleeveLength),
 
-                    LowerHips = GetValue(txtLowerHips.Text),
-                    Crotch = GetValue(txtCrotch.Text),
-                    Thigh = GetValue(txtThigh.Text),
-                    CalfCircumference = GetValue(txtCalfCircumference.Text),
-                    Length = GetValue(txtLength.Text)
+                    LowerHips = GetCyberValue(txtLowerHips),
+                    Crotch = GetCyberValue(txtCrotch),
+                    Thigh = GetCyberValue(txtThigh),
+                    CalfCircumference = GetCyberValue(txtCalfCircumference),
+                    Length = GetCyberValue(txtLength)
                 };
 
                 await _measurementRepo.AddAsync(measurements);
@@ -752,8 +696,6 @@ namespace Dashboard
                 }
             }
         }
-
-
 
         private async void btnOrderHistory_Click(object sender, EventArgs e)
         {
@@ -870,20 +812,16 @@ namespace Dashboard
                 e.Graphics.DrawString(text, font, brush, textLocation);
             }
         }
-        private void hcbSearch_Paint(object sender, PaintEventArgs e)
+
+        private double GetCyberValue(ReaLTaiizor.Controls.CyberTextBox field)
         {
-            ComboBox cmb = sender as ComboBox;
-
-            e.Graphics.FillRectangle(new SolidBrush(cmb.BackColor), cmb.ClientRectangle);
-
-            using (var font = new Font("Segoe UI", 18F))
-            using (var brush = new SolidBrush(cmb.ForeColor))
+            foreach (Control c in field.Controls)
             {
-                string text = cmb.SelectedItem?.ToString() ?? cmb.Text;
-                e.Graphics.DrawString(text, font, brush, new PointF(4, (cmb.Height - font.GetHeight()) / 2));
+                if (c is TextBox tb)
+                    return double.TryParse(tb.Text, out double result) ? result : 0;
             }
+            return 0;
         }
-
         private void hcbSearch_TextChanged(object sender, EventArgs e)
         {
             string searchText = hcbSearch.Text.Trim().ToLower();
@@ -920,5 +858,7 @@ namespace Dashboard
         {
             ClearForm();
         }
+
+       
     }
 }
