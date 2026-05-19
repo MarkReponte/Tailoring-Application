@@ -3,6 +3,7 @@ using ReaLTaiizor.Controls;
 using ReaLTaiizor.Forms;
 using ReaLTaiizor.Manager;
 using ReaLTaiizor.Util;
+using System.Diagnostics.Metrics;
 
 namespace Dashboard.Classes
 {
@@ -133,7 +134,11 @@ namespace Dashboard.Classes
             lblCustomers.TabIndex = 5;
             lblCustomers.Text = "0";
         }
-
+        public static void FormPadding(MaterialCard materialCard10, MaterialCard mcMeasurement)
+        {
+            materialCard10.Padding = new Padding(0);
+            mcMeasurement.Padding = new Padding(0, 17, 0, 0);
+        }
         public static void ConfigureCostButtonPreview(MaterialCard materialCard10)
         {
             if (materialCard10 == null) return;

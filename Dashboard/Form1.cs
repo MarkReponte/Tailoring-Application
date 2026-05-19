@@ -86,8 +86,7 @@ namespace Dashboard
             this.FormBorderStyle = FormBorderStyle.None;
             UpdateNotificationBadge();
            
-            materialCard10.Padding = new Padding(0);
-            mcMeasurement.Padding = new Padding(0, 17, 0, 0);
+           FormConfigurator.FormPadding(materialCard10, mcMeasurement);
 
             FormConfigurator.ConfigureCostConsumptionBackground(CostConsumption, materialCard10);
 
