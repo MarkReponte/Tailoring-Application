@@ -1612,7 +1612,7 @@ namespace Dashboard
             txtUpperHips.ForeColor = Color.Black;
             txtUpperHips.Lighting = false;
             txtUpperHips.LinearGradientPen = false;
-            txtUpperHips.Location = new Point(365, 98);
+            txtUpperHips.Location = new Point(360, 98);
             txtUpperHips.Name = "txtUpperHips";
             txtUpperHips.PenWidth = 10;
             txtUpperHips.RGB = false;
@@ -1706,7 +1706,7 @@ namespace Dashboard
             txtWaistline.ForeColor = Color.Black;
             txtWaistline.Lighting = false;
             txtWaistline.LinearGradientPen = false;
-            txtWaistline.Location = new Point(365, 164);
+            txtWaistline.Location = new Point(360, 164);
             txtWaistline.Name = "txtWaistline";
             txtWaistline.PenWidth = 10;
             txtWaistline.RGB = false;
@@ -1768,7 +1768,7 @@ namespace Dashboard
             txtNeckDip.ForeColor = Color.Black;
             txtNeckDip.Lighting = false;
             txtNeckDip.LinearGradientPen = false;
-            txtNeckDip.Location = new Point(365, 228);
+            txtNeckDip.Location = new Point(360, 228);
             txtNeckDip.Name = "txtNeckDip";
             txtNeckDip.PenWidth = 10;
             txtNeckDip.RGB = false;
@@ -1830,7 +1830,7 @@ namespace Dashboard
             txtArmHole.ForeColor = Color.Black;
             txtArmHole.Lighting = false;
             txtArmHole.LinearGradientPen = false;
-            txtArmHole.Location = new Point(365, 295);
+            txtArmHole.Location = new Point(360, 295);
             txtArmHole.Name = "txtArmHole";
             txtArmHole.PenWidth = 10;
             txtArmHole.RGB = false;
@@ -1985,7 +1985,7 @@ namespace Dashboard
             materialLabel33.Depth = 0;
             materialLabel33.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
             materialLabel33.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
-            materialLabel33.Location = new Point(489, 176);
+            materialLabel33.Location = new Point(484, 176);
             materialLabel33.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialLabel33.Name = "materialLabel33";
             materialLabel33.Size = new Size(20, 17);
@@ -2011,7 +2011,7 @@ namespace Dashboard
             materialLabel16.Depth = 0;
             materialLabel16.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
             materialLabel16.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
-            materialLabel16.Location = new Point(489, 111);
+            materialLabel16.Location = new Point(484, 111);
             materialLabel16.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialLabel16.Name = "materialLabel16";
             materialLabel16.Size = new Size(20, 17);
@@ -2051,7 +2051,7 @@ namespace Dashboard
             materialLabel37.Depth = 0;
             materialLabel37.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
             materialLabel37.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
-            materialLabel37.Location = new Point(368, 211);
+            materialLabel37.Location = new Point(363, 211);
             materialLabel37.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialLabel37.Name = "materialLabel37";
             materialLabel37.Size = new Size(61, 17);
@@ -2101,7 +2101,7 @@ namespace Dashboard
             materialLabel34.Depth = 0;
             materialLabel34.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
             materialLabel34.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
-            materialLabel34.Location = new Point(489, 240);
+            materialLabel34.Location = new Point(484, 240);
             materialLabel34.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialLabel34.Name = "materialLabel34";
             materialLabel34.Size = new Size(20, 17);
@@ -2141,7 +2141,7 @@ namespace Dashboard
             materialLabel27.Depth = 0;
             materialLabel27.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
             materialLabel27.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
-            materialLabel27.Location = new Point(489, 305);
+            materialLabel27.Location = new Point(484, 305);
             materialLabel27.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialLabel27.Name = "materialLabel27";
             materialLabel27.Size = new Size(20, 17);
@@ -2154,7 +2154,7 @@ namespace Dashboard
             materialLabel38.Depth = 0;
             materialLabel38.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
             materialLabel38.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
-            materialLabel38.Location = new Point(364, 144);
+            materialLabel38.Location = new Point(359, 144);
             materialLabel38.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialLabel38.Name = "materialLabel38";
             materialLabel38.Size = new Size(65, 17);
@@ -2219,7 +2219,7 @@ namespace Dashboard
             materialLabel36.Depth = 0;
             materialLabel36.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
             materialLabel36.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
-            materialLabel36.Location = new Point(369, 275);
+            materialLabel36.Location = new Point(364, 275);
             materialLabel36.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialLabel36.Name = "materialLabel36";
             materialLabel36.Size = new Size(64, 17);
@@ -2232,7 +2232,7 @@ namespace Dashboard
             materialLabel39.Depth = 0;
             materialLabel39.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
             materialLabel39.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
-            materialLabel39.Location = new Point(368, 78);
+            materialLabel39.Location = new Point(363, 78);
             materialLabel39.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialLabel39.Name = "materialLabel39";
             materialLabel39.Size = new Size(75, 17);
@@ -3273,6 +3273,7 @@ namespace Dashboard
             // materialCard11
             // 
             materialCard11.BackColor = Color.FromArgb(255, 255, 255);
+            materialCard11.BorderStyle = BorderStyle.Fixed3D;
             materialCard11.Controls.Add(materialLabel65);
             materialCard11.Controls.Add(btnNotificationDesign);
             materialCard11.Depth = 0;
@@ -3311,12 +3312,12 @@ namespace Dashboard
             btnNotificationDesign.Icon = MyResources.bell;
             btnNotificationDesign.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Default;
             btnNotificationDesign.ImageKey = "(none)";
-            btnNotificationDesign.Location = new Point(1322, 14);
+            btnNotificationDesign.Location = new Point(1318, 14);
             btnNotificationDesign.Margin = new Padding(4, 6, 4, 6);
             btnNotificationDesign.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             btnNotificationDesign.Name = "btnNotificationDesign";
             btnNotificationDesign.NoAccentTextColor = Color.Empty;
-            btnNotificationDesign.Size = new Size(36, 37);
+            btnNotificationDesign.Size = new Size(36, 33);
             btnNotificationDesign.TabIndex = 2;
             btnNotificationDesign.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Text;
             btnNotificationDesign.UseAccentColor = false;

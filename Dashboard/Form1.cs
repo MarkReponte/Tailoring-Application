@@ -41,7 +41,7 @@ namespace Dashboard
         public Form1()
         {
             InitializeComponent();
-            
+
             _notificationPopup = new NotificationPopup();
             _measurementRepo = new MeasurementRepository(new SewingDbContext());
             _costRepo = new CostRepository(new CostDBContext());
@@ -76,17 +76,17 @@ namespace Dashboard
             FormConfigurator.ConfigureMaterialSkin(this);
         }
 
-        
+
         private async void Form1_Load(object sender, EventArgs e)
         {
-            
+
             this.ClientSize = new Size(1360, 768);
             this.MinimumSize = this.Size;
             this.MaximumSize = this.Size;
             this.FormBorderStyle = FormBorderStyle.None;
             UpdateNotificationBadge();
-           
-           FormConfigurator.FormPadding(materialCard10, mcMeasurement);
+
+            FormConfigurator.FormPadding(materialCard10, mcMeasurement);
 
             FormConfigurator.ConfigureCostConsumptionBackground(CostConsumption, materialCard10);
 
@@ -261,7 +261,7 @@ namespace Dashboard
 
             if (mtcSelectionControl.SelectedTab == MainDashboard)
             {
-               TriggerDashboardView();
+                TriggerDashboardView();
             }
         }
 
@@ -281,11 +281,11 @@ namespace Dashboard
         }
 
 
-        
 
-     
 
-       
+
+
+
 
         private void hcbSearch_TextChanged(object sender, EventArgs e)
         {
@@ -301,7 +301,7 @@ namespace Dashboard
             flpOrderList.ResumeLayout();
         }
 
-     
+
 
         private void hcbGender_DrawItem(object? sender, DrawItemEventArgs e)
         {
@@ -416,7 +416,7 @@ namespace Dashboard
                 return;
             }
 
-            
+
             try
             {
                 var measurements = BuildMeasurementsModel();
@@ -545,7 +545,7 @@ namespace Dashboard
             {
                 MessageBox.Show("Please enter valid numbers");
             }
-            
+
         }
 
         private void btnCostClear_Click(object sender, EventArgs e)
@@ -584,7 +584,7 @@ namespace Dashboard
                     MaterialCostId = summary.Id
                 });
 
-            
+
             }
 
             using var costPopup = new CostCostumerNamePopup(summary, _costRepo);
@@ -594,7 +594,7 @@ namespace Dashboard
                 dgvMaterialList.Rows.Clear();
                 MessageBox.Show("Saved to History successfully!");
             }
-            txtMaterialTotal.Clear(); txtLaborCost.Clear(); txtQuantity.Clear(); txtTotalLabor.Clear(); 
+            txtMaterialTotal.Clear(); txtLaborCost.Clear(); txtQuantity.Clear(); txtTotalLabor.Clear();
             ClearForm();
         }
 
@@ -709,8 +709,7 @@ namespace Dashboard
                 Console.WriteLine($"Error loading image: {ex.Message}");
             }
         }
-        
-        
-        
+
+      
     }
 }
