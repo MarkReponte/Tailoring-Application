@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Drawing.Drawing2D;
 using System.Text;
 
-namespace Dashboard.Logics
+namespace Dashboard.Classes
 {
     public static class RoundedItem
     {

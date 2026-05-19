@@ -10,18 +10,23 @@ using System.Windows.Forms;
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics.Metrics;
 using AppInfrastructure.Repository;
+using Dashboard.Classes;
+using System.Dynamic;
 
 namespace Dashboard
 {
     public partial class OrderHistoryPopup : MaterialForm
     {
         private readonly MeasurementRepository _measurementRepo;
-        public OrderHistoryPopup(MeasurementRepository measurementRepo)
+        private readonly CostRepository _costRepo;
+        public OrderHistoryPopup(MeasurementRepository measurementRepo, CostRepository costRepo)
         {
             InitializeComponent();
             _measurementRepo = measurementRepo;
-            
+            _costRepo = costRepo;
         }
+
+     
 
         private async void OrderHistoryPopup_Load(object sender, EventArgs e)
         {
@@ -43,12 +48,13 @@ namespace Dashboard
                         {
                             CustomerName = m.CustomerName,
                             Gender = m.Gender,
+                            OrderDate = m.DateCreated.ToString("MM/dd/yy"),
                             Deadline = m.OrderDeadline.ToString("MM/dd/yy"),
-                            OrderDate = DateTime.Now.ToString("MM/dd/yy"),
+                            AllMeasurements = MeasurementFormatter.ToDisplayString(m),
+                            MeasurementId = new object[] {m.Id}
                         };
 
-                        card.lblStatusBadge.Text = "Completed";
-                        card.lblStatusBadge.BackColor = Color.Gray;
+                        card.SetStatus("Completed", Color.Gray);
 
                         flpOrderHistory.Controls.Add(card);
                     }
@@ -82,8 +88,28 @@ namespace Dashboard
 
             try
             {
+                var completedCustomerNames = new List<string>();
+                foreach(Control control in flpOrderHistory.Controls)
+                {
+                    if (control is OrderCard card)
+                    {
+                        completedCustomerNames.Add(card.CustomerName);
+                    }
+                }
+
                 await _measurementRepo.DeleteAllCompletedAsync();
+                if(_costRepo != null && completedCustomerNames.Any())
+                {
+                    await _costRepo.DeleteAllCompletedCostsAsync(completedCustomerNames);
+                }
+
+                if(Form1.GlobalDashboardController != null)
+                {
+                    await Form1.GlobalDashboardController.RefreshDashboardViewAsync();
+                }
+
                 flpOrderHistory.Controls.Clear();
+
                 MessageBox.Show("All completed orders have been cleared.", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)

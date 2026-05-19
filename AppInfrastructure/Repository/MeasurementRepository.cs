@@ -18,7 +18,7 @@ namespace AppInfrastructure.Repository
         }
 
         public async Task<IEnumerable<Measurements>> GetAllAsync() =>
-         await _context.Measurements.ToListAsync();
+         await _context.Measurements.AsNoTracking().ToListAsync();
 
         public async Task<IEnumerable<Measurements>> GetActiveOrdersAsync() =>
             await _context.Measurements.Where(m => m.Status != "Completed").ToListAsync();
@@ -35,8 +35,8 @@ namespace AppInfrastructure.Repository
         }
 
         public async Task SaveAsync() => await _context.SaveChangesAsync();
-    
-      public async Task DeleteAsync(Guid id)
+
+        public async Task DeleteAsync(Guid id)
         {
             var record = await _context.Measurements.FindAsync(id);
             if (record != null)
@@ -52,6 +52,12 @@ namespace AppInfrastructure.Repository
             _context.Measurements.RemoveRange(completed);
             await _context.SaveChangesAsync();
         }
+
+        public IQueryable<Measurements> GetQueryable()
+        {
+            return _context.Measurements.AsNoTracking();
+        }
+
     }
 }
 

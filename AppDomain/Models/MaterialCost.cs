@@ -16,6 +16,8 @@ namespace AppDomain.Models
         public decimal TotalLabor { get; set; } 
         public decimal GrandTotalCost { get; set; }
 
+        public DateTime DateCreated { get; set; }
+
         public virtual ICollection<MaterialItem> Items { get; set; } = new List<MaterialItem>();
     }
 }

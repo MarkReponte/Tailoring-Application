@@ -1,7 +1,5 @@
 using AppDomain.Models;
 using AppInfrastructure.Data;
-using Dashboard.Formatter;
-using Dashboard.Logics;
 using ReaLTaiizor.Controls;
 using ReaLTaiizor.Forms;
 using System;
@@ -11,17 +9,24 @@ using Microsoft.EntityFrameworkCore;
 using Dashboard.CostumizeTools;
 using AppInfrastructure.Repository;
 using Dashboard.Classes;
+using AppInfrastructure.IRepository;
+using System.Runtime.CompilerServices;
+using System.Formats.Nrbf;
+
 
 namespace Dashboard
 {
     public partial class Form1 : MaterialForm
     {
+        public static DashboardController GlobalDashboardController { get; private set; }
 
         private readonly MeasurementRepository _measurementRepo;
         private readonly CostRepository _costRepo;
         private readonly OrderValidator _validator;
         private readonly GalleryService _galleryService;
         private readonly NotificationPopup _notificationPopup;
+        private DashboardService _dashboardService;
+        private DashboardController _dashboardController;
 
         private static void ShowWarning(string msg) =>
             MessageBox.Show(msg, "Input Missing", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -39,6 +44,8 @@ namespace Dashboard
             _costRepo = new CostRepository(new CostDBContext());
             _validator = new OrderValidator(ShowWarning, ShowError);
             _galleryService = new GalleryService();
+            _dashboardService = new DashboardService(_measurementRepo, _costRepo);
+            _dashboardController = new DashboardController(_dashboardService);
 
             FormConfigurator.ConfigureMaterialSkin(this);
         }
@@ -67,11 +74,34 @@ namespace Dashboard
 
             btnOrderHistory.Font = new Font("Segoe UI", 11f, FontStyle.Bold);
 
+
+            try
+            {
+                TriggerDashboardView();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Initial dashboard calculation failed: {ex.Message}", "Dashboard Load Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
             await LoadActiveOrderAsync();
             await LoadSavedDesignsAsync();
             await LoadOrdersFromDatabaseAsync();
+
         }
 
+        private void mtcSelectionControl_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (mtcSelectionControl.SelectedTab == MainDashboard)
+            {
+               TriggerDashboardView();
+            }
+        }
+
+        private async void TriggerDashboardView()
+        {
+            await _dashboardController.ShowAndLoadDashboardAsync(mtcSelectionControl, MainDashboard, lblCustomers, lblMonthlyRevenue, lblMonthlyCost, dgvReport);
+        }
 
         private void CostMaterialButton_MouseEnter(object? sender, EventArgs e)
         {
@@ -222,7 +252,8 @@ namespace Dashboard
             Gender = m.Gender,
             Deadline = m.OrderDeadline.ToString("MM/dd/yy"),
             OrderDate = m.DateCreated.ToString("MM/dd/yy"),
-            AllMeasurements = MeasurementFormatter.ToDisplayString(m)
+            AllMeasurements = MeasurementFormatter.ToDisplayString(m),
+            MeasurementId = new object[] { m.Id }
         };
 
 
@@ -416,7 +447,7 @@ namespace Dashboard
         {
             try
             {
-                using var popup = new OrderHistoryPopup(_measurementRepo);
+                using var popup = new OrderHistoryPopup(_measurementRepo, _costRepo);
                 popup.StartPosition = FormStartPosition.CenterScreen;
                 await popup.LoadCompleteOrdersAsync();
                 popup.ShowDialog();
@@ -521,6 +552,11 @@ namespace Dashboard
             {
                 Console.WriteLine($"Error loading image: {ex.Message}");
             }
+        }
+
+        private void dgvReport_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

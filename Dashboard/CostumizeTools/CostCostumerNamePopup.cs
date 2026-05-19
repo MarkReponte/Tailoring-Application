@@ -49,6 +49,8 @@ namespace Dashboard.CostumizeTools
             {
                 _finalData.CustomerNameCost = name;
                 _finalData.Description = description;
+
+                _finalData.DateCreated = DateTime.Now;
                 
                 await _costRepo.AddAsync(_finalData);
                 await _costRepo.SaveAsync();

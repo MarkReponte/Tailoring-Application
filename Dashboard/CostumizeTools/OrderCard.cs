@@ -1,5 +1,6 @@
 ﻿using AppDomain.Models;
 using AppInfrastructure.Data;
+using AppInfrastructure.Repository;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -22,6 +23,12 @@ namespace Dashboard
         private void OrderCard_Load(object sender, EventArgs e)
         {
             RoundControl(lblStatusBadge, 20);
+        }
+
+        public void SetStatus (string statusText, Color badgeColor)
+        {
+            lblStatusBadge.Text = statusText;
+            lblStatusBadge.BackColor = badgeColor;
         }
 
         private void OrderCard_Clicked(object sender, EventArgs e)
@@ -73,29 +80,43 @@ namespace Dashboard
 
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public string AllMeasurements { get; set; }
-        public object?[]? MeasurementId { get; private set; }
+
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        public object?[]? MeasurementId { get; set; }
 
         private async void lblStatusBadge_Click(object sender, EventArgs e)
         {
             if (lblStatusBadge.Text == "In Progress")
             {
+                if (MeasurementId == null || MeasurementId.Length == 0 || MeasurementId[0] == null)
+                {
+                    MessageBox.Show("Error: Measurement ID is blank.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                string targetGuidStr = MeasurementId[0].ToString();
+
                 try
                 {
                     using (var db = new SewingDbContext())
                     {
-                        var record = await db.Measurements.FirstOrDefaultAsync(m => m.CustomerName == this.CustomerName && m.Status == "In Progress");
+                        var record = await db.Measurements.FirstOrDefaultAsync(m => m.Id.ToString() == targetGuidStr && m.Status == "In Progress");
 
                         if (record != null)
                         {
                             record.Status = "Completed";
                             await db.SaveChangesAsync();
 
-                            MessageBox.Show("Order marked as Completed!");
+                            MessageBox.Show("Order marked as Completed!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                            if (Form1.GlobalDashboardController != null)
+                            {
+                                await Form1.GlobalDashboardController.RefreshDashboardViewAsync();
+                            }
 
                             if (this.Parent != null)
                             {
-
+                               
                                 this.Parent.Controls.Remove(this);
                                 this.Dispose();
                             }
@@ -137,17 +158,45 @@ namespace Dashboard
 
             if (confirm != DialogResult.Yes) return;
 
+            if (MeasurementId == null || MeasurementId.Length == 0 || MeasurementId[0] == null)
+            {
+                MessageBox.Show("Cannot delete order: Invalid or missing Measurement ID array.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            string targetGuidStr = MeasurementId[0].ToString();
+    
             try
             {
                 using (var db = new SewingDbContext())
                 {
-                    var record = await db.Measurements.FindAsync(MeasurementId);
+                    var record = await db.Measurements.FirstOrDefaultAsync(m => m.Id.ToString() == targetGuidStr);
 
                     if (record != null)
                     {
                         db.Measurements.Remove(record);
                         await db.SaveChangesAsync();
                     }
+                }
+
+                using (var costDb = new CostDBContext())
+                {
+                    var linkedCosts = await costDb.MaterialCosts
+                        .Where(c => c.CustomerNameCost == this.CustomerName)
+                        .ToListAsync();
+
+                    if (linkedCosts.Any())
+                    {
+                        costDb.MaterialCosts.RemoveRange(linkedCosts);
+                        await costDb.SaveChangesAsync();
+                    }
+                }
+
+                MessageBox.Show("Order and its associated costs have been deleted successfully!", "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                if (Form1.GlobalDashboardController != null)
+                {
+                    await Form1.GlobalDashboardController.RefreshDashboardViewAsync();
                 }
 
                 if (this.Parent != null)
@@ -161,6 +210,7 @@ namespace Dashboard
                 MessageBox.Show("Failed to delete order: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         public bool MatchesSearch(string searchText)
         {
             return CustomerName?.ToLower().Contains(searchText) == true ||

@@ -1,5 +1,4 @@
 ﻿using Dashboard.CostumizeTools;
-using Dashboard.Logics;
 using ReaLTaiizor.Controls;
 using System.Drawing;
 using System.Windows.Forms;

@@ -27,5 +27,23 @@ namespace AppInfrastructure.Repository
 
         public async Task SaveAsync() =>
             await _context.SaveChangesAsync();
+
+        public IQueryable<MaterialCost> GetQueryable()
+        {
+            return _context.MaterialCosts.AsNoTracking();
+        }
+
+        public async Task DeleteAllCompletedCostsAsync(List<string> completedCustomerNames)
+        {
+            var recordsToDelete = await _context.MaterialCosts
+                .Where(c => completedCustomerNames.Contains(c.CustomerNameCost))
+                .ToListAsync();
+
+            if (recordsToDelete.Any())
+            {
+                _context.MaterialCosts.RemoveRange(recordsToDelete);
+                await _context.SaveChangesAsync();
+            }
+        }
     }
 }
