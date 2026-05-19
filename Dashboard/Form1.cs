@@ -38,7 +38,7 @@ namespace Dashboard
         public Form1()
         {
             InitializeComponent();
-
+            
             _notificationPopup = new NotificationPopup();
             _measurementRepo = new MeasurementRepository(new SewingDbContext());
             _costRepo = new CostRepository(new CostDBContext());
@@ -50,9 +50,10 @@ namespace Dashboard
             FormConfigurator.ConfigureMaterialSkin(this);
         }
 
-
+        
         private async void Form1_Load(object sender, EventArgs e)
         {
+            
             this.ClientSize = new Size(1360, 768);
             this.MinimumSize = this.Size;
             this.MaximumSize = this.Size;
@@ -61,16 +62,14 @@ namespace Dashboard
             materialCard10.Padding = new Padding(0);
             mcMeasurement.Padding = new Padding(0, 17, 0, 0);
 
-            FormConfigurator.ConfigureCostConsumptionBackground(
-                CostConsumption, materialCard10);
+            FormConfigurator.ConfigureCostConsumptionBackground(CostConsumption, materialCard10);
 
-            FormConfigurator.ConfigureOrderSummaryLabel(foxLabel1);
+            FormConfigurator.ConfigureDashboardLabel(moonLabel1, moonLabel2, moonLabel3);
+            FormConfigurator.ConfigureOrderSummaryLabel(foxLabel1, lblMonthlyCost, lblMonthlyRevenue, lblCustomers);
             FormConfigurator.ConfigureInputFonts(txtName, hcbGender);
             FormConfigurator.ConfigureCostButtonPreview(materialCard10);
-            FormConfigurator.ConfigureAccentHoverButton(
-                btnSaveCost, CostMaterialButton_MouseEnter, CostMaterialButton_MouseLeave);
-            FormConfigurator.ConfigureAccentHoverButton(
-                btnCostHistory, CostMaterialButton_MouseEnter, CostMaterialButton_MouseLeave);
+            FormConfigurator.ConfigureAccentHoverButton(btnSaveCost, CostMaterialButton_MouseEnter, CostMaterialButton_MouseLeave);
+            FormConfigurator.ConfigureAccentHoverButton(btnCostHistory, CostMaterialButton_MouseEnter, CostMaterialButton_MouseLeave);
 
             btnOrderHistory.Font = new Font("Segoe UI", 11f, FontStyle.Bold);
 

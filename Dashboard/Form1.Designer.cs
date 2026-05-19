@@ -342,7 +342,7 @@ namespace Dashboard
             dgvReport.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = Color.WhiteSmoke;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Pixel);
             dataGridViewCellStyle1.ForeColor = Color.FromArgb(141, 182, 0);
             dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(230, 240, 210);
             dataGridViewCellStyle1.SelectionForeColor = Color.Black;
@@ -352,7 +352,7 @@ namespace Dashboard
             dgvReport.Columns.AddRange(new DataGridViewColumn[] { Column5, Column6, Column7, Column8 });
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(255, 255, 255);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Pixel);
             dataGridViewCellStyle2.ForeColor = Color.FromArgb(136, 136, 136);
             dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(0, 198, 247);
             dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(17, 17, 17);
@@ -416,13 +416,13 @@ namespace Dashboard
             // 
             materialLabel9.AutoSize = true;
             materialLabel9.Depth = 0;
-            materialLabel9.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel9.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle1;
-            materialLabel9.Location = new Point(48, 193);
+            materialLabel9.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
+            materialLabel9.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.H6;
+            materialLabel9.Location = new Point(68, 204);
             materialLabel9.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialLabel9.Name = "materialLabel9";
             materialLabel9.Padding = new Padding(10, 0, 10, 0);
-            materialLabel9.Size = new Size(109, 19);
+            materialLabel9.Size = new Size(139, 24);
             materialLabel9.TabIndex = 6;
             materialLabel9.Text = "Detailed Report";
             // 
@@ -479,12 +479,11 @@ namespace Dashboard
             // 
             // lblCustomers
             // 
-            lblCustomers.Anchor = AnchorStyles.None;
             lblCustomers.AutoSize = true;
             lblCustomers.BackColor = Color.Transparent;
             lblCustomers.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblCustomers.ForeColor = Color.Black;
-            lblCustomers.Location = new Point(179, 61);
+            lblCustomers.Location = new Point(207, 49);
             lblCustomers.Name = "lblCustomers";
             lblCustomers.Size = new Size(32, 37);
             lblCustomers.TabIndex = 5;
@@ -492,7 +491,6 @@ namespace Dashboard
             // 
             // moonLabel3
             // 
-            moonLabel3.Anchor = AnchorStyles.Left;
             moonLabel3.AutoSize = true;
             moonLabel3.BackColor = Color.Transparent;
             moonLabel3.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -527,12 +525,11 @@ namespace Dashboard
             // 
             // lblMonthlyRevenue
             // 
-            lblMonthlyRevenue.Anchor = AnchorStyles.None;
             lblMonthlyRevenue.AutoSize = true;
             lblMonthlyRevenue.BackColor = Color.Transparent;
             lblMonthlyRevenue.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblMonthlyRevenue.ForeColor = Color.Black;
-            lblMonthlyRevenue.Location = new Point(165, 61);
+            lblMonthlyRevenue.Location = new Point(39, 49);
             lblMonthlyRevenue.Name = "lblMonthlyRevenue";
             lblMonthlyRevenue.Size = new Size(91, 37);
             lblMonthlyRevenue.TabIndex = 4;
@@ -540,7 +537,6 @@ namespace Dashboard
             // 
             // moonLabel2
             // 
-            moonLabel2.Anchor = AnchorStyles.Left;
             moonLabel2.AutoSize = true;
             moonLabel2.BackColor = Color.Transparent;
             moonLabel2.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -575,12 +571,11 @@ namespace Dashboard
             // 
             // lblMonthlyCost
             // 
-            lblMonthlyCost.Anchor = AnchorStyles.None;
             lblMonthlyCost.AutoSize = true;
             lblMonthlyCost.BackColor = Color.Transparent;
             lblMonthlyCost.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblMonthlyCost.ForeColor = Color.Black;
-            lblMonthlyCost.Location = new Point(140, 61);
+            lblMonthlyCost.Location = new Point(32, 49);
             lblMonthlyCost.Name = "lblMonthlyCost";
             lblMonthlyCost.Size = new Size(91, 37);
             lblMonthlyCost.TabIndex = 3;
@@ -588,7 +583,6 @@ namespace Dashboard
             // 
             // moonLabel1
             // 
-            moonLabel1.Anchor = AnchorStyles.Left;
             moonLabel1.AutoSize = true;
             moonLabel1.BackColor = Color.Transparent;
             moonLabel1.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);

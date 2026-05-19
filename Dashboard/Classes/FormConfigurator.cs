@@ -57,14 +57,81 @@ namespace Dashboard.Classes
             materialCard10.BackColor = bg;
             materialCard10.Invalidate();
         }
+        public static void ConfigureDashboardLabel(MoonLabel moonLabel1,MoonLabel moonLabel2,MoonLabel moonLabel3)
+        {
+            moonLabel1.AutoSize = true;
+            moonLabel2.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+            moonLabel1.BackColor = Color.Transparent;
+            moonLabel1.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            moonLabel1.ForeColor = Color.Black;
+            moonLabel1.Location = new Point(10, 7);
+            moonLabel1.Name = "moonLabel1";
+            moonLabel1.Size = new Size(137, 30);
+            moonLabel1.TabIndex = 2;
+            moonLabel1.Text = "Monthly Cost";
 
-        public static void ConfigureOrderSummaryLabel(FoxLabel foxLabel1)
+            moonLabel2.AutoSize = true;
+            moonLabel2.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+            moonLabel2.BackColor = Color.Transparent;
+            moonLabel2.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            moonLabel2.ForeColor = Color.Black;
+            moonLabel2.Location = new Point(12, 7);
+            moonLabel2.Name = "moonLabel2";
+            moonLabel2.Size = new Size(175, 30);
+            moonLabel2.TabIndex = 3;
+            moonLabel2.Text = "Monthly Revenue";
+
+            moonLabel3.AutoSize = true;
+            moonLabel3.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+            moonLabel3.BackColor = Color.Transparent;
+            moonLabel3.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            moonLabel3.ForeColor = Color.Black;
+            moonLabel3.Location = new Point(14, 7);
+            moonLabel3.Name = "moonLabel3";
+            moonLabel3.Size = new Size(111, 30);
+            moonLabel3.TabIndex = 4;
+            moonLabel3.Text = "Customers";
+        }
+        public static void ConfigureOrderSummaryLabel(FoxLabel foxLabel1, MoonLabel lblMonthlyCost, MoonLabel lblMonthlyRevenue, MoonLabel lblCustomers)
         {
             foxLabel1.BackColor = Color.Transparent;
             foxLabel1.Font = new Font("Segoe UI", 19.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             foxLabel1.ForeColor = Color.FromArgb(102, 140, 48);
             foxLabel1.Size = new Size(261, 50);
             foxLabel1.Text = "Order Summary";
+
+            lblMonthlyCost.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+            lblMonthlyCost.AutoSize = true;
+            lblMonthlyCost.BackColor = Color.Transparent;
+            lblMonthlyCost.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblMonthlyCost.ForeColor = Color.Black;
+            lblMonthlyCost.Location = new Point(32, 49);
+            lblMonthlyCost.Name = "lblMonthlyCost";
+            lblMonthlyCost.Size = new Size(91, 37);
+            lblMonthlyCost.TabIndex = 3;
+            lblMonthlyCost.Text = "₱ 0.00";
+
+            lblMonthlyRevenue.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+            lblMonthlyRevenue.AutoSize = true;
+            lblMonthlyRevenue.BackColor = Color.Transparent;
+            lblMonthlyRevenue.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblMonthlyRevenue.ForeColor = Color.Black;
+            lblMonthlyRevenue.Location = new Point(39, 49);
+            lblMonthlyRevenue.Name = "lblMonthlyRevenue";
+            lblMonthlyRevenue.Size = new Size(91, 37);
+            lblMonthlyRevenue.TabIndex = 4;
+            lblMonthlyRevenue.Text = "₱ 0.00";
+
+            lblCustomers.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+            lblCustomers.AutoSize = true;
+            lblCustomers.BackColor = Color.Transparent;
+            lblCustomers.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblCustomers.ForeColor = Color.Black;
+            lblCustomers.Location = new Point(207, 49);
+            lblCustomers.Name = "lblCustomers";
+            lblCustomers.Size = new Size(32, 37);
+            lblCustomers.TabIndex = 5;
+            lblCustomers.Text = "0";
         }
 
         public static void ConfigureCostButtonPreview(MaterialCard materialCard10)
