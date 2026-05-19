@@ -63,9 +63,9 @@ namespace Dashboard.Classes
             moonLabel1.AutoSize = true;
             moonLabel2.Anchor = AnchorStyles.Top | AnchorStyles.Left;
             moonLabel1.BackColor = Color.Transparent;
-            moonLabel1.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            moonLabel1.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             moonLabel1.ForeColor = Color.Black;
-            moonLabel1.Location = new Point(10, 7);
+            
             moonLabel1.Name = "moonLabel1";
             moonLabel1.Size = new Size(137, 30);
             moonLabel1.TabIndex = 2;
@@ -74,9 +74,9 @@ namespace Dashboard.Classes
             moonLabel2.AutoSize = true;
             moonLabel2.Anchor = AnchorStyles.Top | AnchorStyles.Left;
             moonLabel2.BackColor = Color.Transparent;
-            moonLabel2.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            moonLabel2.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             moonLabel2.ForeColor = Color.Black;
-            moonLabel2.Location = new Point(12, 7);
+           
             moonLabel2.Name = "moonLabel2";
             moonLabel2.Size = new Size(175, 30);
             moonLabel2.TabIndex = 3;
@@ -85,9 +85,9 @@ namespace Dashboard.Classes
             moonLabel3.AutoSize = true;
             moonLabel3.Anchor = AnchorStyles.Top | AnchorStyles.Left;
             moonLabel3.BackColor = Color.Transparent;
-            moonLabel3.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            moonLabel3.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             moonLabel3.ForeColor = Color.Black;
-            moonLabel3.Location = new Point(14, 7);
+            
             moonLabel3.Name = "moonLabel3";
             moonLabel3.Size = new Size(111, 30);
             moonLabel3.TabIndex = 4;
@@ -105,8 +105,8 @@ namespace Dashboard.Classes
             lblMonthlyCost.AutoSize = true;
             lblMonthlyCost.BackColor = Color.Transparent;
             lblMonthlyCost.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblMonthlyCost.ForeColor = Color.Black;
-            lblMonthlyCost.Location = new Point(32, 49);
+            lblMonthlyCost.ForeColor = Color.FromArgb(19, 121, 45); ;
+            
             lblMonthlyCost.Name = "lblMonthlyCost";
             lblMonthlyCost.Size = new Size(91, 37);
             lblMonthlyCost.TabIndex = 3;
@@ -116,8 +116,8 @@ namespace Dashboard.Classes
             lblMonthlyRevenue.AutoSize = true;
             lblMonthlyRevenue.BackColor = Color.Transparent;
             lblMonthlyRevenue.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblMonthlyRevenue.ForeColor = Color.Black;
-            lblMonthlyRevenue.Location = new Point(39, 49);
+            lblMonthlyRevenue.ForeColor = Color.FromArgb(11, 103, 204);
+
             lblMonthlyRevenue.Name = "lblMonthlyRevenue";
             lblMonthlyRevenue.Size = new Size(91, 37);
             lblMonthlyRevenue.TabIndex = 4;
@@ -127,8 +127,8 @@ namespace Dashboard.Classes
             lblCustomers.AutoSize = true;
             lblCustomers.BackColor = Color.Transparent;
             lblCustomers.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblCustomers.ForeColor = Color.Black;
-            lblCustomers.Location = new Point(207, 49);
+            lblCustomers.ForeColor = Color.FromArgb(21, 113, 33);
+
             lblCustomers.Name = "lblCustomers";
             lblCustomers.Size = new Size(32, 37);
             lblCustomers.TabIndex = 5;

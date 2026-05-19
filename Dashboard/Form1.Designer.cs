@@ -51,18 +51,22 @@ namespace Dashboard
             panel1 = new Panel();
             tableLayoutPanel1 = new TableLayoutPanel();
             pgpNewCustomer = new ReaLTaiizor.Controls.ParrotGradientPanel();
+            pictureBox13 = new PictureBox();
             lblCustomers = new ReaLTaiizor.Controls.MoonLabel();
             moonLabel3 = new ReaLTaiizor.Controls.MoonLabel();
             pgpProfit = new ReaLTaiizor.Controls.ParrotGradientPanel();
+            pictureBox12 = new PictureBox();
             lblMonthlyRevenue = new ReaLTaiizor.Controls.MoonLabel();
             moonLabel2 = new ReaLTaiizor.Controls.MoonLabel();
             pgpMonthlyCost = new ReaLTaiizor.Controls.ParrotGradientPanel();
+            pictureBox11 = new PictureBox();
             lblMonthlyCost = new ReaLTaiizor.Controls.MoonLabel();
             moonLabel1 = new ReaLTaiizor.Controls.MoonLabel();
             pictureBox2 = new PictureBox();
             materialLabel7 = new ReaLTaiizor.Controls.MaterialLabel();
             pictureBox1 = new PictureBox();
             hopeGroupBox5 = new ReaLTaiizor.Controls.HopeGroupBox();
+            styledPanel9 = new Dashboard.CostumizeTools.StyledPanel();
             materialCard1 = new ReaLTaiizor.Controls.MaterialCard();
             materialLabel1 = new ReaLTaiizor.Controls.MaterialLabel();
             btnNotification = new ReaLTaiizor.Controls.MaterialButton();
@@ -228,10 +232,14 @@ namespace Dashboard
             panel1.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             pgpNewCustomer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox13).BeginInit();
             pgpProfit.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox12).BeginInit();
             pgpMonthlyCost.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox11).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            hopeGroupBox5.SuspendLayout();
             materialCard1.SuspendLayout();
             Order.SuspendLayout();
             materialCard2.SuspendLayout();
@@ -463,9 +471,10 @@ namespace Dashboard
             // 
             // pgpNewCustomer
             // 
-            pgpNewCustomer.BottomLeft = Color.LimeGreen;
-            pgpNewCustomer.BottomRight = Color.LimeGreen;
+            pgpNewCustomer.BottomLeft = Color.FromArgb(236, 246, 222);
+            pgpNewCustomer.BottomRight = Color.FromArgb(236, 246, 222);
             pgpNewCustomer.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+            pgpNewCustomer.Controls.Add(pictureBox13);
             pgpNewCustomer.Controls.Add(lblCustomers);
             pgpNewCustomer.Controls.Add(moonLabel3);
             pgpNewCustomer.Dock = DockStyle.Fill;
@@ -480,16 +489,26 @@ namespace Dashboard
             pgpNewCustomer.Style = ReaLTaiizor.Controls.ParrotGradientPanel.GradientStyle.Corners;
             pgpNewCustomer.TabIndex = 8;
             pgpNewCustomer.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            pgpNewCustomer.TopLeft = Color.LightGreen;
-            pgpNewCustomer.TopRight = Color.LightGreen;
+            pgpNewCustomer.TopLeft = Color.FromArgb(236, 246, 222);
+            pgpNewCustomer.TopRight = Color.FromArgb(236, 246, 222);
+            // 
+            // pictureBox13
+            // 
+            pictureBox13.BackColor = Color.Transparent;
+            pictureBox13.Image = MyResources.customers;
+            pictureBox13.Location = new Point(19, -6);
+            pictureBox13.Name = "pictureBox13";
+            pictureBox13.Size = new Size(112, 107);
+            pictureBox13.TabIndex = 4;
+            pictureBox13.TabStop = false;
             // 
             // lblCustomers
             // 
             lblCustomers.AutoSize = true;
             lblCustomers.BackColor = Color.Transparent;
             lblCustomers.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblCustomers.ForeColor = Color.Black;
-            lblCustomers.Location = new Point(207, 49);
+            lblCustomers.ForeColor = Color.FromArgb(21, 113, 33);
+            lblCustomers.Location = new Point(146, 58);
             lblCustomers.Name = "lblCustomers";
             lblCustomers.Size = new Size(32, 37);
             lblCustomers.TabIndex = 5;
@@ -499,19 +518,20 @@ namespace Dashboard
             // 
             moonLabel3.AutoSize = true;
             moonLabel3.BackColor = Color.Transparent;
-            moonLabel3.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            moonLabel3.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             moonLabel3.ForeColor = Color.Black;
-            moonLabel3.Location = new Point(14, 7);
+            moonLabel3.Location = new Point(137, 19);
             moonLabel3.Name = "moonLabel3";
-            moonLabel3.Size = new Size(111, 30);
+            moonLabel3.Size = new Size(115, 30);
             moonLabel3.TabIndex = 4;
             moonLabel3.Text = "Customers";
             // 
             // pgpProfit
             // 
-            pgpProfit.BottomLeft = Color.LimeGreen;
-            pgpProfit.BottomRight = Color.LimeGreen;
+            pgpProfit.BottomLeft = Color.FromArgb(222, 240, 253);
+            pgpProfit.BottomRight = Color.FromArgb(222, 240, 253);
             pgpProfit.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+            pgpProfit.Controls.Add(pictureBox12);
             pgpProfit.Controls.Add(lblMonthlyRevenue);
             pgpProfit.Controls.Add(moonLabel2);
             pgpProfit.Dock = DockStyle.Fill;
@@ -526,16 +546,26 @@ namespace Dashboard
             pgpProfit.Style = ReaLTaiizor.Controls.ParrotGradientPanel.GradientStyle.Corners;
             pgpProfit.TabIndex = 7;
             pgpProfit.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            pgpProfit.TopLeft = Color.LightGreen;
-            pgpProfit.TopRight = Color.LightGreen;
+            pgpProfit.TopLeft = Color.FromArgb(222, 240, 253);
+            pgpProfit.TopRight = Color.FromArgb(222, 240, 253);
+            // 
+            // pictureBox12
+            // 
+            pictureBox12.BackColor = Color.Transparent;
+            pictureBox12.Image = MyResources.Stocks1;
+            pictureBox12.Location = new Point(18, -6);
+            pictureBox12.Name = "pictureBox12";
+            pictureBox12.Size = new Size(112, 107);
+            pictureBox12.TabIndex = 4;
+            pictureBox12.TabStop = false;
             // 
             // lblMonthlyRevenue
             // 
             lblMonthlyRevenue.AutoSize = true;
             lblMonthlyRevenue.BackColor = Color.Transparent;
             lblMonthlyRevenue.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblMonthlyRevenue.ForeColor = Color.Black;
-            lblMonthlyRevenue.Location = new Point(39, 49);
+            lblMonthlyRevenue.ForeColor = Color.FromArgb(11, 103, 204);
+            lblMonthlyRevenue.Location = new Point(136, 58);
             lblMonthlyRevenue.Name = "lblMonthlyRevenue";
             lblMonthlyRevenue.Size = new Size(91, 37);
             lblMonthlyRevenue.TabIndex = 4;
@@ -545,19 +575,20 @@ namespace Dashboard
             // 
             moonLabel2.AutoSize = true;
             moonLabel2.BackColor = Color.Transparent;
-            moonLabel2.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            moonLabel2.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             moonLabel2.ForeColor = Color.Black;
-            moonLabel2.Location = new Point(12, 7);
+            moonLabel2.Location = new Point(136, 19);
             moonLabel2.Name = "moonLabel2";
-            moonLabel2.Size = new Size(175, 30);
+            moonLabel2.Size = new Size(179, 30);
             moonLabel2.TabIndex = 3;
             moonLabel2.Text = "Monthly Revenue";
             // 
             // pgpMonthlyCost
             // 
-            pgpMonthlyCost.BottomLeft = Color.LimeGreen;
-            pgpMonthlyCost.BottomRight = Color.LimeGreen;
+            pgpMonthlyCost.BottomLeft = Color.FromArgb(223, 249, 225);
+            pgpMonthlyCost.BottomRight = Color.FromArgb(223, 249, 225);
             pgpMonthlyCost.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+            pgpMonthlyCost.Controls.Add(pictureBox11);
             pgpMonthlyCost.Controls.Add(lblMonthlyCost);
             pgpMonthlyCost.Controls.Add(moonLabel1);
             pgpMonthlyCost.Dock = DockStyle.Fill;
@@ -566,22 +597,32 @@ namespace Dashboard
             pgpMonthlyCost.Margin = new Padding(5);
             pgpMonthlyCost.Name = "pgpMonthlyCost";
             pgpMonthlyCost.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.None;
-            pgpMonthlyCost.PrimerColor = Color.YellowGreen;
+            pgpMonthlyCost.PrimerColor = Color.LemonChiffon;
             pgpMonthlyCost.Size = new Size(440, 114);
             pgpMonthlyCost.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
             pgpMonthlyCost.Style = ReaLTaiizor.Controls.ParrotGradientPanel.GradientStyle.Corners;
             pgpMonthlyCost.TabIndex = 6;
             pgpMonthlyCost.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            pgpMonthlyCost.TopLeft = Color.LightGreen;
-            pgpMonthlyCost.TopRight = Color.LightGreen;
+            pgpMonthlyCost.TopLeft = Color.FromArgb(223, 249, 225);
+            pgpMonthlyCost.TopRight = Color.FromArgb(223, 249, 225);
+            // 
+            // pictureBox11
+            // 
+            pictureBox11.BackColor = Color.Transparent;
+            pictureBox11.Image = MyResources.Wallet4;
+            pictureBox11.Location = new Point(10, -6);
+            pictureBox11.Name = "pictureBox11";
+            pictureBox11.Size = new Size(112, 107);
+            pictureBox11.TabIndex = 4;
+            pictureBox11.TabStop = false;
             // 
             // lblMonthlyCost
             // 
             lblMonthlyCost.AutoSize = true;
             lblMonthlyCost.BackColor = Color.Transparent;
             lblMonthlyCost.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblMonthlyCost.ForeColor = Color.Black;
-            lblMonthlyCost.Location = new Point(32, 49);
+            lblMonthlyCost.ForeColor = Color.FromArgb(19, 121, 45);
+            lblMonthlyCost.Location = new Point(128, 58);
             lblMonthlyCost.Name = "lblMonthlyCost";
             lblMonthlyCost.Size = new Size(91, 37);
             lblMonthlyCost.TabIndex = 3;
@@ -591,11 +632,11 @@ namespace Dashboard
             // 
             moonLabel1.AutoSize = true;
             moonLabel1.BackColor = Color.Transparent;
-            moonLabel1.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            moonLabel1.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             moonLabel1.ForeColor = Color.Black;
-            moonLabel1.Location = new Point(10, 7);
+            moonLabel1.Location = new Point(128, 19);
             moonLabel1.Name = "moonLabel1";
-            moonLabel1.Size = new Size(137, 30);
+            moonLabel1.Size = new Size(142, 30);
             moonLabel1.TabIndex = 2;
             moonLabel1.Text = "Monthly Cost";
             // 
@@ -634,6 +675,7 @@ namespace Dashboard
             // hopeGroupBox5
             // 
             hopeGroupBox5.BorderColor = Color.Transparent;
+            hopeGroupBox5.Controls.Add(styledPanel9);
             hopeGroupBox5.Dock = DockStyle.Fill;
             hopeGroupBox5.Font = new Font("Segoe UI", 12F);
             hopeGroupBox5.ForeColor = Color.FromArgb(48, 49, 51);
@@ -646,6 +688,14 @@ namespace Dashboard
             hopeGroupBox5.TabStop = false;
             hopeGroupBox5.Text = "hopeGroupBox5";
             hopeGroupBox5.ThemeColor = Color.FromArgb(248, 250, 252);
+            // 
+            // styledPanel9
+            // 
+            styledPanel9.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            styledPanel9.Location = new Point(2, 181);
+            styledPanel9.Name = "styledPanel9";
+            styledPanel9.Size = new Size(1349, 322);
+            styledPanel9.TabIndex = 0;
             // 
             // materialCard1
             // 
@@ -3467,12 +3517,16 @@ namespace Dashboard
             tableLayoutPanel1.ResumeLayout(false);
             pgpNewCustomer.ResumeLayout(false);
             pgpNewCustomer.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox13).EndInit();
             pgpProfit.ResumeLayout(false);
             pgpProfit.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox12).EndInit();
             pgpMonthlyCost.ResumeLayout(false);
             pgpMonthlyCost.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox11).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            hopeGroupBox5.ResumeLayout(false);
             materialCard1.ResumeLayout(false);
             materialCard1.PerformLayout();
             Order.ResumeLayout(false);
@@ -3714,5 +3768,9 @@ namespace Dashboard
         private CostumizeTools.StyledPanel styledPanel8;
         private ReaLTaiizor.Controls.HopeGroupBox hopeGroupBox5;
         private ReaLTaiizor.Controls.MaterialLabel materialLabel60;
+        private PictureBox pictureBox11;
+        private PictureBox pictureBox12;
+        private PictureBox pictureBox13;
+        private CostumizeTools.StyledPanel styledPanel9;
     }
 }
