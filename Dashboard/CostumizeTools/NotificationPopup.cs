@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Linq;
 using System.Windows.Forms;
+using Dashboard.Classes;
 
 namespace Dashboard.CostumizeTools
 {
@@ -11,9 +13,24 @@ namespace Dashboard.CostumizeTools
         private bool isOpening;
         private int finalY;
         private int startY;
+        private FlowLayoutPanel notificationList = null!;
+        private Label emptyStateLabel = null!;
 
         public NotificationPopup()
         {
+            this.BackColor = Color.Red;
+            this.Size = new Size(400, 500);
+            NotificationManager.NotificationChanged += () =>
+            {
+                if (this.InvokeRequired)
+                {
+                    this.Invoke(new Action(() => LoadNotifications()));
+                }
+                else
+                {
+                    LoadNotifications();
+                }
+            };
             this.FormBorderStyle = FormBorderStyle.None;
             this.StartPosition = FormStartPosition.Manual;
             this.Size = new Size(375, 450);
@@ -51,7 +68,7 @@ namespace Dashboard.CostumizeTools
         private void BuildNotificationUI()
         {
             Panel header = new Panel();
-            header.Size = new Size(this.Width, 70);
+            header.Size = new Size(this.Width, 64);
             header.Location = new Point(0, 0);
             header.BackColor = Color.White;
 
@@ -60,7 +77,7 @@ namespace Dashboard.CostumizeTools
             title.Font = new Font("Segoe UI", 14, FontStyle.Bold);
             title.ForeColor = Color.FromArgb(30, 30, 30);
             title.AutoSize = true;
-            title.Location = new Point(35, 25);
+            title.Location = new Point(24, 22);
             title.Anchor = AnchorStyles.Left | AnchorStyles.Top;
 
             LinkLabel markRead = new LinkLabel();
@@ -70,25 +87,37 @@ namespace Dashboard.CostumizeTools
             markRead.ActiveLinkColor = Color.FromArgb(38, 132, 255);
             markRead.VisitedLinkColor = Color.FromArgb(38, 132, 255);
             markRead.AutoSize = true;
-            markRead.Location = new Point(header.Width - markRead.Width - 35, 28);
+            markRead.Location = new Point(255, 25);
             markRead.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            markRead.Click += (s, e) =>
+            {
+                NotificationManager.MarkAllAsRead();
+                LoadNotifications();
+            };
 
             header.Controls.Add(title);
             header.Controls.Add(markRead);
 
-            FlowLayoutPanel notificationList = new FlowLayoutPanel();
-            notificationList.Location = new Point(0, 70);
-            notificationList.Size = new Size(this.Width, 405);
+            notificationList = new FlowLayoutPanel();
+            notificationList.Location = new Point(0, 64);
+            notificationList.Size = new Size(this.Width, 332);
             notificationList.FlowDirection = FlowDirection.TopDown;
             notificationList.WrapContents = false;
-            notificationList.AutoScroll = false;
+            notificationList.AutoScroll = true;
             notificationList.BackColor = Color.White;
 
-            
+            emptyStateLabel = new Label();
+            emptyStateLabel.Text = "No notifications yet";
+            emptyStateLabel.Font = new Font("Segoe UI", 10, FontStyle.Regular);
+            emptyStateLabel.ForeColor = Color.FromArgb(120, 120, 120);
+            emptyStateLabel.TextAlign = ContentAlignment.MiddleCenter;
+            emptyStateLabel.Size = notificationList.Size;
+            emptyStateLabel.Location = notificationList.Location;
+            emptyStateLabel.Visible = false;
 
             Panel footer = new Panel();
-            footer.Size = new Size(this.Width, 70);
-            footer.Location = new Point(0, 475);
+            footer.Size = new Size(this.Width, 54);
+            footer.Location = new Point(0, 396);
             footer.BackColor = Color.White;
 
             LinkLabel viewAll = new LinkLabel();
@@ -98,20 +127,21 @@ namespace Dashboard.CostumizeTools
             viewAll.ActiveLinkColor = Color.FromArgb(38, 132, 255);
             viewAll.VisitedLinkColor = Color.FromArgb(38, 132, 255);
             viewAll.AutoSize = true;
-            viewAll.Location = new Point((footer.Width - viewAll.Width) / 2, 12);
+            viewAll.Location = new Point(122, 16);
             viewAll.Anchor = AnchorStyles.Bottom | AnchorStyles.Top;
 
             footer.Controls.Add(viewAll);
 
             this.Controls.Add(header);
             this.Controls.Add(notificationList);
+            this.Controls.Add(emptyStateLabel);
             this.Controls.Add(footer);
         }
 
         private Panel CreateNotificationItem(string initials, string message, string time, bool highlighted)
         {
             Panel row = new Panel();
-            row.Size = new Size(this.Width, 95);
+            row.Size = new Size(this.Width - 18, 86);
             row.BackColor = highlighted ? Color.FromArgb(245, 250, 255) : Color.White;
 
             row.Paint += (s, e) =>
@@ -123,27 +153,28 @@ namespace Dashboard.CostumizeTools
             };
 
             Label avatar = CreateAvatar(initials);
-            avatar.Location = new Point(35, 25);
+            avatar.Location = new Point(24, 20);
 
             Panel onlineDot = new Panel();
             onlineDot.Size = new Size(9, 9);
-            onlineDot.Location = new Point(73, 58);
-            onlineDot.BackColor = Color.FromArgb(39, 219, 96);
+            onlineDot.Location = new Point(62, 53);
+            onlineDot.BackColor = highlighted ? Color.FromArgb(220, 20, 60) : Color.FromArgb(39, 219, 96);
             MakeRound(onlineDot, 9);
 
             Label messageLabel = new Label();
             messageLabel.Text = message;
             messageLabel.Font = new Font("Segoe UI", 9);
             messageLabel.ForeColor = Color.FromArgb(70, 70, 70);
-            messageLabel.Size = new Size(260, 50);
-            messageLabel.Location = new Point(105, 25);
+            messageLabel.Size = new Size(210, 50);
+            messageLabel.Location = new Point(82, 19);
 
             Label timeLabel = new Label();
             timeLabel.Text = time;
             timeLabel.Font = new Font("Segoe UI", 8);
             timeLabel.ForeColor = Color.FromArgb(180, 180, 180);
-            timeLabel.AutoSize = true;
-            timeLabel.Location = new Point(380, 28);
+            timeLabel.TextAlign = ContentAlignment.TopRight;
+            timeLabel.Size = new Size(68, 18);
+            timeLabel.Location = new Point(294, 21);
 
             row.Controls.Add(avatar);
             row.Controls.Add(onlineDot);
@@ -224,12 +255,30 @@ namespace Dashboard.CostumizeTools
 
             this.Region = new Region(path);
         }
+        public void LoadNotifications()
+        {
+            notificationList.Controls.Clear();
+            emptyStateLabel.Visible = !NotificationManager.Notifications.Any();
+            notificationList.Visible = !emptyStateLabel.Visible;
 
+            foreach (var notif in NotificationManager.Notifications)
+            {
+                Panel item = CreateNotificationItem(
+                    "RE",
+                    notif.Title + "\n" + notif.Message,
+                    notif.Time.ToString("hh:mm tt"),
+                    !notif.IsRead
+                );
+
+                notificationList.Controls.Add(item);
+            }
+        }
         public void ShowPopup(Form owner, Control anchorButton)
         {
             if (this.Visible)
             {
-                HidePopup();
+                LoadNotifications();
+                this.BringToFront();
                 return;
             }
 
@@ -271,7 +320,7 @@ namespace Dashboard.CostumizeTools
             animationTimer.Start();
         }
 
-        private void AnimationTimer_Tick(object sender, EventArgs e)
+        private void AnimationTimer_Tick(object? sender, EventArgs e)
         {
             if (isOpening)
             {

@@ -1,6 +1,7 @@
 ﻿using AppDomain.Models;
 using AppInfrastructure.Data;
 using AppInfrastructure.Repository;
+using Dashboard.Classes;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -94,7 +95,7 @@ namespace Dashboard
                     return;
                 }
 
-                string targetGuidStr = MeasurementId[0].ToString();
+                string targetGuidStr = MeasurementId[0]!.ToString()!;
 
                 try
                 {
@@ -102,44 +103,37 @@ namespace Dashboard
                     {
                         var record = await db.Measurements.FirstOrDefaultAsync(m => m.Id.ToString() == targetGuidStr && m.Status == "In Progress");
 
-                        if (record != null)
+                        if (record == null)
                         {
-                            record.Status = "Completed";
-                            await db.SaveChangesAsync();
-
-                            MessageBox.Show("Order marked as Completed!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                            if (Form1.GlobalDashboardController != null)
-                            {
-                                await Form1.GlobalDashboardController.RefreshDashboardViewAsync();
-                            }
-
-                            if (this.Parent != null)
-                            {
-                               
-                                this.Parent.Controls.Remove(this);
-                                this.Dispose();
-                            }
-                            else
-                            {
-                                MessageBox.Show("Could not find the active order in the database.");
-                            }
+                            MessageBox.Show("Could not find the active order in the database.");
+                            return;
                         }
+
+                        record.Status = "Completed";
+                        await db.SaveChangesAsync();
                     }
 
+                    if (Form1.GlobalDashboardController != null)
+                    {
+                        await Form1.GlobalDashboardController.RefreshDashboardViewAsync();
+                    }
+
+                    NotificationManager.AddNotification(
+                        "Order completed",
+                        $"{CustomerName}'s order was moved to Order History.");
+
+                    if (this.Parent != null)
+                    {
+                        this.Parent.Controls.Remove(this);
+                    }
+
+                    this.Dispose();
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Database failed to update: " + ex.Message);
                     return;
                 }
-
-                if (this.Parent != null)
-                {
-                    this.Parent.Controls.Remove(this);
-                }
-
-                MessageBox.Show("Order marked as Completed. You can view it in the History window.");
             }
         }
 
@@ -164,7 +158,8 @@ namespace Dashboard
                 return;
             }
 
-            string targetGuidStr = MeasurementId[0].ToString();
+            string targetGuidStr = MeasurementId[0]!.ToString()!;
+            string deletedCustomerName = CustomerName;
     
             try
             {
@@ -192,7 +187,9 @@ namespace Dashboard
                     }
                 }
 
-                MessageBox.Show("Order and its associated costs have been deleted successfully!", "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                NotificationManager.AddNotification(
+                    "Order deleted",
+                    $"{deletedCustomerName}'s order and linked costs were deleted.");
 
                 if (Form1.GlobalDashboardController != null)
                 {

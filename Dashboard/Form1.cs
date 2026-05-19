@@ -4,6 +4,7 @@ using ReaLTaiizor.Controls;
 using ReaLTaiizor.Forms;
 using System;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 using Microsoft.EntityFrameworkCore;
 using Dashboard.CostumizeTools;
@@ -18,8 +19,10 @@ namespace Dashboard
 {
     public partial class Form1 : MaterialForm
     {
-        public static DashboardController GlobalDashboardController { get; private set; }
-
+        public static DashboardController GlobalDashboardController { get; private set; } = null!;
+        private Label notificationBadge = null!;
+        private System.Windows.Forms.Timer badgeFlashTimer = null!;
+        private bool flashState = false;
         private readonly MeasurementRepository _measurementRepo;
         private readonly CostRepository _costRepo;
         private readonly OrderValidator _validator;
@@ -46,19 +49,44 @@ namespace Dashboard
             _galleryService = new GalleryService();
             _dashboardService = new DashboardService(_measurementRepo, _costRepo);
             _dashboardController = new DashboardController(_dashboardService);
+            GlobalDashboardController = _dashboardController;
+            SetupNotificationBadge();
+            SetupBadgeAnimation();
 
+            NotificationManager.NotificationAdded += () =>
+            {
+                RunOnUiThread(() =>
+                {
+                    UpdateNotificationBadge();
+                    ShowNotificationPopup(btnNotification);
+                });
+            };
+
+            NotificationManager.NotificationChanged += () =>
+            {
+                if (this.InvokeRequired)
+                {
+                    this.Invoke(new Action(UpdateNotificationBadge));
+                }
+                else
+                {
+                    UpdateNotificationBadge();
+                }
+            };
             FormConfigurator.ConfigureMaterialSkin(this);
         }
 
         
         private async void Form1_Load(object sender, EventArgs e)
         {
-            
+
+            this.Controls.Add(notificationBadge);
             this.ClientSize = new Size(1360, 768);
             this.MinimumSize = this.Size;
             this.MaximumSize = this.Size;
             this.FormBorderStyle = FormBorderStyle.None;
-
+            UpdateNotificationBadge();
+           
             materialCard10.Padding = new Padding(0);
             mcMeasurement.Padding = new Padding(0, 17, 0, 0);
 
@@ -89,6 +117,101 @@ namespace Dashboard
 
         }
 
+        private void SetupNotificationBadge()
+        {
+            notificationBadge = new Label();
+
+            notificationBadge.Size = new Size(22, 22);
+            notificationBadge.BackColor = Color.Red;
+            notificationBadge.ForeColor = Color.White;
+            notificationBadge.Font = new Font("Segoe UI", 8, FontStyle.Bold);
+            notificationBadge.TextAlign = ContentAlignment.MiddleCenter;
+            notificationBadge.Visible = false;
+            notificationBadge.Region = CreateRoundRegion(notificationBadge.Width, notificationBadge.Height);
+
+            // CHANGE btnNotification TO YOUR BELL BUTTON NAME
+            notificationBadge.Location = new Point(
+                btnNotification.Left + 20,
+                btnNotification.Top - 5
+            );
+
+            notificationBadge.BringToFront();
+
+            this.Controls.Add(notificationBadge);
+        }
+
+        private static Region CreateRoundRegion(int width, int height)
+        {
+            GraphicsPath path = new GraphicsPath();
+            path.AddEllipse(0, 0, width, height);
+            return new Region(path);
+        }
+
+        private void SetupBadgeAnimation()
+        {
+            badgeFlashTimer = new System.Windows.Forms.Timer();
+            badgeFlashTimer.Interval = 420;
+
+            badgeFlashTimer.Tick += (s, e) =>
+            {
+                if (!notificationBadge.Visible)
+                {
+                    badgeFlashTimer.Stop();
+                    return;
+                }
+
+                flashState = !flashState;
+
+                if (flashState)
+                {
+                    notificationBadge.BackColor = Color.FromArgb(230, 0, 35);
+                }
+                else
+                {
+                    notificationBadge.BackColor = Color.FromArgb(160, 0, 25);
+                }
+            };
+        }
+        private void UpdateNotificationBadge()
+        {
+            int count = Dashboard.Classes.NotificationManager.UnreadCount();
+
+            notificationBadge.Text = count > 99 ? "99+" : count.ToString();
+
+            notificationBadge.Visible = count > 0;
+
+            if (count > 0 && !badgeFlashTimer.Enabled)
+            {
+                badgeFlashTimer.Start();
+            }
+            else if (count == 0)
+            {
+                badgeFlashTimer.Stop();
+                notificationBadge.BackColor = Color.FromArgb(230, 0, 35);
+                flashState = false;
+            }
+        }
+
+        private void RunOnUiThread(Action action)
+        {
+            if (IsDisposed) return;
+
+            if (InvokeRequired)
+            {
+                Invoke(action);
+                return;
+            }
+
+            action();
+        }
+
+        private void ShowNotificationPopup(Control anchorButton)
+        {
+            if (!Visible || IsDisposed) return;
+
+            _notificationPopup.LoadNotifications();
+            _notificationPopup.ShowPopup(this, anchorButton);
+        }
         private void mtcSelectionControl_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (mtcSelectionControl.SelectedTab == MainDashboard)
@@ -182,7 +305,16 @@ namespace Dashboard
         }
 
 
-        private void btnNotification_Click(object sender, EventArgs e) => _notificationPopup.ShowPopup(this, btnNotificationOrder);
+        private void btnNotification_Click(object sender, EventArgs e)
+        {
+            if (_notificationPopup.Visible)
+            {
+                _notificationPopup.HidePopup();
+                return;
+            }
+
+            ShowNotificationPopup(btnNotification);
+        }
 
         private void btnNotificationOrder_Click(object sender, EventArgs e) => _notificationPopup.ShowPopup(this, btnNotificationOrder);
 
@@ -274,7 +406,9 @@ namespace Dashboard
                 await _measurementRepo.SaveAsync();
 
                 flpOrderList.Controls.Add(BuildOrderCard(measurements));
-                MessageBox.Show("Order Created and Saved!");
+                NotificationManager.AddNotification(
+                    "New order created",
+                    $"{measurements.CustomerName}'s body measurements were saved.");
             }
             catch (Exception ex)
             {
@@ -552,7 +686,7 @@ namespace Dashboard
                 Console.WriteLine($"Error loading image: {ex.Message}");
             }
         }
-
+        
         private void dgvReport_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
