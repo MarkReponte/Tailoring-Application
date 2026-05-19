@@ -67,8 +67,7 @@ namespace Dashboard
             btnNotification = new ReaLTaiizor.Controls.MaterialButton();
             Order = new TabPage();
             materialCard2 = new ReaLTaiizor.Controls.MaterialCard();
-            textBox1 = new TextBox();
-            hcbSearch = new ReaLTaiizor.Controls.HopeComboBox();
+            txtSearch = new TextBox();
             materialLabel3 = new ReaLTaiizor.Controls.MaterialLabel();
             btnNotificationOrder = new ReaLTaiizor.Controls.MaterialButton();
             mcOrders = new ReaLTaiizor.Controls.MaterialCard();
@@ -696,8 +695,7 @@ namespace Dashboard
             materialCard2.BackColor = Color.FromArgb(255, 255, 255);
             materialCard2.BackgroundImage = MyResources.box;
             materialCard2.BorderStyle = BorderStyle.FixedSingle;
-            materialCard2.Controls.Add(textBox1);
-            materialCard2.Controls.Add(hcbSearch);
+            materialCard2.Controls.Add(txtSearch);
             materialCard2.Controls.Add(materialLabel3);
             materialCard2.Controls.Add(btnNotificationOrder);
             materialCard2.Depth = 0;
@@ -711,30 +709,13 @@ namespace Dashboard
             materialCard2.Size = new Size(1372, 65);
             materialCard2.TabIndex = 2;
             // 
-            // textBox1
+            // txtSearch
             // 
-            textBox1.Location = new Point(855, 19);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(123, 23);
-            textBox1.TabIndex = 11;
-            // 
-            // hcbSearch
-            // 
-            hcbSearch.Dock = DockStyle.Right;
-            hcbSearch.DrawMode = DrawMode.OwnerDrawFixed;
-            hcbSearch.FlatStyle = FlatStyle.Flat;
-            hcbSearch.Font = new Font("Segoe UI", 14F);
-            hcbSearch.ForeColor = Color.Black;
-            hcbSearch.FormattingEnabled = true;
-            hcbSearch.ItemHeight = 23;
-            hcbSearch.Location = new Point(1074, 14);
-            hcbSearch.Name = "hcbSearch";
-            hcbSearch.Size = new Size(242, 29);
-            hcbSearch.TabIndex = 10;
-            hcbSearch.Text = "Search...";
-            hcbSearch.TextChanged += hcbSearch_TextChanged;
-            hcbSearch.Enter += cboSearch_Enter;
-            hcbSearch.Leave += cboSearch_Leave;
+            txtSearch.Location = new Point(1108, 23);
+            txtSearch.Name = "txtSearch";
+            txtSearch.Size = new Size(123, 23);
+            txtSearch.TabIndex = 11;
+            txtSearch.TextChanged += hcbSearch_TextChanged;
             // 
             // materialLabel3
             // 
@@ -2999,9 +2980,9 @@ namespace Dashboard
             materialLabel14.Location = new Point(55, 193);
             materialLabel14.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialLabel14.Name = "materialLabel14";
-            materialLabel14.Size = new Size(61, 19);
+            materialLabel14.Size = new Size(103, 19);
             materialLabel14.TabIndex = 163;
-            materialLabel14.Text = "Quantity";
+            materialLabel14.Text = "Order Quantity";
             // 
             // materialLabel8
             // 
@@ -3012,9 +2993,9 @@ namespace Dashboard
             materialLabel8.Location = new Point(55, 133);
             materialLabel8.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialLabel8.Name = "materialLabel8";
-            materialLabel8.Size = new Size(135, 19);
+            materialLabel8.Size = new Size(136, 19);
             materialLabel8.TabIndex = 163;
-            materialLabel8.Text = "Laber Cost (per pc)";
+            materialLabel8.Text = "Labor Cost (per pc)";
             // 
             // styledPanel2
             // 
@@ -3417,7 +3398,7 @@ namespace Dashboard
             Name = "Form1";
             Padding = new Padding(0, 88, 0, 0);
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "RE Sewing Creations";
+            Text = "RE Tailoring Services";
             WindowState = FormWindowState.Maximized;
             Load += Form1_Load;
             mtcSelectionControl.ResumeLayout(false);
@@ -3618,7 +3599,6 @@ namespace Dashboard
         private ReaLTaiizor.Controls.MaterialButton materialButton1;
         private TabPage Order;
         private ReaLTaiizor.Controls.MaterialCard materialCard2;
-        private ReaLTaiizor.Controls.HopeComboBox hcbSearch;
         private ReaLTaiizor.Controls.MaterialLabel materialLabel3;
         private ReaLTaiizor.Controls.MaterialButton btnNotificationOrder;
         private ReaLTaiizor.Controls.MaterialCard mcOrders;
@@ -3670,6 +3650,6 @@ namespace Dashboard
         public ReaLTaiizor.Controls.MoonLabel lblCustomers;
         public ReaLTaiizor.Controls.PoisonDataGridView dgvReport;
         private PictureBox pictureBox10;
-        private TextBox textBox1;
+        private TextBox txtSearch;
     }
 }

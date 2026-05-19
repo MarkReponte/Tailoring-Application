@@ -79,7 +79,7 @@ namespace Dashboard
         
         private async void Form1_Load(object sender, EventArgs e)
         {
-
+            
             this.ClientSize = new Size(1360, 768);
             this.MinimumSize = this.Size;
             this.MaximumSize = this.Size;
@@ -282,35 +282,15 @@ namespace Dashboard
         }
 
 
-        private void dashboardPanel_Load(object sender, EventArgs e)
-        {
-            hcbSearch.Text = "Search...";
-            hcbSearch.ForeColor = Color.FromArgb(150, 150, 150);
-            this.ActiveControl = null;
-        }
+        
 
-        private void cboSearch_Enter(object sender, EventArgs e)
-        {
-            hcbSearch.Select(0, 0);
-            if (hcbSearch.Text == "Search...")
-            {
-                hcbSearch.Text = "";
-                hcbSearch.ForeColor = Color.Black;
-            }
-        }
+     
 
-        private void cboSearch_Leave(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(hcbSearch.Text))
-            {
-                hcbSearch.Text = "Search...";
-                hcbSearch.ForeColor = Color.FromArgb(150, 150, 150);
-            }
-        }
+       
 
         private void hcbSearch_TextChanged(object sender, EventArgs e)
         {
-            string search = hcbSearch.Text.Trim().ToLower();
+            string search = txtSearch.Text.Trim().ToLower();
             bool showAll = string.IsNullOrWhiteSpace(search) || search == "search...";
 
             flpOrderList.SuspendLayout();
@@ -322,15 +302,7 @@ namespace Dashboard
             flpOrderList.ResumeLayout();
         }
 
-        private void hcbSearch_DrawItem(object sender, DrawItemEventArgs e)
-        {
-            if (e.Index < 0) return;
-            e.DrawBackground();
-            using var font = new Font("Segoe UI", 18F);
-            using var brush = new SolidBrush(e.ForeColor);
-            e.Graphics.DrawString(hcbSearch.Items[e.Index].ToString(), font, brush, e.Bounds);
-            e.DrawFocusRectangle();
-        }
+     
 
         private void hcbGender_DrawItem(object? sender, DrawItemEventArgs e)
         {
@@ -445,7 +417,7 @@ namespace Dashboard
                 return;
             }
 
-            txtMaterialTotal.Clear(); txtLaborCost.Clear(); txtQuantity.Clear(); txtTotalLabor.Clear();
+            
             try
             {
                 var measurements = BuildMeasurementsModel();
@@ -525,6 +497,7 @@ namespace Dashboard
                 field.Text = "";
                 field.Invalidate();
             }
+            txtMaterialTotal.Clear();
         }
 
         private void btnClear_Click(object sender, EventArgs e) => ClearForm();
@@ -611,6 +584,8 @@ namespace Dashboard
                     Price = row.Cells[2].Value.ToString(),
                     MaterialCostId = summary.Id
                 });
+
+            
             }
 
             using var costPopup = new CostCostumerNamePopup(summary, _costRepo);
@@ -620,6 +595,8 @@ namespace Dashboard
                 dgvMaterialList.Rows.Clear();
                 MessageBox.Show("Saved to History successfully!");
             }
+            txtMaterialTotal.Clear(); txtLaborCost.Clear(); txtQuantity.Clear(); txtTotalLabor.Clear(); 
+            ClearForm();
         }
 
 
