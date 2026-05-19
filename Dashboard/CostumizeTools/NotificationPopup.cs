@@ -70,7 +70,7 @@ namespace Dashboard.CostumizeTools
             markRead.ActiveLinkColor = Color.FromArgb(38, 132, 255);
             markRead.VisitedLinkColor = Color.FromArgb(38, 132, 255);
             markRead.AutoSize = true;
-            markRead.Location = new Point(100, 28);
+            markRead.Location = new Point(header.Width - markRead.Width - 35, 28);
             markRead.Anchor = AnchorStyles.Top | AnchorStyles.Right;
 
             header.Controls.Add(title);
@@ -98,8 +98,8 @@ namespace Dashboard.CostumizeTools
             viewAll.ActiveLinkColor = Color.FromArgb(38, 132, 255);
             viewAll.VisitedLinkColor = Color.FromArgb(38, 132, 255);
             viewAll.AutoSize = true;
-            viewAll.Location = new Point((footer.Width - 135) / 2, 25);
-            viewAll.Anchor = AnchorStyles.Top;
+            viewAll.Location = new Point((footer.Width - viewAll.Width) / 2, 12);
+            viewAll.Anchor = AnchorStyles.Bottom | AnchorStyles.Top;
 
             footer.Controls.Add(viewAll);
 

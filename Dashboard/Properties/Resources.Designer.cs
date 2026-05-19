@@ -213,6 +213,16 @@ namespace Dashboard.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap time_sheet {
+            get {
+                object obj = ResourceManager.GetObject("time-sheet", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Untitled_design__1_ {
             get {
                 object obj = ResourceManager.GetObject("Untitled design (1)", resourceCulture);
