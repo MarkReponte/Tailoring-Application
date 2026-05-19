@@ -63,7 +63,7 @@ namespace Dashboard.Classes
             moonLabel1.AutoSize = true;
             moonLabel2.Anchor = AnchorStyles.Top | AnchorStyles.Left;
             moonLabel1.BackColor = Color.Transparent;
-            moonLabel1.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            moonLabel1.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             moonLabel1.ForeColor = Color.Black;
             
             moonLabel1.Name = "moonLabel1";

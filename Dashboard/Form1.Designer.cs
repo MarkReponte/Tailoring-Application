@@ -2476,7 +2476,7 @@ namespace Dashboard
             // 
             styledPanel6.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             styledPanel6.Controls.Add(btnClear);
-            styledPanel6.Location = new Point(1063, 7);
+            styledPanel6.Location = new Point(1086, 7);
             styledPanel6.Name = "styledPanel6";
             styledPanel6.Size = new Size(126, 49);
             styledPanel6.TabIndex = 159;
@@ -2511,10 +2511,10 @@ namespace Dashboard
             btnSubmit.Font = new Font("Segoe UI", 12F);
             btnSubmit.HoverTextColor = Color.FromArgb(120, 160, 0);
             btnSubmit.InfoColor = Color.FromArgb(144, 147, 153);
-            btnSubmit.Location = new Point(1195, 7);
+            btnSubmit.Location = new Point(1218, 7);
             btnSubmit.Name = "btnSubmit";
             btnSubmit.PrimaryColor = Color.FromArgb(141, 182, 0);
-            btnSubmit.Size = new Size(151, 49);
+            btnSubmit.Size = new Size(128, 49);
             btnSubmit.SuccessColor = Color.FromArgb(103, 194, 58);
             btnSubmit.TabIndex = 157;
             btnSubmit.Text = "Submit";
