@@ -73,6 +73,7 @@ namespace Dashboard
             mcOrders = new ReaLTaiizor.Controls.MaterialCard();
             pictureBox3 = new PictureBox();
             hopeGroupBox1 = new ReaLTaiizor.Controls.HopeGroupBox();
+            pictureBox10 = new PictureBox();
             flpOrderList = new FlowLayoutPanel();
             btnOrderHistory = new ReaLTaiizor.Controls.HopeButton();
             lblOrderList = new ReaLTaiizor.Controls.MaterialLabel();
@@ -233,6 +234,7 @@ namespace Dashboard
             mcOrders.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             hopeGroupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
             BodyMeasurement.SuspendLayout();
             materialCard4.SuspendLayout();
             panel2.SuspendLayout();
@@ -797,6 +799,7 @@ namespace Dashboard
             // 
             hopeGroupBox1.BackColor = Color.Lime;
             hopeGroupBox1.BorderColor = Color.FromArgb(248, 250, 253);
+            hopeGroupBox1.Controls.Add(pictureBox10);
             hopeGroupBox1.Controls.Add(flpOrderList);
             hopeGroupBox1.Controls.Add(btnOrderHistory);
             hopeGroupBox1.Controls.Add(lblOrderList);
@@ -814,6 +817,15 @@ namespace Dashboard
             hopeGroupBox1.TabStop = false;
             hopeGroupBox1.Text = "hopeGroupBox1";
             hopeGroupBox1.ThemeColor = Color.FromArgb(248, 250, 253);
+            // 
+            // pictureBox10
+            // 
+            pictureBox10.Image = MyResources.time_sheet;
+            pictureBox10.Location = new Point(0, 61);
+            pictureBox10.Name = "pictureBox10";
+            pictureBox10.Size = new Size(66, 68);
+            pictureBox10.TabIndex = 159;
+            pictureBox10.TabStop = false;
             // 
             // flpOrderList
             // 
@@ -853,12 +865,12 @@ namespace Dashboard
             // 
             lblOrderList.AutoSize = true;
             lblOrderList.Depth = 0;
-            lblOrderList.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            lblOrderList.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle1;
-            lblOrderList.Location = new Point(11, 75);
+            lblOrderList.Font = new Font("Roboto", 34F, FontStyle.Bold, GraphicsUnit.Pixel);
+            lblOrderList.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.H4;
+            lblOrderList.Location = new Point(75, 75);
             lblOrderList.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             lblOrderList.Name = "lblOrderList";
-            lblOrderList.Size = new Size(69, 19);
+            lblOrderList.Size = new Size(148, 41);
             lblOrderList.TabIndex = 4;
             lblOrderList.Text = "Order List";
             // 
@@ -2946,7 +2958,7 @@ namespace Dashboard
             foxLabel1.BackColor = Color.Transparent;
             foxLabel1.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             foxLabel1.ForeColor = Color.FromArgb(102, 140, 48);
-            foxLabel1.Location = new Point(69, 9);
+            foxLabel1.Location = new Point(69, 16);
             foxLabel1.Name = "foxLabel1";
             foxLabel1.Size = new Size(261, 50);
             foxLabel1.TabIndex = 174;
@@ -3019,7 +3031,7 @@ namespace Dashboard
             materialLabel59.Depth = 0;
             materialLabel59.Font = new Font("Roboto Medium", 20F, FontStyle.Bold, GraphicsUnit.Pixel);
             materialLabel59.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.H6;
-            materialLabel59.Location = new Point(70, 18);
+            materialLabel59.Location = new Point(70, 25);
             materialLabel59.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialLabel59.Name = "materialLabel59";
             materialLabel59.Size = new Size(114, 24);
@@ -3429,6 +3441,7 @@ namespace Dashboard
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             hopeGroupBox1.ResumeLayout(false);
             hopeGroupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox10).EndInit();
             BodyMeasurement.ResumeLayout(false);
             materialCard4.ResumeLayout(false);
             materialCard4.PerformLayout();
@@ -3653,5 +3666,6 @@ namespace Dashboard
         public ReaLTaiizor.Controls.MoonLabel lblMonthlyRevenue;
         public ReaLTaiizor.Controls.MoonLabel lblCustomers;
         public ReaLTaiizor.Controls.PoisonDataGridView dgvReport;
+        private PictureBox pictureBox10;
     }
 }
