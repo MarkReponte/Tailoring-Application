@@ -100,7 +100,7 @@ namespace Dashboard.CostumizeTools
 
             notificationList = new FlowLayoutPanel();
             notificationList.Location = new Point(0, 64);
-            notificationList.Size = new Size(this.Width, 332);
+            notificationList.Size = new Size(this.Width, this.Height - 64);
             notificationList.FlowDirection = FlowDirection.TopDown;
             notificationList.WrapContents = false;
             notificationList.AutoScroll = true;
@@ -115,34 +115,18 @@ namespace Dashboard.CostumizeTools
             emptyStateLabel.Location = notificationList.Location;
             emptyStateLabel.Visible = false;
 
-            Panel footer = new Panel();
-            footer.Size = new Size(this.Width, 54);
-            footer.Location = new Point(0, 396);
-            footer.BackColor = Color.White;
-
-            LinkLabel viewAll = new LinkLabel();
-            viewAll.Text = "View all notifications";
-            viewAll.Font = new Font("Segoe UI", 10, FontStyle.Bold);
-            viewAll.LinkColor = Color.FromArgb(38, 132, 255);
-            viewAll.ActiveLinkColor = Color.FromArgb(38, 132, 255);
-            viewAll.VisitedLinkColor = Color.FromArgb(38, 132, 255);
-            viewAll.AutoSize = true;
-            viewAll.Location = new Point(122, 16);
-            viewAll.Anchor = AnchorStyles.Bottom | AnchorStyles.Top;
-
-            footer.Controls.Add(viewAll);
-
             this.Controls.Add(header);
             this.Controls.Add(notificationList);
             this.Controls.Add(emptyStateLabel);
-            this.Controls.Add(footer);
         }
 
         private Panel CreateNotificationItem(string initials, string message, string time, bool highlighted)
         {
             Panel row = new Panel();
-            row.Size = new Size(this.Width - 18, 86);
+            int rowWidth = Math.Max(320, notificationList.ClientSize.Width - SystemInformation.VerticalScrollBarWidth - 4);
+            row.Size = new Size(rowWidth, 86);
             row.BackColor = highlighted ? Color.FromArgb(245, 250, 255) : Color.White;
+            row.Cursor = Cursors.Hand;
 
             row.Paint += (s, e) =>
             {
@@ -165,8 +149,9 @@ namespace Dashboard.CostumizeTools
             messageLabel.Text = message;
             messageLabel.Font = new Font("Segoe UI", 9);
             messageLabel.ForeColor = Color.FromArgb(70, 70, 70);
-            messageLabel.Size = new Size(210, 50);
+            messageLabel.Size = new Size(row.Width - 160, 50);
             messageLabel.Location = new Point(82, 19);
+            messageLabel.Cursor = Cursors.Hand;
 
             Label timeLabel = new Label();
             timeLabel.Text = time;
@@ -174,7 +159,8 @@ namespace Dashboard.CostumizeTools
             timeLabel.ForeColor = Color.FromArgb(180, 180, 180);
             timeLabel.TextAlign = ContentAlignment.TopRight;
             timeLabel.Size = new Size(68, 18);
-            timeLabel.Location = new Point(294, 21);
+            timeLabel.Location = new Point(row.Width - timeLabel.Width - 8, 21);
+            timeLabel.Cursor = Cursors.Hand;
 
             row.Controls.Add(avatar);
             row.Controls.Add(onlineDot);
@@ -254,6 +240,16 @@ namespace Dashboard.CostumizeTools
             path.CloseAllFigures();
 
             this.Region = new Region(path);
+
+            if (notificationList != null)
+            {
+                notificationList.Size = new Size(this.Width, this.Height - notificationList.Top);
+            }
+
+            if (emptyStateLabel != null)
+            {
+                emptyStateLabel.Size = new Size(this.Width, this.Height - emptyStateLabel.Top);
+            }
         }
         public void LoadNotifications()
         {
@@ -270,7 +266,23 @@ namespace Dashboard.CostumizeTools
                     !notif.IsRead
                 );
 
+                AttachReadClick(item, notif);
                 notificationList.Controls.Add(item);
+            }
+
+            notificationList.HorizontalScroll.Enabled = false;
+            notificationList.HorizontalScroll.Visible = false;
+            notificationList.AutoScrollMinSize = new Size(0, 0);
+        }
+
+        private void AttachReadClick(Control control, AppNotification notification)
+        {
+            control.Click += (s, e) => NotificationManager.MarkAsRead(notification);
+
+            foreach (Control child in control.Controls)
+            {
+                child.Cursor = Cursors.Hand;
+                AttachReadClick(child, notification);
             }
         }
         public void ShowPopup(Form owner, Control anchorButton)

@@ -58,7 +58,7 @@ namespace Dashboard
                 RunOnUiThread(() =>
                 {
                     UpdateNotificationBadge();
-                    ShowNotificationPopup(btnNotification);
+                    ShowNotificationPopup(GetActiveNotificationButton());
                 });
             };
 
@@ -80,7 +80,6 @@ namespace Dashboard
         private async void Form1_Load(object sender, EventArgs e)
         {
 
-            this.Controls.Add(notificationBadge);
             this.ClientSize = new Size(1360, 768);
             this.MinimumSize = this.Size;
             this.MaximumSize = this.Size;
@@ -128,16 +127,60 @@ namespace Dashboard
             notificationBadge.TextAlign = ContentAlignment.MiddleCenter;
             notificationBadge.Visible = false;
             notificationBadge.Region = CreateRoundRegion(notificationBadge.Width, notificationBadge.Height);
+            notificationBadge.Cursor = Cursors.Hand;
+            notificationBadge.Click += btnNotification_Click;
 
-            // CHANGE btnNotification TO YOUR BELL BUTTON NAME
+            Control activeButton = GetActiveNotificationButton();
+            Control badgeParent = activeButton.Parent ?? this;
+            badgeParent.Controls.Add(notificationBadge);
+            PositionNotificationBadge();
+
+            WireNotificationBadgeAnchor(btnNotification);
+            WireNotificationBadgeAnchor(btnNotificationOrder);
+            WireNotificationBadgeAnchor(btnNotificationBodyMeasurement);
+            WireNotificationBadgeAnchor(btnNotificationCostConsumption);
+            WireNotificationBadgeAnchor(btnNotificationDesign);
+            badgeParent.SizeChanged += (s, e) => PositionNotificationBadge();
+        }
+
+        private void WireNotificationBadgeAnchor(Control button)
+        {
+            button.LocationChanged += (s, e) => PositionNotificationBadge();
+            button.SizeChanged += (s, e) => PositionNotificationBadge();
+
+            if (button.Parent != null)
+            {
+                button.Parent.SizeChanged += (s, e) => PositionNotificationBadge();
+            }
+        }
+
+        private Control GetActiveNotificationButton()
+        {
+            if (mtcSelectionControl.SelectedTab == Order) return btnNotificationOrder;
+            if (mtcSelectionControl.SelectedTab == BodyMeasurement) return btnNotificationBodyMeasurement;
+            if (mtcSelectionControl.SelectedTab == CostConsumption) return btnNotificationCostConsumption;
+            if (mtcSelectionControl.SelectedTab == Design) return btnNotificationDesign;
+
+            return btnNotification;
+        }
+
+        private void PositionNotificationBadge()
+        {
+            if (notificationBadge == null) return;
+
+            Control activeButton = GetActiveNotificationButton();
+            Control badgeParent = activeButton.Parent ?? this;
+
+            if (notificationBadge.Parent != badgeParent)
+            {
+                badgeParent.Controls.Add(notificationBadge);
+            }
+
+            Point bellLocation = badgeParent.PointToClient(activeButton.PointToScreen(Point.Empty));
             notificationBadge.Location = new Point(
-                btnNotification.Left + 20,
-                btnNotification.Top - 5
-            );
-
+                bellLocation.X + activeButton.Width - notificationBadge.Width - 2,
+                bellLocation.Y - 4);
             notificationBadge.BringToFront();
-
-            this.Controls.Add(notificationBadge);
         }
 
         private static Region CreateRoundRegion(int width, int height)
@@ -179,6 +222,7 @@ namespace Dashboard
             notificationBadge.Text = count > 99 ? "99+" : count.ToString();
 
             notificationBadge.Visible = count > 0;
+            PositionNotificationBadge();
 
             if (count > 0 && !badgeFlashTimer.Enabled)
             {
@@ -214,6 +258,8 @@ namespace Dashboard
         }
         private void mtcSelectionControl_SelectedIndexChanged(object sender, EventArgs e)
         {
+            PositionNotificationBadge();
+
             if (mtcSelectionControl.SelectedTab == MainDashboard)
             {
                TriggerDashboardView();
@@ -305,7 +351,7 @@ namespace Dashboard
         }
 
 
-        private void btnNotification_Click(object sender, EventArgs e)
+        private void btnNotification_Click(object? sender, EventArgs e)
         {
             if (_notificationPopup.Visible)
             {
@@ -313,16 +359,16 @@ namespace Dashboard
                 return;
             }
 
-            ShowNotificationPopup(btnNotification);
+            ShowNotificationPopup(GetActiveNotificationButton());
         }
 
-        private void btnNotificationOrder_Click(object sender, EventArgs e) => _notificationPopup.ShowPopup(this, btnNotificationOrder);
+        private void btnNotificationOrder_Click(object sender, EventArgs e) => ShowNotificationPopup(btnNotificationOrder);
 
-        private void btnNotificationBodyMeasurement_Click(object sender, EventArgs e) => _notificationPopup.ShowPopup(this, btnNotificationBodyMeasurement);
+        private void btnNotificationBodyMeasurement_Click(object sender, EventArgs e) => ShowNotificationPopup(btnNotificationBodyMeasurement);
 
-        private void btnNotificationCostConsumption_Click(object sender, EventArgs e) => _notificationPopup.ShowPopup(this, btnNotificationCostConsumption);
+        private void btnNotificationCostConsumption_Click(object sender, EventArgs e) => ShowNotificationPopup(btnNotificationCostConsumption);
 
-        private void btnNotificationRevenue_Click(object sender, EventArgs e) => _notificationPopup.ShowPopup(this, btnNotificationDesign);
+        private void btnNotificationRevenue_Click(object sender, EventArgs e) => ShowNotificationPopup(btnNotificationDesign);
 
         private void btnCloseNotification_Click(object sender, EventArgs e) => pnlNotification.Visible = false;
 
@@ -399,6 +445,7 @@ namespace Dashboard
                 return;
             }
 
+            txtMaterialTotal.Clear(); txtLaborCost.Clear(); txtQuantity.Clear(); txtTotalLabor.Clear();
             try
             {
                 var measurements = BuildMeasurementsModel();
@@ -416,7 +463,6 @@ namespace Dashboard
                 while (real.InnerException != null) real = real.InnerException;
                 MessageBox.Show($"Actual SQL Error: {real.Message}");
             }
-
             ClearForm();
         }
 
@@ -527,6 +573,7 @@ namespace Dashboard
             {
                 MessageBox.Show("Please enter valid numbers");
             }
+            
         }
 
         private void btnCostClear_Click(object sender, EventArgs e)
@@ -687,9 +734,7 @@ namespace Dashboard
             }
         }
         
-        private void dgvReport_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+        
+        
     }
 }

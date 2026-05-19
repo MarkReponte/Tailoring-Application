@@ -67,6 +67,7 @@ namespace Dashboard
             btnNotification = new ReaLTaiizor.Controls.MaterialButton();
             Order = new TabPage();
             materialCard2 = new ReaLTaiizor.Controls.MaterialCard();
+            textBox1 = new TextBox();
             hcbSearch = new ReaLTaiizor.Controls.HopeComboBox();
             materialLabel3 = new ReaLTaiizor.Controls.MaterialLabel();
             btnNotificationOrder = new ReaLTaiizor.Controls.MaterialButton();
@@ -378,7 +379,6 @@ namespace Dashboard
             dgvReport.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvReport.Size = new Size(1307, 255);
             dgvReport.TabIndex = 7;
-            dgvReport.CellContentClick += dgvReport_CellContentClick;
             // 
             // Column5
             // 
@@ -696,6 +696,7 @@ namespace Dashboard
             materialCard2.BackColor = Color.FromArgb(255, 255, 255);
             materialCard2.BackgroundImage = MyResources.box;
             materialCard2.BorderStyle = BorderStyle.FixedSingle;
+            materialCard2.Controls.Add(textBox1);
             materialCard2.Controls.Add(hcbSearch);
             materialCard2.Controls.Add(materialLabel3);
             materialCard2.Controls.Add(btnNotificationOrder);
@@ -709,6 +710,13 @@ namespace Dashboard
             materialCard2.Padding = new Padding(14);
             materialCard2.Size = new Size(1372, 65);
             materialCard2.TabIndex = 2;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(855, 19);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(123, 23);
+            textBox1.TabIndex = 11;
             // 
             // hcbSearch
             // 
@@ -3266,16 +3274,17 @@ namespace Dashboard
             btnNotificationDesign.Icon = MyResources.bell;
             btnNotificationDesign.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Default;
             btnNotificationDesign.ImageKey = "(none)";
-            btnNotificationDesign.Location = new Point(1318, 14);
+            btnNotificationDesign.Location = new Point(1322, 14);
             btnNotificationDesign.Margin = new Padding(4, 6, 4, 6);
             btnNotificationDesign.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             btnNotificationDesign.Name = "btnNotificationDesign";
             btnNotificationDesign.NoAccentTextColor = Color.Empty;
-            btnNotificationDesign.Size = new Size(40, 37);
+            btnNotificationDesign.Size = new Size(36, 37);
             btnNotificationDesign.TabIndex = 2;
             btnNotificationDesign.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Text;
             btnNotificationDesign.UseAccentColor = false;
             btnNotificationDesign.UseVisualStyleBackColor = true;
+            btnNotificationDesign.Click += btnNotificationRevenue_Click;
             // 
             // hopeGroupBox2
             // 
@@ -3661,5 +3670,6 @@ namespace Dashboard
         public ReaLTaiizor.Controls.MoonLabel lblCustomers;
         public ReaLTaiizor.Controls.PoisonDataGridView dgvReport;
         private PictureBox pictureBox10;
+        private TextBox textBox1;
     }
 }
