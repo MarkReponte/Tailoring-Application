@@ -758,7 +758,7 @@ namespace Dashboard
             Order.ImageKey = "order.png";
             Order.Location = new Point(4, 24);
             Order.Name = "Order";
-            Order.Size = new Size(1372, 672);
+            Order.Size = new Size(1378, 672);
             Order.TabIndex = 1;
             Order.Text = "Order";
             Order.UseVisualStyleBackColor = true;
@@ -780,7 +780,7 @@ namespace Dashboard
             materialCard2.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialCard2.Name = "materialCard2";
             materialCard2.Padding = new Padding(14);
-            materialCard2.Size = new Size(1372, 65);
+            materialCard2.Size = new Size(1378, 65);
             materialCard2.TabIndex = 2;
             // 
             // materialLabel60
@@ -790,7 +790,7 @@ namespace Dashboard
             materialLabel60.Depth = 0;
             materialLabel60.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             materialLabel60.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle1;
-            materialLabel60.Location = new Point(1039, 27);
+            materialLabel60.Location = new Point(1045, 27);
             materialLabel60.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialLabel60.Name = "materialLabel60";
             materialLabel60.Size = new Size(54, 19);
@@ -800,7 +800,7 @@ namespace Dashboard
             // txtSearch
             // 
             txtSearch.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            txtSearch.Location = new Point(1108, 23);
+            txtSearch.Location = new Point(1114, 23);
             txtSearch.Name = "txtSearch";
             txtSearch.Size = new Size(146, 23);
             txtSearch.TabIndex = 11;
@@ -830,7 +830,7 @@ namespace Dashboard
             btnNotificationOrder.Icon = MyResources.bell;
             btnNotificationOrder.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Default;
             btnNotificationOrder.ImageKey = "(none)";
-            btnNotificationOrder.Location = new Point(1316, 14);
+            btnNotificationOrder.Location = new Point(1322, 14);
             btnNotificationOrder.Margin = new Padding(4, 6, 4, 6);
             btnNotificationOrder.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             btnNotificationOrder.Name = "btnNotificationOrder";
@@ -855,7 +855,7 @@ namespace Dashboard
             mcOrders.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             mcOrders.Name = "mcOrders";
             mcOrders.Padding = new Padding(14);
-            mcOrders.Size = new Size(1372, 672);
+            mcOrders.Size = new Size(1378, 672);
             mcOrders.TabIndex = 3;
             // 
             // pictureBox3
@@ -884,7 +884,7 @@ namespace Dashboard
             hopeGroupBox1.Name = "hopeGroupBox1";
             hopeGroupBox1.Padding = new Padding(0);
             hopeGroupBox1.ShowText = false;
-            hopeGroupBox1.Size = new Size(1344, 644);
+            hopeGroupBox1.Size = new Size(1350, 644);
             hopeGroupBox1.TabIndex = 160;
             hopeGroupBox1.TabStop = false;
             hopeGroupBox1.Text = "hopeGroupBox1";
@@ -922,7 +922,7 @@ namespace Dashboard
             btnOrderHistory.Font = new Font("Segoe UI Semibold", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnOrderHistory.HoverTextColor = Color.FromArgb(120, 160, 0);
             btnOrderHistory.InfoColor = Color.FromArgb(144, 147, 153);
-            btnOrderHistory.Location = new Point(1200, 75);
+            btnOrderHistory.Location = new Point(1206, 75);
             btnOrderHistory.Name = "btnOrderHistory";
             btnOrderHistory.PrimaryColor = Color.FromArgb(141, 182, 0);
             btnOrderHistory.Size = new Size(133, 47);
@@ -1143,6 +1143,7 @@ namespace Dashboard
             // hcbGender
             // 
             hcbGender.DrawMode = DrawMode.OwnerDrawFixed;
+            hcbGender.DropDownStyle = ComboBoxStyle.DropDownList;
             hcbGender.FlatStyle = FlatStyle.Flat;
             hcbGender.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
             hcbGender.FormattingEnabled = true;
@@ -2695,7 +2696,7 @@ namespace Dashboard
             txtMetersNeed.MaxLength = 32767;
             txtMetersNeed.Name = "txtMetersNeed";
             txtMetersNeed.PasswordChar = '\0';
-            txtMetersNeed.PromptText = "Enter Meters";
+            txtMetersNeed.PromptText = "Enter Meters/Quantity";
             txtMetersNeed.ScrollBars = ScrollBars.None;
             txtMetersNeed.SelectedText = "";
             txtMetersNeed.SelectionLength = 0;
@@ -2704,7 +2705,7 @@ namespace Dashboard
             txtMetersNeed.Size = new Size(240, 34);
             txtMetersNeed.TabIndex = 53;
             txtMetersNeed.UseSelectable = true;
-            txtMetersNeed.WaterMark = "Enter Meters";
+            txtMetersNeed.WaterMark = "Enter Meters/Quantity";
             txtMetersNeed.WaterMarkColor = Color.FromArgb(109, 109, 109);
             txtMetersNeed.WaterMarkFont = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             // 
@@ -3184,10 +3185,10 @@ namespace Dashboard
             // 
             // ColMeters
             // 
-            ColMeters.HeaderText = "Meters";
+            ColMeters.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            ColMeters.HeaderText = "Meters/Quantity";
             ColMeters.MinimumWidth = 6;
             ColMeters.Name = "ColMeters";
-            ColMeters.Width = 80;
             // 
             // colPricePerMeter
             // 
@@ -3274,7 +3275,7 @@ namespace Dashboard
             Design.ImageKey = "design.png";
             Design.Location = new Point(4, 24);
             Design.Name = "Design";
-            Design.Size = new Size(1372, 672);
+            Design.Size = new Size(1378, 672);
             Design.TabIndex = 5;
             Design.Text = "Design";
             Design.UseVisualStyleBackColor = true;
@@ -3286,7 +3287,7 @@ namespace Dashboard
             panel3.Dock = DockStyle.Bottom;
             panel3.Location = new Point(0, 612);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1372, 60);
+            panel3.Size = new Size(1378, 60);
             panel3.TabIndex = 6;
             // 
             // btnAddDesign
@@ -3299,7 +3300,7 @@ namespace Dashboard
             btnAddDesign.Font = new Font("Segoe UI", 12F);
             btnAddDesign.HoverTextColor = Color.FromArgb(120, 160, 0);
             btnAddDesign.InfoColor = Color.FromArgb(144, 147, 153);
-            btnAddDesign.Location = new Point(1218, 15);
+            btnAddDesign.Location = new Point(1224, 15);
             btnAddDesign.Name = "btnAddDesign";
             btnAddDesign.PrimaryColor = Color.FromArgb(141, 182, 0);
             btnAddDesign.Size = new Size(120, 35);
@@ -3317,7 +3318,7 @@ namespace Dashboard
             flpDesignGallery.Dock = DockStyle.Fill;
             flpDesignGallery.Location = new Point(0, 65);
             flpDesignGallery.Name = "flpDesignGallery";
-            flpDesignGallery.Size = new Size(1372, 607);
+            flpDesignGallery.Size = new Size(1378, 607);
             flpDesignGallery.TabIndex = 5;
             // 
             // materialCard11
@@ -3334,7 +3335,7 @@ namespace Dashboard
             materialCard11.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialCard11.Name = "materialCard11";
             materialCard11.Padding = new Padding(14);
-            materialCard11.Size = new Size(1372, 65);
+            materialCard11.Size = new Size(1378, 65);
             materialCard11.TabIndex = 4;
             // 
             // materialLabel65
@@ -3362,7 +3363,7 @@ namespace Dashboard
             btnNotificationDesign.Icon = MyResources.bell;
             btnNotificationDesign.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Default;
             btnNotificationDesign.ImageKey = "(none)";
-            btnNotificationDesign.Location = new Point(1318, 14);
+            btnNotificationDesign.Location = new Point(1324, 14);
             btnNotificationDesign.Margin = new Padding(4, 6, 4, 6);
             btnNotificationDesign.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             btnNotificationDesign.Name = "btnNotificationDesign";
@@ -3682,10 +3683,6 @@ namespace Dashboard
         private ReaLTaiizor.Controls.MaterialCard materialCard11;
         private ReaLTaiizor.Controls.MaterialLabel materialLabel65;
         private ReaLTaiizor.Controls.MaterialButton btnNotificationDesign;
-        private DataGridViewTextBoxColumn colItem;
-        private DataGridViewTextBoxColumn ColMeters;
-        private DataGridViewTextBoxColumn colPricePerMeter;
-        private DataGridViewTextBoxColumn colTotal;
         private Panel panel3;
         private ReaLTaiizor.Controls.HopeButton btnAddDesign;
         private ReaLTaiizor.Controls.MaterialButton btnSaveCost;
@@ -3772,5 +3769,9 @@ namespace Dashboard
         private PictureBox pictureBox12;
         private PictureBox pictureBox13;
         private CostumizeTools.StyledPanel styledPanel9;
+        private DataGridViewTextBoxColumn colItem;
+        private DataGridViewTextBoxColumn ColMeters;
+        private DataGridViewTextBoxColumn colPricePerMeter;
+        private DataGridViewTextBoxColumn colTotal;
     }
 }
