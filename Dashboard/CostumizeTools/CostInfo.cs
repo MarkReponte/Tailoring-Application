@@ -42,7 +42,7 @@ namespace Dashboard.CostumizeTools
 
                     dgvMaterialListSaved.Rows.Add(
                         itemName,
-                        meters.EndsWith("m") ? meters : meters + "m",
+                        meters.EndsWith("m") ? meters : meters,
                         price.StartsWith("₱") ? price : "₱" + price,
                         "₱" + rowTotal.ToString("N2"));
                 }
