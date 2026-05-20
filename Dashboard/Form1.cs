@@ -519,7 +519,7 @@ namespace Dashboard
         {
             if (string.IsNullOrEmpty(txtItem.Text) || string.IsNullOrWhiteSpace(txtMetersNeed.Text))
             {
-                MessageBox.Show("Please enter the Item and Meters");
+                MessageBox.Show("Please enter the Item and Meters/Quantity");
                 return;
             }
 

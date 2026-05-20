@@ -309,7 +309,7 @@ namespace Dashboard
             mtcSelectionControl.Name = "mtcSelectionControl";
             mtcSelectionControl.Padding = new Point(0, 0);
             mtcSelectionControl.SelectedIndex = 0;
-            mtcSelectionControl.Size = new Size(1386, 700);
+            mtcSelectionControl.Size = new Size(1380, 700);
             mtcSelectionControl.TabIndex = 0;
             mtcSelectionControl.SelectedIndexChanged += mtcSelectionControl_SelectedIndexChanged;
             // 
@@ -320,7 +320,7 @@ namespace Dashboard
             MainDashboard.ImageKey = "dashboard.png";
             MainDashboard.Location = new Point(4, 24);
             MainDashboard.Name = "MainDashboard";
-            MainDashboard.Size = new Size(1378, 672);
+            MainDashboard.Size = new Size(1372, 672);
             MainDashboard.TabIndex = 0;
             MainDashboard.Text = "Dashboard";
             MainDashboard.UseVisualStyleBackColor = true;
@@ -344,7 +344,7 @@ namespace Dashboard
             materialCard7.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialCard7.Name = "materialCard7";
             materialCard7.Padding = new Padding(5);
-            materialCard7.Size = new Size(1378, 607);
+            materialCard7.Size = new Size(1372, 607);
             materialCard7.TabIndex = 3;
             // 
             // dgvReport
@@ -391,7 +391,7 @@ namespace Dashboard
             dgvReport.RowHeadersWidth = 51;
             dgvReport.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dgvReport.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvReport.Size = new Size(1313, 255);
+            dgvReport.Size = new Size(1307, 255);
             dgvReport.TabIndex = 7;
             // 
             // Column5
@@ -446,7 +446,7 @@ namespace Dashboard
             panel1.Controls.Add(tableLayoutPanel1);
             panel1.Location = new Point(-6, 44);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1391, 134);
+            panel1.Size = new Size(1385, 134);
             panel1.TabIndex = 5;
             // 
             // tableLayoutPanel1
@@ -466,7 +466,7 @@ namespace Dashboard
             tableLayoutPanel1.RowCount = 1;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 105F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.Size = new Size(1368, 134);
+            tableLayoutPanel1.Size = new Size(1362, 134);
             tableLayoutPanel1.TabIndex = 0;
             // 
             // pgpNewCustomer
@@ -479,12 +479,12 @@ namespace Dashboard
             pgpNewCustomer.Controls.Add(moonLabel3);
             pgpNewCustomer.Dock = DockStyle.Fill;
             pgpNewCustomer.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
-            pgpNewCustomer.Location = new Point(914, 10);
+            pgpNewCustomer.Location = new Point(910, 10);
             pgpNewCustomer.Margin = new Padding(5);
             pgpNewCustomer.Name = "pgpNewCustomer";
             pgpNewCustomer.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
             pgpNewCustomer.PrimerColor = Color.YellowGreen;
-            pgpNewCustomer.Size = new Size(444, 114);
+            pgpNewCustomer.Size = new Size(442, 114);
             pgpNewCustomer.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
             pgpNewCustomer.Style = ReaLTaiizor.Controls.ParrotGradientPanel.GradientStyle.Corners;
             pgpNewCustomer.TabIndex = 8;
@@ -536,12 +536,12 @@ namespace Dashboard
             pgpProfit.Controls.Add(moonLabel2);
             pgpProfit.Dock = DockStyle.Fill;
             pgpProfit.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
-            pgpProfit.Location = new Point(462, 10);
+            pgpProfit.Location = new Point(460, 10);
             pgpProfit.Margin = new Padding(5);
             pgpProfit.Name = "pgpProfit";
             pgpProfit.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
             pgpProfit.PrimerColor = Color.YellowGreen;
-            pgpProfit.Size = new Size(442, 114);
+            pgpProfit.Size = new Size(440, 114);
             pgpProfit.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
             pgpProfit.Style = ReaLTaiizor.Controls.ParrotGradientPanel.GradientStyle.Corners;
             pgpProfit.TabIndex = 7;
@@ -598,7 +598,7 @@ namespace Dashboard
             pgpMonthlyCost.Name = "pgpMonthlyCost";
             pgpMonthlyCost.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.None;
             pgpMonthlyCost.PrimerColor = Color.LemonChiffon;
-            pgpMonthlyCost.Size = new Size(442, 114);
+            pgpMonthlyCost.Size = new Size(440, 114);
             pgpMonthlyCost.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
             pgpMonthlyCost.Style = ReaLTaiizor.Controls.ParrotGradientPanel.GradientStyle.Corners;
             pgpMonthlyCost.TabIndex = 6;
@@ -683,7 +683,7 @@ namespace Dashboard
             hopeGroupBox5.Location = new Point(5, 5);
             hopeGroupBox5.Name = "hopeGroupBox5";
             hopeGroupBox5.ShowText = false;
-            hopeGroupBox5.Size = new Size(1366, 595);
+            hopeGroupBox5.Size = new Size(1360, 595);
             hopeGroupBox5.TabIndex = 8;
             hopeGroupBox5.TabStop = false;
             hopeGroupBox5.Text = "hopeGroupBox5";
@@ -694,7 +694,7 @@ namespace Dashboard
             styledPanel9.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             styledPanel9.Location = new Point(2, 181);
             styledPanel9.Name = "styledPanel9";
-            styledPanel9.Size = new Size(1355, 322);
+            styledPanel9.Size = new Size(1349, 322);
             styledPanel9.TabIndex = 0;
             // 
             // materialCard1
@@ -711,7 +711,7 @@ namespace Dashboard
             materialCard1.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialCard1.Name = "materialCard1";
             materialCard1.Padding = new Padding(14);
-            materialCard1.Size = new Size(1378, 65);
+            materialCard1.Size = new Size(1372, 65);
             materialCard1.TabIndex = 1;
             // 
             // materialLabel1
@@ -739,7 +739,7 @@ namespace Dashboard
             btnNotification.Icon = MyResources.bell;
             btnNotification.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Default;
             btnNotification.ImageKey = "(none)";
-            btnNotification.Location = new Point(1322, 14);
+            btnNotification.Location = new Point(1316, 14);
             btnNotification.Margin = new Padding(4, 6, 4, 6);
             btnNotification.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             btnNotification.Name = "btnNotification";
@@ -953,7 +953,7 @@ namespace Dashboard
             BodyMeasurement.ImageKey = "bodyMeasurement.png";
             BodyMeasurement.Location = new Point(4, 24);
             BodyMeasurement.Name = "BodyMeasurement";
-            BodyMeasurement.Size = new Size(1378, 672);
+            BodyMeasurement.Size = new Size(1372, 672);
             BodyMeasurement.TabIndex = 2;
             BodyMeasurement.Text = "Body Measurement";
             BodyMeasurement.UseVisualStyleBackColor = true;
@@ -972,7 +972,7 @@ namespace Dashboard
             materialCard4.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialCard4.Name = "materialCard4";
             materialCard4.Padding = new Padding(14);
-            materialCard4.Size = new Size(1378, 65);
+            materialCard4.Size = new Size(1372, 65);
             materialCard4.TabIndex = 2;
             // 
             // materialLabel4
@@ -1000,7 +1000,7 @@ namespace Dashboard
             btnNotificationBodyMeasurement.Icon = MyResources.bell;
             btnNotificationBodyMeasurement.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Default;
             btnNotificationBodyMeasurement.ImageKey = "(none)";
-            btnNotificationBodyMeasurement.Location = new Point(1322, 14);
+            btnNotificationBodyMeasurement.Location = new Point(1316, 14);
             btnNotificationBodyMeasurement.Margin = new Padding(4, 6, 4, 6);
             btnNotificationBodyMeasurement.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             btnNotificationBodyMeasurement.Name = "btnNotificationBodyMeasurement";
@@ -1019,7 +1019,7 @@ namespace Dashboard
             panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1378, 672);
+            panel2.Size = new Size(1372, 672);
             panel2.TabIndex = 3;
             // 
             // mcMeasurement
@@ -1035,7 +1035,7 @@ namespace Dashboard
             mcMeasurement.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             mcMeasurement.Name = "mcMeasurement";
             mcMeasurement.Padding = new Padding(0, 17, 0, 0);
-            mcMeasurement.Size = new Size(1376, 670);
+            mcMeasurement.Size = new Size(1370, 670);
             mcMeasurement.TabIndex = 0;
             // 
             // hopeGroupBox3
@@ -1051,7 +1051,7 @@ namespace Dashboard
             hopeGroupBox3.Location = new Point(0, 17);
             hopeGroupBox3.Name = "hopeGroupBox3";
             hopeGroupBox3.ShowText = false;
-            hopeGroupBox3.Size = new Size(1376, 581);
+            hopeGroupBox3.Size = new Size(1370, 581);
             hopeGroupBox3.TabIndex = 170;
             hopeGroupBox3.TabStop = false;
             hopeGroupBox3.Text = "hopeGroupBox3";
@@ -1071,7 +1071,7 @@ namespace Dashboard
             styledPanel4.Controls.Add(pictureBox7);
             styledPanel4.Location = new Point(18, 64);
             styledPanel4.Name = "styledPanel4";
-            styledPanel4.Size = new Size(1339, 146);
+            styledPanel4.Size = new Size(1333, 146);
             styledPanel4.TabIndex = 167;
             // 
             // spaceSeparatorHorizontal3
@@ -1083,7 +1083,7 @@ namespace Dashboard
             spaceSeparatorHorizontal3.Location = new Point(23, 51);
             spaceSeparatorHorizontal3.Name = "spaceSeparatorHorizontal3";
             spaceSeparatorHorizontal3.NoRounding = false;
-            spaceSeparatorHorizontal3.Size = new Size(1236, 4);
+            spaceSeparatorHorizontal3.Size = new Size(1230, 4);
             spaceSeparatorHorizontal3.TabIndex = 158;
             spaceSeparatorHorizontal3.Text = "spaceSeparatorHorizontal3";
             spaceSeparatorHorizontal3.Transparent = false;
@@ -1092,7 +1092,7 @@ namespace Dashboard
             // 
             pdtOrderDeadline.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pdtOrderDeadline.FontSize = ReaLTaiizor.Extension.Poison.PoisonDateTimeSize.Tall;
-            pdtOrderDeadline.Location = new Point(979, 88);
+            pdtOrderDeadline.Location = new Point(973, 88);
             pdtOrderDeadline.MinimumSize = new Size(0, 35);
             pdtOrderDeadline.Name = "pdtOrderDeadline";
             pdtOrderDeadline.Size = new Size(280, 35);
@@ -1120,7 +1120,7 @@ namespace Dashboard
             materialLabel13.Depth = 0;
             materialLabel13.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
             materialLabel13.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
-            materialLabel13.Location = new Point(979, 65);
+            materialLabel13.Location = new Point(973, 65);
             materialLabel13.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialLabel13.Name = "materialLabel13";
             materialLabel13.Size = new Size(101, 17);
@@ -1227,7 +1227,7 @@ namespace Dashboard
             styledPanel5.Controls.Add(materialLabel46);
             styledPanel5.Controls.Add(materialLabel50);
             styledPanel5.Controls.Add(materialLabel53);
-            styledPanel5.Location = new Point(790, 225);
+            styledPanel5.Location = new Point(784, 225);
             styledPanel5.Name = "styledPanel5";
             styledPanel5.Size = new Size(567, 339);
             styledPanel5.TabIndex = 169;
@@ -1610,7 +1610,7 @@ namespace Dashboard
             styledPanel7.Location = new Point(18, 225);
             styledPanel7.Name = "styledPanel7";
             styledPanel7.Padding = new Padding(3);
-            styledPanel7.Size = new Size(746, 339);
+            styledPanel7.Size = new Size(740, 339);
             styledPanel7.TabIndex = 168;
             // 
             // txtArmCircumference
@@ -1631,7 +1631,7 @@ namespace Dashboard
             txtArmCircumference.ForeColor = Color.Black;
             txtArmCircumference.Lighting = false;
             txtArmCircumference.LinearGradientPen = false;
-            txtArmCircumference.Location = new Point(555, 98);
+            txtArmCircumference.Location = new Point(552, 98);
             txtArmCircumference.Name = "txtArmCircumference";
             txtArmCircumference.PenWidth = 10;
             txtArmCircumference.RGB = false;
@@ -1725,7 +1725,7 @@ namespace Dashboard
             txtSleeveLength.ForeColor = Color.Black;
             txtSleeveLength.Lighting = false;
             txtSleeveLength.LinearGradientPen = false;
-            txtSleeveLength.Location = new Point(555, 164);
+            txtSleeveLength.Location = new Point(552, 164);
             txtSleeveLength.Name = "txtSleeveLength";
             txtSleeveLength.PenWidth = 10;
             txtSleeveLength.RGB = false;
@@ -1997,7 +1997,7 @@ namespace Dashboard
             spaceSeparatorHorizontal1.Location = new Point(26, 69);
             spaceSeparatorHorizontal1.Name = "spaceSeparatorHorizontal1";
             spaceSeparatorHorizontal1.NoRounding = false;
-            spaceSeparatorHorizontal1.Size = new Size(695, 4);
+            spaceSeparatorHorizontal1.Size = new Size(689, 4);
             spaceSeparatorHorizontal1.TabIndex = 157;
             spaceSeparatorHorizontal1.Text = "spaceSeparatorHorizontal1";
             spaceSeparatorHorizontal1.Transparent = false;
@@ -2022,7 +2022,7 @@ namespace Dashboard
             materialLabel57.Depth = 0;
             materialLabel57.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
             materialLabel57.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
-            materialLabel57.Location = new Point(555, 144);
+            materialLabel57.Location = new Point(552, 144);
             materialLabel57.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialLabel57.Name = "materialLabel57";
             materialLabel57.Size = new Size(96, 17);
@@ -2075,7 +2075,7 @@ namespace Dashboard
             materialLabel42.Depth = 0;
             materialLabel42.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
             materialLabel42.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
-            materialLabel42.Location = new Point(679, 111);
+            materialLabel42.Location = new Point(676, 111);
             materialLabel42.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialLabel42.Name = "materialLabel42";
             materialLabel42.Size = new Size(20, 17);
@@ -2115,7 +2115,7 @@ namespace Dashboard
             materialLabel43.Depth = 0;
             materialLabel43.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
             materialLabel43.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
-            materialLabel43.Location = new Point(679, 176);
+            materialLabel43.Location = new Point(676, 176);
             materialLabel43.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialLabel43.Name = "materialLabel43";
             materialLabel43.Size = new Size(20, 17);
@@ -2165,7 +2165,7 @@ namespace Dashboard
             materialLabel58.Depth = 0;
             materialLabel58.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
             materialLabel58.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Subtitle2;
-            materialLabel58.Location = new Point(555, 78);
+            materialLabel58.Location = new Point(552, 78);
             materialLabel58.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialLabel58.Name = "materialLabel58";
             materialLabel58.Size = new Size(128, 17);
@@ -2469,14 +2469,14 @@ namespace Dashboard
             materialCard6.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialCard6.Name = "materialCard6";
             materialCard6.Padding = new Padding(14);
-            materialCard6.Size = new Size(1376, 72);
+            materialCard6.Size = new Size(1370, 72);
             materialCard6.TabIndex = 3;
             // 
             // styledPanel6
             // 
             styledPanel6.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             styledPanel6.Controls.Add(btnClear);
-            styledPanel6.Location = new Point(1092, 7);
+            styledPanel6.Location = new Point(1086, 7);
             styledPanel6.Name = "styledPanel6";
             styledPanel6.Size = new Size(126, 49);
             styledPanel6.TabIndex = 159;
@@ -2511,7 +2511,7 @@ namespace Dashboard
             btnSubmit.Font = new Font("Segoe UI", 12F);
             btnSubmit.HoverTextColor = Color.FromArgb(120, 160, 0);
             btnSubmit.InfoColor = Color.FromArgb(144, 147, 153);
-            btnSubmit.Location = new Point(1224, 7);
+            btnSubmit.Location = new Point(1218, 7);
             btnSubmit.Name = "btnSubmit";
             btnSubmit.PrimaryColor = Color.FromArgb(141, 182, 0);
             btnSubmit.Size = new Size(128, 49);
@@ -2529,7 +2529,7 @@ namespace Dashboard
             CostConsumption.ImageKey = "cost.png";
             CostConsumption.Location = new Point(4, 24);
             CostConsumption.Name = "CostConsumption";
-            CostConsumption.Size = new Size(1378, 672);
+            CostConsumption.Size = new Size(1372, 672);
             CostConsumption.TabIndex = 3;
             CostConsumption.Text = "Cost Consumption";
             // 
@@ -2546,7 +2546,7 @@ namespace Dashboard
             materialCard10.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialCard10.Name = "materialCard10";
             materialCard10.Padding = new Padding(17);
-            materialCard10.Size = new Size(1378, 607);
+            materialCard10.Size = new Size(1372, 607);
             materialCard10.TabIndex = 4;
             // 
             // hopeGroupBox4
@@ -2562,7 +2562,7 @@ namespace Dashboard
             hopeGroupBox4.Location = new Point(17, 17);
             hopeGroupBox4.Name = "hopeGroupBox4";
             hopeGroupBox4.ShowText = false;
-            hopeGroupBox4.Size = new Size(1342, 571);
+            hopeGroupBox4.Size = new Size(1336, 571);
             hopeGroupBox4.TabIndex = 178;
             hopeGroupBox4.TabStop = false;
             hopeGroupBox4.Text = "hopeGroupBox4";
@@ -2584,14 +2584,14 @@ namespace Dashboard
             styledPanel3.Controls.Add(btnCostHistory);
             styledPanel3.Location = new Point(23, 16);
             styledPanel3.Name = "styledPanel3";
-            styledPanel3.Size = new Size(1284, 152);
+            styledPanel3.Size = new Size(1278, 152);
             styledPanel3.TabIndex = 177;
             // 
             // styledPanel8
             // 
             styledPanel8.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             styledPanel8.Controls.Add(btnCostClear);
-            styledPanel8.Location = new Point(1049, 88);
+            styledPanel8.Location = new Point(1043, 88);
             styledPanel8.Name = "styledPanel8";
             styledPanel8.Size = new Size(107, 40);
             styledPanel8.TabIndex = 173;
@@ -2763,7 +2763,7 @@ namespace Dashboard
             btnCostAdd.Font = new Font("Segoe UI", 12F);
             btnCostAdd.HoverTextColor = Color.FromArgb(120, 160, 0);
             btnCostAdd.InfoColor = Color.FromArgb(144, 147, 153);
-            btnCostAdd.Location = new Point(1162, 88);
+            btnCostAdd.Location = new Point(1156, 88);
             btnCostAdd.Name = "btnCostAdd";
             btnCostAdd.PrimaryColor = Color.FromArgb(141, 182, 0);
             btnCostAdd.Size = new Size(101, 40);
@@ -2807,7 +2807,7 @@ namespace Dashboard
             btnCostHistory.Icon = MyResources.refresh;
             btnCostHistory.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Default;
             btnCostHistory.ImageKey = "(none)";
-            btnCostHistory.Location = new Point(1049, 24);
+            btnCostHistory.Location = new Point(1043, 24);
             btnCostHistory.Margin = new Padding(4, 6, 4, 6);
             btnCostHistory.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             btnCostHistory.Name = "btnCostHistory";
@@ -2838,7 +2838,7 @@ namespace Dashboard
             styledPanel1.Controls.Add(materialLabel6);
             styledPanel1.Controls.Add(materialLabel14);
             styledPanel1.Controls.Add(materialLabel8);
-            styledPanel1.Location = new Point(857, 186);
+            styledPanel1.Location = new Point(851, 186);
             styledPanel1.Name = "styledPanel1";
             styledPanel1.Size = new Size(450, 363);
             styledPanel1.TabIndex = 175;
@@ -3111,7 +3111,7 @@ namespace Dashboard
             styledPanel2.Controls.Add(pictureBox8);
             styledPanel2.Location = new Point(23, 186);
             styledPanel2.Name = "styledPanel2";
-            styledPanel2.Size = new Size(754, 363);
+            styledPanel2.Size = new Size(748, 363);
             styledPanel2.TabIndex = 176;
             // 
             // materialLabel59
@@ -3172,7 +3172,7 @@ namespace Dashboard
             dgvMaterialList.RowHeadersWidth = 51;
             dgvMaterialList.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dgvMaterialList.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvMaterialList.Size = new Size(684, 303);
+            dgvMaterialList.Size = new Size(678, 303);
             dgvMaterialList.TabIndex = 161;
             // 
             // colItem
@@ -3226,7 +3226,7 @@ namespace Dashboard
             materialCard5.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialCard5.Name = "materialCard5";
             materialCard5.Padding = new Padding(14);
-            materialCard5.Size = new Size(1378, 65);
+            materialCard5.Size = new Size(1372, 65);
             materialCard5.TabIndex = 3;
             // 
             // materialLabel5
@@ -3254,7 +3254,7 @@ namespace Dashboard
             btnNotificationCostConsumption.Icon = MyResources.bell;
             btnNotificationCostConsumption.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Default;
             btnNotificationCostConsumption.ImageKey = "(none)";
-            btnNotificationCostConsumption.Location = new Point(1322, 14);
+            btnNotificationCostConsumption.Location = new Point(1316, 14);
             btnNotificationCostConsumption.Margin = new Padding(4, 6, 4, 6);
             btnNotificationCostConsumption.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             btnNotificationCostConsumption.Name = "btnNotificationCostConsumption";
@@ -3491,7 +3491,7 @@ namespace Dashboard
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             AutoValidate = AutoValidate.EnablePreventFocusChange;
             BackColor = SystemColors.Control;
-            ClientSize = new Size(1386, 788);
+            ClientSize = new Size(1380, 788);
             Controls.Add(mtcSelectionControl);
             Controls.Add(pnlNotification);
             DrawerAutoHide = false;
