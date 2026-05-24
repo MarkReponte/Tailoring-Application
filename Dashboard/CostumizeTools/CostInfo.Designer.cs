@@ -367,9 +367,9 @@
             // 
             // ColMeters
             // 
-            ColMeters.HeaderText = "Meters";
+            ColMeters.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            ColMeters.HeaderText = "Meters/Quantity";
             ColMeters.Name = "ColMeters";
-            ColMeters.Width = 80;
             // 
             // colPricePerMeter
             // 
@@ -406,10 +406,6 @@
 
         private ReaLTaiizor.Controls.MaterialCard materialCard1;
         private ReaLTaiizor.Controls.PoisonDataGridView dgvMaterialListSaved;
-        private DataGridViewTextBoxColumn colItem;
-        private DataGridViewTextBoxColumn ColMeters;
-        private DataGridViewTextBoxColumn colPricePerMeter;
-        private DataGridViewTextBoxColumn colTotal;
         private ReaLTaiizor.Controls.GroupBox groupBox1;
         private ReaLTaiizor.Controls.PoisonLabel lblGrandTotalCostSaved;
         private ReaLTaiizor.Controls.MaterialLabel materialLabel64;
@@ -427,5 +423,9 @@
         private ReaLTaiizor.Controls.PoisonLabel lblQuantitySaved;
         private ReaLTaiizor.Controls.PoisonLabel lblLaborCostSaved;
         private ReaLTaiizor.Controls.PoisonLabel lblMaterialTotalSaved;
+        private DataGridViewTextBoxColumn colItem;
+        private DataGridViewTextBoxColumn ColMeters;
+        private DataGridViewTextBoxColumn colPricePerMeter;
+        private DataGridViewTextBoxColumn colTotal;
     }
 }

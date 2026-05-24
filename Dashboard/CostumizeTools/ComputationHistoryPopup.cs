@@ -30,10 +30,7 @@ namespace Dashboard.CostumizeTools
                 {
                     CostCard card = new CostCard(); 
 
-                    card.lblCustomerNameCost.Text = cost.CustomerNameCost;
-                    card.lblDescription.Text = cost.Description;
-                    card.lblGrandTotal.Text = "₱" + cost.GrandTotalCost.ToString("N2");
-                    card.lblDateSaved.Text = cost.DateCreated.ToString("MM/dd/yy");
+                    card.SetData(cost);
 
                     flpComputationHistory.Controls.Add(card);
 
