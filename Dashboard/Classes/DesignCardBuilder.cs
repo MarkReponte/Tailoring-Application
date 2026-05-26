@@ -9,26 +9,28 @@ namespace Dashboard.Classes
     {
         public class DesignCard
         {
-            public MaterialCard Card { get; set; }
-            public PictureBox PicBox { get; set; }
-            public HopeButton RemoveBtn { get; set; }
+            public MaterialCard Card { get; set; } = null!;
+            public PictureBox PicBox { get; set; } = null!;
+            public HopeButton RemoveBtn { get; set; } = null!;
+            public ComboBox OrderLinkComboBox { get; set; } = null!;
         }
 
         public static DesignCard Build()
         {
             var card = new MaterialCard
             {
-                Size = new Size(160, 160),
+                Size = new Size(220, 245),
                 BackColor = Color.FromArgb(142, 188, 30),
                 Padding = new Padding(5),
                 Margin = new Padding(10)
             };
-            card.HandleCreated += (s, e) => RoundedItem.MakeRounded(card, 30);
+            card.HandleCreated += (s, e) => RoundedItem.MakeRounded(card, 18);
 
             var pb = new PictureBox
             {
                 SizeMode = PictureBoxSizeMode.Zoom,
-                Dock = DockStyle.Fill,
+                Location = new Point(5, 5),
+                Size = new Size(210, 165),
                 BackColor = Color.White
             };
 
@@ -43,11 +45,37 @@ namespace Dashboard.Classes
             };
             btnRemove.HandleCreated += (s, e) => RoundedItem.MakeRounded(btnRemove, 10);
 
+            var lblOrderLink = new Label
+            {
+                Text = "Linked order",
+                Location = new Point(8, 178),
+                Size = new Size(204, 18),
+                Font = new Font("Segoe UI", 9f, FontStyle.Bold),
+                ForeColor = Color.FromArgb(40, 60, 30),
+                BackColor = Color.Transparent
+            };
+
+            var cboOrderLink = new ComboBox
+            {
+                DropDownStyle = ComboBoxStyle.DropDownList,
+                Location = new Point(8, 200),
+                Size = new Size(204, 30),
+                Font = new Font("Segoe UI", 9f)
+            };
+
             card.Controls.Add(pb);
+            card.Controls.Add(lblOrderLink);
+            card.Controls.Add(cboOrderLink);
             card.Controls.Add(btnRemove);
             btnRemove.BringToFront();
 
-            return new DesignCard { Card = card, PicBox = pb, RemoveBtn = btnRemove };
+            return new DesignCard
+            {
+                Card = card,
+                PicBox = pb,
+                RemoveBtn = btnRemove,
+                OrderLinkComboBox = cboOrderLink
+            };
         }
     }
 }

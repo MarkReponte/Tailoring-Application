@@ -32,9 +32,149 @@ namespace Dashboard
             lblStatusBadge.BackColor = badgeColor;
         }
 
-        private void OrderCard_Clicked(object sender, EventArgs e)
+        private async void OrderCard_Clicked(object sender, EventArgs e)
         {
-            MessageBox.Show(AllMeasurements, "Order Details: " + CustomerName);
+            Guid? measurementId = GetMeasurementId();
+
+            if (!measurementId.HasValue)
+            {
+                MessageBox.Show(AllMeasurements, "Order Details: " + CustomerName);
+                return;
+            }
+
+            try
+            {
+                var galleryService = new GalleryService();
+                string[] referenceImages = await galleryService.GetImageFilesForOrderAsync(measurementId.Value);
+
+                if (referenceImages.Length == 0)
+                {
+                    MessageBox.Show(AllMeasurements, "Order Details: " + CustomerName);
+                    return;
+                }
+
+                ShowOrderDetailsWithReferences(referenceImages);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Could not load reference photos: {ex.Message}", "Order References", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(AllMeasurements, "Order Details: " + CustomerName);
+            }
+        }
+
+        private Guid? GetMeasurementId()
+        {
+            if (MeasurementId == null || MeasurementId.Length == 0 || MeasurementId[0] == null)
+            {
+                return null;
+            }
+
+            return Guid.TryParse(MeasurementId[0]!.ToString(), out Guid id) ? id : null;
+        }
+
+        private void ShowOrderDetailsWithReferences(string[] referenceImages)
+        {
+            var details = new Form
+            {
+                Text = "Order Details: " + CustomerName,
+                Size = new Size(980, 620),
+                StartPosition = FormStartPosition.CenterScreen
+            };
+
+            var layout = new TableLayoutPanel
+            {
+                Dock = DockStyle.Fill,
+                ColumnCount = 2,
+                RowCount = 1,
+                Padding = new Padding(12)
+            };
+            layout.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 45));
+            layout.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 55));
+
+            var measurementBox = new TextBox
+            {
+                Text = AllMeasurements,
+                Dock = DockStyle.Fill,
+                Multiline = true,
+                ReadOnly = true,
+                ScrollBars = ScrollBars.Vertical,
+                Font = new Font("Segoe UI", 10f)
+            };
+
+            var referencePanel = new FlowLayoutPanel
+            {
+                Dock = DockStyle.Fill,
+                AutoScroll = true,
+                BackColor = Color.White,
+                Padding = new Padding(4)
+            };
+
+            foreach (string imagePath in referenceImages)
+            {
+                try
+                {
+                    var picture = new PictureBox
+                    {
+                        Image = LoadImageCopy(imagePath),
+                        SizeMode = PictureBoxSizeMode.Zoom,
+                        Size = new Size(230, 180),
+                        BackColor = Color.FromArgb(248, 250, 253),
+                        Margin = new Padding(8),
+                        Cursor = Cursors.Hand
+                    };
+
+                    picture.Click += (s, e) => ShowReferenceImageZoom(picture.Image);
+                    referencePanel.Controls.Add(picture);
+                }
+                catch
+                {
+                    // Ignore broken image files so the rest of the references still open.
+                }
+            }
+
+            details.FormClosed += (s, e) =>
+            {
+                foreach (Control control in referencePanel.Controls)
+                {
+                    if (control is PictureBox picture)
+                    {
+                        picture.Image?.Dispose();
+                    }
+                }
+            };
+
+            layout.Controls.Add(measurementBox, 0, 0);
+            layout.Controls.Add(referencePanel, 1, 0);
+            details.Controls.Add(layout);
+            details.ShowDialog();
+        }
+
+        private static void ShowReferenceImageZoom(Image image)
+        {
+            var zoom = new Form
+            {
+                Size = new Size(850, 650),
+                StartPosition = FormStartPosition.CenterScreen
+            };
+
+            var picture = new PictureBox
+            {
+                Image = new Bitmap(image),
+                Dock = DockStyle.Fill,
+                SizeMode = PictureBoxSizeMode.Zoom
+            };
+
+            zoom.FormClosed += (s, e) => picture.Image?.Dispose();
+            zoom.Controls.Add(picture);
+            zoom.ShowDialog();
+        }
+
+        private static Image LoadImageCopy(string imagePath)
+        {
+            byte[] bytes = File.ReadAllBytes(imagePath);
+            using var ms = new MemoryStream(bytes);
+            using var source = Image.FromStream(ms);
+            return new Bitmap(source);
         }
 
         private void RoundControl(Control control, int radius)

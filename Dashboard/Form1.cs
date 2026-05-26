@@ -30,6 +30,21 @@ namespace Dashboard
         private readonly NotificationPopup _notificationPopup;
         private DashboardService _dashboardService;
         private DashboardController _dashboardController;
+        private Guid? _editingMeasurementId;
+
+        private sealed class GalleryOrderOption
+        {
+            public GalleryOrderOption(Guid? id, string displayName)
+            {
+                Id = id;
+                DisplayName = displayName;
+            }
+
+            public Guid? Id { get; }
+            public string DisplayName { get; }
+
+            public override string ToString() => DisplayName;
+        }
 
         private static void ShowWarning(string msg) =>
             MessageBox.Show(msg, "Input Missing", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -92,6 +107,7 @@ namespace Dashboard
 
             FormConfigurator.ConfigureDashboardLabel(moonLabel1, moonLabel2, moonLabel3);
             FormConfigurator.ConfigureOrderSummaryLabel(foxLabel1, lblMonthlyCost, lblMonthlyRevenue, lblCustomers);
+            ConfigureSmoothDashboard();
             FormConfigurator.ConfigureInputFonts(txtName, hcbGender);
             FormConfigurator.ConfigureCostButtonPreview(materialCard10);
             FormConfigurator.ConfigureAccentHoverButton(btnSaveCost, CostMaterialButton_MouseEnter, CostMaterialButton_MouseLeave);
@@ -420,13 +436,26 @@ namespace Dashboard
             try
             {
                 var measurements = BuildMeasurementsModel();
-                await _measurementRepo.AddAsync(measurements);
-                await _measurementRepo.SaveAsync();
+                if (_editingMeasurementId.HasValue)
+                {
+                    measurements.Id = _editingMeasurementId.Value;
+                    await UpdateMeasurementAsync(measurements);
+                    await LoadOrdersFromDatabaseAsync();
+                    await _dashboardController.RefreshUIAsync(lblCustomers, lblMonthlyRevenue, lblMonthlyCost, dgvReport);
+                    NotificationManager.AddNotification(
+                        "Order updated",
+                        $"{measurements.CustomerName}'s body measurements were updated.");
+                }
+                else
+                {
+                    await _measurementRepo.AddAsync(measurements);
+                    await _measurementRepo.SaveAsync();
 
-                flpOrderList.Controls.Add(BuildOrderCard(measurements));
-                NotificationManager.AddNotification(
-                    "New order created",
-                    $"{measurements.CustomerName}'s body measurements were saved.");
+                    flpOrderList.Controls.Add(BuildOrderCard(measurements));
+                    NotificationManager.AddNotification(
+                        "New order created",
+                        $"{measurements.CustomerName}'s body measurements were saved.");
+                }
             }
             catch (Exception ex)
             {
@@ -464,6 +493,43 @@ namespace Dashboard
             Length = GetCyberValue(txtLength)
         };
 
+        private static async Task UpdateMeasurementAsync(Measurements measurements)
+        {
+            using var db = new SewingDbContext();
+            var existing = await db.Measurements.FirstOrDefaultAsync(m => m.Id == measurements.Id);
+
+            if (existing == null)
+            {
+                throw new InvalidOperationException("The selected order no longer exists.");
+            }
+
+            existing.CustomerName = measurements.CustomerName;
+            existing.Gender = measurements.Gender;
+            existing.OrderDeadline = measurements.OrderDeadline;
+            existing.Status = measurements.Status;
+            existing.Shoulder = measurements.Shoulder;
+            existing.ArmCircumference = measurements.ArmCircumference;
+            existing.FrontFigure = measurements.FrontFigure;
+            existing.UpperBust = measurements.UpperBust;
+            existing.Bust = measurements.Bust;
+            existing.LowerBust = measurements.LowerBust;
+            existing.BackFigure = measurements.BackFigure;
+            existing.FrontChest = measurements.FrontChest;
+            existing.BackChest = measurements.BackChest;
+            existing.UpperHips = measurements.UpperHips;
+            existing.Waistline = measurements.Waistline;
+            existing.NeckDip = measurements.NeckDip;
+            existing.ArmHole = measurements.ArmHole;
+            existing.SleeveLength = measurements.SleeveLength;
+            existing.LowerHips = measurements.LowerHips;
+            existing.Crotch = measurements.Crotch;
+            existing.Thigh = measurements.Thigh;
+            existing.CalfCircumference = measurements.CalfCircumference;
+            existing.Length = measurements.Length;
+
+            await db.SaveChangesAsync();
+        }
+
         private double GetCyberValue(CyberTextBox field)
         {
             foreach (Control c in field.Controls)
@@ -477,6 +543,8 @@ namespace Dashboard
             txtName.Clear();
             hcbGender.SelectedIndex = -1;
             pdtOrderDeadline.Value = DateTime.Now;
+            _editingMeasurementId = null;
+            btnSubmit.Text = "Submit";
 
             var fields = new CyberTextBox[]
             {
@@ -647,7 +715,7 @@ namespace Dashboard
             {
                 string saved = await _galleryService.SaveImageAsync(ofd.FileName);
                 await AddDesignCardToGalleryAsync(saved);
-                MessageBox.Show("Design added and saved locally!");
+                MessageBox.Show("Design added. You can link it to an order from its gallery card.");
             }
             catch (Exception ex)
             {
@@ -659,6 +727,7 @@ namespace Dashboard
         {
 
             var result = DesignCardBuilder.Build();
+            await ConfigureOrderLinkComboAsync(result.OrderLinkComboBox, imagePath);
 
             result.PicBox.Click += (s, ev) =>
             {
@@ -672,7 +741,7 @@ namespace Dashboard
                 zoom.ShowDialog();
             };
 
-            result.RemoveBtn.Click += (s, ev) =>
+            result.RemoveBtn.Click += async (s, ev) =>
             {
                 var confirm = MessageBox.Show(
                 "Remove this design?", "Confirm",
@@ -683,8 +752,7 @@ namespace Dashboard
 
                 try
                 {
-                    if (File.Exists(imagePath))
-                        File.Delete(imagePath);
+                    await _galleryService.DeleteImageAsync(imagePath);
                 }
                 catch (Exception ex)
                 {
@@ -707,6 +775,67 @@ namespace Dashboard
             catch (Exception ex)
             {
                 Console.WriteLine($"Error loading image: {ex.Message}");
+            }
+        }
+
+        private async Task ConfigureOrderLinkComboAsync(ComboBox combo, string imagePath)
+        {
+            var options = await LoadGalleryOrderOptionsAsync();
+            Guid? linkedOrderId = await _galleryService.GetLinkedOrderIdAsync(imagePath);
+
+            combo.Items.Clear();
+            combo.Items.AddRange(options.Cast<object>().ToArray());
+            SelectGalleryOrder(combo, linkedOrderId);
+
+            combo.SelectionChangeCommitted += async (s, ev) =>
+            {
+                if (combo.SelectedItem is not GalleryOrderOption selected) return;
+
+                try
+                {
+                    await _galleryService.SetLinkedOrderAsync(imagePath, selected.Id);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Could not link design to order: {ex.Message}", "Gallery Link", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            };
+        }
+
+        private async Task<List<GalleryOrderOption>> LoadGalleryOrderOptionsAsync()
+        {
+            var options = new List<GalleryOrderOption>
+            {
+                new GalleryOrderOption(null, "No linked order")
+            };
+
+            using var db = new SewingDbContext();
+            var orders = await db.Measurements
+                .OrderByDescending(m => m.DateCreated)
+                .ToListAsync();
+
+            options.AddRange(orders.Select(m =>
+                new GalleryOrderOption(
+                    m.Id,
+                    $"{m.CustomerName} ({m.Status}) - {m.DateCreated:MM/dd/yy}")));
+
+            return options;
+        }
+
+        private static void SelectGalleryOrder(ComboBox combo, Guid? linkedOrderId)
+        {
+            foreach (object item in combo.Items)
+            {
+                if (item is GalleryOrderOption option && option.Id == linkedOrderId)
+                {
+                    combo.SelectedItem = item;
+                    return;
+                }
+            }
+
+            if (combo.Items.Count > 0)
+            {
+                combo.SelectedIndex = 0;
             }
         }
 

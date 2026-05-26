@@ -14,6 +14,7 @@
   <ItemGroup>
     <Compile Remove="Logics\**" />
     <EmbeddedResource Remove="Logics\**" />
+    <EmbeddedResource Remove="Form1.DashboardStyle.resx" />
     <None Remove="Logics\**" />
   </ItemGroup>
 

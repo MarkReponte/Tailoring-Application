@@ -82,10 +82,15 @@ namespace Dashboard.Classes
 
                 dgvReport.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
-                if (dgvReport.Columns["CustomerName"] != null) dgvReport.Columns["CustomerName"].HeaderText = "CustomerName";
-                if (dgvReport.Columns["OrderValue"] != null) dgvReport.Columns["OrderValue"].HeaderText = "Order Value";
-                if (dgvReport.Columns["OrderDeadline"] != null) dgvReport.Columns["OrderDeadline"].HeaderText = "Order Deadline";
-                if (dgvReport.Columns["Status"] != null) dgvReport.Columns["Status"].HeaderText = "Status";
+                var customerNameColumn = dgvReport.Columns["CustomerName"];
+                var orderValueColumn = dgvReport.Columns["OrderValue"];
+                var orderDeadlineColumn = dgvReport.Columns["OrderDeadline"];
+                var statusColumn = dgvReport.Columns["Status"];
+
+                if (customerNameColumn != null) customerNameColumn.HeaderText = "CUSTOMER NAME";
+                if (orderValueColumn != null) orderValueColumn.HeaderText = "ORDER VALUE";
+                if (orderDeadlineColumn != null) orderDeadlineColumn.HeaderText = "ORDER DATE";
+                if (statusColumn != null) statusColumn.HeaderText = "STATUS";
             }
             catch (Exception ex)
             {

@@ -93,6 +93,7 @@ namespace Dashboard.Classes
 
                     return new DetailedReportRow
                     {
+                        MeasurementId = m.Id,
                         CustomerName = m.CustomerName,
                         OrderValue = "₱" + totalCost.ToString("N2"),
                         OrderDeadline = m.OrderDeadline.ToString("MM/dd/yy"),
@@ -115,6 +116,7 @@ namespace Dashboard.Classes
 
     public class DetailedReportRow
     {
+        public Guid MeasurementId { get; set; }
         public string CustomerName { get; set; }
         public string OrderValue { get; set; }  
         public string OrderDeadline { get; set; } 

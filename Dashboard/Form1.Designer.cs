@@ -303,13 +303,13 @@ namespace Dashboard
             mtcSelectionControl.Dock = DockStyle.Fill;
             mtcSelectionControl.HotTrack = true;
             mtcSelectionControl.ImageList = imageList;
-            mtcSelectionControl.Location = new Point(0, 88);
+            mtcSelectionControl.Location = new Point(0, 108);
             mtcSelectionControl.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             mtcSelectionControl.Multiline = true;
             mtcSelectionControl.Name = "mtcSelectionControl";
             mtcSelectionControl.Padding = new Point(0, 0);
             mtcSelectionControl.SelectedIndex = 0;
-            mtcSelectionControl.Size = new Size(1380, 700);
+            mtcSelectionControl.Size = new Size(1380, 680);
             mtcSelectionControl.TabIndex = 0;
             mtcSelectionControl.SelectedIndexChanged += mtcSelectionControl_SelectedIndexChanged;
             // 
@@ -320,7 +320,7 @@ namespace Dashboard
             MainDashboard.ImageKey = "dashboard.png";
             MainDashboard.Location = new Point(4, 24);
             MainDashboard.Name = "MainDashboard";
-            MainDashboard.Size = new Size(1372, 672);
+            MainDashboard.Size = new Size(1372, 652);
             MainDashboard.TabIndex = 0;
             MainDashboard.Text = "Dashboard";
             MainDashboard.UseVisualStyleBackColor = true;
@@ -344,7 +344,7 @@ namespace Dashboard
             materialCard7.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialCard7.Name = "materialCard7";
             materialCard7.Padding = new Padding(5);
-            materialCard7.Size = new Size(1372, 607);
+            materialCard7.Size = new Size(1372, 587);
             materialCard7.TabIndex = 3;
             // 
             // dgvReport
@@ -683,7 +683,7 @@ namespace Dashboard
             hopeGroupBox5.Location = new Point(5, 5);
             hopeGroupBox5.Name = "hopeGroupBox5";
             hopeGroupBox5.ShowText = false;
-            hopeGroupBox5.Size = new Size(1360, 595);
+            hopeGroupBox5.Size = new Size(1360, 575);
             hopeGroupBox5.TabIndex = 8;
             hopeGroupBox5.TabStop = false;
             hopeGroupBox5.Text = "hopeGroupBox5";
@@ -758,7 +758,7 @@ namespace Dashboard
             Order.ImageKey = "order.png";
             Order.Location = new Point(4, 24);
             Order.Name = "Order";
-            Order.Size = new Size(1372, 672);
+            Order.Size = new Size(1372, 652);
             Order.TabIndex = 1;
             Order.Text = "Order";
             Order.UseVisualStyleBackColor = true;
@@ -855,7 +855,7 @@ namespace Dashboard
             mcOrders.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             mcOrders.Name = "mcOrders";
             mcOrders.Padding = new Padding(14);
-            mcOrders.Size = new Size(1372, 672);
+            mcOrders.Size = new Size(1372, 652);
             mcOrders.TabIndex = 3;
             // 
             // pictureBox3
@@ -884,7 +884,7 @@ namespace Dashboard
             hopeGroupBox1.Name = "hopeGroupBox1";
             hopeGroupBox1.Padding = new Padding(0);
             hopeGroupBox1.ShowText = false;
-            hopeGroupBox1.Size = new Size(1344, 644);
+            hopeGroupBox1.Size = new Size(1344, 624);
             hopeGroupBox1.TabIndex = 160;
             hopeGroupBox1.TabStop = false;
             hopeGroupBox1.Text = "hopeGroupBox1";
@@ -953,7 +953,7 @@ namespace Dashboard
             BodyMeasurement.ImageKey = "bodyMeasurement.png";
             BodyMeasurement.Location = new Point(4, 24);
             BodyMeasurement.Name = "BodyMeasurement";
-            BodyMeasurement.Size = new Size(1372, 672);
+            BodyMeasurement.Size = new Size(1372, 652);
             BodyMeasurement.TabIndex = 2;
             BodyMeasurement.Text = "Body Measurement";
             BodyMeasurement.UseVisualStyleBackColor = true;
@@ -1019,7 +1019,7 @@ namespace Dashboard
             panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1372, 672);
+            panel2.Size = new Size(1372, 652);
             panel2.TabIndex = 3;
             // 
             // mcMeasurement
@@ -1035,7 +1035,7 @@ namespace Dashboard
             mcMeasurement.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             mcMeasurement.Name = "mcMeasurement";
             mcMeasurement.Padding = new Padding(0, 17, 0, 0);
-            mcMeasurement.Size = new Size(1370, 670);
+            mcMeasurement.Size = new Size(1370, 650);
             mcMeasurement.TabIndex = 0;
             // 
             // hopeGroupBox3
@@ -1051,7 +1051,7 @@ namespace Dashboard
             hopeGroupBox3.Location = new Point(0, 17);
             hopeGroupBox3.Name = "hopeGroupBox3";
             hopeGroupBox3.ShowText = false;
-            hopeGroupBox3.Size = new Size(1370, 581);
+            hopeGroupBox3.Size = new Size(1370, 561);
             hopeGroupBox3.TabIndex = 170;
             hopeGroupBox3.TabStop = false;
             hopeGroupBox3.Text = "hopeGroupBox3";
@@ -1230,7 +1230,7 @@ namespace Dashboard
             styledPanel5.Controls.Add(materialLabel53);
             styledPanel5.Location = new Point(784, 225);
             styledPanel5.Name = "styledPanel5";
-            styledPanel5.Size = new Size(567, 339);
+            styledPanel5.Size = new Size(567, 319);
             styledPanel5.TabIndex = 169;
             // 
             // txtThigh
@@ -1611,7 +1611,7 @@ namespace Dashboard
             styledPanel7.Location = new Point(18, 225);
             styledPanel7.Name = "styledPanel7";
             styledPanel7.Padding = new Padding(3);
-            styledPanel7.Size = new Size(740, 339);
+            styledPanel7.Size = new Size(740, 319);
             styledPanel7.TabIndex = 168;
             // 
             // txtArmCircumference
@@ -2465,7 +2465,7 @@ namespace Dashboard
             materialCard6.Depth = 0;
             materialCard6.Dock = DockStyle.Bottom;
             materialCard6.ForeColor = Color.FromArgb(222, 0, 0, 0);
-            materialCard6.Location = new Point(0, 598);
+            materialCard6.Location = new Point(0, 578);
             materialCard6.Margin = new Padding(14);
             materialCard6.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialCard6.Name = "materialCard6";
@@ -2530,7 +2530,7 @@ namespace Dashboard
             CostConsumption.ImageKey = "cost.png";
             CostConsumption.Location = new Point(4, 24);
             CostConsumption.Name = "CostConsumption";
-            CostConsumption.Size = new Size(1372, 672);
+            CostConsumption.Size = new Size(1372, 652);
             CostConsumption.TabIndex = 3;
             CostConsumption.Text = "Cost Consumption";
             // 
@@ -2547,7 +2547,7 @@ namespace Dashboard
             materialCard10.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialCard10.Name = "materialCard10";
             materialCard10.Padding = new Padding(17);
-            materialCard10.Size = new Size(1372, 607);
+            materialCard10.Size = new Size(1372, 587);
             materialCard10.TabIndex = 4;
             // 
             // hopeGroupBox4
@@ -2563,7 +2563,7 @@ namespace Dashboard
             hopeGroupBox4.Location = new Point(17, 17);
             hopeGroupBox4.Name = "hopeGroupBox4";
             hopeGroupBox4.ShowText = false;
-            hopeGroupBox4.Size = new Size(1336, 571);
+            hopeGroupBox4.Size = new Size(1336, 551);
             hopeGroupBox4.TabIndex = 178;
             hopeGroupBox4.TabStop = false;
             hopeGroupBox4.Text = "hopeGroupBox4";
@@ -2841,7 +2841,7 @@ namespace Dashboard
             styledPanel1.Controls.Add(materialLabel8);
             styledPanel1.Location = new Point(851, 186);
             styledPanel1.Name = "styledPanel1";
-            styledPanel1.Size = new Size(450, 363);
+            styledPanel1.Size = new Size(450, 343);
             styledPanel1.TabIndex = 175;
             // 
             // txtTotalLabor
@@ -3112,7 +3112,7 @@ namespace Dashboard
             styledPanel2.Controls.Add(pictureBox8);
             styledPanel2.Location = new Point(23, 186);
             styledPanel2.Name = "styledPanel2";
-            styledPanel2.Size = new Size(748, 363);
+            styledPanel2.Size = new Size(748, 343);
             styledPanel2.TabIndex = 176;
             // 
             // materialLabel59
@@ -3275,7 +3275,7 @@ namespace Dashboard
             Design.ImageKey = "design.png";
             Design.Location = new Point(4, 24);
             Design.Name = "Design";
-            Design.Size = new Size(1372, 672);
+            Design.Size = new Size(1372, 652);
             Design.TabIndex = 5;
             Design.Text = "Design";
             Design.UseVisualStyleBackColor = true;
@@ -3285,7 +3285,7 @@ namespace Dashboard
             panel3.BackColor = Color.White;
             panel3.Controls.Add(btnAddDesign);
             panel3.Dock = DockStyle.Bottom;
-            panel3.Location = new Point(0, 612);
+            panel3.Location = new Point(0, 592);
             panel3.Name = "panel3";
             panel3.Size = new Size(1372, 60);
             panel3.TabIndex = 6;
@@ -3318,7 +3318,7 @@ namespace Dashboard
             flpDesignGallery.Dock = DockStyle.Fill;
             flpDesignGallery.Location = new Point(0, 65);
             flpDesignGallery.Name = "flpDesignGallery";
-            flpDesignGallery.Size = new Size(1372, 607);
+            flpDesignGallery.Size = new Size(1372, 587);
             flpDesignGallery.TabIndex = 5;
             // 
             // materialCard11
@@ -3504,7 +3504,7 @@ namespace Dashboard
             FormBorderStyle = FormBorderStyle.FixedSingle;
             FormStyle = ReaLTaiizor.Enum.Material.FormStyles.ActionBar_64;
             Name = "Form1";
-            Padding = new Padding(0, 88, 0, 0);
+            Padding = new Padding(0, 108, 0, 0);
             StartPosition = FormStartPosition.CenterScreen;
             Text = "RE Tailoring Services";
             WindowState = FormWindowState.Maximized;
