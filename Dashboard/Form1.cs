@@ -423,8 +423,10 @@ namespace Dashboard
 
         private async void btnSubmit_Click(object sender, EventArgs e)
         {
+            string customerName = GetCyberText(txtName);
+
             if (!_validator.Validate(
-                    txtName.Text,
+                    customerName,
                     hcbGender.SelectedItem,
                     pdtOrderDeadline.Value))
             {
@@ -468,7 +470,7 @@ namespace Dashboard
 
         private Measurements BuildMeasurementsModel() => new Measurements
         {
-            CustomerName = txtName.Text,
+            CustomerName = GetCyberText(txtName),
             Gender = hcbGender.SelectedItem.ToString(),
             OrderDeadline = pdtOrderDeadline.Value.Date,
             Status = "In Progress",
@@ -530,6 +532,30 @@ namespace Dashboard
             await db.SaveChangesAsync();
         }
 
+        private static string GetCyberText(CyberTextBox field)
+        {
+            foreach (Control c in field.Controls)
+                if (c is TextBox tb)
+                    return tb.Text;
+
+            return field.Text;
+        }
+
+        private static void SetCyberText(CyberTextBox field, string text)
+        {
+            foreach (Control c in field.Controls)
+            {
+                if (c is TextBox tb)
+                {
+                    tb.Text = text;
+                    break;
+                }
+            }
+
+            field.Text = text;
+            field.Invalidate();
+        }
+
         private double GetCyberValue(CyberTextBox field)
         {
             foreach (Control c in field.Controls)
@@ -540,7 +566,7 @@ namespace Dashboard
 
         private void ClearForm()
         {
-            txtName.Clear();
+            SetCyberText(txtName, string.Empty);
             hcbGender.SelectedIndex = -1;
             pdtOrderDeadline.Value = DateTime.Now;
             _editingMeasurementId = null;

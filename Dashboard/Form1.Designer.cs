@@ -91,13 +91,13 @@ namespace Dashboard
             mcMeasurement = new ReaLTaiizor.Controls.MaterialCard();
             hopeGroupBox3 = new ReaLTaiizor.Controls.HopeGroupBox();
             styledPanel4 = new Tailoring_Application.Dashboard.StyledPanel();
+            txtName = new ReaLTaiizor.Controls.CyberTextBox();
             spaceSeparatorHorizontal3 = new ReaLTaiizor.Controls.SpaceSeparatorHorizontal();
             pdtOrderDeadline = new ReaLTaiizor.Controls.PoisonDateTime();
             materialLabel10 = new ReaLTaiizor.Controls.MaterialLabel();
             materialLabel13 = new ReaLTaiizor.Controls.MaterialLabel();
             materialLabel11 = new ReaLTaiizor.Controls.MaterialLabel();
             hcbGender = new ReaLTaiizor.Controls.HopeComboBox();
-            txtName = new ReaLTaiizor.Controls.PoisonTextBox();
             materialLabel12 = new ReaLTaiizor.Controls.MaterialLabel();
             pictureBox7 = new PictureBox();
             styledPanel5 = new Tailoring_Application.Dashboard.StyledPanel();
@@ -1060,19 +1060,50 @@ namespace Dashboard
             // styledPanel4
             // 
             styledPanel4.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            styledPanel4.Controls.Add(txtName);
             styledPanel4.Controls.Add(spaceSeparatorHorizontal3);
             styledPanel4.Controls.Add(pdtOrderDeadline);
             styledPanel4.Controls.Add(materialLabel10);
             styledPanel4.Controls.Add(materialLabel13);
             styledPanel4.Controls.Add(materialLabel11);
             styledPanel4.Controls.Add(hcbGender);
-            styledPanel4.Controls.Add(txtName);
             styledPanel4.Controls.Add(materialLabel12);
             styledPanel4.Controls.Add(pictureBox7);
             styledPanel4.Location = new Point(18, 64);
             styledPanel4.Name = "styledPanel4";
             styledPanel4.Size = new Size(1333, 146);
             styledPanel4.TabIndex = 167;
+            // 
+            // txtName
+            // 
+            txtName.Alpha = 20;
+            txtName.BackColor = Color.Transparent;
+            txtName.Background_WidthPen = 2F;
+            txtName.BackgroundPen = true;
+            txtName.ColorBackground = Color.White;
+            txtName.ColorBackground_Pen = Color.FromArgb(153, 153, 153);
+            txtName.ColorLighting = Color.FromArgb(29, 200, 238);
+            txtName.ColorPen_1 = Color.FromArgb(29, 200, 238);
+            txtName.ColorPen_2 = Color.FromArgb(37, 52, 68);
+            txtName.CyberTextBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            txtName.Font = new Font("Arial", 10F);
+            txtName.ForeColor = Color.Black;
+            txtName.Lighting = false;
+            txtName.LinearGradientPen = false;
+            txtName.Location = new Point(92, 88);
+            txtName.Name = "txtName";
+            txtName.PenWidth = 10;
+            txtName.RGB = false;
+            txtName.Rounding = true;
+            txtName.RoundingInt = 25;
+            txtName.Size = new Size(346, 40);
+            txtName.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            txtName.TabIndex = 159;
+            txtName.Tag = "Cyber";
+            txtName.TextAlign = HorizontalAlignment.Left;
+            txtName.TextButton = "";
+            txtName.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            txtName.Timer_RGB = 300;
             // 
             // spaceSeparatorHorizontal3
             // 
@@ -1153,37 +1184,6 @@ namespace Dashboard
             hcbGender.Name = "hcbGender";
             hcbGender.Size = new Size(271, 39);
             hcbGender.TabIndex = 2;
-            // 
-            // txtName
-            // 
-            // 
-            // 
-            // 
-            txtName.CustomButton.Image = null;
-            txtName.CustomButton.Location = new Point(335, 1);
-            txtName.CustomButton.Name = "";
-            txtName.CustomButton.Size = new Size(33, 33);
-            txtName.CustomButton.Style = ReaLTaiizor.Enum.Poison.ColorStyle.Blue;
-            txtName.CustomButton.TabIndex = 1;
-            txtName.CustomButton.Theme = ReaLTaiizor.Enum.Poison.ThemeStyle.Light;
-            txtName.CustomButton.UseSelectable = true;
-            txtName.CustomButton.Visible = false;
-            txtName.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Pixel);
-            txtName.FontSize = ReaLTaiizor.Extension.Poison.PoisonTextBoxSize.Tall;
-            txtName.Location = new Point(92, 92);
-            txtName.MaxLength = 32767;
-            txtName.Name = "txtName";
-            txtName.PasswordChar = '\0';
-            txtName.ScrollBars = ScrollBars.None;
-            txtName.SelectedText = "";
-            txtName.SelectionLength = 0;
-            txtName.SelectionStart = 0;
-            txtName.ShortcutsEnabled = true;
-            txtName.Size = new Size(369, 35);
-            txtName.TabIndex = 1;
-            txtName.UseSelectable = true;
-            txtName.WaterMarkColor = Color.FromArgb(109, 109, 109);
-            txtName.WaterMarkFont = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Pixel);
             // 
             // materialLabel12
             // 
@@ -1943,7 +1943,7 @@ namespace Dashboard
             txtLowerBust.ForeColor = Color.Black;
             txtLowerBust.Lighting = false;
             txtLowerBust.LinearGradientPen = false;
-            txtLowerBust.Location = new Point(16, 295);
+            txtLowerBust.Location = new Point(13, 295);
             txtLowerBust.Name = "txtLowerBust";
             txtLowerBust.PenWidth = 10;
             txtLowerBust.RGB = false;
@@ -3619,7 +3619,6 @@ namespace Dashboard
         private ReaLTaiizor.Controls.MaterialLabel materialLabel12;
         private ReaLTaiizor.Controls.MaterialLabel materialLabel11;
         private ReaLTaiizor.Controls.MaterialLabel materialLabel10;
-        private ReaLTaiizor.Controls.PoisonTextBox txtName;
         private ReaLTaiizor.Controls.MaterialLabel materialLabel15;
         private PictureBox pictureBox5;
         private ReaLTaiizor.Controls.MaterialLabel materialLabel45;
@@ -3773,5 +3772,6 @@ namespace Dashboard
         private DataGridViewTextBoxColumn ColMeters;
         private DataGridViewTextBoxColumn colPricePerMeter;
         private DataGridViewTextBoxColumn colTotal;
+        private ReaLTaiizor.Controls.CyberTextBox txtName;
     }
 }

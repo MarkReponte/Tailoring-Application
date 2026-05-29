@@ -76,9 +76,15 @@ namespace Dashboard
             materialLabel7.Location = new Point(52, 23);
             materialLabel9.Location = new Point(52, 218);
 
-            styledPanel9.Location = new Point(24, 244);
-            styledPanel9.Size = new Size(materialCard7.Width - 48, 322);
-            styledPanel9.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            LayoutDashboardReport();
+            hopeGroupBox5.SendToBack();
+            styledPanel9.SendToBack();
+            panel1.BringToFront();
+            pictureBox1.BringToFront();
+            materialLabel7.BringToFront();
+            pictureBox2.BringToFront();
+            materialLabel9.BringToFront();
+            dgvReport.BringToFront();
 
             ConfigureDashboardReportGrid();
 
@@ -91,8 +97,31 @@ namespace Dashboard
         {
             panel1.Width = materialCard7.Width - 42;
             tableLayoutPanel1.Width = panel1.Width;
-            styledPanel9.Width = materialCard7.Width - 48;
-            dgvReport.Width = materialCard7.Width - 88;
+            LayoutDashboardReport();
+        }
+
+        private void LayoutDashboardReport()
+        {
+            const int reportPanelX = 24;
+            const int reportPanelY = 244;
+            const int reportPanelSidePadding = 20;
+            const int gridTopPadding = 44;
+            const int gridBottomPadding = 24;
+
+            int reportPanelWidth = Math.Max(320, materialCard7.ClientSize.Width - (reportPanelX * 2));
+            int reportPanelHeight = Math.Max(260, materialCard7.ClientSize.Height - reportPanelY - 22);
+
+            styledPanel9.Location = new Point(
+                reportPanelX - hopeGroupBox5.Left,
+                reportPanelY - hopeGroupBox5.Top);
+            styledPanel9.Size = new Size(reportPanelWidth, reportPanelHeight);
+            styledPanel9.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom;
+
+            dgvReport.Location = new Point(reportPanelX + reportPanelSidePadding, reportPanelY + gridTopPadding);
+            dgvReport.Size = new Size(
+                reportPanelWidth - (reportPanelSidePadding * 2),
+                Math.Max(160, reportPanelHeight - gridTopPadding - gridBottomPadding));
+            dgvReport.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom;
         }
 
         private static void StyleMetricPanel(ParrotGradientPanel panel, Color fill, Color primer)
@@ -214,9 +243,7 @@ namespace Dashboard
             grid.ColumnHeadersHeight = 46;
             grid.RowTemplate.Height = 48;
             grid.ReadOnly = false;
-            grid.Location = new Point(44, 292);
-            grid.Size = new Size(materialCard7.Width - 88, 236);
-            grid.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            LayoutDashboardReport();
 
             grid.ColumnHeadersDefaultCellStyle = new DataGridViewCellStyle
             {
@@ -290,10 +317,14 @@ namespace Dashboard
             {
                 Name = DashboardActionColumnName,
                 HeaderText = string.Empty,
-                AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill,
-                FillWeight = 45,
+                AutoSizeMode = DataGridViewAutoSizeColumnMode.None,
+                Width = 64,
                 ReadOnly = true
             });
+            if (grid.Columns[DashboardActionColumnName] is DataGridViewColumn actionColumn)
+            {
+                actionColumn.ToolTipText = "Edit order";
+            }
 
             if (!_dashboardReportStyled)
             {
@@ -383,7 +414,7 @@ namespace Dashboard
         private void PopulateMeasurementForm(Measurements measurement)
         {
             _editingMeasurementId = measurement.Id;
-            txtName.Text = measurement.CustomerName;
+            SetCyberText(txtName, measurement.CustomerName);
             hcbGender.SelectedItem = measurement.Gender;
             pdtOrderDeadline.Value = measurement.OrderDeadline;
             btnSubmit.Text = "Update";
@@ -510,22 +541,15 @@ namespace Dashboard
             e.PaintBackground(e.ClipBounds, true);
 
             Rectangle icon = new Rectangle(
-                e.CellBounds.Left + (e.CellBounds.Width - 18) / 2,
-                e.CellBounds.Top + (e.CellBounds.Height - 18) / 2,
-                18,
-                18);
+                e.CellBounds.Left + (e.CellBounds.Width - 22) / 2,
+                e.CellBounds.Top + (e.CellBounds.Height - 22) / 2,
+                22,
+                22);
 
-            using Pen pen = new Pen(Color.FromArgb(148, 163, 184), 1.8F)
-            {
-                StartCap = LineCap.Round,
-                EndCap = LineCap.Round
-            };
             Graphics graphics = e.Graphics!;
 
-            graphics.SmoothingMode = SmoothingMode.AntiAlias;
-            graphics.DrawLine(pen, icon.Left + 5, icon.Bottom - 5, icon.Right - 4, icon.Top + 6);
-            graphics.DrawLine(pen, icon.Right - 5, icon.Top + 4, icon.Right - 2, icon.Top + 7);
-            graphics.DrawLine(pen, icon.Left + 4, icon.Bottom - 4, icon.Left + 8, icon.Bottom - 3);
+            graphics.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
+            graphics.DrawImage(Properties.Resources.edit, icon);
 
             e.Handled = true;
         }
