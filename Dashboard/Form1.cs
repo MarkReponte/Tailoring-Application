@@ -279,6 +279,11 @@ namespace Dashboard
             {
                 TriggerDashboardView();
             }
+
+            if (mtcSelectionControl.SelectedTab == Design)
+            {
+                _ = RefreshGalleryOrderLinkCombosAsync();
+            }
         }
 
         private async void TriggerDashboardView()
@@ -444,6 +449,7 @@ namespace Dashboard
                     await UpdateMeasurementAsync(measurements);
                     await LoadOrdersFromDatabaseAsync();
                     await _dashboardController.RefreshUIAsync(lblCustomers, lblMonthlyRevenue, lblMonthlyCost, dgvReport);
+                    await RefreshGalleryOrderLinkCombosAsync();
                     NotificationManager.AddNotification(
                         "Order updated",
                         $"{measurements.CustomerName}'s body measurements were updated.");
@@ -454,6 +460,7 @@ namespace Dashboard
                     await _measurementRepo.SaveAsync();
 
                     flpOrderList.Controls.Add(BuildOrderCard(measurements));
+                    await RefreshGalleryOrderLinkCombosAsync();
                     NotificationManager.AddNotification(
                         "New order created",
                         $"{measurements.CustomerName}'s body measurements were saved.");
@@ -809,9 +816,8 @@ namespace Dashboard
             var options = await LoadGalleryOrderOptionsAsync();
             Guid? linkedOrderId = await _galleryService.GetLinkedOrderIdAsync(imagePath);
 
-            combo.Items.Clear();
-            combo.Items.AddRange(options.Cast<object>().ToArray());
-            SelectGalleryOrder(combo, linkedOrderId);
+            combo.Tag = imagePath;
+            PopulateGalleryOrderCombo(combo, options, linkedOrderId);
 
             combo.SelectionChangeCommitted += async (s, ev) =>
             {
@@ -826,6 +832,40 @@ namespace Dashboard
                     MessageBox.Show($"Could not link design to order: {ex.Message}", "Gallery Link", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             };
+        }
+
+        private async Task RefreshGalleryOrderLinkCombosAsync()
+        {
+            if (flpDesignGallery.Controls.Count == 0) return;
+
+            var options = await LoadGalleryOrderOptionsAsync();
+
+            foreach (Control card in flpDesignGallery.Controls)
+            {
+                var combo = card.Controls.OfType<ComboBox>().FirstOrDefault();
+                if (combo?.Tag is not string imagePath) continue;
+
+                Guid? linkedOrderId = await _galleryService.GetLinkedOrderIdAsync(imagePath);
+                PopulateGalleryOrderCombo(combo, options, linkedOrderId);
+            }
+        }
+
+        private static void PopulateGalleryOrderCombo(
+            ComboBox combo,
+            List<GalleryOrderOption> options,
+            Guid? linkedOrderId)
+        {
+            combo.BeginUpdate();
+            try
+            {
+                combo.Items.Clear();
+                combo.Items.AddRange(options.Cast<object>().ToArray());
+                SelectGalleryOrder(combo, linkedOrderId);
+            }
+            finally
+            {
+                combo.EndUpdate();
+            }
         }
 
         private async Task<List<GalleryOrderOption>> LoadGalleryOrderOptionsAsync()

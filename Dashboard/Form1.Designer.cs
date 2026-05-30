@@ -3134,7 +3134,7 @@ namespace Dashboard
             dgvMaterialList.AllowUserToResizeRows = false;
             dgvMaterialList.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             dgvMaterialList.BackgroundColor = Color.FromArgb(255, 255, 255);
-            dgvMaterialList.BorderStyle = BorderStyle.Fixed3D;
+            dgvMaterialList.BorderStyle = BorderStyle.None;
             dgvMaterialList.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dgvMaterialList.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
@@ -3158,7 +3158,7 @@ namespace Dashboard
             dgvMaterialList.EnableHeadersVisualStyles = false;
             dgvMaterialList.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
             dgvMaterialList.GridColor = Color.FromArgb(141, 182, 0);
-            dgvMaterialList.Location = new Point(70, 57);
+            dgvMaterialList.Location = new Point(3, 77);
             dgvMaterialList.Name = "dgvMaterialList";
             dgvMaterialList.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
@@ -3173,7 +3173,7 @@ namespace Dashboard
             dgvMaterialList.RowHeadersWidth = 51;
             dgvMaterialList.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dgvMaterialList.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvMaterialList.Size = new Size(678, 303);
+            dgvMaterialList.Size = new Size(743, 303);
             dgvMaterialList.TabIndex = 161;
             // 
             // colItem
